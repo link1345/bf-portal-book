@@ -1,42 +1,42 @@
 ---
-title: "第4章 地图编辑器实用指南（放置和链接）"
+title: "第 4 章 地图编辑器实务指南（放置与关联）"
 free: true
 ---
 
-在本章中，我们将通过匹配 Godot 实体（`.tscn`）和 Portal 的名称来组织“可以放置的东西从哪里来？”“什么地图可以放置什么？”和“与操作相关的重要物体有哪些？”等问题。最后，我们将准备一个可以从后续规则设计和TypeScript实现中引用和控制的表单（=分配的ID和账本状态）。
+本章会整理“可以放置的东西来自哪里”“哪些地图可以放哪些东西”“哪些对象会影响游戏行为”等问题，并把 Godot 中的实际实体（`.tscn`）和 Portal 侧的名称对应起来。最终目标是准备到这样一种状态：后续的规则设计和 TypeScript 实现可以引用和控制这些对象，也就是已经赋予 ID，并整理成台账。
 
-# 1 “可以放置的东西”的真正本质：“res://objects”和地图依赖
+# 1 “可以放置的东西”的本质：`res://objects` 与地图依赖
 
-**可以放置在地图上的对象必须位于 Godot 的文件系统 `res://objects`** 中。此外，根据您编辑的地图，可放置的对象范围也有限制。 ** **截至2026年4月21日，现有的Portal SDK（版本：1.2.3.0）配置如下**。
+**地图上可以放置的对象，仅限于 Godot 文件系统 `res://objects` 内的对象。** 此外，**根据以哪张地图为基础进行编辑，可放置对象的范围也会受到限制。** **截至 2026 年 4 月 21 日，手头的 Portal SDK（版本：1.2.3.0）结构如下。**
 
-SDK的配置可能会因更新而改变。开始工作之前，先查看SDK下的`sdk.version.json`，如果与本文档不同，优先考虑SDK中的`docs/pages/spatial_editor.html`和`code/types/mod/index.d.ts`。
+SDK 可能会随着更新而改变结构。开始作业前，请确认 SDK 根目录下的 `sdk.version.json`。如果与本书不同，请优先参考 SDK 内的 `docs/pages/spatial_editor.html` 和 `code/types/mod/index.d.ts`。
 
-Godot真实文件夹示例：
+Godot 的实际文件夹示例：
 `res://objects/entities`、`res://objects/gameplay`、`res://objects/fx`、`res://objects/props`、`res://objects/nature`、`res://objects/architecture`、`res://objects/roads` 等。
 
-另外，`Gameplay/Common`等大写字母混合的分类名称可能会出现在`asset_types.json`的`directory`中。
-将其视为资产分类，并在 Godot 中查找实际文件时，根据实际文件夹名称进行检查，例如 `res://objects/gameplay/common`。
+另外，`asset_types.json` 的 `directory` 中可能会出现 `Gameplay/Common` 这样混有大写字母的分类名。
+请把它理解为资产分类。实际在 Godot 中查找文件时，要按照实际文件夹名确认，例如 `res://objects/gameplay/common`。
 
-这里重要的一点是“文件夹名称本身并不能决定它是否可以使用。”
-检查 SDK 中的 `asset_types.json` 以及编辑器上的警告，看看是否最终可以放置资源。
-如果在放置时出现如下所示的警告标记，请考虑它不能与该底图一起使用。
+这里最重要的是，不要只根据文件夹名判断能不能使用。
+某个资产最终能不能放置，要通过 SDK 内的 `asset_types.json` 和编辑器上的警告来确认。
+如果放置瞬间出现如下警告标记，就应认为它不能在当前基础地图中使用。
 
 ![](/images/bf_portal_doc/3-map-1.png)
 
-## 检查级别限制 `asset_types.json`
+## 用 `asset_types.json` 确认 Level 限制
 
-您可以在 SDK 中的 `FbExportData/asset_types.json` 查看资产的地图限制。
-不要仅根据对象库中是否可见来判断；如果有疑问，请搜索该文件。
+资产的地图限制可以从 SDK 内的 `FbExportData/asset_types.json` 确认。
+不要只根据 Object Library 中是否看得到来判断。拿不准时，请搜索这个文件。
 
-每个资产定义中需要考虑三个方面：
+需要看的，是各资产定义中的以下 3 项。
 
-|项目 |意义|
+| 项目 | 含义 |
 | ---- | ---- |
-| `type` | `type` |对象名称。在 Godot 或对象库中搜索时的名称 |
-| `directory` | `directory` |包含资产的文件夹 |
-| `levelRestrictions` | `levelRestrictions` |可安装的关卡名称列表 |
+| `type` | 对象名。在 Godot 或 Object Library 中查找时使用的名称 |
+| `directory` | 该资产所在的文件夹 |
+| `levelRestrictions` | 可以设置的 Level 名称列表 |
 
-例如，`AAGun_01` 定义为：
+例如，`AAGun_01` 的定义如下。
 
 ```json
 {
@@ -48,77 +48,77 @@ Godot真实文件夹示例：
 }
 ```
 
-在这种情况下，`AAGun_01` 可以被读取为 `Props` 下的资产，该资产仅限于 `MP_Battery`。
-另一方面，游戏规则资源（例如 `AI_Spawner`、`AreaTrigger`、`WorldIcon` 和 `VehicleSpawner`）在 SDK 中被重命名为 `levelRestrictions: []`。
-空数组和没有限制项的数组是通常可用的候选数组，但优先考虑 SDK 更新和编辑器端警告显示。
+这种情况下，可以理解为 `AAGun_01` 是 `Props` 下的资产，并且被限制为面向 `MP_Battery`。
+另一方面，`AI_Spawner`、`AreaTrigger`、`WorldIcon`、`VehicleSpawner` 等游戏规则用资产，在手头 SDK 中是 `levelRestrictions: []`。
+空数组或没有限制项的对象，可以作为通用候选，但仍以 SDK 更新后的内容和编辑器侧警告为准。
 
-实际上，按以下顺序检查是安全的。
+实务中，按下面顺序确认比较安全。
 
-1. 在对象库中搜索所需的资源名称。
+1. 在 Object Library 中查找目标资产名。
 2. 在 `asset_types.json` 中搜索 `type`。
-3. 检查 `directory` 的位置。
-4. 检查 `levelRestrictions` 是否包含正在编辑的 Level 名称。
-5. 将其放在Godot 上，检查是否出现警告标记。
+3. 用 `directory` 确认放置位置。
+4. 确认 `levelRestrictions` 中是否包含正在编辑的 Level 名称。
+5. 放到 Godot 中试放，确认是否出现警告标记。
 
 ```mermaid
 flowchart TD
-  library["Object Libraryで探す"]
-  assetTypes["asset_types.jsonでtypeを検索"]
-  directory["directoryで分類を確認"]
-  restrictions{"levelRestrictionsは<br/>対象Levelを含む？"}
-  empty{"空配列または<br/>制限なし？"}
-  place["Godotへ試し置き"]
-  warning{"警告マークが<br/>出る？"}
-  usable["候補として使う"]
-  unusable["そのLevelでは使わない"]
+  library["在 Object Library 中查找"]
+  assetTypes["在 asset_types.json 中搜索 type"]
+  directory["用 directory 确认分类"]
+  restrictions{"levelRestrictions 是否<br/>包含目标 Level？"}
+  empty{"空数组或<br/>没有限制？"}
+  place["在 Godot 中试放"]
+  warning{"是否出现<br/>警告标记？"}
+  usable["作为候选使用"]
+  unusable["不在该 Level 中使用"]
 
   library --> assetTypes --> directory --> restrictions
-  restrictions -- "はい" --> place
-  restrictions -- "いいえ" --> empty
-  empty -- "はい" --> place
-  empty -- "いいえ" --> unusable
+  restrictions -- "是" --> place
+  restrictions -- "否" --> empty
+  empty -- "是" --> place
+  empty -- "否" --> unusable
   place --> warning
-  warning -- "出ない" --> usable
-  warning -- "出る" --> unusable
+  warning -- "没有" --> usable
+  warning -- "出现" --> unusable
 ```
 
-文件夹名称、官方关卡名称和地图 ID 可能不匹配。
-在 SDK `docs/pages/spatial_editor.html` 中，可用级别的组织如下（截至 2026 年 4 月 21 日，SDK 1.2.3.0）。
+文件夹名、官方 Level Name、Map ID 可能并不一致。
+SDK 的 `docs/pages/spatial_editor.html` 中，可用 Level 整理如下（截至 2026 年 4 月 21 日，SDK 1.2.3.0）。
 
-|官方级别名称 |地图ID |
+| 官方 Level Name | Map ID |
 | ---- | ---- |
-|开罗围城| MP_阿拔斯 |
-|帝国大厦 | MP_后果|
-|布莱克威尔场| MP_荒地 |
-|伊比利亚攻势 | MP_电池|
-|解放峰| MP_Capstone |
-|污染| MP_污染 |
-|曼哈顿大桥| MP_小飞象 |
-|伊斯特伍德 | MP_伊斯特伍德 |
-|火焰风暴行动 | MP_Firestorm |
-|高尔夫球场 | MP_Granite_ClubHouse_Portal |
-|市中心 | MP_Granite_MainStreet_Portal |
-|码头 | MP_Granite_Marina_Portal | MP_Granite_Marina_Portal |
-| 22B区| MP_Granite_MilitaryRnD_Portal | MP_Granite_MilitaryRnD_Portal |
-|红线存储| MP_Granite_MilitaryStorage_Portal | MP_Granite_MilitaryStorage_Portal |
-|国防关系| MP_Granite_TechCampus_Portal |
-|综合体 3 | MP_Granite_Underground_Portal | MP_Granite_Underground_Portal |
-|圣区 | MP_石灰石 |
-|新索贝克市| MP_郊区 |
-|门户沙盒 | MP_Portal_Sand | MP_传送门_沙子
-|哈根塔尔基地 | MP_地下 |
-|米拉克谷| MP_钨 |
+| Siege of Cairo | MP_Abbasid |
+| Empire State | MP_Aftermath |
+| Blackwell Fields | MP_Badlands |
+| Iberian Offensive | MP_Battery |
+| Liberation Peak | MP_Capstone |
+| Contaminated | MP_Contaminated |
+| Manhattan Bridge | MP_Dumbo |
+| Eastwood | MP_Eastwood |
+| Operation Firestorm | MP_Firestorm |
+| Golf Course | MP_Granite_ClubHouse_Portal |
+| Downtown | MP_Granite_MainStreet_Portal |
+| Marina | MP_Granite_Marina_Portal |
+| Area 22B | MP_Granite_MilitaryRnD_Portal |
+| Redline Storage | MP_Granite_MilitaryStorage_Portal |
+| Defense Nexus | MP_Granite_TechCampus_Portal |
+| Complex 3 | MP_Granite_Underground_Portal |
+| Saint's Quarter | MP_Limestone |
+| New Sobek City | MP_Outskirts |
+| Portal Sandbox | MP_Portal_Sand |
+| Hagental Base | MP_Subsurface |
+| Mirak Valley | MP_Tungsten |
 
-* 在官方文档的Available Levels表中，写为`MP_Firestorm`，但在本地SDK中`asset_types.json`和Godot的level文件中，也使用`MP_FireStorm`。搜索`levelRestrictions`时，优先考虑SDK中的实际数据表示法。
-*`MP_Granite_ClubHouse_Portal` 是官方级别名称 `Golf Course`。实际使用时请查看`asset_types.json`、`levelRestrictions`以及Godot上的警告显示。
+注：官方 docs 的 Available Levels 表中写作 `MP_Firestorm`，但手头 SDK 的 `asset_types.json` 和 Godot 的 level 文件中也使用 `MP_FireStorm`。搜索 `levelRestrictions` 时，请优先使用 SDK 实际数据中的写法。
+注：`MP_Granite_ClubHouse_Portal` 的官方 Level Name 是 `Golf Course`。实际使用时，请确认 `asset_types.json` 的 `levelRestrictions` 和 Godot 上的警告显示。
 
-例如，当基于“`MP_Aftermath` (Empire State)”进行编辑时，包含 `asset_types.json`（其中 `levelRestrictions` 为空）或 `MP_Aftermath` 的资源将被视为候选资源。
-即使它在对象库或Godot中可见，也无法在实际游戏中使用或显示，除非`levelRestrictions`中有目标级别。
+例如，以 `MP_Aftermath`（Empire State）为基础进行编辑时，可以把 `asset_types.json` 中 `levelRestrictions` 为空，或包含 `MP_Aftermath` 的资产作为候选。
+即使在 Object Library 或 Godot 上看得到，如果 `levelRestrictions` 中没有目标 Level，也无法在实际游戏内使用或显示。
 
-## `RuntimeSpawn_...` 是可以从代码生成的候选者
+## `RuntimeSpawn_...` 是可以从代码生成的候选
 
-如果您查看 `code/types/mod/index.d.ts`，您将看到类似 `RuntimeSpawn_Common`、`RuntimeSpawn_Abbasid` 和 `RuntimeSpawn_Aftermath` 的枚举。
-这是一个预制候选，可以在运行时从 TypeScript 的 `mod.SpawnObject(...)` 生成，而不是手动放置在 Godot 对象库中的列表。
+查看 `code/types/mod/index.d.ts`，会看到 `RuntimeSpawn_Common`、`RuntimeSpawn_Abbasid`、`RuntimeSpawn_Aftermath` 等 enum。
+这些不是在 Godot 的 Object Library 中手动放置的列表，而是可以通过 TypeScript 的 `mod.SpawnObject(...)` 在运行时生成的 Prefab 候选。
 
 ```ts
 const obj = mod.SpawnObject(
@@ -129,276 +129,276 @@ const obj = mod.SpawnObject(
 );
 ```
 
-`RuntimeSpawn_Common` 是一个通用系统，易于与多个 Map 一起使用，任何具有 Map 名称（例如 `RuntimeSpawn_Abbasid`）的内容都会被读取为从该 Map 派生的候选。
-但是，如果目标对象不支持，`SpawnObject`的返回值可能会变成`-1`。
-另外，代码生成的账本与 Godot 上手动保存的 `ObjId` 账本是分开管理的，所以如果您使用它们，请分别记下“手动 ID”和“运行时生成”。
+`RuntimeSpawn_Common` 是较容易在多个 Map 中使用的通用类，`RuntimeSpawn_Abbasid` 等带有 Map 名称的内容，则理解为来自该 Map 的候选。
+不过，如果目标对象不支持，`SpawnObject` 的返回值可能会变成 `-1`。
+另外，由代码生成的对象和 Godot 中手动放置的 `ObjId` 台账是分开管理的。使用时，请分别记录“手动 ID”和“运行时生成”。
 
-## 实用指南：
+## 实务上的判断标准
 
-* 首先，主要在`res://objects/gameplay`和`res://objects/entities`中搜索游戏规则相关的对象。
-* 对于外观和配件资产，请检查 `asset_types.json` 上的 `levelRestrictions` → 尝试一下 → 检查警告标记 → 仅保留可用的物品。
-* 在对象库中找到的资源与 `asset_types.json` 中的 `type` 进行匹配。如果 `levelRestrictions` 中没有正在编辑的关卡名称，则即使在 Godot 中可见，也无法在实际游戏中使用或显示。
-* `Static` 图层中包含的地形和烧毁资产目前无法编辑。
-* 仅将比例更改为统一比例。官方不鼓励使用单独拉伸 X/Y/Z 的非均匀比例。
+* 与游戏规则相关的对象，优先在 `res://objects/gameplay` 和 `res://objects/entities` 中查找。
+* 外观和小道具类资产，要先确认 `asset_types.json` 的 `levelRestrictions`，再试放，确认警告标记，只保留可用的对象。
+* 在 Object Library 中找到的资产，要和 `asset_types.json` 的 `type` 对照。`levelRestrictions` 中没有正在编辑的 Level 名称时，即使在 Godot 中可见，也无法在实际游戏内使用或显示。
+* `Static` layer 中包含的地形和烘焙好的资产，目前不是编辑对象。
+* 缩放只使用统一缩放。分别拉伸 X/Y/Z 的非统一缩放并不被官方推荐。
 
-# 2 对移动有效的“噱头”物体列表
+# 2 会影响行为的“机关类”对象总览
 
-与“仅用于外观的配件”不同，涉及游戏行为、事件、范围、UI 等的重要对象主要组织在 `res://objects/entities` 和 `res://objects/gameplay` 中。我们将介绍典型的戈多路径、角色和常见组合。
+不同于只影响外观的小道具，参与游戏行为、事件、范围、UI 等的重要对象，主要集中在 `res://objects/entities` 和 `res://objects/gameplay` 中。下面按 Godot 路径、作用和常见组合整理代表性对象。
 
-## SpawnPoint（玩家外观的关键点）
+## SpawnPoint（玩家出生点的关键）
 
-*现实：`res://objects/entities/SpawnPoint.tscn`
-* 角色：定义玩家的重生位置。
+* 实体：`res://objects/entities/SpawnPoint.tscn`
+* 作用：定义玩家的出生位置。
 * 常用组合：
-  `res://objects/gameplay/common/HQ_PlayerSpawner.tscn`（每个团队的总部出击）
+  `res://objects/gameplay/common/HQ_PlayerSpawner.tscn`（各队的 HQ 出击）
   `res://objects/gameplay/common/PlayerSpawner.tscn`（从脚本直接出击）
-* 重要提示：`SpawnPoint` 本身不会创建范围。 `HQ_PlayerSpawner` / `PlayerSpawner` 的一个或多个链接决定了玩家可以生成的实际位置。
-* `PolygonVolume` 不用于 SpawnPoint，而是用于指定 `CombatArea` 或 `AreaTrigger` 的范围。
-* 实用关键：根据是否是团队特定的或者是否可以直接从脚本调度来选择 `HQ_PlayerSpawner` / `PlayerSpawner`。 ID是在属性中手动设置的（初始-1）。将 SpawnPoint 本身和所使用的对象（HQ/PlayerSpawner）的 ID 系列分开将使规则更易于阅读。
+* 重要：`SpawnPoint` 单独不会形成范围。它需要被 1 个以上的 `HQ_PlayerSpawner` / `PlayerSpawner` 关联，才会决定玩家实际可以出生的位置。
+* `PolygonVolume` 不是给 SpawnPoint 用的，而是用于指定 `CombatArea` 或 `AreaTrigger` 的范围。
+* 实务要点：根据是队伍专用，还是从脚本直接出击，选择 `HQ_PlayerSpawner` / `PlayerSpawner`。ID 在属性中手动设置（初始值 -1）。把 SpawnPoint 本体和配套对象（HQ/PlayerSpawner）的 ID 系列分开，规则侧会更容易阅读。
 
-## AI 生成/路径
+## AI 生成与路径
 
-* AI外观：`res://objects/gameplay/ai/AI_Spawner.tscn`
-* AI路线：`res://objects/gameplay/ai/AI_WaypointPath.tscn`
+* AI 生成：`res://objects/gameplay/ai/AI_Spawner.tscn`
+* AI 路径：`res://objects/gameplay/ai/AI_WaypointPath.tscn`
 
-## AreaTrigger（入侵/退出检测）
+## AreaTrigger（进入与退出检测）
 
-*现实：`res://objects/gameplay/common/AreaTrigger.tscn`
-* 作用：将进入/退出变成一个事件。
-* 组合：使用 Godot `PolygonVolume` 定义范围。
-* 实践要点：高度（Y）不足是禁忌。能跳过去的厚度不太好。通过将ID与制作（FX/SFX）和分数加算以1:1的方式链接，并在账本中写入“AreaTrigger ID → 呼叫人员”，您将不必担心执行规则。
+* 实体：`res://objects/gameplay/common/AreaTrigger.tscn`
+* 作用：把进入 / 离开事件化。
+* 组合：用 Godot `PolygonVolume` 定义范围。
+* 实务要点：高度（Y）不足是禁忌。玩家能跳出厚度的范围不合格。把 ID 与演出（FX/SFX）或得分加算一对一关联，并在台账中写上“AreaTrigger ID -> 调用对象”，规则实现时就不会迷路。
 
-## CapturePoint（可捕获的目标点）
+## CapturePoint（可以占领的目标点）
 
-*现实：`res://objects/gameplay/conquest/CapturePoint.tscn`
-* 角色：队伍争夺的基地。您可以处理所有权团队、占领进度以及占领开始/完成/损失事件。
-* 组合：Godot `PolygonVolume` 到 `CaptureArea`。如有必要，还可以使用 `AdditionalCaptureArea`。
-* 实用点：`AreaTrigger` 对于简单的入侵检测来说已经足够了。如果你想处理归属团队、占领时间、占领进度和基地出动架次，请使用`CapturePoint`。
+* 实体：`res://objects/gameplay/conquest/CapturePoint.tscn`
+* 作用：队伍争夺的据点。可以处理拥有队伍、占领进度、占领开始 / 完成 / 丢失事件。
+* 组合：把 Godot `PolygonVolume` 设置为 `CaptureArea`。需要时也可以使用 `AdditionalCaptureArea`。
+* 实务要点：如果只是单纯进入判定，`AreaTrigger` 就足够。需要处理拥有队伍、占领时间、占领进度、从据点出击时，使用 `CapturePoint`。
 
-`CapturePoint` 是“游戏模式目标”而不是距离传感器。
-在 TypeScript 端，您可以在 `mod.GetCapturePoint(id)`、`mod.GetCaptureProgress(...)`、`mod.GetCurrentOwnerTeam(...)`、`mod.SetCapturePointOwner(...)` 等处读取和更改状态。
+`CapturePoint` 不是范围传感器，而是“游戏模式上的目标”。
+TypeScript 侧可以用 `mod.GetCapturePoint(id)`、`mod.GetCaptureProgress(...)`、`mod.GetCurrentOwnerTeam(...)`、`mod.SetCapturePointOwner(...)` 等读取或修改状态。
 
-## VL7Cloud（气云/特效区）
+## VL7Cloud（毒气云 / 特殊效果区域）
 
-*现实：`res://objects/gameplay/common/VL7Cloud.tscn`
-* 作用：气云等特效区域。您可以同时切换屏幕效果、士兵效果和视觉特效。
-* 组合：VL7Cloud本身被放置和使用，而不是像`AreaTrigger`或`CapturePoint`那样单独绑定`PolygonVolume`的类型。
-*实用点：用于对地点本身有影响的表达方式，例如毒气、烟雾、视线障碍和特殊区域。不用于简单的目标判断或切换范围。
+* 实体：`res://objects/gameplay/common/VL7Cloud.tscn`
+* 作用：类似毒气云的特殊效果区域。可以统一切换画面效果、士兵效果、VFX。
+* 组合：它不像 `AreaTrigger` 或 `CapturePoint` 那样另行关联 `PolygonVolume`，而是放置 VL7Cloud 本身来使用。
+* 实务要点：用于毒气、烟雾、视野妨碍、特殊区域等“地点本身带有效果”的表现。不要用于单纯的目标判定或开关范围。
 
-在 TypeScript 端，使用 `mod.GetVL7Cloud(id)` 检索它并使用 `mod.SetVL7CloudEffects(cloud, screenEffect, soldierEffect, visualEffect)` 切换效果。
-入侵/退出信息可以在 `OnPlayerEnterVL7Cloud` / `OnPlayerExitVL7Cloud` 找到。
+TypeScript 侧用 `mod.GetVL7Cloud(id)` 获取，并用 `mod.SetVL7CloudEffects(cloud, screenEffect, soldierEffect, visualEffect)` 切换效果。
+进入 / 离开可以用 `OnPlayerEnterVL7Cloud` / `OnPlayerExitVL7Cloud` 接收。
 
-## 如何使用范围对象
+## 范围类对象的区分
 
-`AreaTrigger`、`CapturePoint`、`VL7Cloud` 都与“范围内的玩家”相关。
-然而，它们的使用目的却截然不同。
+`AreaTrigger`、`CapturePoint`、`VL7Cloud` 都与“进入范围的玩家”有关。
+不过，它们的用途相当不同。
 
-|目的|使用什么 |原因 |
+| 目的 | 使用对象 | 理由 |
 | ---- | ---- | ---- |
-|目标确定、店铺范围、陷阱、事件起点 | `AreaTrigger` | `AreaTrigger` |只需将入口/出口连接到您自己的逻辑 |
-|处理方式的变化取决于基地 A、基地 B、位置和所属球队 | `CapturePoint` | `CapturePoint` |职业进度、归属团队、职业事件均可使用|
-|有毒气、特殊烟雾、屏幕效果和士兵效果的区域 | `VL7Cloud` | `VL7Cloud` |该区域本身可以有特殊效果|
+| 终点判定、商店范围、陷阱、事件开始地点 | `AreaTrigger` | 只需要把进入 / 离开连接到自己的逻辑 |
+| A 据点、B 据点、占地、按拥有队伍改变处理 | `CapturePoint` | 可以使用占领进度、拥有队伍、占领事件 |
+| 毒气、特殊烟雾、带有画面效果或士兵效果的区域 | `VL7Cloud` | 范围本身可以带专用效果 |
 
-如果有疑问，请首先考虑 `AreaTrigger`。
-如果您需要“职业”或“拥有团队”一词，请访问 `CapturePoint`，如果您想添加气体云或特效本身，请访问 `VL7Cloud`。
+拿不准时，先从 `AreaTrigger` 考虑。
+如果需要“占领”或“拥有队伍”这些概念，就用 `CapturePoint`；如果想放置毒气云或特殊效果本身，就用 `VL7Cloud`。
 
-## CombatArea（可玩区域）
+## CombatArea（可游玩区域）
 
-*现实：`res://objects/gameplay/common/CombatArea.tscn`
-* 作用：指定可玩范围，如果外出则施加警告、伤害等。
-* 组合：使用 Godot `PolygonVolume` 定义范围。
-* 实践要点：拓展外围，局部化异常。在测试过程中，我们重点检查了人们无法返回并上瘾的情况。
+* 实体：`res://objects/gameplay/common/CombatArea.tscn`
+* 作用：指定可游玩范围，离开范围时应用警告、伤害等。
+* 组合：用 Godot `PolygonVolume` 定义范围。
+* 实务要点：外围要稍微放宽，例外区域局部处理。测试时重点检查“无法返回而卡住”的情况。
 
-## DeployCam（部署屏幕概述）
+## DeployCam（部署画面的俯瞰）
 
-*现实：`res://objects/gameplay/common/DeployCam.tscn`
-* 作用：调整整个地图的鸟瞰位置和角度。
-* 实用键：如果不设置，出击前后的地图显示会不正确，所以一定要设置。
+* 实体：`res://objects/gameplay/common/DeployCam.tscn`
+* 作用：调整整张地图俯瞰显示的位置和角度。
+* 实务要点：不设置它的话，出击前后的地图显示会不正常，所以一定要设置。
 
-## HQ / 玩家生成器（生成规则的差异）
+## HQ / Player Spawner（出生规则的差异）
 
-* 仅限总部：`res://objects/gameplay/common/HQ_PlayerSpawner.tscn`
-  可以分配给团队的标准总部生成器。如果您想为每个团队创建出击位置，请使用此选项。
-* 直接出击：`res://objects/gameplay/common/PlayerSpawner.tscn`
-  没有总部的替代刷怪笼。当您想要从脚本中派遣任何玩家而不将其分配给团队时，它适合使用。
-* 两个生成器仅在链接到一个或多个 `SpawnPoint` 时充当生成位置。
-*实用点：如果你想避免假象，请使用HQ版本。如果您想使用脚本控制任意出击次数，请使用 PlayerSpawner。混合操作时，分离并澄清ID带。
+* HQ 专用：`res://objects/gameplay/common/HQ_PlayerSpawner.tscn`
+  分配给队伍使用的标准 HQ 出击用 Spawner。想为各队创建出击位置时使用它。
+* 直接出击用：`res://objects/gameplay/common/PlayerSpawner.tscn`
+  不带 HQ 的替代 Spawner。不分配给队伍，适合从脚本让任意玩家出击。
+* 两种 Spawner 都必须关联 1 个以上 `SpawnPoint` 后，才会作为出生位置发挥作用。
+* 实务要点：想避免误出生就采用 HQ 用。想用脚本控制任意出击就采用 PlayerSpawner。混用时要明确分开 ID 段。
 
 ## InteractPoint（操作起点）
 
-*现实：`res://objects/gameplay/common/InteractPoint.tscn`
-* 作用：接近时显示，按下按钮时触发事件。
-* 实用键：**“按 → 会发生什么”** 为了将其直接连接到规则，请使用有意义的 ID（例如 Start=500 / Shop=501）。
+* 实体：`res://objects/gameplay/common/InteractPoint.tscn`
+* 作用：靠近时显示，按下按钮时触发事件。
+* 实务要点：为了让 **“按下 -> 发生什么”** 直接连接到规则，请使用有意义的 ID，例如 Start=500 / Shop=501。
 
-## 扇区（突破核心）
+## Sector（突破类玩法的核心）
 
-*现实：`res://objects/gameplay/common/Sector.tscn`
-* 作用：添加扇区概念。就像突破一样，它由“推阶段和拉阶段”组成。
-* 包括的概念：`Advance Area` / `Retreat Area` / `Capture Points` / `Sector Area`
-* 实际工作的关键：多个领域重叠且不矛盾。按概念组织 ID 可以更轻松地在规则端编写阶段控制。
+* 实体：`res://objects/gameplay/common/Sector.tscn`
+* 作用：追加扇区概念。像突破模式那样构成“推进与后退的阶段”。
+* 包含概念：`Advance Area` / `Retreat Area` / `Capture Points` / `Sector Area`
+* 实务要点：多个区域要无矛盾地重叠。按概念整理 ID，规则侧的阶段控制会更容易写。
 
 ## StationaryEmplacementSpawner（固定武器）
 
-*现实：`res://objects/gameplay/common/StationaryEmplacementSpawner.tscn`
-* 作用：定义固定武器的位置和内容。
-*实用重点：注意可见性、命中路径、屏蔽等方面的物理干扰。带有 ID 的安全控制室，用于“搬迁/搬迁”。
+* 实体：`res://objects/gameplay/common/StationaryEmplacementSpawner.tscn`
+* 作用：定义固定武器的出现位置和内容。
+* 实务要点：注意视野、受击路线、掩体的物理干涉。用 ID 保留“撤去 / 重新配置”的控制空间。
 
-## 周围战斗区域（总部防波堤）
+## SurroundingCombatArea（HQ 的防线）
 
-*现实：`res://objects/gameplay/common/SurroundingCombatArea.tscn`
-* 作用：在征服游戏中，在总部周围设置禁区，防止敌人进入总部。
-* 实用重点：只强化总部附近的区域。如果你把它分散得太多，你的攻击者就会窒息。
+* 实体：`res://objects/gameplay/common/SurroundingCombatArea.tscn`
+* 作用：在征服类玩法中，设置 HQ 周围的禁止区域，防止敌人进入 HQ。
+* 实务要点：只在 HQ 附近加强。扩得太大，进攻方会失去行动空间。
 
-## 车辆生成器
+## VehicleSpawner（载具生成）
 
-*现实：`res://objects/gameplay/common/VehicleSpawner.tscn`
-* 作用：定义武器的位置和车辆类型。
-*实用要点：出现后不要立即接触物体/指向行进方向/按永久物和事件分开ID带（例如2001 =永久，2090 =事件）。
+* 实体：`res://objects/gameplay/common/VehicleSpawner.tscn`
+* 作用：定义载具的出现位置和种类。
+* 实务要点：出现后不要立刻接触物体，要朝向前进方向，并按常设与事件分开 ID 段（例：2001=常设，2090 段=事件）。
 
-## WorldIcon（目标指南）
+## WorldIcon（目标路标）
 
-*现实：`res://objects/gameplay/common/WorldIcon.tscn`
-* 作用：透过墙壁可见的地标。按规则控制说明文本、所有权团队、显示/隐藏。
-*实用关键：**将其放置在目的地“稍前”**，它将与引导线相匹配。尽早决定 ID（例如 21、22...）。
+* 实体：`res://objects/gameplay/common/WorldIcon.tscn`
+* 作用：隔墙也能看到的标记。说明文本、拥有队伍、显示 / 隐藏都可以由规则控制。
+* 实务要点：放在 **目的地的稍前方**，就会和动线一致。ID 要尽早确定（例：21、22……）。
 
 ## FX（视觉效果）
 
-* 实体：存在于各种文件夹中，如 `FX_****.tscn`
-* 作用：烟花、爆炸等展示效果
-* 实现要点：使用强烈闪光或闪烁灯光等效果时，注意不要造成“神奇宝贝休克”现象。
+* 实体：以 `FX_****.tscn` 的形式存在于多个文件夹中
+* 作用：显示烟花、爆炸等效果表现
+* 实现要点：使用强光或闪烁类效果时，要注意避免造成强烈的光敏刺激。
 
-## SFX（声音表达）
+## SFX（声音效果）
 
-* 实体：存在于各种文件夹中，如 `SFX_****.tscn`
-* 作用：显示烟花声、爆炸声等声音表现
-* 实现关键：放多了会很吵。
+* 实体：以 `SFX_****.tscn` 的形式存在于多个文件夹中
+* 作用：播放烟花声、爆炸声等声音表现
+* 实现要点：放太多会很吵。
 
-# 3 实际放置流程（ID、账本、兼容性检查）
+# 3 放置的实务流程（ID、台账、兼容检查）
 
-在实际工作中，如果按照以下步骤操作，错误将会大大减少。
+实际作业如果落到下面流程，失误会大幅减少。
 
-1.确定基础水平
-如下所示，有一个列表，因此复制适合您目的的基本级别，然后双击复制的级别以展开该级别。
+1. 决定基础 Level
+  如下图所示，存在 Level 列表。复制符合目的的基础 Level，然后双击复制后的 Level 展开它。
 
-![级别选择](/images/bf_portal_doc/3-map-3.png)
-*级别列表*
+![Level 选择](/images/bf_portal_doc/3-map-3.png)
+*Level 列表*
 
-![创建副本](/images/bf_portal_doc/3-map-4.png)
-*经过多次创建，创建了一个名为“MP_Test_Granite_ClubHouse_Portal.tscn”的关卡*
+![创建复制](/images/bf_portal_doc/3-map-4.png)
+*复制后，创建了名为“MP_Test_Granite_ClubHouse_Portal.tscn”的 Level*
 
-![等级扩展](/images/bf_portal_doc/3-map-5.png)
-*双击打开关卡*
+![展开 Level](/images/bf_portal_doc/3-map-5.png)
+*双击打开 Level*
 
-2. 提取可能的安置候选人
-  首先，从 `res://objects/gameplay` / `res://objects/entities` 中选择与游戏规则相关的规则。
-  如果您看到感兴趣的资产，请在 `FbExportData/asset_types.json` 中搜索 `type` 并检查 `directory` 和 `levelRestrictions`。
-  外观及配件资产请查看 `levelRestrictions` 检查 → 试用 → 警告标记以确认兼容性后再离开。
+2. 提取可放置候选
+  首先，从 `res://objects/gameplay` / `res://objects/entities` 中选择与游戏规则相关的对象。
+  如果有在意的资产，请在 `FbExportData/asset_types.json` 中搜索 `type`，确认 `directory` 和 `levelRestrictions`。
+  外观和小道具类资产，要先确认 `levelRestrictions`，再试放，通过警告标记确认兼容性后再保留。
 
-3. 投放的同时添加ID
-  如图所示，在 **Obj Id 字段** 中手动输入。请勿重复 ID。遵守系列分类（例如 Spawn = 1000 单位/车辆 = 2000 单位...）。
-  对于不被 TypeScript 实现引用或控制的对象（环境对象，例如椅子），初始值 -1 就可以了。
+3. 放置的同时赋予 ID
+  像图中一样，在 **Obj Id 栏** 中手动输入。ID 不要重复。遵守系列划分（例：Spawn=1000 段 / Vehicle=2000 段……）。
+  TypeScript 实现不会引用或控制的对象（椅子等环境对象），保持初始值 -1 即可。
 
-![ID设置](/images/bf_portal_doc/3-map-2.png)
-*在 Obj ID 字段中设置对象 ID*
+![ID 设置](/images/bf_portal_doc/3-map-2.png)
+*在 Obj ID 栏中设置对象 ID*
 
-## ObjId 账本模板
+## ObjId 台账模板
 
-如果你只在Godot上管理你的ID，以后你肯定会感到困惑。请至少准备以下账本。
+ID 如果只在 Godot 上管理，之后一定会迷路。至少请准备如下台账。
 
-账本可以是 Excel、Google Sheets、Markdown 表或 CSV。
-重点不在于工具，而在于将 `ObjId`、用法、Godot 对象、TypeScript 检索函数和测试结果保留在同一位置。
+台账可以是 Excel、Google Sheets、Markdown 表、CSV，哪种都可以。
+重要的不是工具，而是把 `ObjId`、用途、Godot 对象、TypeScript 获取函数、测试结果放在同一个地方管理。
 
 :::message
-如果手动账本管理变得困难，您还可以使用 [hekaron/ObjIdManager](https://github.com/hekaron/ObjIdManager)。
-这是一个为 Battlefield Portal SDK 的 Godot 环境制作的 ObjId 管理插件，允许您列出 Node3D 的 `ObjId`、突出显示重复值、自动编号、导出为 TypeScript 格式等等。
-在本书中，我们将首先使用分类账来解释这个概念，但随着排列对象数量的增加，使用这些工具将更容易减少确认错误和重复ID。
-通过使用 Vitest 在代码端检查 `ids.ts` 并使用 ObjIdManager 或分类帐检查 Godot 端的实际位置，可以安全地分离角色。
+如果手动管理台账变得辛苦，也可以考虑使用 [hekaron/ObjIdManager](https://github.com/hekaron/ObjIdManager)。
+这是面向 Battlefield Portal SDK 的 Godot 环境制作的 ObjId 管理插件，可以显示 Node3D 的 `ObjId` 列表、高亮重复值、自动连续编号、导出为 TypeScript 格式等。
+本书先用台账掌握思路，但当放置对象增加时，使用这类工具会更容易减少确认遗漏和重复 ID。
+代码侧的 `ids.ts` 用 Vitest 确认，Godot 侧的实际放置用 ObjIdManager 或台账确认，这样分工会更安全。
 :::
 
-|用途 |对象 ID |戈多对象| TypeScript 获取函数 |测试结果 |笔记|
+| 用途 | ObjId | Godot 对象 | TypeScript 获取函数 | 测试结果 | 备注 |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-|开始按钮| 500 | 500互动点 | `mod.GetInteractPoint(500)` | `mod.GetInteractPoint(500)` |未经证实 |大堂中心|
-|入学信息| 21 | 21世界图标 | `mod.GetWorldIcon(21)` | `mod.GetWorldIcon(21)` |未经证实 |初始显示|
-|目的地指南 | 22 | 22世界图标 | `mod.GetWorldIcon(22)` | `mod.GetWorldIcon(22)` |未经证实 |启动后显示|
-|目的地确定 | 11 | 11区域触发 | `mod.GetAreaTrigger(11)` | `mod.GetAreaTrigger(11)` |未经证实 |保证足够的高度|
-|成功外汇 | 901 | 901视觉特效 | `mod.GetVFX(901)` | `mod.GetVFX(901)` |未经证实 |到达时播放 |
-|成功的特效 | 951 | 951音效 | `mod.GetSFX(951)` | `mod.GetSFX(951)` |未经证实 |注意不要发出太大的噪音 |
+| 开始按钮 | 500 | InteractPoint | `mod.GetInteractPoint(500)` | 未确认 | 大厅中央 |
+| 入口引导 | 21 | WorldIcon | `mod.GetWorldIcon(21)` | 未确认 | 初始显示 |
+| 目的地引导 | 22 | WorldIcon | `mod.GetWorldIcon(22)` | 未确认 | 开始后显示 |
+| 目的地判定 | 11 | AreaTrigger | `mod.GetAreaTrigger(11)` | 未确认 | 高度要足够 |
+| 成功 FX | 901 | VFX | `mod.GetVFX(901)` | 未确认 | 到达时播放 |
+| 成功 SFX | 951 | SFX | `mod.GetSFX(951)` | 未确认 | 注意不要播放过多 |
 
-账本中的“测试结果”从放置后立即从“未确认”开始。如果它在测试中有效，你可以只写“OK”，如果它坏了，“需要修复”，这将减少疏忽。
+台账中的“测试结果”在刚放置后先写“未确认”。测试能运行就改成“OK”，坏了就改成“需修正”。只做这件事，也能减少遗漏。
 
-4.最终确认兼容性并成功
-  对于 `levelRestrictions` 的对象，请再次检查是否有警告。
-  测试高度 (Y) 是否会导致气泡或沉入地面，以及 Spawn/Vehicle 周围是否有足够的空间。
+4. 最终确认兼容性和碰撞
+  有 `levelRestrictions` 的对象，要再次确认是否出现警告。
+  测试高度（Y）是否导致空中出生或陷入地面，Spawn / Vehicle 周围是否有足够余地。
 
 :::message
-实用提示：虽然不是官方文档中规定的必填程序，但在放置物体之前和之后检查地形、地面碰撞检测和碰撞状态，可以减少物体沉入地面、轻微漂浮、车辆被夹住等事故。
+实务 Tips：这不是官方 docs 明确写出的必需步骤，但在对象放置前后确认地形、地板碰撞、碰撞状态，可以减少放置物陷入地面、略微浮起、载具卡住等事故。
 :::
 
 5. 创建地图数据
-  右下角有一个 BFPortal 字段，因此单击那里的“门户设置”按钮。稍等片刻后，它会显示“设置完成”。
-  接下来，单击“导出当前级别”按钮。执行此操作时，将从保存门户项目的文件夹层次结构中的 `*Portal保存場所*\export\levels` 创建一个名为 `レベル名.spatial.json` 的文件。
-  *当您按下“打开导出...”按钮时，资源管理器将打开并引导您到达该位置。
+  右下角有 BFPortal 栏，点击其中的“Portal Setup”按钮。稍等后，会显示“Completed setup”。
+  接着点击“Export Current Level”按钮。这样会生成名为 `Level名.spatial.json` 的文件。生成位置是从 Portal 项目保存文件夹层级来看，位于 `*Portal保存位置*\export\levels`。
+  注：点击“Open Exports...”按钮，会打开资源管理器并显示位置。
 
-![传送门领域](/images/bf_portal_doc/3-map-6.png)
-*BF门户专栏*
+![Portal 栏](/images/bf_portal_doc/3-map-6.png)
+*BFPortal 栏*
 
-![单击“门户设置”按钮后的显示](/images/bf_portal_doc/3-map-7.png)
-*点击“门户设置”按钮后显示*
+![点击“Portal Setup”按钮后的显示](/images/bf_portal_doc/3-map-7.png)
+*点击“Portal Setup”按钮后的显示*
 
-![单击“导出当前级别”按钮后的显示](/images/bf_portal_doc/3-map-8.png)
-*点击“导出当前级别”按钮后显示*
+![点击“Export Current Level”按钮后的显示](/images/bf_portal_doc/3-map-8.png)
+*点击“Export Current Level”按钮后的显示*
 
 
-6. 将地图数据注册到Portal
-  将创建的地图数据注册到门户。
-  如下图所示，转到门户创建屏幕上的地图旋转字段，然后选择与您准备的关卡相同的地图。注册您创建的数据文件。
+6. 将地图数据注册到 Portal
+  将制作好的地图数据注册到 Portal。
+  如下图所示，移动到 Portal 创建画面的地图轮换栏，选择与准备好的 Level 相同的地图。然后注册制作好的数据文件。
 
-![门户创建屏幕（地图旋转）](/images/bf_portal_doc/3-map-9.png)
-*门户创建屏幕（地图旋转）*
+![Portal 创建画面（地图轮换）](/images/bf_portal_doc/3-map-9.png)
+*Portal 创建画面（地图轮换）*
 
 ![地图数据设置](/images/bf_portal_doc/3-map-10.png)
 *地图数据设置*
 
-![检查是否附加了地图数据](/images/bf_portal_doc/3-map-11.png)
-*检查是否包含地图数据*
+![确认是否附加地图数据](/images/bf_portal_doc/3-map-11.png)
+*确认是否附加地图数据*
 
 
-完成此操作后，您可以立即参考并控制下一章的规则设计和后续 TypeScript 实现中的规则。 **90%的“我放置了它但不起作用”的情况是由于ID为-1，或重复/丢失账本造成的。 **
+到这里完成后，下一章的规则设计和后续 TypeScript 实现就能立刻引用、立刻控制。**“放了但不动”的 9 成原因，是 ID 仍为 -1、ID 重复，或台账遗漏。**
 
 
-# 4 最小设置示例（直到操作确认）
+# 4 最小设置示例（到动作确认为止）
 
-我们将向您展示创建最小配置的实际步骤，使您可以在最短的时间内进行设置和移动。
-（这里，我们只准备Team1/Team2外观的“核心”，开始按钮，地标，以及简单的制作）
+下面用实务步骤，给出最短“放置并让它动起来”的极小构成。
+这里先只准备 Team1 / Team2 的出生、开始按钮、标记、简单演出的核心。
 
-* 出现点：设置`HQ_PlayerSpawner`或`PlayerSpawner`并链接一个或多个`SpawnPoint`。
-* 开始按钮：将 `InteractPoint` (ID:500) 放在大厅中。高度便于从前面推动。
-* 地标：2 `WorldIcon` (ID:21 / 22)。入口前和目的地前。
-* 生产：将 `FX` (ID:901) 和 `SFX` (ID:951) 放置在目的地。
-* 检测：在 `AreaTrigger` (ID:11) 处拾取目标入侵。完整高度位于 `PolygonVolume`。
-* Ledger：1001/1002=每个派系的生成，500=开始，21/22=地标，11=入侵检测→激活901/951
+* 出生点：设置 `HQ_PlayerSpawner` 或 `PlayerSpawner`，并关联 1 个以上 `SpawnPoint`。
+* 开始按钮：把 `InteractPoint`（ID:500）放在大厅中。高度要便于从正面按下。
+* 标记：放置 2 个 `WorldIcon`（ID:21 / 22）。分别放在入口稍前方和目的地稍前方。
+* 演出：把 `FX`（ID:901）和 `SFX`（ID:951）放在目的地。
+* 检测：用 `AreaTrigger`（ID:11）检测进入目的地。`PolygonVolume` 要给足高度。
+* 台账：1001/1002=各阵营出生，500=开始，21/22=标记，11=进入检测 -> 启动 901/951
 
-在此状态下保存，启动测试，目视检查生成→按钮按下→入侵→生产。
-在下一章中，我想创建一个类似于下面的流程。
+以这个状态保存，启动测试，目视确认出生 -> 按下按钮 -> 进入范围 -> 演出这一串流程。
+下一章会尝试组合下面这样的流程。
 
-1. 触发按下`InteractPoint`(ID:500)。
-2. 将指南从 `WorldIcon`(ID:21) 切换到 `WorldIcon`(ID:22)。
-3. 使用 `AreaTrigger`(ID:11) 操作 `FX`(ID:901) 和 `SFX`(ID:951)。
+1. 以按下 `InteractPoint`（ID:500）为触发。
+2. 将引导从 `WorldIcon`（ID:21）切换到 `WorldIcon`（ID:22）。
+3. 用 `AreaTrigger`（ID:11）让 `FX`（ID:901）和 `SFX`（ID:951）动作。
 
-在您的项目中，请确保将要使用 Godot 编辑的 `.tscn` 和要注册到 Portal Web Builder 的 `.spatial.json` 作为一组进行管理。
-如果只使用`.tscn`，则不会反映在Portal端，如果只使用`.spatial.json`，则后面编辑的内容将很难跟上。
-通过在文件名中包含基本地图 ID、用途、日期和版本号，可以避免重新部署时出现混乱。
+在自己的项目中，请务必把 Godot 中编辑的 `.tscn` 和注册到 Portal Web Builder 的 `.spatial.json` 成套管理。
+只有 `.tscn` 无法反映到 Portal 侧，只有 `.spatial.json` 又很难追踪之后的编辑内容。
+文件名中加入基础 Map ID、用途、日期或版本号，可以防止重新部署时拿错。
 
-# 结论：只有 3 件事要做！
+# 结论：要做的只有三件事
 
-您可以使用地图编辑器执行三件事：
+地图编辑器中要做的事，归根结底就是下面三点。
 
-（1）正确选择可以放置的“实体”（基础等级+兼容的普通群体）
-(2) 放置后立即手动分配除-1之外的ID（系列划分和分类帐）
-（3）按照规定的流程组装使用Godot集成的设备对象（`PolygonVolume`等）。
+(1) 正确选择可以放置的“实体”（基础 Level + 兼容的通用对象）
+(2) 放置后立刻手动赋予不是 -1 的 ID（系列划分并整理成台账）
+(3) 按规定步骤组合使用 Godot 关联（`PolygonVolume` 等）的机关类对象。
 
-一旦这三点到位，后续的规则设计和TypeScript实现参考和控制就会顺利进行。
+只要这三点做好，后续规则设计和 TypeScript 实现中的引用、控制就会比较顺利地动作。
 
 ---
 
-📘 **下一章：《规则设计简介（搬家前三思而行）放置》`SpawnPoint`／`AI_Spawner`／`AI_WaypointPath`／`AreaTrigger`／`CombatArea`／`DeployCam`／`HQ`/https://codex.l ocal/keep/7／`InteractPoint`／`Sector`／`AI_Spawner`0／`AI_Spawner`1／`AI_Spawner`2／`AI_Spawner`3／`AI_Spawner`4与事件和条件相关。首先，我们将从**“开始按钮（InteractPoint 500）→更新地标（WorldIcon 21→22）→在目的地入侵时激活FX/SFX（901/951）（AreaTrigger 11）”**的最小循环开始，逐步将其发展为复杂的事件。
+📘 **下一章“规则设计入门（让配置‘动起来’之前先思考）”** 会把刚才赋予 ID 的 `SpawnPoint` / `AI_Spawner` / `AI_WaypointPath` / `AreaTrigger` / `CombatArea` / `DeployCam` / `HQ` / `PlayerSpawner` / `InteractPoint` / `Sector` / `StationaryEmplacementSpawner` / `VehicleSpawner` / `WorldIcon` / `FX` / `SFX`，用事件和条件连接起来。一开始会从 **“开始按钮（InteractPoint 500）-> 更新标记（WorldIcon 21 -> 22）-> 进入目的地（AreaTrigger 11）时启动 FX/SFX（901/951）”** 这个最小循环开始，再逐步发展成复合事件。
