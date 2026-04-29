@@ -1,57 +1,58 @@
 ---
-title: "第7章：“整齐分开”的小设计"
+title: "第 7 章 “整齐拆分”的小设计"
 free: true
 ---
 
-# 0 “整齐分开”的小设计
+# 0 “整齐拆分”的小设计
 
-> --- 难以破坏、易于修复且可以稍后添加的代码。
+> 让代码更不容易坏、更容易改、也更方便以后继续追加功能
 
-在第 6 章中，您能够在 TypeScript 中运行“Press → Landmark → Arrival → Light and Sound”的最小循环。
-当你从这里添加更多的功能时，类似的过程（消息显示、图标切换、音效播放）分散在各处，即使你只想修复一些东西，最终也会破坏整个事情。
+在第 6 章里，你已经让 **“按下 -> 标记 -> 到达 -> 光和声音”** 这个最小循环在 TypeScript 中跑起来了。
+接下来一旦开始加功能，类似的处理就会慢慢散落到各处，比如消息显示、图标切换、音效播放。结果往往会变成：本来只想改一点点，却把整套流程一起弄坏。
 
-因此，在本章中，我们将介绍“小设计”，它将代码简单地分为三个框，尽可能不使用困难的技术术语。
-目的很简单。
+所以这一章要做的事情很简单。
+我们不尽量不用太难的术语，只是把代码分进三个盒子里，导入一个 **“小设计”**。
+目标也很直接：
 
-* 难以破解（一个地方的变化很难扩散到其他部分）
-* 易于修复（您立即知道该触摸哪里）
-* 易于添加（不要害怕添加新功能）
+* 不容易坏：改一处时，不容易牵连别处
+* 好修改：一眼就知道该去哪里动
+* 好追加：以后继续加功能时没那么害怕
 
-> 我们在这里所做的并不是“完整的全尺寸设计”。
+> 这里做的不是“完整的大型设计”。
 >
-> **“轻松清理第 6 章中创建的代码”** 就是您所需要做的一切。
+> 只是把 **第 6 章写出来的代码，温和地整理一下**。
 
-# 1 分为三个盒子（边界/状态/如何呈现）
+# 1 分成三个盒子（边界 / 状态 / 表现）
 
-首先，让我们按角色来划分它们。只需记住三件事：
+先按职责来拆。只要记住这三类就够了：
 
-1. 边界（API）：调用Portal/SDK的窗口。
+1. 边界（API）：调用 Portal / SDK 的窗口
 
-只放置向游戏外部世界发出命令的函数的地方，例如“实际打开/关闭 WorldIcon”和“玩 FX”。
+这里只放那些真正向游戏外部发出命令的函数，比如“实际把 WorldIcon 打开 / 关闭”“播放 FX”之类。
 
-2. 状态（域）：游戏进度和规则。
+2. 状态（domain）：游戏进度和规则
 
-表达诸如“我们可以开始吗？”“我们可以到达目的地吗？”“我们在防守吗？”“数了多少秒？”等条件的小函数，以及使用 `modlib.ConditionState` 进行多重射击预防。
+这里放的是条件判断和进度控制，比如“现在能不能开始”“能不能算到达”“是否正在防守”“还剩几秒”，以及用 `modlib.ConditionState` 防止重复触发。
 
-3. 如何呈现（UI/方向）：消息、图标、声音和灯光。
+3. 表现（UI / 演出）：消息、图标、声音、光效
 
-  一个盒子，将“文字→地标→效果”的顺序组合成一个功能，并照顾“仅外观”。
+这里把“文字 -> 标记 -> 效果”的顺序收进一个函数里，只负责看得见的部分。
 
-最初，仅保护以下依赖项就足够了：
+一开始，只要守住下面这套依赖关系就够了：
 
-|文件 |角色 |你可以称呼什么 |
+| 文件 | 作用 | 允许调用的对象 |
 | ---- | ---- | ---- |
-| `Script.ts` | `Script.ts` |接收Portal事件并连接处理的入口 | `game.ts`，`ui.ts` | `game.ts`
-| `game.ts` | `game.ts` |进度状态，条件函数，`ConditionState` | `ids.ts`，如有必要 `api.ts` |
-| `ui.ts` | `ui.ts` |如何显示消息、WorldIcon、FX/SFX 等 | `api.ts`，`ids.ts` | `api.ts`
-| `api.ts` | `api.ts` |直接调用Portal SDK和modlib的薄窗口 | `mod`，`modlib` | `mod`
-| `ids.ts` | `ids.ts` |仅放置 ObjId 和常量 |不要打电话 |
+| `Script.ts` | 接收 Portal 事件并串起处理的入口 | `game.ts`、`ui.ts` |
+| `game.ts` | 进度状态、条件函数、`ConditionState` | `ids.ts`，必要时可用 `api.ts` |
+| `ui.ts` | 消息、WorldIcon、FX/SFX 等表现 | `api.ts`、`ids.ts` |
+| `api.ts` | 直接调用 Portal SDK 和 `modlib` 的薄边界 | `mod`、`modlib` |
+| `ids.ts` | 只放 ObjId 和常量 | 不调用任何东西 |
 
-依赖方向为 `Script.ts` → `game.ts` / `ui.ts` → `api.ts` → Portal SDK。
-如果你开始朝相反的方向调用，你最终会陷入只想改变显示但游戏进度被破坏的情况。
-如有疑问，请将直接与Portal SDK交互的代码提交到`api.ts`，并且仅在事件中调用短函数。
+依赖方向应该是 `Script.ts` -> `game.ts` / `ui.ts` -> `api.ts` -> Portal SDK。
+一旦开始反过来调用，就很容易变成“我只是想改个显示，结果连游戏流程都坏了”。
+拿不准时，就把直接碰 Portal SDK 的代码都收进 `api.ts`，让事件函数里只保留短小的函数调用。
 
-## 文具（感受气氛）
+## 参考骨架
 
 ```ts
 // 1) API boundary
@@ -92,15 +93,15 @@ export const ui = {
 };
 ```
 
-### 积分
+### 重点
 
-* 如果Portal规格发生变化，只需修复API即可。
-*如果你想替换UI文本或方向，只需修复UI即可。
-* 游戏进度规范可在 `state`、`can...`、`mark...`、`ConditionState` 进行解释。
+* 如果 Portal 的规格变了，通常只要改 `api`
+* 如果要换文案或演出，通常只要改 `ui`
+* 游戏流程则可以用 `state`、`can...`、`mark...`、`ConditionState` 来说明清楚
 
-# 2 个单独的文件（基于模板的小文件夹结构）
+# 2 拆分文件（基于模板的小文件夹结构）
 
-对于初学者来说 4 个文件就足够了。
+对初学者来说，先拆成 4 个文件就够用了。
 
 ```
 /mods
@@ -111,29 +112,30 @@ export const ui = {
   └─ Script.ts     // Event wiring
 ```
 
-* ids.ts：仅列出命名 ID，例如 const ICON_TARGET = 22。
-* api.ts：将SDK调用包装成一行函数（即使内容很复杂，从外部看也可以看作一行）。
-* game.ts：`ConditionState`，声明，放入`can...` / `mark...`。
-* ui.ts：从 say/guide/celebrate 3 件套开始，并根据需要增加。
-* Script.ts：在调用上面的框的同时，编写第五章的逻辑（推送→引导→到达→灯光和声音）。
+* `ids.ts`：只放带名字的 ID，比如 `const ICON_TARGET = 22`
+* `api.ts`：把 SDK 调用包成一行函数，外面读起来更干净
+* `game.ts`：放 `ConditionState`、状态标志、`can...` / `mark...`
+* `ui.ts`：先从 `say` / `guide` / `celebrate` 这三件套开始，不够再加
+* `Script.ts`：调用上面这些盒子，把第 5 章的逻辑串起来
 
-> 通过分离信息，“我应该在哪里写”变得固定并减少混乱。
+> 一旦拆开，“这段该写在哪儿”就固定下来了，人会轻松很多。
 
-模板 `npm run build` 递归收集 `mods` 下的 `.ts` 文件，并将其编译为 `dist/Script.ts` 以在门户中注册。 Portal端只能接收一个文件，开发时可以随意分割。
+模板里的 `npm run build` 会递归收集 `mods` 下的 `.ts` 文件，把它们合并成给 Portal 注册用的 `dist/Script.ts`。
+Portal 端虽然只能收一个文件，但开发时完全可以放心拆分。
 
-# 3 依赖方向（仅限“向下箭头”）
+# 3 依赖方向（只准“往下箭头”）
 
-理想情况下，箭头应该只朝一个方向流动，例如 main → ui → api。
-反向流程（例如 `api` 调用 `ui` 和 `ui` 调用 `main` ）会导致混乱。
-如果你坚持“我叫你下来，但我不叫你起来”这句口头禅，你就会停止像滚雪球一样越滚越大的依赖。
+理想情况是像 `main -> ui -> api` 这样，只朝一个方向流动。
+如果变成 `api` 去调用 `ui`，或者 `ui` 再去调用 `main`，读起来很快就会乱。
+记一句就够了：可以往下叫，不要往上叫。
 
 ```mermaid
 flowchart TD
-  script["Script.ts<br/>イベントの入口"]
-  game["game.ts<br/>状態・条件・ConditionState"]
-  ui["ui.ts<br/>メッセージ・アイコン・演出"]
-  api["api.ts<br/>SDK / modlibを呼ぶ窓口"]
-  ids["ids.ts<br/>ObjIdと定数"]
+  script["Script.ts<br/>事件入口"]
+  game["game.ts<br/>状态、条件、ConditionState"]
+  ui["ui.ts<br/>消息、图标、演出"]
+  api["api.ts<br/>调用 SDK / modlib 的边界"]
+  ids["ids.ts<br/>ObjId 与常量"]
   sdk["Portal SDK<br/>mod / modlib"]
 
   script --> game
@@ -148,12 +150,12 @@ flowchart TD
   class script,game,ui,api,ids,sdk base
 ```
 
-# 4 第六章代码“分离”演示（小动作）
+# 4 把第 6 章的代码“拆开来放”（一次小搬家）
 
-假设第 5 章中的最小循环已按原样放置在 `mods/Script.ts` 中。
-以下是如何通过 3 个步骤完成此操作。
+假设第 5 章的最小循环现在还原样放在 `mods/Script.ts` 里。
+那我们就用 3 个步骤把它整理开。
 
-## 步骤 1：移动 ID (ids.ts)
+## 步骤 1：把 ID 搬出去（`ids.ts`）
 
 ```ts
 // ids.ts
@@ -165,10 +167,11 @@ export const FX_GOAL      = 901;
 export const SFX_GOAL      = 951;
 ```
 
-将 `mods/Script.ts` 替换为 `import { ... } from "./ids"`。
-效果：数字消失，仅保留名称（易于阅读）。
+然后把 `mods/Script.ts` 里的裸数字替换成 `import { ... } from "./ids"`。
 
-## 步骤 2：移动演示文稿 (ui.ts)
+效果：数字消失，只剩下名字，读起来马上轻松很多。
+
+## 步骤 2：把表现搬出去（`ui.ts`）
 
 ```ts
 // ui.ts
@@ -185,11 +188,11 @@ export const ui = {
 };
 ```
 
-`showMessageAll` / `setIconVisible` / `playFX` / `playSfx` 在 `mods/Script.ts` 一侧，
-替换为 `ui.say` / `ui.guide` / `ui.celebrate`。
-效果：文字→地标→效果的顺序可以一行读完。
+把 `mods/Script.ts` 里的 `showMessageAll` / `setIconVisible` / `playFX` / `playSfx`，替换成 `ui.say` / `ui.guide` / `ui.celebrate`。
 
-## 步骤 3：移动条件和多重射击预防 (game.ts)
+效果：“文字 -> 标记 -> 效果” 这条线会变得一行就能读懂。
+
+## 步骤 3：把条件和防重复触发搬出去（`game.ts`）
 
 ```ts
 // game.ts
@@ -226,7 +229,7 @@ export function markReached(): void {
 }
 ```
 
-在`mods/Script.ts`中，为每个事件创建一个判断函数，然后传递给`ConditionState`。
+在 `mods/Script.ts` 里，先为每个事件写一个判断函数，再把它交给 `ConditionState`。
 
 ```ts
 import { startGate, targetGate, canStart, canReachTarget, markStarted, markReached } from "./game";
@@ -265,20 +268,25 @@ export function OnPlayerEnterAreaTrigger(eventPlayer: mod.Player, eventAreaTrigg
 }
 ```
 
-效果：多次预防每次都会以相同的形式，并且您还可以使用名称 `isStartInteract` / `isTargetArea` 来读取“正在确定的内容”。
-门户网站的评论将以英文简短撰写。请避免日语注释，因为它们很容易导致多字节字符出现问题。
+效果：防重复触发每次都会长成同一种形状，而且 `isStartInteract` / `isTargetArea` 这些名字本身也能告诉你“现在到底在判断什么”。
+另外，给 Portal 用的注释请尽量短小并保持英文。日文注释容易踩到多字节字符的问题。
 
-# 5 “命名”规则（初学者可以稍后阅读的名称）
+# 5 “命名”的规则（让以后再看也能读懂）
 
-* 函数名称是动词+宾语：`guide` from `guideIcon`（“icon”是隐式的，因为它位于演示框中），`celebrate` from `playGoalEffect`（减少宾语以表达“for What”）。
-* 条件函数以 `is...` / `has...` / `can...` 开头：阅读 `isStartInteract`、`canReachTarget` 等。
-* ID常量是一个大写的蛇：`ICON_TARGET`是**只要你看到它，你就知道它是一个“不变的数字”**。
-* 文件名简短明了：`ids` / `api` / `game` / `ui`。正义不是让人们误入歧途。
+* 函数名尽量是“动词 + 对象 / 目的”
+  `guide` 比 `guideIcon` 更简洁，因为它已经放在表现盒子里，图标这一层意思是隐含的。
+  `celebrate` 也比 `playGoalEffect` 更像“这是为了什么”。
+* 条件函数统一用 `is...` / `has...` / `can...` 开头
+  比如 `isStartInteract`、`canReachTarget`
+* ID 常量统一用大写蛇形
+  `ICON_TARGET` 这种名字一眼就能看出它是“不会变的数字”
+* 文件名尽量短且直白
+  `ids` / `api` / `game` / `ui` 就够了，不要把人带进命名迷宫
 
-# 6 个设置集中在一个框中（以便稍后编辑数字）
+# 6 把设置集中到一个盒子里（以后改数字更轻松）
 
-我想在不重写代码的情况下进行平衡调整（例如防御10秒→15秒）。
-准备一份 `config.ts` 并仅在游戏过程中查看。
+像“防守 10 秒改成 15 秒”这种平衡调整，最好不要碰到主逻辑代码。
+准备一个 `config.ts`，让这些设置都集中在那里。
 
 ```ts
 // config.ts
@@ -292,15 +300,15 @@ export const config = {
 };
 ```
 
-将文本本身放入 `Strings.json`，并将密钥放入 `mod.stringkeys...` 以进行代码端设置。
-显示时，像`ui.say(mod.Message(config.messages.defendSeconds, t))`一样组装`mod.Message`。
+真正显示出来的文字放在 `Strings.json`，代码侧的设置里只保留 `mod.stringkeys...` 的键。
+要显示时，再用 `mod.Message` 组装，比如 `ui.say(mod.Message(config.messages.defendSeconds, t))`。
 
-> 现在您可以立即回复“我只想更改数字”或“我只想更改文字键”。
+> 这样一来，“我只想改数字”或者“我只想改文案键”时，就能立刻动手。
 
-# 7 ：自诊断（先用Vitest发现ID事故）
+# 7 自检（先用 Vitest 把 ID 事故找出来）
 
--1（未设置）和重复 ID 在 `npm run test` 上找到比在游戏开始后发现它们更容易。
-像 `assertIds()` 这样的确认函数应该放在 Vitest 的 `test/ids.test.ts` 端，而不是在 `mods/Script.ts` 的生产启动期间调用。
+像 `-1`（未设置）或者重复 ID，这类问题与其在游戏跑起来之后才发现，不如先在 `npm run test` 阶段抓出来。
+像 `assertIds()` 这样的检查函数，建议放在 Vitest 的 `test/ids.test.ts` 里，而不是放在 `mods/Script.ts` 的正式启动流程中。
 
 ```ts
 // test/ids.test.ts
@@ -336,13 +344,15 @@ describe("ids", () => {
 });
 ```
 
-现在，当您运行 `npm run test` 时，您可以检查代码端的 `ids.ts` 是否未设置或重复。
-然而，直到在 Godot 上实际部署后才能看到 Vitest。请检查第四章中的账本或ObjIdManager，看看实际场景中是否放置了相同的ObjId。
+这样一来，执行 `npm run test` 时，就能先检查 `ids.ts` 里有没有未设置或重复的 ID。
+不过 Vitest 看不到 Godot 里真实放了什么。所以实际场景里是否摆了同样的 ObjId，还是要回到第 4 章的台账和 ObjIdManager 去确认。
 
-# 8 “聚合和分发”事件（小型调度）
+# 8 把事件“汇总后再分发”（小型 dispatch）
 
-当事件数量增加时，你可以将规范写在表格顶部的表格中，上面写着：“当事件到来时我应该做什么，我应该看什么条件，我应该做什么？”代码就变成了可读的规范。
-这里同样将 `ConditionState` 与判断函数配对，而不是增加阶段名称 `type` ，这样更容易理解。
+事件一多，代码最好能在上面先写出一张小表，明确“什么事件来了、要看什么条件、通过后做什么”。
+这样代码本身就会更像一份能读的规格说明。
+
+这里同样建议把 `ConditionState` 和判断函数成对放着，而不是一直扩张阶段名 `type`。
 
 ```ts
 // flow.ts
@@ -396,27 +406,29 @@ export function dispatch(when: When, id: number) {
 }
 ```
 
-对于 `mods/Script.ts`，只需从 SDK 事件回调中调用dispatch("interact", IP_START) 即可。
-效果：你可以阅读上表中的行为（对于初学者来说更安全）。
-`gate` 停止多次触发，`test` 使用命名函数来解释现在是否可以继续该过程。
+这样在 `mods/Script.ts` 里，SDK 的事件回调就只要写成 `dispatch("interact", IP_START)` 这种形式即可。
 
-# 9 将单独的代码合并为一个
+效果：行为能从上面的表里直接读出来，尤其对初学者更安心。
+`gate` 负责挡住重复触发，`test` 则用有名字的函数说明“现在是否允许通过”。
 
-使用模板时，开发时将 `mods` 下的文件分开，仅在注册到门户时将它们合并为一个文件。
+# 9 把拆开的代码重新合成一个文件
 
-这是要运行的命令：
+使用模板时，开发阶段可以把文件拆在 `mods` 下；等到要注册到 Portal 时，再把它们合并成一个文件。
+
+执行的命令是：
 
 ```bash
 npm run build
 ```
 
-此命令收集 `mods` 下的 `.ts` 文件，组织 `import` 行，并创建 `dist/Script.ts`。
+这个命令会收集 `mods` 下的 `.ts` 文件，整理 `import`，然后生成 `dist/Script.ts`。
 
-开发时在Portal Web Builder中注册的不是`mods/Script.ts`。 **`dist/Script.ts`**。如果您使用字符串定义，还需注册 **`dist/Strings.json`**。
+要注册到 Portal Web Builder 的，不是开发中的 `mods/Script.ts`，而是 **`dist/Script.ts`**。
+如果还用了字符串定义，那么 **`dist/Strings.json`** 也要一起注册。
 
-## 注册前检查订单
+## 注册前的确认顺序
 
-在将其带到门户之前，请按以下顺序检查以下内容。
+带进 Portal 之前，建议按这个顺序确认：
 
 ```bash
 npm run lint
@@ -424,63 +436,68 @@ npm run test
 npm run build
 ```
 
-* `lint`：首先查找语法或写作风格中的危险点。
-* `test`：检查状态转换和小函数是否按预期工作。
-* `build`: 生成1个要在Portal中注册的文件。
+* `lint`：先找出语法或写法上的危险点
+* `test`：确认状态变化和小函数按预期动作
+* `build`：生成给 Portal 注册的单文件
 
-请不要仅仅通过 `build` 就感到安全。构建是一个组合，而不是游戏正确性的证明。
+不要因为 `build` 通过就完全放心。构建成功只代表“文件合并成功了”，不代表“游戏逻辑一定正确”。
 
-# 1 0 如何修复“分离后”（实用流程）
+# 10 拆开之后，应该去哪里改
 
-我想改变外观→打开`ui.ts`（措辞、方向、顺序）。
+想改外观？
+去 `ui.ts`，看文案、演出、顺序。
 
-导出的命令已更改 → 打开 `api.ts`（SDK 替换）。
+想改向外发出的命令？
+去 `api.ts`，处理 SDK 侧的变更。
 
-我想增加游戏的阶段 → 将状态标志添加到 `game.ts`、`ConditionState`、`can...` / `mark...` 函数，并将该行添加到 `flow.ts`。
+想给游戏多加一个阶段？
+去 `game.ts` 增加状态标志、`ConditionState`、`can...` / `mark...`，再去 `flow.ts` 加一行。
 
-ID 增加了 → 添加一个常量到 `ids.ts` 并使用 Vitest 和 ObjIdManager 检查。
+ID 增加了？
+去 `ids.ts` 加常量，再用 Vitest 和 ObjIdManager 检查。
 
-调整数字和措辞 → 更改 `config.ts` 的值。
+想调整数字和文案？
+去 `config.ts` 改值。
 
-分离最大的作用就是你接触的地方是唯一确定的。
+拆分最大的好处，就是你很快能知道“这次该去哪里动”。
 
-# 1 1 常见NG及对策
+# 11 常见 NG 和对策
 
-NG：直接从各个地方调用API
-→ 对策：始终访问 `ui` 或 `api`。不要直接从 `main` 访问 `setIconVisible`。
+NG：到处直接调用 API
+-> 对策：一定通过 `ui` 或 `api`。不要从 `main` 里直接打 `setIconVisible`。
 
-NG：当场写下数字（例如 `setIconVisible(22, true)`）
-→ 对策：将所有内容更改为常量 `ids.ts`。走向不追寻数字的生活。
+NG：把数字写死在现场，比如 `setIconVisible(22, true)`
+-> 对策：全部搬进 `ids.ts` 常量里，过上不用追裸数字的生活。
 
-NG：复制并粘贴该标志以防止每次多次触发。
-→ 对策：将判断函数`ConditionState`发布到`game.ts`。
+NG：防重复触发的标志到处复制粘贴
+-> 对策：把 `ConditionState` 和判断函数集中到 `game.ts`。
 
-NG：代码中的措辞分散
-→ 对策：将文本放入 `Strings.json` 中，然后像 `ui.say(mod.Message(mod.stringkeys.start))` 一样通过 `mod.Message` 。
+NG：文案散落在代码里
+-> 对策：把文字放进 `Strings.json`，通过 `mod.Message` 使用，比如 `ui.say(mod.Message(mod.stringkeys.start))`。
 
-# 1 2 渐进重构（按最不可怕的顺序排列）
+# 12 渐进式重构（按不吓人的顺序）
 
-没有必要“一次性完成所有事情”。这是安全的顺序。
+没必要一次做完。安全顺序如下：
 
-1. **将 ID 转换为常数**（最大效果/最小风险）
-2. 剪出3点UI集（`say` / `guide` / `celebrate`）
-3.创建**ConditionState和判断函数**
-4. 创建 API 联系点
-5. 转到**转换表（流程）**（如有必要）
+1. 先把 ID 变成常量
+2. 抽出 UI 的三件套：`say` / `guide` / `celebrate`
+3. 建立 `ConditionState` 和判断函数
+4. 建立 API 边界
+5. 有需要时，再上过渡表 `flow`
 
-构建并测试每个步骤，确保可以正常播放，然后继续下一步。
+每做完一步，就 build 一次、test 一次，确认游戏还能像平常一样跑，再继续下一步。
 
 # 结论
 
-* 只需将其分为三个框（api / game / ui）即可使其不太可能损坏且更易于修复。
-* **停止号码和使用名称（ids.ts）**是可读性的核心。
-* 使用 `ConditionState` 减少多次触发，使用配置减少文本和数字，并使用 Vitest 和 ObjIdManager 减少 ID 事故。
-* 划分顺序为ID→UI→状态→API→转换表。把它切成小块就不可怕了。
+* 只要把代码拆成 `api` / `game` / `ui` 这三个盒子，就会明显更不容易坏，也更容易改。
+* 停止写裸数字，改用 `ids.ts` 里的名字，是可读性的核心。
+* 用 `ConditionState` 压住重复触发，用 `config` 集中文案和数字，用 Vitest + ObjIdManager 降低 ID 事故。
+* 安全的拆分顺序是：ID -> UI -> 状态 -> API -> 过渡表。一步一步来，就没那么可怕。
 
-# 下一节的指南
+# 下一章预告
 
-**第 8 章“视觉和制作：掌握 UI、SFX 和 FX”** 在本章中，我们将进一步完善本章中创建的 UI 框，
+在 **第 8 章《视觉与演出：掌握 UI、SFX、FX》** 里，我们会继续打磨这一章做出来的 `ui` 盒子：
 
-* 如何发送消息（个别/整体/重要性）
-* WorldIcon切换时序设计
-* 调试 UI 位置以及对玩家隐藏它的方法
+* 消息怎么发：个人、全体、重要度
+* WorldIcon 该在什么时机切换
+* 调试 UI 放在哪里，以及怎样不让玩家看见它

@@ -3,6 +3,10 @@ title: "Appendix B: Sample program explanation “BumperCars (vehicle mini game)
 free: true
 ---
 
+::::message
+This appendix is currently only a rough machine translation, so the wording may be very awkward. I will revise it properly later. Please bear with me for now.
+::::
+
 # Game overview
 
 `BumperCars` is an example of a small mini-game using vehicles.

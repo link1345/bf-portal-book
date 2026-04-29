@@ -3,6 +3,10 @@ title: "Appendix C: modlib explanation Auxiliary library that makes SDK a little
 free: true
 ---
 
+::::message
+This appendix is currently only a rough machine translation, so the wording may be very awkward. I will revise it properly later. Please bear with me for now.
+::::
+
 # What is modlib?
 
 `modlib` is an auxiliary library for TypeScript shipped with the BF6 Portal SDK.

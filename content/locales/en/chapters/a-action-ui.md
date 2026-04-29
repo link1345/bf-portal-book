@@ -3,6 +3,10 @@ title: "Appendix A-3: Action/value acquisition list (UI/reference/value)"
 free: true
 ---
 
+::::message
+This appendix is currently only a rough machine translation, so the wording may be very awkward. I will revise it properly later. Please bear with me for now.
+::::
+
 # Action/value acquisition list (UI/reference/value)
 
 This appendix covers functions for UI, notifications, and scoreboards, frequently used types, implementation notes, and minimal templates. For basic operation functions, please refer to "Appendix A-2: Action/value acquisition list (basic operations)".

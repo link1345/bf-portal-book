@@ -3,6 +3,10 @@ title: "附录C：modlib解释 使SDK更容易使用的辅助库"
 free: true
 ---
 
+::::message
+本附录目前只是粗略的机器翻译，文字可能非常不自然。我之后会认真修改，暂时请多包涵。
+::::
+
 # 什么是 modlib？
 
 `modlib` 是 BF6 Portal SDK 附带的 TypeScript 辅助库。

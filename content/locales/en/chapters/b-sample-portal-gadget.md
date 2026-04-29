@@ -3,6 +3,10 @@ title: "Appendix B: Sample program explanation “PortalGadgetExample (dedicated
 free: true
 ---
 
+::::message
+This appendix is currently only a rough machine translation, so the wording may be very awkward. I will revise it properly later. Please bear with me for now.
+::::
+
 # Game overview
 
 `PortalGadgetExample` is a sample that allows the player to have a Portal Gadget and receives input such as aiming, shooting, and laser switching using a script.

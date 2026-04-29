@@ -1,190 +1,190 @@
 ---
-title: "第三章 「門戶客製化」環境搭建"
+title: "第 3 章「Portal Custom」的環境建構"
 free: true
 ---
 
-> --- 為了創建它，讓我們準備一個開發環境。
+> 為了開始製作，先準備開發環境。
 
-本章為您提供了開始後續章節所需的工具。
-請注意，如果不做這些事情，你絕對無法開發「入口網站客製化」。
+本章會準備進入後續章節所需的工具。
+如果不完成這些步驟，就無法開發「Portal Custom」，請務必注意。
 
-# 下載BF官方SDK
+# 下載 BF 官方 SDK
 
 https://portal.battlefield.com/
 
-當您造訪上述網址時，系統會詢問您是“戰地 2042”還是“戰地 6”，因此選擇“戰地 6”並點擊“開始建立”。
+造訪上面的 URL 後，會詢問你選擇 Battlefield 2042 還是 Battlefield 6。請選擇 Battlefield 6，然後點擊「START CREATING」。
 
-![開始](/images/bf_portal_doc/3-setup-init-0.png)
+![start](/images/bf_portal_doc/3-setup-init-0.png)
 
-頂部有一個“下載 SDK”按鈕，點擊它可以下載 SDK zip 檔案。
+頁面頂部有「Download SDK」按鈕，點擊它下載 SDK 的 zip 檔案。
 
-![下載](/images/bf_portal_doc/3-setup-init-1.png)
+![download](/images/bf_portal_doc/3-setup-init-1.png)
 
-如果在這些步驟中提示您登錄，請使用您的 EA 帳戶登入。
+如果過程中提示需要登入，請使用 EA 帳戶登入。
 
-另外，下載完成後，解壓縮 zip 檔案。要解壓縮文件，請右鍵單擊下載的文件，然後會出現一列“提取全部...”，單擊該列以解壓縮 zip 文件。
+下載完成後，請解壓縮 zip 檔案。解壓縮的方法是右鍵點擊下載好的檔案，選擇「全部解壓縮...」，即可解壓縮 zip 檔案。
 
 # 準備地圖編輯器
 
-解壓縮下載的 SDK zip 檔案後，您可以立即使用地圖編輯器。
+只要把下載好的 SDK zip 檔案解壓縮，地圖編輯器就可以馬上使用。
 
-在官方的SDK說明中，Godot端做了以下準備工作。
+按照官方 SDK 的步驟，需要在 Godot 側進行以下準備。
 
 1. 啟動 SDK 中包含的 Godot 執行檔。
-2. 當「專案選擇」畫面開啟時，拖曳並載入 SDK 中的 `GodotProject` 資料夾。如果您想手動執行此操作，請從「匯入」中選擇 `GodotProject`。
-3. 開啟戰地 6 門戶專案。首次啟動可能需要幾分鐘。
-4. 在Godot右側的`BFPortal`標籤上按`Portal Setup`，等待設定完成。
-5. 從 `Scene` 選單中選擇 `Open Scene`，然後在 `levels` 目錄中開啟要編輯的層級。
+2. 開啟「Project Selection」畫面後，把 SDK 內的 `GodotProject` 資料夾拖進去讀取。如果手動操作，則從「Import」中選擇 `GodotProject`。
+3. 開啟 Battlefield 6 Portal Project。首次啟動可能需要幾分鐘。
+4. 點擊 Godot 右側 `BFPortal` 分頁中的 `Portal Setup`，等待設定完成。
+5. 從 `Scene` 選單選擇 `Open Scene`，開啟 `levels` 目錄中想要編輯的關卡。
 
-如果您在關卡中看不到地形，則它可能位於您的相機位置上方。首先，查看上方並確保地形已加載。
+如果找不到關卡地形，它可能位於相機位置的上方。請先向上看，確認地形是否已經讀取。
 
 ## 地圖編輯器的基本操作
 
-在官方SDK文件中，描述了以下操作作為空間編輯器的基本操作。
+官方 SDK docs 中，將以下操作作為 Spatial Editor 的基本操作。
 
-|營運|內容 |
+| 操作 | 內容 |
 | ---- | ---- |
-|從物件庫拖曳 |將要使用的物件放入 3D 場景或場景大綱 |
-|選擇 `W` | 時移動模式。移動放置的物體 |
-|選擇 `E` | 時旋轉模式。旋轉放置的物件 |
-|選擇 `R` | 時縮放模式。縮放放置的物件 |
+| 從 Object Library 拖曳 | 將想使用的物件放置到 3D Scene 或 Scene Outliner 中 |
+| 選取時按 `W` | Move mode。移動已放置的物件 |
+| 選取時按 `E` | Rotate mode。旋轉已放置的物件 |
+| 選取時按 `R` | Scale mode。縮放已放置的物件 |
 
-在 3D 視圖中移動視點是標準的 Godot 操作，因此請使用滑鼠或 WASD 移動來檢查位置。
-當觸摸放置的物件時，請記住先選擇它，然後使用 `W` / `E` / `R` 來移動、旋轉和縮放它，這樣你就不會迷路。
+3D 視圖中的視角移動是 Godot 的標準操作，可以透過滑鼠操作或 WASD 移動來確認位置。
+操作已放置物件時，請記住先選取物件，再用 `W` / `E` / `R` 切換移動、旋轉、縮放。這樣比較不容易迷路。
 
-基本上，比例應該是統一的。
-單獨拉伸 X/Y/Z 的非均勻縮放不受官方支持，並且會導致遊戲內外觀和命中檢測損壞。
+縮放原則上請使用統一縮放。
+分別拉伸 X/Y/Z 的非統一縮放並未得到官方支援，可能會導致遊戲中的外觀或碰撞判定出問題。
 
-# 準備打字稿
+# 準備 TypeScript
 
-本書不詳細介紹視覺化編輯器或區塊視覺化程式設計。
-從現在開始，我們將準備好使用 TypeScript SDK 和模板儲存庫進行開發。
+本書不會詳細講解視覺化編輯器或區塊式視覺化程式設計。
+從這裡開始，我們會準備使用 TypeScript SDK 和範本儲存庫進行開發。
 
-## 1. 建立github帳戶
+## 1. 建立 GitHub 帳戶
 
 https://github.com/
 
-造訪 github 並建立您自己的帳戶。
+造訪 GitHub，建立自己的帳戶。
 
 ## 2. 建立儲存庫（專案）
 
 https://github.com/link1345/Battlefield6-SampleTemplate
 
-在上面的頁面上，有一個名為“使用此模板”的按鈕，如下圖所示，因此單擊它，然後單擊“創建新存儲庫”。
+開啟上面的頁面後，可以看到下圖中的「Use this template」按鈕。點擊它，然後點擊其中的「Create a new repository」。
 
-![使用這個模板](/images/bf_portal_doc/3-setup-1.png)
+![use this template](/images/bf_portal_doc/3-setup-1.png)
 
 
-然後，將開啟一個名為「建立新儲存庫」的頁面，因此請按照說明操作並填寫如下圖所示的資訊。
-「儲存庫名稱」是您的專案的名稱。請選擇一個適合您目的的名稱。
-「描述」是對項目的描述。你不必寫任何東西。
-「選擇可見性」可讓您選擇項目是「私有」還是「公共」。如果您不打算向任何人公開，那麼私有也可以。
+隨後會開啟「Create a new repository」頁面。請按照下圖的指示填寫。
+「Repository name」是專案名稱。請使用符合用途的名稱。
+「Description」是專案說明，可以不填寫。
+「Choose visibility」可以選擇專案是「private」還是「public」。如果沒有公開給他人的計畫，選擇 private 即可。
 
-![建立一個新的儲存庫](/images/bf_portal_doc/3-setup-1.png)
+![Create a new repository](/images/bf_portal_doc/3-setup-1.png)
 
-如果儲存庫（專案）建立成功，將顯示如下圖所示。
+儲存庫（專案）正常建立後，會顯示成下圖這樣。
 
 ![儲存庫](/images/bf_portal_doc/3-setup-3.png)
 
-## 3 . 使原始程式碼可存取
+## 3. 讓原始碼可以編輯
 
-我想立即接觸原始程式碼，但這次我想輕鬆創建一個環境，所以我想使用「Codespaces」。
-
-:::message alert
-
-這次，我們使用**Codespaces**輕鬆建置環境。
-
-由於Portal的TypeScript註冊規範，它不會是一個使用很多GB的大型程序，所以我認為免費層就足夠了。
-如果你想在本機環境中執行此操作，則需要在電腦上安裝 VSCode，使用 git 克隆儲存庫，並做很多工作。 **
-
-[範本「link1345/Battlefield6-SampleTemplate」](https://github.com/link1345/Battlefield6-SampleTemplate)在README.md（英文）和README-JP.md（日文）中有說明，所以請檢查那裡。
-
-:::
-
-當您造訪您建立的儲存庫的頁面並按下標有「程式碼」的綠色按鈕時，您將看到「本機」和「程式碼空間」選項。
-這次，點擊“Codespaces”並按下“Create codespace on main”按鈕。
-
-![程式碼空間頂部](/images/bf_portal_doc/3-setup-5.png)
-
-
-片刻之後，VSCode 將在新的瀏覽器標籤中打開，並且將出現一個指南，如下圖所示。
-
-![vscode 頂部](/images/bf_portal_doc/3-setup-6.png)
-
-底部有一個名為“Terminal”的選項卡，因此請點擊它，切換到“Terminal”選項卡，然後輸入“`npm install`”。
-特別是沒有出現`Error`這句話，就沒有問題。
-
-![vscode 頂部](/images/bf_portal_doc/3-setup-7.png)
-
-接下來，請查看VSCode的資源管理器，將第一次從BF官方下載並解壓縮的SDK所在的`code`資料夾中的內容放入`code`資料夾中。
-如果按照下圖插入就沒有問題了。
-
-![SDK設定](/images/bf_portal_doc/3-setup-8.png)
-
-## 4 . 模板可以讓什麼變得更簡單？
-
-在本書中，我們使用 [link1345/Battlefield6-SampleTemplate](https://github.com/link1345/Battlefield6-SampleTemplate) 進行 TypeScript 開發。
-
-如果直接在Portal Web Builder的Script欄位中寫程式碼的話，是可以的，但是如果寫大一點的話，就會出現下面的問題。
-
-* 1 個文件變得很長，我不記得我在哪裡寫了什麼。
-* 直到開始遊戲我才注意到一個小文法錯誤。
-* 每次重新測試相同流程時，手動工作都會增加。
-* Portal Web Builder 的 Script 欄位最終接收的是一個 TypeScript 文件，因此需要手動將已經拆分成文件的程式碼拼湊在一起。
-
-此模板可以輕鬆實現：
-
-|命令 |你能做什麼|
-| ---- | ---- |
-| `npm run lint` | `npm run lint` |使用 ESLint 檢查語法和寫作風格 |
-| `npm run lint:fix` | `npm run lint:fix` |自動修復可以使用 ESLint 修復的問題 |
-| `npm run build` | `npm run build` |將 `mods` 下的多個 `.ts` 檔案合併到 `dist/Script.ts` |
-| `npm run test` | `npm run test` |使用 Vitest 執行測試 |
-
-當您推送到 GitHub 時，範本中包含的 GitHub Actions 將執行 `npm run lint`。換句話說，您可以在發布之前快速阻止「一開始就可疑」的程式碼。
-
-## 5 . 範本資料夾結構
-
-前四個要看的地方是：
-
-|地點 |角色 |
-| ---- | ---- |
-| `mods/` | `mods/` |您寫的 TypeScript 程式碼 |
-| `code/` | `code/` | 《戰地 6》SDK 的 `code` 資料夾放置在哪裡？
-| `dist/Script.ts` | `dist/Script.ts` | `npm run build` 要註冊 Portal 的 TypeScript |
-| `dist/Strings.json` | `dist/Strings.json` | Portal | 要註冊的字串定義
-| `test/` | `test/` |維度測試測試儲存|
-
-在開發過程中，多個檔案寫入`mods`。完成後，執行 `npm run build` 並將產生的 `dist/Script.ts` 和 `dist/Strings.json` 註冊到 Portal Web Builder 的 Script 欄位中。
+雖然現在就想開始改原始碼，但這次為了簡單建構環境，我們會使用「Codespaces」。
 
 :::message alert
 
-在README中，有些地方字串檔案寫為`String.json`，但範本中的實際檔案是`dist/Strings.json`。本書寫為`dist/Strings.json`。
+這次為了簡化環境建構，使用 **Codespaces**。
+
+由於 Portal 的 TypeScript 註冊規格限制，這不會變成需要佔用好幾 GB 的大型程式，所以免費額度應該足夠使用。
+如果要在 **本機環境** 中進行，就需要在自己的電腦上安裝 VSCode，從儲存庫用 git Clone，並完成各種準備工作。
+
+作為範本使用的 [link1345/Battlefield6-SampleTemplate](https://github.com/link1345/Battlefield6-SampleTemplate) 中，README.md（英文）和 README-JP.md（日文）都有說明，請根據需要查看。
 
 :::
 
-使用 TypeScript 建立 Portal 腳本的步驟到此結束。
+造訪自己建立的儲存庫頁面，點擊綠色的「Code」按鈕後，會出現 Local 和 Codespaces 兩個選項。
+這次點擊「Codespaces」，然後點擊「Create codespace on main」按鈕。
 
-# 如何導航 SDK 資料夾
+![codespaces top](/images/bf_portal_doc/3-setup-5.png)
 
-SDK 很大，因此您無需從頭閱讀所有內容。請先按以下順序觀看。
 
-|去哪裡看|看什麼 |
+稍等片刻後，VSCode 會在新的瀏覽器分頁中開啟，並顯示如下圖所示的引導。
+
+![vscode top](/images/bf_portal_doc/3-setup-6.png)
+
+下面有一個「Terminal」分頁，點擊它切換到「Terminal」分頁，然後輸入 `npm install`。
+如果沒有出現 `Error` 這個字樣，就沒有問題。
+
+![vscode top](/images/bf_portal_doc/3-setup-7.png)
+
+接著，在 VSCode 的檔案總管中查看 `code` 資料夾。把最開始從 BF 官方下載並解壓縮的 SDK 中，`code` 資料夾裡的內容放進去。
+如果像下圖這樣放入，就沒有問題。
+
+![sdk setup](/images/bf_portal_doc/3-setup-8.png)
+
+## 4. 範本能讓哪些事情變輕鬆
+
+本書使用 [link1345/Battlefield6-SampleTemplate](https://github.com/link1345/Battlefield6-SampleTemplate) 進行 TypeScript 開發。
+
+即使直接在 Portal Web Builder 的 Script 欄中寫程式碼也能執行，但程式碼稍微變大後，就會出現以下問題。
+
+* 單一檔案變得很長，分不清哪裡寫了什麼。
+* 細小的語法錯誤，要到啟動遊戲後才會發現。
+* 每次重新測試同一段處理，手動操作都會增加。
+* Portal Web Builder 的 Script 欄最終只接收一個 TypeScript 檔案，因此需要手動把拆分後的程式碼合併起來。
+
+使用這個範本後，下面的工作會變得更簡單。
+
+| 命令 | 可以做什麼 |
 | ---- | ---- |
-| `docs/pages/getting_started.html` | `docs/pages/getting_started.html` |啟動Godot、匯入`GodotProject`、`Portal Setup`的流程 |
-| `docs/pages/spatial_editor.html` | `docs/pages/spatial_editor.html` |地圖編輯、物件庫、匯出 `.spatial.json` |
-| `docs/pages/gameplay_logic.html` | `docs/pages/gameplay_logic.html` | TypeScript、自訂 UI、AI、ObjId 參考、日誌確認 |
-| `docs/pages/tips_tricks.html` | `docs/pages/tips_tricks.html` |車輛數量、玩家掃描、UI widget 管理等負載對策 |
-| `code/types/mod/index.d.ts` | `code/types/mod/index.d.ts` | Portal TypeScript API 函數與類型清單 |
-| `GodotProject/mods/_StartHere_BasicTemplate` | `GodotProject/mods/_StartHere_BasicTemplate` |先閱讀官方 TypeScript 範本 |
+| `npm run lint` | 用 ESLint 檢查語法和寫法 |
+| `npm run lint:fix` | 自動修正 ESLint 可以修正的問題 |
+| `npm run build` | 將 `mods` 下的多個 `.ts` 檔案合併到 `dist/Script.ts` |
+| `npm run test` | 用 Vitest 執行測試 |
 
-其中本地 SDK 為 `sdk.version.json` ，參考 SDK 為 `1.2.3.0` 。 SDK 的內容會隨著更新而變化，因此，如果本文檔中的步驟與畫面不同，請先檢查 `sdk.version.json` 和 `docs/pages`。
+推送到 GitHub 時，範本內包含的 GitHub Actions 也會執行 `npm run lint`。也就是說，在發布前就能盡早攔下「作為程式碼本身就可疑」的內容。
+
+## 5. 範本的資料夾結構
+
+最先看的地方如下。
+
+| 位置 | 作用 |
+| ---- | ---- |
+| `mods/` | 放置自己編寫的 TypeScript 程式碼 |
+| `code/` | 放置 Battlefield 6 SDK 的 `code` 資料夾 |
+| `dist/Script.ts` | 由 `npm run build` 生成，並註冊到 Portal 的 TypeScript |
+| `dist/Strings.json` | 註冊到 Portal 的字串定義 |
+| `test/` | 放置 Vitest 測試 |
+
+開發中會在 `mods` 中分成多個檔案編寫。完成後執行 `npm run build`，再把生成的 `dist/Script.ts` 和 `dist/Strings.json` 註冊到 Portal Web Builder 的 Script 欄。
+
+:::message alert
+
+README 中有些地方把字串檔案寫成 `String.json`，但範本內實際檔案是 `dist/Strings.json`。本書統一寫作 `dist/Strings.json`。
+
+:::
+
+至此，使用 TypeScript 製作 Portal 腳本的步驟就結束了。
+
+# SDK 資料夾的閱讀方式
+
+SDK 很大，不需要一開始就全部閱讀。請先按下面的順序查看。
+
+| 查看位置 | 可以了解什麼 |
+| ---- | ---- |
+| `docs/pages/getting_started.html` | Godot 啟動、`GodotProject` 的 Import、`Portal Setup` 的流程 |
+| `docs/pages/spatial_editor.html` | 地圖編輯、Object Library、`.spatial.json` 的 Export |
+| `docs/pages/gameplay_logic.html` | TypeScript、Custom UI、AI、ObjId 引用、日誌確認 |
+| `docs/pages/tips_tricks.html` | 載具數量、Player 掃描、UI Widget 管理等負載對策 |
+| `code/types/mod/index.d.ts` | Portal TypeScript API 的函數和型別列表 |
+| `GodotProject/mods/_StartHere_BasicTemplate` | 最先閱讀的官方 TypeScript 範本 |
+
+本機 SDK 的 `sdk.version.json` 中，基準 SDK 是 `1.2.3.0`。SDK 會隨著更新而改變內容，如果本書步驟和你的畫面不同，請先確認 `sdk.version.json` 和 `docs/pages`。
 
 # 結論
 
-我們準備了使用「Portal Custom」創建遊戲的環境。
-現在您可以在接下來的章節中順利地編程和創建遊戲。
+我們已經準備好了使用「Portal Custom」製作遊戲的環境。
+這樣，在後續章節中就可以更順利地把想法寫成程式，並製作成遊戲。
 
 ---
 
-📘 **在下一章《地圖編輯器實用指南（實用放置與連結）》**中，我們將利用已經準備好的環境來進行「可以放置什麼」、「放置在哪裡」、「如何分配ID」**。共享是試用設定→警告標記確認，ID為-1禁止&分類帳。使用這兩個作為密碼，繼續下一步。
+📘 **下一章「地圖編輯器實務指南（放置與關聯）」** 會使用準備好的環境，實際推進 **「可以放什麼」「放在哪裡」「如何賦予 ID」**。Shared 要先試放並確認警告標記，ID 禁止使用 -1，並整理成台帳。記住這兩點，進入下一步。

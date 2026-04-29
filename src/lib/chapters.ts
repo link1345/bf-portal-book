@@ -3,6 +3,7 @@ import path from "node:path";
 import * as cheerio from "cheerio";
 import matter from "gray-matter";
 import markdownToHtml from "zenn-markdown-html";
+import { withBasePath } from "@/lib/basePath";
 import { defaultLocale, type Locale } from "@/lib/i18n";
 
 const localesDirectory = path.join(process.cwd(), "content", "locales");
@@ -70,6 +71,21 @@ function extractHeadings(html: string): ChapterHeading[] {
     .filter((heading) => heading.id && heading.text);
 }
 
+function applyBasePathToAssetUrls(html: string) {
+  const $ = cheerio.load(html, null, false);
+
+  $("img[src]").each((_, element) => {
+    const image = $(element);
+    const src = image.attr("src");
+
+    if (src?.startsWith("/")) {
+      image.attr("src", withBasePath(src));
+    }
+  });
+
+  return $.root().html() ?? html;
+}
+
 function getChaptersDirectory(locale: Locale) {
   return path.join(localesDirectory, locale, "chapters");
 }
@@ -111,7 +127,11 @@ export async function getChapter(
 
   try {
     const chapter = await readChapterFile(filename, locale);
-    const html = await markdownToHtml(chapter.content);
+    const html = applyBasePathToAssetUrls(
+      await markdownToHtml(chapter.content, {
+        embedOrigin: "https://embed.zenn.studio",
+      }),
+    );
 
     return {
       ...toChapter(chapter),

@@ -3,6 +3,10 @@ title: "Appendix A-2: Action/value acquisition list (basic operations)"
 free: true
 ---
 
+::::message
+This appendix is currently only a rough machine translation, so the wording may be very awkward. I will revise it properly later. Please bear with me for now.
+::::
+
 # Action/value acquisition list
 
 Here, the functions called from `mod.` are arranged by purpose. Some names are similar to Portal's block names, but TypeScript has strict types, so you need to pass types such as `Player`, `Team`, `Vector`, `Message`, `UIWidget`.

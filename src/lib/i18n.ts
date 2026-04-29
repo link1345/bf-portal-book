@@ -34,6 +34,7 @@ export const uiText: Record<
     headingsTitle: string;
     noHeadings: string;
     languageLabel: string;
+    translationNotice: string;
   }
 > = {
   ja: {
@@ -51,6 +52,8 @@ export const uiText: Record<
     headingsTitle: "見出し一覧",
     noHeadings: "この章には見出しがありません。",
     languageLabel: "言語",
+    translationNotice:
+      "日本語を原文として制作しています。英語・中国語（簡体字／繁体字）は機械翻訳のため、意図と異なる表現になっている可能性があります。",
   },
   en: {
     bookLabel: "Battlefield 6 Portal Book",
@@ -67,6 +70,8 @@ export const uiText: Record<
     headingsTitle: "Headings",
     noHeadings: "This chapter has no headings.",
     languageLabel: "Language",
+    translationNotice:
+      "This book is written primarily in Japanese. The English and Chinese (Simplified/Traditional) versions are machine translated, so some wording may differ from the intended meaning.",
   },
   "zh-CN": {
     bookLabel: "Battlefield 6 Portal Book",
@@ -83,6 +88,8 @@ export const uiText: Record<
     headingsTitle: "标题列表",
     noHeadings: "本章没有标题。",
     languageLabel: "语言",
+    translationNotice:
+      "本书以日语原文为准。英语和中文（简体/繁体）为机器翻译，因此部分表述可能与原意不同。",
   },
   "zh-TW": {
     bookLabel: "Battlefield 6 Portal Book",
@@ -99,6 +106,8 @@ export const uiText: Record<
     headingsTitle: "標題列表",
     noHeadings: "本章沒有標題。",
     languageLabel: "語言",
+    translationNotice:
+      "本書以日文原文為準。英文與中文（簡體／繁體）為機器翻譯，因此部分表述可能與原意不同。",
   },
 };
 

@@ -3,6 +3,10 @@ title: "附錄A-2：動作/值獲取清單（基本操作）"
 free: true
 ---
 
+::::message
+本附錄目前只是粗略的機器翻譯，文字可能非常不自然。我之後會認真修改，暫時請多包涵。
+::::
+
 # 動作/價值獲取列表
 
 這裡，從 `mod.` 呼叫的函數是依照用途排列的。有些名稱與 Portal 的區塊名稱類似，但 TypeScript 有嚴格的類型，因此您需要傳遞 `Player`、`Team`、`Vector`、`Message`、`Vector`、`Message`、`UIWidget` 等類型。

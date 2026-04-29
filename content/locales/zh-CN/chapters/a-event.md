@@ -3,6 +3,10 @@ title: "附录 A-1：事件列表"
 free: true
 ---
 
+::::message
+本附录目前只是粗略的机器翻译，文字可能非常不自然。我之后会认真修改，暂时请多包涵。
+::::
+
 # 如何阅读本附录
 
 本附录基于本地 SDK `books/bf_portal_doc/tmp/bf6-sdk/code/types/mod/index.d.ts` 的 `mod` 命名空间列出了 BF6 Portal TypeScript 中可用的事件和操作。参考 SDK 为 `1.2.3.0`、`sdk.version.json` 和 `index.d.ts`。请务必在实施前搜索 `index.d.ts`，因为它可能会随着 SDK 更新而增加或减少。

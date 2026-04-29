@@ -3,6 +3,10 @@ title: "Appendix B: Introduction How to read the official sample"
 free: true
 ---
 
+::::message
+This appendix is currently only a rough machine translation, so the wording may be very awkward. I will revise it properly later. Please bear with me for now.
+::::
+
 # 0　Read the official samples in a specific order
 
 The SDK includes official samples. If you suddenly read a large sample, the UI, AI, vehicles, and state management will appear all at once, which can be confusing.

@@ -5,34 +5,34 @@ free: true
 
 ## 本书的目的
 
-本书的目的是为那些想要尝试用《战地 6》的 Portal 做一些有趣的事情的人来学习如何使用基本编辑器以及 Portal 的独特机制。
-目的是掌握Portal的脚本功能和地图编辑器，包括改进编程以长期操作Portal服务器。
-请注意，我们不处理使用块的可视化编程，而是专注于 TypeScript 中的实现。
+本书面向“想在 Battlefield 6 Portal 里亲手做点有趣内容”的读者，目标是从基础的编辑器用法开始，学习 Portal 独有的机制。
+本书也会介绍为了长期运营 Portal 服务器而需要的程序改进，目标是掌握 Portal 的脚本功能和地图编辑器。
+需要说明的是，本书不讲解积木式可视化编程，而是以 TypeScript 实现为中心。
 
 ### 关于可视化编程和地图编辑器
 
-关于可视化编程和地图编辑器，[“BF Portal BF6 Memorandum by.TOKAI_Server_JPN”](https://w.atwiki.jp/tokaiserver/pages/1.html)有丰富的描述。
+关于可视化编程和地图编辑器，[“BF Portal BF6 备忘录 by TOKAI_Server_JPN”](https://w.atwiki.jp/tokaiserver/pages/1.html) 中有更详细的说明。
 
 ## 目标受众
 
-简单来说，目标受众是“编程初学者”级别。具体来说，我假设如下。
+简单来说，本书面向“编程初学者”级别的读者。具体来说，假设读者符合以下情况。
 
-* 学习过编程（2025年达到相当于日本初中学习水平）
-* 我用其他语言做过编程，但对其他语言没有做过太多深入的研究。
+* 学过一点编程（大致相当于 2025 年日本初中课程中学习过的水平）
+* 用其他语言写过程序，但还没有深入学习过
 
-2025年日本初中学习的定义是能够理解测量和控制系统的机制，并能够创建安全且适当的程序。
+这里所说的 2025 年日本初中课程水平，大致是“理解测量与控制系统的机制，并能制作安全、合适的程序”。
 
-> 教育电脑化指南 - 补充版 - （2020年6月）第3章（文部科学省）：https://www.mext.go.jp/content/20200608-mxt_jogai01-000003284_004.pdf
+> 教育信息化指南 - 追补版 - （2020 年 6 月）第 3 章（文部科学省）：https://www.mext.go.jp/content/20200608-mxt_jogai01-000003284_004.pdf
 
-因此，**本书不是一本编程或学习语法的入门书**。
-对于TypeScript语法，我们推荐一本入门书籍，例如《[TypeScript生存](https://typescriptbook.jp/)》。
-我们还建议您通过阅读“[GodotEngine官方文档](https://docs.godotengine.org/ja/4.x/)”来学习如何使用Godot。
+因此，**本书不是编程入门书，也不是语法入门书**。
+如果想学习 TypeScript 语法，推荐阅读《[サバイバルTypeScript](https://typescriptbook.jp/)》等入门资料。
+如果想学习 Godot 的用法，推荐阅读“[Godot Engine 官方文档](https://docs.godotengine.org/ja/4.x/)”。
 
 ### 附录的目标受众
 
-* 能够像呼吸一样编程的人。
+* 能像呼吸一样自然地写程序的人
 
-附录是一本**手册，适合那些可以编程但不熟悉 Portal 的 TypeScript API** 的人。
+附录是一本**面向已经会编程、但第一次接触 Portal 的 TypeScript API 的读者的手册**。
 
 
 ## 致谢
