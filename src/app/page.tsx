@@ -1,66 +1,45 @@
 import Image from "next/image";
-import styles from "./page.module.css";
+import Link from "next/link";
+import { getChapters } from "@/lib/chapters";
 
-export default function Home() {
+export default async function Home() {
+  const chapters = await getChapters();
+
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.tsx file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <main className="site-shell">
+      <section className="book-hero" aria-labelledby="book-title">
+        <div className="book-hero-copy">
+          <p className="book-label">Battlefield 6 Portal Book</p>
+          <h1 id="book-title">Battlefield 6 Portal エクスペリエンス制作大全</h1>
+          <p className="book-description">
+            Battlefield 6 Portalのエクスペリエンスビルダー、Godot SDK、TypeScript、公開運営までを扱う入門書です。
+            Portalカスタムでマップを編集し、ObjIdで仕掛けをつなぎ、TypeScript SDKと公式サンプルを読みながら自分のゲームモードを作れる状態を目指します。
           </p>
         </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+        <Image
+          className="book-cover"
+          src="/images/bf_portal_doc/cover.png"
+          alt="Battlefield 6 Portal エクスペリエンス制作大全の表紙"
+          width={500}
+          height={700}
+          priority
+          unoptimized
+        />
+      </section>
+
+      <section className="chapter-list" aria-labelledby="chapters-title">
+        <h2 id="chapters-title">目次</h2>
+        <ol>
+          {chapters.map((chapter) => (
+            <li key={chapter.slug}>
+              <Link href={`/chapters/${chapter.slug}`}>
+                <span>{chapter.title}</span>
+                {chapter.description ? <small>{chapter.description}</small> : null}
+              </Link>
+            </li>
+          ))}
+        </ol>
+      </section>
+    </main>
   );
 }
