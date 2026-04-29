@@ -1,62 +1,62 @@
 ---
-title: "第 8 章视觉效果和制作：掌握 UI、SFX 和 FX"
+title: "第 8 章 视觉与演出：掌握 UI、SFX、FX"
 free: true
 ---
 
-# 0 视觉效果和制作：掌握 UI、SFX 和 FX
+# 0 视觉与演出：掌握 UI、SFX、FX
 
-> ―― 按照以下顺序：理解→不要犹豫→感觉良好
+> 按“传达 -> 引导 -> 有手感”的顺序来做
 
-* 发送（短信/切换WorldIcon）
-* 指南（让您一眼就知道“去这里”的放置和更新）
-* 营造感觉（用 SFX/FX 添加感觉。但是，不要让它“太大声”）
-* 不受干扰（防止垃圾邮件、距离/次数限制、冷却时间）
-* 可以查看（查看调试 HUD 上的“刚刚发生了什么”）
+* 传达：短消息 / WorldIcon 切换
+* 引导：让玩家一眼看懂“去这里”的摆放和更新
+* 有手感：用 SFX / FX 增加反馈，但不要播放过头
+* 不失控：防连按、距离 / 次数限制、冷却时间
+* 可回看：用调试 HUD 看见“刚刚发生了什么”
 
-> 密码是“文字→符号→效果”。
-> 首先用简短的句子陈述要求，然后用 WorldIcon 指示方向，最后用 SFX/FX 重复响应。
+> 口诀是“文字 -> 标记 -> 效果”。
+> 先用短句给出要求，再用 WorldIcon 指方向，最后用 SFX / FX 叠加反馈。
 
 ```mermaid
 flowchart LR
-  message["ことば<br/>次に何をするか"]
-  icon["目印<br/>どこへ向かうか"]
-  effect["効果<br/>成功・到達の手応え"]
-  limit["抑制<br/>連打防止・距離制限・クールダウン"]
-  debug["確認<br/>デバッグHUD / PortalLog.txt"]
+  message["文字<br/>接下来做什么"]
+  icon["标记<br/>要去哪里"]
+  effect["效果<br/>成功、到达的反馈"]
+  limit["抑制<br/>防连按、距离限制、冷却"]
+  debug["确认<br/>调试 HUD / PortalLog.txt"]
 
   message --> icon --> effect --> limit --> debug
-  debug -- "直す" --> message
+  debug -- "修正" --> message
 ```
 
-# 1 信息：用简短的句子给出“下一步”
+# 1 消息：用短句只给出“下一步”
 ## 为什么
 
-玩家在几秒钟内做出决定。长文本将不会被阅读。如果你只用 5 到 12 个字符说“接下来你想让我做什么”，你的犹豫就会消失。
+玩家会在几秒内判断。长文不会被认真读。只把“接下来要做什么”用短句显示出来，迷路感就会少很多。
 
-## 如何写（类型）
+## 怎么写
 
-* 命令式+宾语：
+* 使用“命令 + 对象”：
 
-例）“前往入口”“启动A航站楼”“防御10秒”
+例：“go entrance”“start terminal A”“defend 10s”
 
-* 建议包含时间/距离：
+* 加上时间 / 距离也很有效：
 
-例）“防守10秒”“还剩120m”
+例：“defend 10s”“120m left”
 
-## 实现类型
+## 实现模板
 
-屏幕上要显示的字符并不是直接写在代码中，而是在使用前注册到`Strings.json`中。
-所有对玩家可见的角色，例如通知、WorldIcon 和 UI Text `textLabel`，都有相同的想法。
+画面上显示的文字不要直接写进代码。请先注册到 `Strings.json` 再使用。
+通知、WorldIcon、UI Text 的 `textLabel` 等玩家能看到的文字，都按同样的方式处理。
 
-该流程由以下三个阶段组成。
+流程分三步：
 
-1. 在 `Strings.json` 中注册要显示的句子的键和正文。
-2. 在 TypeScript 端创建 `mod.Message(mod.stringkeys.キー名, 追加値...)`。
-3. 将 `Message` 传递给显示函数，例如 `modlib.ShowNotificationMessage()`。
+1. 在 `Strings.json` 中注册要显示的文字键和正文。
+2. 在 TypeScript 侧创建 `mod.Message(mod.stringkeys.keyName, extraValues...)`。
+3. 把 `Message` 传给 `modlib.ShowNotificationMessage()` 等显示函数。
 
-`Strings.json` 是要在屏幕上显示的句子的字典。
-在 TypeScript 端，指定字典的键，并在必要时仅传递要放置在 `{}` 中的附加值。
-通过使用这种划分方法，可以避免当您增加显示的句子数量时，直接在代码中编写的字符在门户中被损坏的事故。
+`Strings.json` 是画面文字的字典。
+TypeScript 侧指定这个字典里的键，必要时只把要填进 `{}` 的值追加传入。
+这样分开后，可以避免显示文案增加时，把直接写在代码里的文字弄坏在 Portal 里。
 
 ```json
 {
@@ -66,8 +66,8 @@ flowchart LR
 }
 ```
 
-在代码方面，`mod.Message` 创建 `Message` 进行显示。
-第二个参数之后传递的值将被放置在 `{}` 的位置。
+代码侧用 `mod.Message` 创建显示用的 `Message`。
+第二个参数之后传入的值，会放进 `{}` 的位置。
 
 ```ts
 modlib.ShowEventGameModeMessage(mod.Message(mod.stringkeys.goEntrance));
@@ -75,8 +75,8 @@ modlib.ShowEventGameModeMessage(mod.Message(mod.stringkeys.defendSeconds, 10));
 modlib.ShowNotificationMessage(mod.Message(mod.stringkeys.testName, "player1"));
 ```
 
-最后一个示例将在屏幕上显示为 `test name:player1`。
-您最多可以为 `mod.Message` 使用三个附加参数，因此您的代码应该只传递发生变化的值，例如剩余秒数、得分和玩家姓名。
+最后一个例子在画面上会显示为 `test name:player1`。
+`mod.Message` 最多可以使用 3 个追加参数，所以代码里只传剩余秒数、分数、玩家名这类会变化的值。
 
 ```ts
 // Important message
@@ -86,43 +86,46 @@ ui.say(mod.Message(mod.stringkeys.goEntrance));
 ui.say(mod.Message(mod.stringkeys.defendSeconds, t));
 ```
 
-## 预防绊倒
+## 防踩坑
 
-* 添加要在屏幕上显示的字符后，检查 `Strings.json` 中是否存在该密钥。
-* 不要同时释放多个项目（设计为仅保留最后一个项目）。
-* 降低通知频率（每秒都有新通知很累人。让我们覆盖它们吧）。
-* 个人与整体：个人注意力“仅针对按下按钮的人”，而信号“针对所有人”。先决定，再统一。
+* 追加画面文字后，确认 `Strings.json` 里有对应的键。
+* 不要同时显示多条消息。设计成最后一条覆盖前一条。
+* 降低通知频率。每秒新通知会很累，尽量覆盖更新。
+* 个人和全体要先分清。个人提醒只发给触发者，合图则发给所有人。
 
-# 2 WorldIcon：将导体置于“稍靠前”并分阶段切换
+# 2 WorldIcon：引导标记放在“稍微靠前”的位置，并按阶段切换
 ## 为什么
 
-如果你把它放在目的地本身，当你接近它时，你就会在墙壁或角落里丢失它。 **如果将其放置在入口或拐角的“稍前方”**，即使转弯时您也不会迷路。
+如果把标记直接放在目的地上，玩家靠近时很容易被墙或转角挡住。
+放在入口或转角的**稍微前方**，转弯时也不容易迷路。
 
-## 如何放置/切换
+## 怎么放 / 怎么切
 
-* 阶段划分：入口(ICON_ENTRANCE)→目的地(ICON_TARGET)→下一个目标(ICON_NEXT…)
-*到达时关闭，然后打开：**“不要让它发光两次”** 这是不迷路的秘诀。
+* 分阶段：入口（`ICON_ENTRANCE`）-> 目的地（`ICON_TARGET`）-> 下一个目标（`ICON_NEXT...`）
+* 到达后把当前标记 OFF，再把下一个 ON。不要让两个目标同时发光，这是不迷路的关键。
 
-## 实现类型
+## 实现模板
 
 ```ts
-// 案内の基本（6章の guide を利用）
-ui.guide(ICON_ENTRANCE, ICON_TARGET);  // 入口OFF → 目的地ON
+// Basic guidance using the Chapter 6 guide helper
+ui.guide(ICON_ENTRANCE, ICON_TARGET);  // entrance OFF -> target ON
 
-// 到達時
-ui.guide(ICON_TARGET, undefined);      // 目的地OFF（次があるならここでON）
+// On arrival
+ui.guide(ICON_TARGET, undefined);      // target OFF (turn the next one ON here if needed)
 ```
 
-## 预防绊倒
-* 增加ON的事故：到达目的地时始终关闭前一个ICON。
-* 如果需要按团队显示，单独使用 ui.guideForTeam(teamId, hide, show) 等函数可以防止显示范围错误。
+## 防踩坑
 
-# 3 【SFX：铃声过多会导致“累”（一定要放冷却时间）
+* 只增加 ON，忘记 OFF：到达时一定关闭前一个图标。
+* 如果需要按队伍显示，可以分出 `ui.guideForTeam(teamId, hide, show)` 这类函数，避免显示范围出错。
+
+# 3 SFX：声音太多会变成疲劳，所以一定要加冷却
 ## 为什么
 
-* 成就的声音是一种享受，但连续播放会导致疲劳。冷却（在一定时间内不玩）会降低密度。
+达成音很爽，但连续播放会让人疲劳。
+冷却时间，也就是“一段时间内不要再播放”，可以控制密度。
 
-## 实现类型：SFX 冷却
+## 实现模板：SFX 冷却
 
 ```ts
 const sfxCooldownMs = 1500;
@@ -136,40 +139,42 @@ function playSfxCooled(id: number) {
 }
 ```
 
-## 预防绊倒
+## 防踩坑
 
-* 结合多个事件触发，它就变成了地狱。与第 6 章中的 OnceIn 结合使用。
-* 如果有根据距离改变音量的 API，请将其设置为不会在远距离播放。如果没有，我们决定一开始就不在长距离比赛中使用它。
+* 如果和事件重复触发叠在一起，声音会立刻变吵。请和第 6 章的一次性守卫一起用。
+* 如果 API 能按距离调整音量，就让远处事件不播放。没有这种 API 时，就先决定远距离事件不播放 SFX。
 
-# 4 ：FX：远处的“灯塔”，近处的“奖励”
+# 4 FX：远处是“灯塔”，近处是“奖励”
 ## 为什么
 
-理想情况下，您应该从远处观察外汇并近距离了解它。在远距离时，重点关注可见性，例如闪烁的灯光、柱子和箭头；在短距离时，重点关注响应性，例如爆炸、火花和火柱。
+FX 的理想状态是：远处能注意到，近处能理解。
+远距离重视可见性，比如闪烁、光柱、箭头。近距离重视手感，比如爆炸、火花、火柱。
 
-## 实现类型：FX 单次/循环
+## 实现模板：一次性 FX / 循环 FX
 
 ```ts
 function celebrate() {
-  api.playFX(FX_GOAL);   // ワンショット想定
-  playSfxCooled(SFX_GOAL); // 7.3のクールダウン版
+  api.playFX(FX_GOAL);   // Assume one-shot FX
+  playSfxCooled(SFX_GOAL); // Cooldown version from 8.3
 }
 
-// ループ物は必ず停止側も
+// Looping effects must also have a stop path
 onEnterArea(AREA_TARGET, () => api.playFX(FX_GOAL));
 onLeaveArea(AREA_TARGET, () => api.stopFX(FX_GOAL));
 ```
 
-## 预防绊倒
+## 防踩坑
 
-* 不间断烟雾：在退出事件上可靠地写入停止。
-* 室内看不到：将安装位置稍微向您的方向移动。插入向上偏移通常可以解决问题。
+* 烟雾停不下来：退出事件里一定写停止处理。
+* 室内看不见：把放置位置稍微往前移。向上加一点偏移也常常有效。
 
-# 5 【距离与方向：“只需◯◯m”将指导变为现实
+# 5 距离和方向：用“还剩 XXm”把引导变成实感
 ## 为什么
 
-当你能看到距离的时候，你就会觉得自己正在进步。每隔几秒更新一次就足够了（不需要每一帧都更新）。
+看到距离后，玩家会感觉“我正在前进”。
+每隔几秒更新一次就够了，不需要每帧更新。
 
-## 实现类型（覆盖距离UI）
+## 实现模板：覆盖更新距离 UI
 
 ```ts
 const updateDistance = debounce(500, (playerPos: Vector3, targetPos: Vector3) => {
@@ -178,47 +183,50 @@ const updateDistance = debounce(500, (playerPos: Vector3, targetPos: Vector3) =>
 });
 ```
 
-在这种情况下，请为 `Strings.json` 准备一个类似 `"distanceLeft": "{}m left"` 的短语。
+这种情况下，请在 `Strings.json` 中准备 `"distanceLeft": "{}m left"` 这样的文案。
 
-## 预防绊倒
-* 由于更新过多，通知变得嘈杂 → 通过去抖功能进行稀疏化。
-* 距离不会变成0米 → 目标位置会像WorldIcon一样离你更近一些。
+## 防踩坑
 
-# 6 优先级：首先播放/释放重要的声音、灯光和文字
+* 更新太频繁导致通知吵：用 debounce 间隔更新。
+* 距离不到 0m：目标点和 WorldIcon 一样，放在稍微靠前的位置。
+
+# 6 优先级：重要的声音、光效、文字先播放 / 先显示
 ## 为什么
 
-如果同时叠加多个效果，较弱的效果就会消失。按照高→中→低的顺序分配优先级和进程，并抑制低优先级。
+多个演出同时叠在一起时，弱的那个会被盖掉。
+请设定优先级，按高 -> 中 -> 低处理，必要时抑制低优先级演出。
 
-## 实现类型（优先级队列图像）
+## 实现模板：优先级队列的思路
 
 ```ts
 type Prio = "high"|"mid"|"low";
 function playSfxPrio(id: number, prio: Prio) {
-  if (prio === "low" && Date.now() - lastSfxAt < 2000) return; // 直近に鳴ってたら抑制
+  if (prio === "low" && Date.now() - lastSfxAt < 2000) return; // Suppress if something played recently
   playSfxCooled(id);
 }
 ```
 
-## 提示
+## 小技巧
 
-* 胜利和失败的旋律总是高亢。
-* 脚步声和环境声音等地面声音留给游戏，唯一的原创 SFX 已达到里程碑。
+* 胜利和失败的提示音一定是 `high`。
+* 脚步声、环境音这类底层声音交给游戏本身。自定义 SFX 只放在关键节点。
 
-# 7 防止“过度”的设计：1个场景、1个效果、1个段落、1条消息
+# 7 防止“做太多”的设计：一个场景一个效果，一个时刻一条消息
 
-* 1 个场景 1 效果：同一事件中不要重叠两个或三个 FX。决定一个主角。
-*一段，一条信息：不要同时给出“目的”、“警告”和“提示”。只专注于目的。
-* 一定要写终止处理：停止循环FX/SFX、覆盖消息、关闭WorldIcon。
+* 一个场景一个效果：同一事件里不要叠两三个 FX。先决定一个主角。
+* 一个时刻一条消息：不要同时显示目的、注意、提示。只聚焦目的。
+* 一定要写结束处理：停止循环 FX/SFX、覆盖消息、关闭 WorldIcon。
 
-# 8 调试 HUD：拥有只有你能看到的“耳朵和眼睛”
+# 8 调试 HUD：准备只有自己能看到的“眼睛和耳朵”
 ## 为什么
 
-方向是你可以感觉到的东西，但设计是关于数字和条件的。只有您可以看到的小型 HUD 显示阶段、剩余秒数和最近发生的事件，从而可以快速修复。
+演出是靠感觉体验的，但设计靠的是数值和状态。
+给自己准备一个小 HUD，只显示 phase、剩余秒数、最近事件，修起来会快很多。
 
-## 实现类型（示例）
+## 实现模板
 ```
 const debug = { on: true };
-function dbg(line: string) { if (!debug.on) return; /* 画面端に小さく */ }
+function dbg(line: string) { if (!debug.on) return; /* small text at screen edge */ }
 
 function dump() { dbg(`phase=${Phase[state.phase]} time=${remainSec}`); }
 
@@ -227,39 +235,42 @@ onEnterArea(AREA_TARGET, () => dbg("Enter:Target"));
 onLeaveArea(AREA_TARGET, () => dbg("Leave:Target"));
 ```
 
-## 提示
+## 小技巧
 
-* 在生产发布期间设置 debug.on=false。
-* 与通知的垃圾邮件预防类似，HUD 也被反跳（保持可见性）。
+* 正式发布时设为 `debug.on = false`。
+* HUD 也和通知一样做 debounce，保持可读性。
 
-# 9 ：性能与稳定性：不做事的勇气
-* 避免检查每一帧（距离/方向每 0.5 到 1 秒检查一次就足够了）。
-* 无限循环+短暂等待被密封。等待事件和计时器。
-* 限制同时播放的数量（最多同时播放3个SFX等，具体取决于您自己的规则）。
-* 使演示文稿“仅针对那些可以看到的人”：如果您有 API，请选中听觉范围/视觉范围复选框。
+# 9 性能和稳定性：不做也是勇气
 
-官方SDK的提示中也提到了车辆数量、玩家扫描、UI小部件管理等与负载直接相关的东西。在增加产量之前，请记住以下三件事。
+* 避免每帧判定。距离和方向每 0.5 到 1 秒检查一次就够了。
+* 避免无限循环加短等待。用事件和计时器等待。
+* 限制同时播放数量，比如同时最多 3 个 SFX。
+* 演出只给能感知到的人。API 支持的话，检查可听范围 / 可视范围。
 
-* 一次不超过 40 辆车。查看永久车辆和活动车辆的总数。
-* 不要每帧扫描所有玩家。使用 `OnPlayerEnterCapturePoint` 和 `OnPlayerExitCapturePoint` 等事件记录状态，并仅在需要时读取。
-* UI 小部件不会每次都重新创建。将创建的小部件保存在变量中并更新显示内容。
+官方 SDK 的 Tips 也把车辆数量、Player 扫描、UI Widget 管理列为和负载直接相关的点。
+增加演出前，请先守住下面三点：
 
-制作越华丽，你就越要在它变得太重之前决定上限。不要看它看起来有多少，而要看玩家能理解多少。
+* 同时存在的载具不要超过 40 台。常驻载具和事件载具要合在一起看。
+* 不要每帧扫描所有玩家。用 `OnPlayerEnterCapturePoint`、`OnPlayerExitCapturePoint` 等事件记录状态，需要时再读取。
+* UI Widget 不要每次重新创建。把创建好的 Widget 保存在变量里，只更新显示内容。
 
-# 1 0 配方集（可以直接使用的小部件）
-## A) 到达后摇动相机并短暂欢呼
+演出越华丽，越要在变重之前先定好上限。
+判断标准不是“能显示多少”，而是“玩家能理解多少”。
+
+# 10 配方集：可以直接复用的小部件
+## A）到达时让镜头晃一下，并只播放一次短欢呼
 
 ```ts
 let cheered = false;
 function celebrateOnce() {
   if (cheered) return; cheered = true;
-  ui.celebrate(FX_GOAL, SFX_GOAL);    // 光と音
-  api.shakeCameraAll?.(0.4, 600);      // APIがあれば：強さ0.4/600ms
-  setTimeout(()=> cheered = false, 3000); // 3秒は再発しない
+  ui.celebrate(FX_GOAL, SFX_GOAL);    // Light and sound
+  api.shakeCameraAll?.(0.4, 600);      // If available: strength 0.4 / 600ms
+  setTimeout(()=> cheered = false, 3000); // Do not trigger again for 3 seconds
 }
 ```
 
-## B) 分步信息（一个故事中的 3 个短句）
+## B）阶段消息：用 3 个短句串成一条故事线
 
 ```ts
 ui.say(mod.Message(mod.stringkeys.start));
@@ -269,7 +280,7 @@ ui.say(mod.Message(mod.stringkeys.goTerminalA));
 ui.say(mod.Message(mod.stringkeys.goodJob));
 ```
 
-## C) 伪“闪烁图标”（交替开/关）
+## C）伪“闪烁图标”：交替 ON / OFF
 
 ```ts
 let blinkOn = false, blinkH: any;
@@ -280,19 +291,19 @@ function startBlinkIcon(id: number, ms = 600) {
 function stopBlinkIcon() { if (blinkH) clearInterval(blinkH); api.showIcon(ICON_TARGET, true); }
 ```
 
-> 注意不要过度使用它。仅在第一次“呼叫”时眨眼→在即将到达时保持点亮状态是优雅的。
+> 注意不要用太多。比较自然的做法是：第一次吸引注意时闪烁，到快到达时改为常亮。
 
 # 结论
 
-* 只需遵循文字→地标→效果的顺序，您就可以改变信息的传达方式。
-* WorldIcon“稍微接近”，SFX/FX 冷却，UI 被覆盖以防止“噪音”。
-* 使用调试 HUD 可视化“现在”。维修速度更快，生产质量也得到提高。
+* 只要守住“文字 -> 标记 -> 效果”的顺序，体验的传达方式就会明显改变。
+* WorldIcon 放在稍微靠前的位置，SFX / FX 加冷却，UI 用覆盖更新，能防止演出变吵。
+* 用调试 HUD 可视化“现在”。修正会更快，演出质量也会更稳。
 
-# 下一节的指南
+# 下一章预告
 
-在接下来的第 9 章“发布、托管和管理”中，我们将继续讨论将迄今为止获得的经验转化为可以发挥的状态的实践方面。
+接下来的第 9 章《发布、托管、运营》会进入实务，把到目前为止做出的体验变成“能被别人游玩”的状态。
 
-* 如何编写共享代码、256个字符以内的说明文字和缩略图（简洁地传达目的/建议人数/所需时间）
-* 服务器运行（常驻/活动）及公告模板
-* 更新频率和“不中断改进”程序
-* 适度操作的提示，前提是XP视情况可能存在限制
+* 共享代码、256 字以内说明文、缩略图的写法：短短说明目的 / 推荐人数 / 所需时间
+* 服务器运营：常驻 / 活动，以及公告模板
+* 更新频率和“不弄坏地改进”的流程
+* 以 XP 相关内容可能因情况受限为前提，进行稳妥运营的技巧

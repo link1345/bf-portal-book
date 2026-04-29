@@ -1,62 +1,62 @@
 ---
-title: "Chapter 8 Visuals and Production: Mastering UI, SFX, and FX"
+title: "Chapter 8: Visuals and Presentation: Mastering UI, SFX, and FX"
 free: true
 ---
 
-# 0 Visuals and production: mastering UI, SFX, and FX
+# 0 Visuals and Presentation: Mastering UI, SFX, and FX
 
-> ―― In the following order: get it across → don't hesitate → feel good
+> Communicate -> guide -> make it feel good, in that order
 
-* Send (short message/switch WorldIcon)
-* Guide (placement and updates that let you know “go here” at a glance)
-* Make it feel (Add a feeling with SFX/FX. However, do not make it “too loud”)
-* Undisturbed (spam prevention, distance/number of times limit, cooldown)
-* Can be reviewed (see “what just happened” on the debug HUD)
+* Communicate: short messages and WorldIcon switching
+* Guide: placement and updates that make "go here" obvious at a glance
+* Make it feel good: add feedback with SFX and FX, without overplaying them
+* Keep it controlled: prevent spam, limit distance / repeat count, and use cooldowns
+* Make it reviewable: use a debug HUD to see what just happened
 
-> The password is "Words → Signs → Effects".
-> First, state the requirements in a short sentence, then show the direction with WorldIcon, and finally repeat the response with SFX/FX.
+> The rule of thumb is "words -> marker -> effect."
+> Start with a short instruction, show the direction with a WorldIcon, then add feedback with SFX / FX.
 
 ```mermaid
 flowchart LR
-  message["ことば<br/>次に何をするか"]
-  icon["目印<br/>どこへ向かうか"]
-  effect["効果<br/>成功・到達の手応え"]
-  limit["抑制<br/>連打防止・距離制限・クールダウン"]
-  debug["確認<br/>デバッグHUD / PortalLog.txt"]
+  message["Words<br/>what to do next"]
+  icon["Marker<br/>where to go"]
+  effect["Effect<br/>feedback for success / arrival"]
+  limit["Control<br/>anti-spam, distance limits, cooldowns"]
+  debug["Check<br/>debug HUD / PortalLog.txt"]
 
   message --> icon --> effect --> limit --> debug
-  debug -- "直す" --> message
+  debug -- "fix" --> message
 ```
 
-# 1　Message: Give just the “next move” in a short sentence
+# 1 Messages: Show Only the Next Move in a Short Sentence
 ## Why
 
-Players decide in seconds. Long texts will not be read. If you just say ``What do you want me to do next'' in 5 to 12 characters, your hesitation will disappear.
+Players decide within seconds. Long text will not be read. If you show only "what you want them to do next" in a short phrase, the confusion disappears.
 
-## How to write (type)
+## How to Write It
 
-* Imperative + object:
+* Use an imperative phrase plus an object:
 
-Example) "Head to the entrance" "Start terminal A" "Defend for 10 seconds"
+Examples: "go entrance", "start terminal A", "defend 10s"
 
-* It is recommended to include time/distance:
+* Time and distance are useful:
 
-Example) “Defend for 10 seconds” “120m left”
+Examples: "defend 10s", "120m left"
 
-## Implementation type
+## Implementation Pattern
 
-The characters to be displayed on the screen are not written directly in the code, but are registered in `Strings.json` before use.
-All characters visible to the player, such as notifications, WorldIcon, and UI Text `textLabel`, have the same idea.
+Text displayed on screen should not be written directly in code. Register it in `Strings.json` first.
+The same rule applies to all player-visible text, such as notifications, WorldIcon text, and UI Text `textLabel`.
 
-The flow consists of the following three stages.
+The flow has three steps.
 
-1. Register the key and body of the sentence you want to display in `Strings.json`.
-2. Create `mod.Message(mod.stringkeys.キー名, 追加値...)` on the TypeScript side.
-3. Pass `Message` to a display function such as `modlib.ShowNotificationMessage()`.
+1. Register the key and body text in `Strings.json`.
+2. Create `mod.Message(mod.stringkeys.keyName, extraValues...)` on the TypeScript side.
+3. Pass the `Message` to a display function such as `modlib.ShowNotificationMessage()`.
 
-`Strings.json` is a dictionary of sentences to display on the screen.
-On the TypeScript side, specify the key of the dictionary and pass only additional values to be placed in `{}` if necessary.
-By using this method of division, you can avoid accidents where characters written directly in the code are corrupted in the portal when you increase the number of displayed sentences.
+`Strings.json` is a dictionary for text shown on screen.
+TypeScript specifies a key in that dictionary, and passes only the values that should be inserted into `{}`.
+This keeps display text out of the code and avoids accidents where directly written text breaks in Portal.
 
 ```json
 {
@@ -66,8 +66,8 @@ By using this method of division, you can avoid accidents where characters writt
 }
 ```
 
-On the code side, `mod.Message` creates `Message` for display.
-The value passed after the second argument will be placed in the position of `{}`.
+In code, use `mod.Message` to create the display `Message`.
+Values passed after the first argument are inserted into `{}`.
 
 ```ts
 modlib.ShowEventGameModeMessage(mod.Message(mod.stringkeys.goEntrance));
@@ -75,8 +75,8 @@ modlib.ShowEventGameModeMessage(mod.Message(mod.stringkeys.defendSeconds, 10));
 modlib.ShowNotificationMessage(mod.Message(mod.stringkeys.testName, "player1"));
 ```
 
-The last example would appear on your screen as `test name:player1`.
-You can use up to three additional arguments for `mod.Message`, so your code should only pass values that change, such as seconds left, score, and player name.
+The last example appears as `test name:player1` on screen.
+`mod.Message` can take up to three extra values, so pass only values that change from code, such as remaining seconds, score, or player name.
 
 ```ts
 // Important message
@@ -86,43 +86,46 @@ ui.say(mod.Message(mod.stringkeys.goEntrance));
 ui.say(mod.Message(mod.stringkeys.defendSeconds, t));
 ```
 
-## Stumble prevention
+## Avoiding Common Problems
 
-* After adding the characters to be displayed on the screen, check if the key exists in `Strings.json`.
-* Do not release multiple items at the same time (designed so that only the last item will remain).
-* Reduce notification frequency (new notifications every second are tiring. Let's overwrite them).
-* Individual vs. overall: Individual attention is “only for the person who pressed the button”, and signal is “for everyone”. Decide and unify first.
+* When you add text shown on screen, confirm the key exists in `Strings.json`.
+* Do not show several messages at once. Design it so the newest one replaces the previous one.
+* Reduce notification frequency. A new notification every second is tiring, so overwrite instead.
+* Decide individual vs. global early. Personal warnings go only to the player who triggered them; signals go to everyone.
 
-# 2　WorldIcon: Place the conductor “slightly in front” and switch in stages
+# 2 WorldIcon: Place Guidance Slightly Before the Destination and Switch by Stage
 ## Why
 
-If you place it on the destination itself, you'll lose it around a wall or corner the moment you approach it. **If you place it "slightly in front" of an entrance or corner**, you won't get lost even when turning a corner.
+If the icon is directly on the destination, players can lose sight of it behind a wall or corner right as they approach.
+Placing it **slightly before an entrance or corner** makes the route easier to follow.
 
-## How to place/switch
+## How to Place and Switch
 
-* Stage division: Entrance (ICON_ENTRANCE) → Destination (ICON_TARGET) → Next objective (ICON_NEXT…)
-* Turn OFF when you reach it, then turn it on: **“Do not make it shine twice”** This is the trick to not getting lost.
+* Split by stage: entrance (`ICON_ENTRANCE`) -> target (`ICON_TARGET`) -> next objective (`ICON_NEXT...`)
+* Turn the current icon off on arrival, then turn the next one on. The trick is **not lighting two icons at once**.
 
-## Implementation type
+## Implementation Pattern
 
 ```ts
-// 案内の基本（6章の guide を利用）
-ui.guide(ICON_ENTRANCE, ICON_TARGET);  // 入口OFF → 目的地ON
+// Basic guidance using the Chapter 6 guide helper
+ui.guide(ICON_ENTRANCE, ICON_TARGET);  // entrance OFF -> target ON
 
-// 到達時
-ui.guide(ICON_TARGET, undefined);      // 目的地OFF（次があるならここでON）
+// On arrival
+ui.guide(ICON_TARGET, undefined);      // target OFF (turn the next one ON here if needed)
 ```
 
-## Stumble prevention
-* Accidents that increase by ON: Always turn off the previous ICON when reaching the destination.
-* If you need to display by team, separate functions like ui.guideForTeam(teamId, hide, show) will prevent mistakes in the display range.
+## Avoiding Common Problems
 
-# 3　SFX: Excessive ringing will cause “tiring” (be sure to put a cooldown)
+* Icons only ever turn on: always turn the previous icon off on arrival.
+* If team-specific display is needed, prepare a separate function such as `ui.guideForTeam(teamId, hide, show)` to avoid display-range mistakes.
+
+# 3 SFX: Too Much Sound Becomes Fatigue, So Always Add Cooldown
 ## Why
 
-* Achievement sounds are a pleasure, but continuous playback can cause fatigue. Cooldown (does not play for a certain period of time) reduces density.
+Achievement sounds feel good, but repeated playback becomes tiring.
+A cooldown, meaning "do not play again for a short time," keeps the density under control.
 
-## Implementation type: SFX cooldown
+## Implementation Pattern: SFX Cooldown
 
 ```ts
 const sfxCooldownMs = 1500;
@@ -136,40 +139,42 @@ function playSfxCooled(id: number) {
 }
 ```
 
-## Stumble prevention
+## Avoiding Common Problems
 
-* Combined with multiple event firings, it becomes hell. Used in conjunction with onceIn in Chapter 6.
-* If there is an API that changes the volume depending on distance, set it so that it does not play at long distances. If not, we decided not to play it in the first place at long-distance events.
+* If this combines with duplicate event firing, it becomes noisy very quickly. Use it together with the one-time guards from Chapter 6.
+* If the API can adjust volume by distance, avoid playing sounds for far-away events. If not, decide not to play SFX for distant events in the first place.
 
-# 4　FX: “Lighthouse” in the distance, “Reward” in the vicinity
+# 4 FX: A Distant Lighthouse, a Nearby Reward
 ## Why
 
-Ideally, you should notice FX from a distance and understand it up close. At long distances, focus on visibility such as flashing lights, pillars, and arrows, and at short distances, focus on responsiveness such as explosions, sparks, and pillars of fire.
+FX works best when players notice it from far away and understand it up close.
+For long distance, prioritize visibility with blinking, pillars, or arrows. For close range, prioritize feedback with explosions, sparks, or flame columns.
 
-## Implementation type: FX one-shot/loop
+## Implementation Pattern: One-Shot and Looping FX
 
 ```ts
 function celebrate() {
-  api.playFX(FX_GOAL);   // ワンショット想定
-  playSfxCooled(SFX_GOAL); // 7.3のクールダウン版
+  api.playFX(FX_GOAL);   // Assume one-shot FX
+  playSfxCooled(SFX_GOAL); // Cooldown version from 8.3
 }
 
-// ループ物は必ず停止側も
+// Looping effects must also have a stop path
 onEnterArea(AREA_TARGET, () => api.playFX(FX_GOAL));
 onLeaveArea(AREA_TARGET, () => api.stopFX(FX_GOAL));
 ```
 
-## Stumble prevention
+## Avoiding Common Problems
 
-* Non-stop smoke: Write a stop reliably on the exit event.
-* Cannot be seen indoors: Move the installation position slightly towards you. Inserting an upward offset often solves the problem.
+* Smoke that never stops: always write the stop logic on the exit event.
+* Invisible indoors: move the placement slightly forward. Adding an upward offset often helps.
 
-# 5　Distance and direction: Turn guidance into reality with “just ◯◯m”
+# 5 Distance and Direction: Turn Guidance into Progress with "About XXm Left"
 ## Why
 
-When you can see the distance, you will feel that you are making progress. It is sufficient to update once every few seconds (no need to update every frame).
+When players can see distance, they feel they are moving forward.
+Updating once every few seconds is enough. Updating every frame is unnecessary.
 
-## Implementation type (override distance UI)
+## Implementation Pattern: Overwrite Distance UI
 
 ```ts
 const updateDistance = debounce(500, (playerPos: Vector3, targetPos: Vector3) => {
@@ -178,47 +183,50 @@ const updateDistance = debounce(500, (playerPos: Vector3, targetPos: Vector3) =>
 });
 ```
 
-In this case, prepare a phrase like `"distanceLeft": "{}m left"` for `Strings.json`.
+In this case, prepare text such as `"distanceLeft": "{}m left"` in `Strings.json`.
 
-## Stumble prevention
-* Notifications are noisy due to too many updates → Thin out with debounce.
-* Distance does not become 0m → Target position is a little closer to you like WorldIcon.
+## Avoiding Common Problems
 
-# 6 Priority: Play/release important sounds, lights, and words first
+* Notifications get noisy because they update too often: thin them out with debounce.
+* Distance never reaches 0m: place the target point slightly before the real destination, like with WorldIcon.
+
+# 6 Priority: Play or Show the Most Important Sound, Light, and Text First
 ## Why
 
-If you stack multiple effects at the same time, the weaker one will disappear. Assign priorities and process in the order of high → medium → low, and suppress low priority.
+When several effects overlap at once, weaker ones disappear.
+Set priority and process high -> mid -> low. Suppress low-priority effects when needed.
 
-## Implementation type (priority queue image)
+## Implementation Pattern: Priority Queue Idea
 
 ```ts
 type Prio = "high"|"mid"|"low";
 function playSfxPrio(id: number, prio: Prio) {
-  if (prio === "low" && Date.now() - lastSfxAt < 2000) return; // 直近に鳴ってたら抑制
+  if (prio === "low" && Date.now() - lastSfxAt < 2000) return; // Suppress if something played recently
   playSfxCooled(id);
 }
 ```
 
 ## Tips
 
-* The jingle of victory and failure is always high.
-* Ground sounds such as footsteps and environmental sounds are left to the game, and the only original SFX are at milestones.
+* Victory and failure jingles should always be `high`.
+* Leave baseline sounds such as footsteps and ambience to the game. Use custom SFX only at important beats.
 
-# 7 Design to prevent “overdoing”: 1 scene, 1 effect, 1 paragraph, 1 message
+# 7 Prevent Overdoing It: One Effect per Scene, One Message per Moment
 
-* 1 scene 1 effect: Do not overlap two or three FX in the same event. Decide on one main character.
-*One paragraph, one message: Do not give "purpose", "warning", and "hint" at the same time. Focus only on the purpose.
-* Be sure to write termination processing: stop loop FX/SFX, overwrite messages, turn off WorldIcon.
+* One scene, one effect: do not stack two or three FX on the same event. Pick one star.
+* One moment, one message: do not show the goal, warning, and hint all at once. Focus on the goal.
+* Always write cleanup logic: stop looping FX/SFX, overwrite messages, and turn WorldIcons off.
 
-# 8 Debug HUD: Have “ears and eyes” that only you can see
+# 8 Debug HUD: Give Yourself Private Eyes and Ears
 ## Why
 
-Direction is something you can feel, but design is about numbers and conditions. A small HUD that only you can see shows the phase, remaining seconds, and recent events, making it quick to fix.
+Presentation is felt, but design is built from numbers and state.
+A small HUD only you can see, showing phase, remaining seconds, and the latest event, makes fixing things much faster.
 
-## Implementation type (example)
+## Implementation Pattern
 ```
 const debug = { on: true };
-function dbg(line: string) { if (!debug.on) return; /* 画面端に小さく */ }
+function dbg(line: string) { if (!debug.on) return; /* small text at screen edge */ }
 
 function dump() { dbg(`phase=${Phase[state.phase]} time=${remainSec}`); }
 
@@ -229,37 +237,40 @@ onLeaveArea(AREA_TARGET, () => dbg("Leave:Target"));
 
 ## Tips
 
-* Set debug.on=false during production release.
-* Similar to spam prevention for notifications, HUD is also debounced (maintains visibility).
+* Set `debug.on = false` before publishing.
+* Debounce the HUD just like notifications, so it stays readable.
 
-# 9　Performance and stability: The courage not to do it
-* Avoid checking every frame (distance/direction once every 0.5 to 1 second is sufficient).
-* Infinite loop + short wait is sealed. Wait for events and timers.
-* Limit the number of simultaneous playbacks (up to 3 SFX at the same time, etc., depending on your own rules).
-* Make the presentation “only for those who can see it”: If you have an API, check the audible range/visual range checkbox.
+# 9 Performance and Stability: The Courage Not to Do Things
 
-The tips of the official SDK also mention the number of vehicles, player scanning, and UI widget management as things that are directly related to the load. Before increasing your production, please keep the following three things in mind.
+* Avoid checking every frame. Distance and direction checks every 0.5 to 1 second are enough.
+* Avoid infinite loops with short waits. Use events and timers.
+* Limit simultaneous playback, such as no more than three SFX at once.
+* Show presentation only to people who can perceive it. If the API allows it, check audible or visible range.
 
-* No more than 40 vehicles at a time. View the total of permanent vehicles and event vehicles.
-* Don't scan all players every frame. Record the state with events such as `OnPlayerEnterCapturePoint` and `OnPlayerExitCapturePoint` and read it only when needed.
-* UI widgets are not recreated every time. Save the created widget in a variable and update the display content.
+The official SDK tips also mention vehicle count, player scanning, and UI Widget management as load-sensitive areas.
+Before adding more presentation, keep these three rules:
 
-The more flashy the production, the more you decide on the upper limit before it gets too heavy. Don't base it on how much it looks, but on how much the players can understand.
+* Keep vehicles at 40 or fewer at the same time. Count both permanent and event vehicles.
+* Do not scan all players every frame. Record state with events such as `OnPlayerEnterCapturePoint` and `OnPlayerExitCapturePoint`, then read it only when needed.
+* Do not recreate UI Widgets every time. Store the created widget in a variable and update its content.
 
-# 1 0 Recipe collection (small parts that can be used as is)
-## A) Shake the camera and give a short cheer once on arrival
+The flashier the presentation, the earlier you should set limits.
+Base the amount on what players can understand, not on how much you can display.
+
+# 10 Recipes: Small Parts You Can Reuse
+## A) Shake the Camera and Play a Short Cheer Once on Arrival
 
 ```ts
 let cheered = false;
 function celebrateOnce() {
   if (cheered) return; cheered = true;
-  ui.celebrate(FX_GOAL, SFX_GOAL);    // 光と音
-  api.shakeCameraAll?.(0.4, 600);      // APIがあれば：強さ0.4/600ms
-  setTimeout(()=> cheered = false, 3000); // 3秒は再発しない
+  ui.celebrate(FX_GOAL, SFX_GOAL);    // Light and sound
+  api.shakeCameraAll?.(0.4, 600);      // If available: strength 0.4 / 600ms
+  setTimeout(()=> cheered = false, 3000); // Do not trigger again for 3 seconds
 }
 ```
 
-## B) Step-by-step messages (3 short sentences in one story)
+## B) Step Messages: Three Short Lines Make One Story
 
 ```ts
 ui.say(mod.Message(mod.stringkeys.start));
@@ -269,7 +280,7 @@ ui.say(mod.Message(mod.stringkeys.goTerminalA));
 ui.say(mod.Message(mod.stringkeys.goodJob));
 ```
 
-## C) Pseudo “blinking icon” (ON/OFF alternately)
+## C) Pseudo Blinking Icon: Alternate ON and OFF
 
 ```ts
 let blinkOn = false, blinkH: any;
@@ -280,19 +291,19 @@ function startBlinkIcon(id: number, ms = 600) {
 function stopBlinkIcon() { if (blinkH) clearInterval(blinkH); api.showIcon(ICON_TARGET, true); }
 ```
 
-> Be careful not to overuse it. It is elegant to blink only at the first "call" → to stay lit when the arrival is near.
+> Be careful not to overuse it. A clean pattern is: blink only for the first call for attention, then keep it steadily lit as arrival gets closer.
 
 # Conclusion
 
-* Just by following the order of words → landmarks → effects, you can make a difference in how your message is conveyed.
-* WorldIcon is “slightly closer”, SFX/FX is cooled down, and UI is overwritten to prevent “noisyness”.
-* Visualize the “now” with the debug HUD. Repairs are faster and the quality of the production is improved.
+* Keeping the order words -> marker -> effect already changes how clearly the experience communicates.
+* Place WorldIcons slightly before the destination, add cooldowns to SFX / FX, and overwrite UI to prevent noise.
+* Visualize "now" with a debug HUD. Fixes become faster, and the presentation quality improves.
 
-# Guide to the next section
+# Next Chapter
 
-In the next Chapter 9, "Publishing, Hosting, and Management," we will move on to the practical aspects of turning the experience we have gained so far into a state where it can be played.
+In Chapter 9, "Publishing, Hosting, and Operations," we will move from the experience we have built so far into the practical work of making it playable by others.
 
-* How to write a shared code, explanatory text within 256 characters, and thumbnail (concisely convey the purpose/recommended number of people/required time)
-* Server operation (permanent/event) and announcement template
-* Update frequency and “improvement without breaking” procedures
-* Tips for moderate operation based on the premise that there may be restrictions around XP depending on the situation
+* How to write share codes, descriptions under 256 characters, and thumbnails that briefly communicate purpose / recommended player count / play time
+* Server operation patterns, permanent or event-based, and announcement templates
+* Update frequency and a process for improving without breaking
+* Practical operation tips, assuming XP-related restrictions may apply depending on the situation
