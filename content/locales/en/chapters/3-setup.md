@@ -1,190 +1,190 @@
 ---
-title: "Chapter 3 Environment construction for “Portal custom”"
+title: "Chapter 3: Environment Setup for Portal Custom"
 free: true
 ---
 
-> --- To create it, let's prepare a development environment.
+> To build something, first prepare the development environment.
 
-This chapter provides you with the tools you need to get started in the chapters that follow.
-Please note that if you do not do these things, you will absolutely not be able to develop "Portal Custom".
+In this chapter, you will prepare the tools needed for the chapters that follow.
+Without these steps, you will not be able to develop a Portal Custom experience, so make sure to complete them.
 
-# Download BF official SDK
+# Download the Official BF SDK
 
 https://portal.battlefield.com/
 
-When you access the above URL, you will be asked whether it is Battlefield 2042 or Battlefield 6, so select Battlefield 6 and click "START CREATING".
+Open the URL above. When you are asked to choose between Battlefield 2042 and Battlefield 6, choose Battlefield 6 and click "START CREATING".
 
 ![start](/images/bf_portal_doc/3-setup-init-0.png)
 
-There is a "Download SDK" button at the top, click it to download the SDK zip file.
+There is a "Download SDK" button at the top. Click it to download the SDK zip file.
 
 ![download](/images/bf_portal_doc/3-setup-init-1.png)
 
-If you are prompted to log in during these steps, please log in with your EA account.
+If you are asked to log in during this process, log in with your EA account.
 
-Also, once the download is complete, unzip the zip. To unzip the file, right-click on the downloaded file and there will be a column that says "Extract all..." Click that to unzip the zip file.
+After the download finishes, extract the zip file. On Windows, right-click the downloaded file and choose "Extract All..." to extract it.
 
-# Prepare map editor
+# Preparing the Map Editor
 
-You can use the map editor immediately if you unzip the downloaded SDK zip file.
+Once you extract the downloaded SDK zip file, the map editor is ready to use.
 
-In the official SDK instructions, make the following preparations on the Godot side.
+According to the official SDK instructions, prepare Godot as follows.
 
-1. Launch the Godot executable file included in the SDK.
-2. When the "Project Selection" screen opens, drag and load the `GodotProject` folder in the SDK. If you want to do it manually, select `GodotProject` from "Import".
-3. Open Battlefield 6 Portal Project. The first boot may take several minutes.
-4. Press `Portal Setup` on the `BFPortal` tab on the right side of Godot and wait for the setup to complete.
-5. Select `Open Scene` from the `Scene` menu and open the level you want to edit in the `levels` directory.
+1. Launch the Godot executable included in the SDK.
+2. When the "Project Selection" screen opens, drag the `GodotProject` folder from the SDK into it. To do it manually, choose `GodotProject` from "Import".
+3. Open Battlefield 6 Portal Project. The first launch may take several minutes.
+4. Press `Portal Setup` in the `BFPortal` tab on the right side of Godot, then wait for setup to finish.
+5. From the `Scene` menu, choose `Open Scene`, then open the level you want to edit from the `levels` directory.
 
-If you can't see the terrain in your level, it may be located above your camera position. First, look above and make sure the terrain is loaded.
+If you cannot find the level terrain, it may be placed above the camera position. First look upward and check whether the terrain has loaded.
 
-## Basic operations of map editor
+## Basic Map Editor Controls
 
-In the official SDK docs, the following operations are described as basic operations of Spatial Editor.
+The official SDK docs list the following as the basic Spatial Editor operations.
 
-| Operation | Contents |
+| Operation | What it does |
 | ---- | ---- |
-| Drag from the Object Library | Place the object you want to use into the 3D Scene or Scene Outliner |
-| While selecting `W` | Move mode. Move placed objects |
-| While selecting `E` | Rotate mode. Rotate placed objects |
-| While selecting `R` | Scale mode. Scale placed objects |
+| Drag from Object Library | Places the object you want to use into the 3D Scene or Scene Outliner |
+| `W` while selected | Move mode. Moves the placed object |
+| `E` while selected | Rotate mode. Rotates the placed object |
+| `R` while selected | Scale mode. Scales the placed object |
 
-Moving the viewpoint in the 3D view is a standard Godot operation, so check the position by using the mouse or WASD movement.
-When touching a placed object, remember to select it first and use `W` / `E` / `R` to move, rotate, and scale it, so you won't get lost.
+Moving the viewpoint in the 3D view uses standard Godot controls, so check positions with mouse controls and WASD movement.
+When working with a placed object, remember this flow: select it first, then switch between move, rotate, and scale with `W` / `E` / `R`. That makes it much harder to get lost.
 
-Basically, the scale should be uniform.
-Non-uniform scaling that stretches X/Y/Z separately is not officially supported and will cause in-game appearance and hit detection to be corrupted.
+As a rule, use uniform scaling.
+Non-uniform scaling, where X/Y/Z are stretched separately, is not officially supported and can break the object's appearance or collision in-game.
 
-# Prepare TypeScript
+# Preparing TypeScript
 
-This book does not cover visual editors or block visual programming in detail.
-From here on, we will prepare for development using the TypeScript SDK and template repository.
+This book does not cover the visual editor or block-style visual programming in detail.
+From here on, you will prepare to develop with the TypeScript SDK and a template repository.
 
-## 1 . Create a github account
+## 1. Create a GitHub Account
 
 https://github.com/
 
-Visit github and create your own account.
+Go to GitHub and create your own account.
 
-## 2 . Create a repository (project)
+## 2. Create a Repository (Project)
 
 https://github.com/link1345/Battlefield6-SampleTemplate
 
-On the above page, there is a button called "use this template" as shown in the image below, so click it and then click "Create a new repository".
+On the page above, click the "Use this template" button shown in the image below, then click "Create a new repository".
 
 ![use this template](/images/bf_portal_doc/3-setup-1.png)
 
 
-Then, a page called "Create a new repository" will open, so follow the instructions and fill in the information as shown in the image below.
-"Repository name" is the name of your project. Please choose a name that suits your purpose.
-"Description" is a description of the project. You don't have to write anything.
-"Choose visibility" allows you to select whether the project is "private" or "public". If you don't plan to make it public to anyone, private is fine.
+The "Create a new repository" page will open. Fill it in as shown in the image below.
+"Repository name" is the name of your project. Choose a name that fits what you are making.
+"Description" is a description of the project. You can leave it blank.
+"Choose visibility" lets you choose whether the project is private or public. If you do not plan to share it with anyone, private is fine.
 
 ![Create a new repository](/images/bf_portal_doc/3-setup-1.png)
 
-If the repository (project) is successfully created, it will be displayed as shown in the image below.
+When the repository (project) is created successfully, it will appear as shown below.
 
 ![repository](/images/bf_portal_doc/3-setup-3.png)
 
-## 3 . Make the source code accessible
+## 3. Make the Source Code Editable
 
-I want to touch the source code right away, but this time I want to easily create an environment, so I would like to use "Codespaces".
+You may want to start editing the source code right away, but this time we will use "Codespaces" to make the setup easier.
 
 :::message alert
 
-This time, we are using **Codespaces** to easily build the environment.
+In this book, we use **Codespaces** to make environment setup simple.
 
-Due to Portal's TypeScript registration specifications, it will not be a large-scale program that uses many GB, so I think the free tier is sufficient.
-If you want to do it in a local environment, you'll need to install VSCode on your computer, clone the repository with git, and do a lot of work. **
+Because of Portal's TypeScript registration format, this will not become a large project that uses many gigabytes, so the free tier should be enough.
+If you work in a **local environment**, you will need to install VSCode on your computer, clone the repository with git, and do several other setup steps.
 
-[The template "link1345/Battlefield6-SampleTemplate"](https://github.com/link1345/Battlefield6-SampleTemplate) has an explanation in README.md (English) and README-JP.md (Japanese), so please check there.
+The README.md (English) and README-JP.md (Japanese) in the template repository, [link1345/Battlefield6-SampleTemplate](https://github.com/link1345/Battlefield6-SampleTemplate), include setup instructions, so check them if needed.
 
 :::
 
-When you access the page for the repository you built and press the green button labeled "Code," you will see the options Local and Codespaces.
-This time, click on "Codespaces" and press the "Create codespace on main" button.
+Open the page for the repository you created, then press the green "Code" button. You will see options for Local and Codespaces.
+This time, click "Codespaces", then press "Create codespace on main".
 
 ![codespaces top](/images/bf_portal_doc/3-setup-5.png)
 
 
-After a short while, VSCode will open in a new browser tab and a guide will appear as shown in the image below.
+After a short wait, VSCode opens in a new browser tab and shows a guide like the image below.
 
 ![vscode top](/images/bf_portal_doc/3-setup-6.png)
 
-There is a tab called "Terminal" at the bottom, so click it, switch to the "Terminal" tab, and enter "`npm install`".
-Especially if the phrase `Error` does not appear, there is no problem.
+There is a "Terminal" tab near the bottom. Click it, switch to the "Terminal" tab, and enter `npm install`.
+If you do not see a message containing `Error`, there is no problem.
 
 ![vscode top](/images/bf_portal_doc/3-setup-7.png)
 
-Next, look at VSCode's Explorer and put the contents of the `code` folder, where you first downloaded and unzipped the SDK from BF official, into the `code` folder.
-If it is inserted as shown in the figure below, there is no problem.
+Next, look at VSCode's Explorer. Put the contents of the SDK `code` folder, which you downloaded from the official BF site and extracted earlier, into the repository's `code` folder.
+If the files are arranged like the image below, it is fine.
 
 ![sdk setup](/images/bf_portal_doc/3-setup-8.png)
 
-## 4 . What can templates make easier?
+## 4. What the Template Makes Easier
 
-In this book, we use [link1345/Battlefield6-SampleTemplate](https://github.com/link1345/Battlefield6-SampleTemplate) for TypeScript development.
+In this book, TypeScript development uses [link1345/Battlefield6-SampleTemplate](https://github.com/link1345/Battlefield6-SampleTemplate).
 
-If you write the code directly in the Script field of Portal Web Builder, it will work, but if it gets a little bigger, the following problem will occur.
+You can write code directly in the Script field of Portal Web Builder, but once the code becomes a little larger, the following problems appear.
 
-* 1 file becomes long and I can't remember what I wrote where.
-* I didn't notice a small grammar mistake until I started the game.
-* Every time you retest the same process, manual work increases.
-* Portal Web Builder's Script field ultimately receives one TypeScript file, so you need to manually put together the code that has been split into files.
+* A single file becomes long, and you lose track of what was written where.
+* Small syntax mistakes are hard to notice until you launch the game.
+* Every time you retest the same logic, manual work increases.
+* The Script field in Portal Web Builder ultimately receives one TypeScript file, so split files must be combined by hand.
 
-This template makes it easy to:
+Using this template makes the following tasks easier.
 
-| Command | What you can do |
+| Command | What it does |
 | ---- | ---- |
-| `npm run lint` | Check grammar and writing style with ESLint |
-| `npm run lint:fix` | Automatically fix things that can be fixed with ESLint |
-| `npm run build` | Combine multiple `.ts` files under `mods` into `dist/Script.ts` |
-| `npm run test` | Run tests with Vitest |
+| `npm run lint` | Checks syntax and coding style with ESLint |
+| `npm run lint:fix` | Automatically fixes issues ESLint can fix |
+| `npm run build` | Combines multiple `.ts` files under `mods` into `dist/Script.ts` |
+| `npm run test` | Runs tests with Vitest |
 
-When you push to GitHub, the GitHub Actions included in the template will execute `npm run lint`. In other words, you can quickly stop code that is ``suspicious in the first place'' before it is published.
+When you push to GitHub, the GitHub Actions included in the template also run `npm run lint`. In other words, it helps catch code that is suspicious as code before you publish it.
 
-## 5 . Template folder structure
+## 5. Template Folder Structure
 
-The first four places to look are:
+The first places to look are the following.
 
 | Location | Role |
 | ---- | ---- |
-| `mods/` | TypeScript code you write |
-| `code/` | Where to put the `code` folder for the Battlefield 6 SDK |
-| `dist/Script.ts` | `npm run build` TypeScript to be registered in Portal |
-| `dist/Strings.json` | String definition to be registered in Portal |
-| `test/` | Vitest test storage |
+| `mods/` | Where you write your TypeScript code |
+| `code/` | Where you put the Battlefield 6 SDK `code` folder |
+| `dist/Script.ts` | The TypeScript file generated by `npm run build` and registered in Portal |
+| `dist/Strings.json` | The string definitions registered in Portal |
+| `test/` | Where Vitest tests are stored |
 
-During development, multiple files are written to `mods`. Once completed, run `npm run build` and register the generated `dist/Script.ts` and `dist/Strings.json` in the Script field of Portal Web Builder.
+During development, write your code as multiple files in `mods`. When it is ready, run `npm run build`, then register the generated `dist/Script.ts` and `dist/Strings.json` in the Script field of Portal Web Builder.
 
 :::message alert
 
-In the README, there are places where the string file is written as `String.json`, but the actual file in the template is `dist/Strings.json`. In this book, it is written as `dist/Strings.json`.
+Some places in the README write the string file as `String.json`, but the actual file in the template is `dist/Strings.json`. This book uses `dist/Strings.json`.
 
 :::
 
-This concludes the steps for creating a Portal script with TypeScript.
+That completes the setup for creating Portal scripts with TypeScript.
 
-# How to navigate the SDK folder
+# How to Read the SDK Folder
 
-The SDK is large, so you don't need to read everything from the beginning. Please watch them in the following order first.
+The SDK is large, so you do not need to read everything from the beginning. Start by checking the following places in order.
 
-| Where to see | What to see |
+| Where to look | What you can learn |
 | ---- | ---- |
-| `docs/pages/getting_started.html` | Flow of starting Godot, importing `GodotProject`, and `Portal Setup` |
-| `docs/pages/spatial_editor.html` | Map editing, Object Library, Export of `.spatial.json` |
-| `docs/pages/gameplay_logic.html` | TypeScript, Custom UI, AI, ObjId reference, log confirmation |
-| `docs/pages/tips_tricks.html` | Load countermeasures such as number of vehicles, player scanning, UI widget management, etc. |
-| `code/types/mod/index.d.ts` | List of Portal TypeScript API functions and types |
-| `GodotProject/mods/_StartHere_BasicTemplate` | Official TypeScript template to read first |
+| `docs/pages/getting_started.html` | How to launch Godot, import `GodotProject`, and run `Portal Setup` |
+| `docs/pages/spatial_editor.html` | Map editing, Object Library, and exporting `.spatial.json` |
+| `docs/pages/gameplay_logic.html` | TypeScript, Custom UI, AI, ObjId references, and log checks |
+| `docs/pages/tips_tricks.html` | Performance tips such as vehicle count, player scanning, and UI Widget management |
+| `code/types/mod/index.d.ts` | Function and type list for the Portal TypeScript API |
+| `GodotProject/mods/_StartHere_BasicTemplate` | The official TypeScript template to read first |
 
-Where the local SDK is `sdk.version.json` , the reference SDK is `1.2.3.0` . The contents of the SDK change with updates, so if the steps in this document differ from the screens, first check `sdk.version.json` and `docs/pages`.
+In the local SDK's `sdk.version.json`, the reference SDK version is `1.2.3.0`. The SDK changes through updates, so if this book's steps differ from your screen, first check `sdk.version.json` and `docs/pages`.
 
 # Conclusion
 
-We have prepared an environment for creating games using "Portal Custom".
-Now you can smoothly program and create games in the chapters that follow.
+You have prepared the environment for making a game with Portal Custom.
+With this ready, you can move smoothly into the later chapters and start turning your ideas into a working game.
 
 ---
 
-📘 **In the next chapter, ``Map Editor Practical Guide (Practical Placement and Linking)''**, we will use the prepared environment to proceed with ``what can be placed'', ``where to place'', and ``how to assign IDs''**. Shared is a trial setting → warning mark is confirmed, ID is -1 prohibited & ledger. With these two as passwords, move on to the next step.
+📘 **In the next chapter, "Practical Map Editor Guide (Placement and Linking)",** we will use the prepared environment to work through **what can be placed, where to place it, and how to assign IDs**. For Shared, place it as a test and check warning marks. For IDs, never use -1 and keep a ledger. Keep those two rules in mind as you move to the next step.
