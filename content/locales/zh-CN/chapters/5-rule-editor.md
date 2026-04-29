@@ -3,38 +3,69 @@ title: "第五章：规则设计简介（“移动”安排之前思考）"
 free: true
 ---
 
-第 4 章中放置在地图上的物体都被赋予了**安装位置**和**调用地址（ID）**。不过，**谁来发出信号，发送什么地址，发送什么业务，目前还没有决定。 **
-在本章中，我们将在转向 TypeScript 之前组织一下**设计信号→目的地（ID）→反应作为一条路径**的想法。如果你能做到这一点，你的地图将从“只是放置在那里的模型”变成“玩家可以做出反应的游戏”。
+第 4 章中放置在地图上的对象，都已经有了**放置位置**和**用于调用它们的地址（ID）**。不过，**谁发出信号、要发送到哪个地址、要传达什么指令，还没有决定。**
+在本章中，我们会在转向 TypeScript 之前，整理**将信号 → 目标（ID） → 反应设计成一条连续路径**的思路。只要这条路径打通，你的地图就会从“只是摆在那里的模型”，变成“会响应玩家操作的玩法”。
 
-在这里，我们不会详细处理块式可视化编程和编辑器操作，而是以一种可以直接转移到后续 TypeScript 实现的方式确定事件、ID 和反应之间的关系。
+这里不会详细讲解积木式可视化编程或编辑器操作，而是会以之后能直接搬到 TypeScript 实现中的形式，决定事件、ID 和反应之间的关系。
 
-## 信号→收件人→反应（释义）
+## 信号 → 目标 → 反应（换一种说法）
 
-![信号/地址/反应图](/images/bf_portal_doc/5-rule-1.png)
+```mermaid
+flowchart LR
+  subgraph signalGroup[" "]
+    direction TB
+    signal(("<span style='display:inline-block;width:120px;text-align:center;color:white'>信号</span>"))
+    signalText["按下开始按钮后"]
+  end
 
-* 信号：按下/输入/时间已到
-* 目的地：InteractPoint 500、WorldIcon 21、AreaTrigger 11…（按 ID 提名）
-* 反应：显示/隐藏/点亮/声音/火花
+  subgraph targetGroup[" "]
+    direction TB
+    target(("<span style='display:inline-block;width:120px;text-align:center;color:white'>目标</span>"))
+    targetText["标记（WorldIcon）"]
+  end
 
-信号是指“事件的接收”。例如，有“我进入了A空间”和“我达到了100分”之类的内容。
-目的地是确定响应“信号”而“应该移动什么”的信息。
-这种反应会导致“收件人”做什么？决定。
+  subgraph reactionGroup[" "]
+    direction TB
+    reaction(("<span style='display:inline-block;width:120px;text-align:center;color:white'>反应</span>"))
+    reactionText["显示"]
+  end
 
-第5章是第4章中将“行为”传递给ID的设计工作。
+  signal --> target --> reaction
+
+  style signal fill:#176985,color:#fff,stroke:#176985,stroke-width:2px,font-size:28px,font-weight:700
+  style target fill:#176985,color:#fff,stroke:#176985,stroke-width:2px,font-size:28px,font-weight:700
+  style reaction fill:#176985,color:#fff,stroke:#176985,stroke-width:2px,font-size:28px,font-weight:700
+  style signalText fill:#fff,color:#1e2430,stroke:#1e2430,stroke-width:1px
+  style targetText fill:#fff,color:#1e2430,stroke:#1e2430,stroke-width:1px
+  style reactionText fill:#fff,color:#1e2430,stroke:#1e2430,stroke-width:1px
+  style signalGroup fill:transparent,stroke:transparent
+  style targetGroup fill:transparent,stroke:transparent
+  style reactionGroup fill:transparent,stroke:transparent
+```
+
+* 信号：按下／进入／到达指定时间
+* 目标：InteractPoint 500、WorldIcon 21、AreaTrigger 11...（用 ID 指定）
+* 反应：显示／隐藏／点亮／播放声音／生成
+
+信号指的是“接收到事件”。例如，“进入了 A 区域”或“达到了 100 分”。
+目标决定的是，针对这个信号要操作什么对象。
+反应决定的是，要让这个目标执行什么动作。
+
+第 5 章要做的，就是把“行为”接到第 4 章的 ID 上。
 
 ## 首先整理成表格
 
-至少在编写代码之前填写此表将更容易迷失方向。
-这里没有复杂的逻辑需要决定。
-“应该发生什么？”“我们应该瞄准什么？”和“我们应该做什么？”
+在写代码之前，至少先把这张表填好，就不容易迷路。
+这里要决定的并不是复杂逻辑。
+只是“发生了什么”“以什么为目标”“要做什么”。
 
-|信号|地址 |反应|确认方法 |
+| 信号 | 目标 | 反应 | 确认方法 |
 | ---- | ---- | ---- | ---- |
-|按 InteractPoint 500 |世界图标 21 / 22 |删除入口并显示目的地 |按 | 后地标立即发生变化
-|输入区域触发器 11 | FX 901 / SFX 951 | FX 901 / SFX 951发出光和声音|仅在到达时发出声音 |
-|防御时间变为0 |分数/下一个世界图标 |将其视为成功并继续下一步 |请勿开火两次 |
+| 按下 InteractPoint 500 | WorldIcon 21 / 22 | 隐藏入口，显示目的地 | 按下后标记立即变化 |
+| 进入 AreaTrigger 11 | FX 901 / SFX 951 | 播放光效和音效 | 只在到达时播放 |
+| 防守时间变为 0 | Score / 下一个 WorldIcon | 判定为成功并进入下一步 | 不会触发两次 |
 
-如果你只看流程，它会是这样的：
+只看流程的话，会是这样：
 
 ```mermaid
 flowchart TD

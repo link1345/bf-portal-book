@@ -32,6 +32,7 @@ export function BookHome({ locale, chapters }: BookHomeProps) {
           <p className="book-label">{text.bookLabel}</p>
           <h1 id="book-title">{text.bookTitle}</h1>
           <p className="book-description">{text.bookDescription}</p>
+          <p className="translation-notice">{text.translationNotice}</p>
         </div>
         <Image
           className="book-cover"

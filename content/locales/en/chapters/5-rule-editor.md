@@ -3,38 +3,69 @@ title: "Chapter 5: Introduction to rule design (think before “moving” the ar
 free: true
 ---
 
-The objects placed on the map in Chapter 4 were given a **installation location** and **call address (ID)**. However, **Who will give the signal, what address to send, and what business to send has not yet been decided. **
-In this chapter, we will organize the idea of **Designing a signal → destination (ID) → reaction as one path** before moving to TypeScript. If you can do this, your map will change from ``just a model placed there'' to ``a game where players can react.''
+The objects placed on the map in Chapter 4 were given an **installation position** and an **address (ID) used to call them**. However, **who sends the signal, which address it is sent to, and what instruction is sent have not been decided yet.**
+In this chapter, before moving to TypeScript, we will organize the idea of **designing signal → target (ID) → reaction as one continuous path**. Once this path is clear, your map changes from "a model that is merely placed there" into "gameplay that responds to the player."
 
 Here, rather than dealing in detail with block-style visual programming and editor operations, we will determine the relationship between events, IDs, and reactions in a way that can be directly transferred to later TypeScript implementations.
 
-## Signal → Addressee → Reaction (paraphrase)
+## Signal → Target → Reaction (in other words)
 
-![Signal/address/reaction diagram](/images/bf_portal_doc/5-rule-1.png)
+```mermaid
+flowchart LR
+  subgraph signalGroup[" "]
+    direction TB
+    signal(("<span style='display:inline-block;width:120px;text-align:center;color:white'>Signal</span>"))
+    signalText["When the start button is pressed"]
+  end
 
-* Signal: pressed / entered / time has come
-* Destination: InteractPoint 500, WorldIcon 21, AreaTrigger 11… (nominate by ID)
-* Reaction: Show/hide/light up/sound/spark
+  subgraph targetGroup[" "]
+    direction TB
+    target(("<span style='display:inline-block;width:120px;text-align:center;color:white'>Target</span>"))
+    targetText["Marker (WorldIcon)"]
+  end
 
-A signal refers to the "reception of an event." For example, there are things like ``I entered space A'' and ``I reached 100 points.''
-The destination is the information that determines ``what should be moved'' in response to the ``signal''.
-And what does the reaction cause the “addressee” to do? Decide.
+  subgraph reactionGroup[" "]
+    direction TB
+    reaction(("<span style='display:inline-block;width:120px;text-align:center;color:white'>Reaction</span>"))
+    reactionText["Display it"]
+  end
 
-Chapter 5 is the design work to pass "behavior" to the ID in Chapter 4.
+  signal --> target --> reaction
+
+  style signal fill:#176985,color:#fff,stroke:#176985,stroke-width:2px,font-size:28px,font-weight:700
+  style target fill:#176985,color:#fff,stroke:#176985,stroke-width:2px,font-size:28px,font-weight:700
+  style reaction fill:#176985,color:#fff,stroke:#176985,stroke-width:2px,font-size:28px,font-weight:700
+  style signalText fill:#fff,color:#1e2430,stroke:#1e2430,stroke-width:1px
+  style targetText fill:#fff,color:#1e2430,stroke:#1e2430,stroke-width:1px
+  style reactionText fill:#fff,color:#1e2430,stroke:#1e2430,stroke-width:1px
+  style signalGroup fill:transparent,stroke:transparent
+  style targetGroup fill:transparent,stroke:transparent
+  style reactionGroup fill:transparent,stroke:transparent
+```
+
+* Signal: pressed / entered / time reached
+* Target: InteractPoint 500, WorldIcon 21, AreaTrigger 11... (specified by ID)
+* Reaction: show / hide / light up / play a sound / spawn
+
+A signal means receiving an event. For example, "entered area A" or "reached 100 points."
+The target decides what will be affected by that signal.
+The reaction decides what the target should do.
+
+Chapter 5 is the design work for connecting behavior to the IDs from Chapter 4.
 
 ## Organize in a table first
 
-Filling out this table at least before writing code will make it easier to get lost.
-There's no complicated logic to decide here.
-``What should happen?'' ``What should we target?'' and ``What should we do?''
+Before writing code, filling in at least this table will make it easier to stay oriented.
+There is no complicated logic to decide here.
+You are only deciding "what happens," "what is the target," and "what should it do."
 
-| Signal | Address | Reaction | Confirmation method |
+| Signal | Target | Reaction | Confirmation method |
 | ---- | ---- | ---- | ---- |
-| Press InteractPoint 500 | WorldIcon 21 / 22 | Delete the entrance and show the destination | The landmark changes immediately after pressing |
-| Enter AreaTrigger 11 | FX 901 / SFX 951 | Emit light and sound | Sound only when arriving |
-| Defense time becomes 0 | Score / Next WorldIcon | Treat it as a success and proceed to the next | Do not fire twice |
+| Press InteractPoint 500 | WorldIcon 21 / 22 | Hide the entrance and show the destination | The marker changes immediately after pressing |
+| Enter AreaTrigger 11 | FX 901 / SFX 951 | Play light and sound effects | They play only on arrival |
+| Defense time reaches 0 | Score / next WorldIcon | Treat it as success and move to the next step | It does not fire twice |
 
-If you just look at the flow, it will look like this:
+If you look only at the flow, it looks like this:
 
 ```mermaid
 flowchart TD

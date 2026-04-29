@@ -136,6 +136,14 @@ select {
   line-height: 1.9;
 }
 
+.translation-notice {
+  max-width: 680px;
+  margin-top: 18px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
 .book-cover {
   width: 100%;
   max-width: 260px;
@@ -233,6 +241,10 @@ select {
   grid-template-columns: minmax(0, 760px) minmax(220px, 280px);
   align-items: start;
   gap: 48px;
+}
+
+.reader-layout > * {
+  min-width: 0;
 }
 
 .reader-header {
@@ -352,7 +364,15 @@ select {
 }
 
 .znc pre {
+  max-width: 100%;
+  overflow-x: auto;
   background: var(--code-background);
+}
+
+.znc table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
 }
 
 .znc img {

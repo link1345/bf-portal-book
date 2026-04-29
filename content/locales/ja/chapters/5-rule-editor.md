@@ -10,7 +10,38 @@ free: true
 
 ## 合図 → 宛先 → 反応（言い換え）
 
-![合図・宛先・反応の図](/images/bf_portal_doc/5-rule-1.png)
+```mermaid
+flowchart LR
+  subgraph signalGroup[" "]
+    direction TB
+    signal(("<span style='display:inline-block;width:120px;text-align:center;color:white'>合図</span>"))
+    signalText["開始ボタンを押したら"]
+  end
+
+  subgraph targetGroup[" "]
+    direction TB
+    target(("<span style='display:inline-block;width:120px;text-align:center;color:white'>宛先</span>"))
+    targetText["目印(WorldIcon)を"]
+  end
+
+  subgraph reactionGroup[" "]
+    direction TB
+    reaction(("<span style='display:inline-block;width:120px;text-align:center;color:white'>反応</span>"))
+    reactionText["表示する"]
+  end
+
+  signal --> target --> reaction
+
+  style signal fill:#176985,color:#fff,stroke:#176985,stroke-width:2px,font-size:28px,font-weight:700
+  style target fill:#176985,color:#fff,stroke:#176985,stroke-width:2px,font-size:28px,font-weight:700
+  style reaction fill:#176985,color:#fff,stroke:#176985,stroke-width:2px,font-size:28px,font-weight:700
+  style signalText fill:#fff,color:#1e2430,stroke:#1e2430,stroke-width:1px
+  style targetText fill:#fff,color:#1e2430,stroke:#1e2430,stroke-width:1px
+  style reactionText fill:#fff,color:#1e2430,stroke:#1e2430,stroke-width:1px
+  style signalGroup fill:transparent,stroke:transparent
+  style targetGroup fill:transparent,stroke:transparent
+  style reactionGroup fill:transparent,stroke:transparent
+```
 
 * 合図：押した／入った／時間になった
 * 宛先：InteractPoint 500、WorldIcon 21、AreaTrigger 11…（IDで指名）

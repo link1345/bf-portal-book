@@ -127,7 +127,11 @@ export async function getChapter(
 
   try {
     const chapter = await readChapterFile(filename, locale);
-    const html = applyBasePathToAssetUrls(await markdownToHtml(chapter.content));
+    const html = applyBasePathToAssetUrls(
+      await markdownToHtml(chapter.content, {
+        embedOrigin: "https://embed.zenn.studio",
+      }),
+    );
 
     return {
       ...toChapter(chapter),
