@@ -1,150 +1,150 @@
 ---
-title: "Chapter 1 What is Battlefield Portal?"
+title: "Chapter 1: What is Battlefield Portal?"
 free: true
 ---
 
 # What is Battlefield Portal?
 
-> - "Development kit for players" prepared by the official -
+> An official "development kit for players"
 
-When most people hear the Battlefield series, what comes to mind is the "realism of the war experience" that is consistent throughout the series, such as "epic battlefields," "squad cooperation," and "destructible environments."
-However, Battlefield Portal (hereinafter referred to as Portal), which appeared in 2021, is the most experimental and innovative mechanism in the history of this series.
+When people hear the Battlefield series, many think of the realism of the war experience that runs throughout the series: massive battlefields, squad-based cooperation, and destructible environments.
+Within that series, Battlefield Portal (Portal for short), which first appeared in 2021, is one of the most experimental and innovative systems in Battlefield history.
 
-Portal is an official tool set developed by DICE and Ripple Effect Studios that allows players to "create the rules" of Battlefield.
-In other words, Portal is a battlefield for not only "playing" but also "designing."
+Portal is an official set of tools developed by DICE and Ripple Effect Studios that lets players create Battlefield rules for themselves.
+In other words, Portal is not only a battlefield for playing, but also a battlefield for designing.
 
-## Official definition (from EA official website)
+## Official Definition (from EA's official site)
 
-> Battlefield Portal is a giant sandbox where creators and players can push Battlefield to its limits.
-> Move, scale and duplicate objects for unprecedented control over your environment.
-> Create completely unique game modes using NPC scripts and customizable UI.
-> A legendary Battlefield experience is waiting to be created - prove your worth.
+> Battlefield Portal is a massive sandbox where creators and players can push Battlefield to its limits.
+> Move, scale, and duplicate objects to control the environment more freely than ever before.
+> Use NPC scripting and customizable UI to create completely unique game modes.
+> Legendary Battlefield experiences are waiting to be created. Show what you are truly capable of.
 >
-> Think, create, play:
-> This unique experience is called the "Community Experience." Recreate classic game modes like Horde Mode or create innovative experiences like top-down 2D shooters.
+> Think, create, and play:
+> These custom experiences are called Community Experiences. You can recreate classic game modes such as horde modes, or create innovative experiences such as top-down 2D shooters.
 >
 > Powerful creator tools:
-> Equipped with space editing (map/geographic editing) and AI scripting functions to customize the actions of AI combatants. Portal's builder tools also support custom UI scripting capabilities for building fully customizable user interfaces.
+> Portal includes spatial editing (map/geography editing) and AI scripting for customizing AI combatant behavior. Portal Builder also supports custom UI scripting for building fully customizable user interfaces.
 >
-> “BATTLEFIELD” your way:
-> Experience Battlefield the way you want with web creator Portal tools, with a wealth of mutators and ruleset options. Hardcore mode, limited weapon equipment, etc. - the possibilities are endless.
+> Battlefield your way:
+> With the web-based Portal tools, rich mutators, and ruleset options, you can experience Battlefield however you like. Hardcore mode, restricted weapon loadouts, and more. The possibilities are endless.
 >
-> (Source: EA official “The power of PC is fused with the possibilities of PORTAL”)
+> (Source: EA official article "PC Power Fuses with Portal Possibilities")
 
-## What the definitions mean
+## What That Definition Means
 
-What this official description shows is that Portal is not just a "rule setting tool" but **a creative tool with a degree of freedom similar to that of a game development environment**. Of particular note are the following three elements:
+This official description shows that Portal is not merely a rule configuration tool. It is **a creative tool with a level of freedom close to a game development environment**. Three elements are especially important.
 
-### Spatial manipulation of objects
-* Terrain and baked assets in the existing `Static` layer cannot be edited.
-* The creator uses the Spatial Editor to add and place assets that can be used at the target level, and moves, rotates, and scales the placed objects to create a space.
-  → In other words, Portal's map editing is not about ``rewriting existing terrain,'' but rather about ``assembling an experience by adding available parts.''
+### Spatial Object Editing
+* Terrain and baked-in assets included in the existing `Static` layer cannot be edited.
+* Creators use the Spatial Editor to add assets that are available for the target Level, then move, rotate, and scale the placed objects to build the space.
+  → In other words, Portal map editing is not about rewriting existing terrain. It is about adding available parts and assembling an experience.
 
-### AI scripts and custom UI
-* You can create your own NPC (AI soldier) behavior patterns and UI configuration.
+### AI Scripts and Custom UI
+* You can create behavior patterns for NPCs (AI soldiers) and build your own UI layout.
   → You can design the gameplay experience itself.
 
-### Mutators and rulesets
-* You can easily set rule variables such as unlimited ammo, double stamina, limited weapons, etc. using the GUI.
-  → Supports everything from “modification” to “reconstruction” of existing modes.
+### Mutators and Rulesets
+* You can use the GUI to easily configure rule variables such as infinite ammo, increased health, and weapon restrictions.
+  → Portal supports everything from tweaking existing modes to rebuilding them.
 
-In this way, Portal unlocks Battlefield's core ``battlefield simulation'' as an expanded field of player imagination.
+In this way, Portal opens up Battlefield's core battlefield simulation as a field where players can extend their imagination.
 
-## Differences from other series
+## How It Differs from Earlier Titles
 
-Even in past Battlefield games (BF3, BF4, BFV, etc.), some modifications were possible in the form of "custom servers" and "server rules."
-However, this was mainly limited to things like map order, weapon restrictions, and respawn settings.
+Past Battlefield titles such as BF3, BF4, and BFV also allowed a certain amount of customization through custom servers and server rules.
+However, those changes were mostly limited to areas such as map rotation, weapon restrictions, and respawn settings.
 
-Portal allows you to completely rewrite these concepts from a structural level.
-In other words, ``players can interact with the internal logic of game modes from the same perspective as developers''**
+Portal lets you rewrite those concepts at the structural level.
+In other words, **players can work with the internal logic of game modes from almost the same perspective as developers**.
 
-This is the biggest difference and revolution in Portal.
+That is Portal's biggest difference, and its most revolutionary point.
 
-## A new unit called “community experience”
+## A New Unit Called a "Community Experience"
 
-The term "community experience" is used repeatedly by EA to describe Portal.
-This refers to ``a single game experience that combines maps, rules, AI, and UI created by ordinary players''**.
+EA repeatedly uses the term "Community Experience" when describing Portal.
+This means **one gameplay experience made by combining maps, rules, AI, and UI created by regular players**.
 
-What used to be "server settings changes" is now treated as a work unit in Portal.
-Other players search for the "work", play with it, rate it, and leave comments.
-It's a world where players upload and share their "experiences", just like a "gaming version of YouTube".
+What used to be a server settings change is treated in Portal as a work of its own.
+Other players can search for that work, play it, rate it, and leave comments.
+It is a world where players upload and share experiences, almost like **a YouTube for game experiences**.
 
-## Portal is officially recognized as a “place of creativity”
+## Portal Is an Officially Recognized Place for Creation
 
-While traditional Battlefield was a game where you "receive an experience," Portal is a game where you "create an experience."
+Traditional Battlefield was a game where players received an experience. Portal is a game where players create an experience.
 
-AI script, custom UI, spatial editing, rule construction. When these elements come together, players become not just soldiers, but creators of their own worlds.
+AI scripts, custom UI, spatial editing, and rule building. When these elements come together, the player is no longer just a soldier, but a creator designing their own world.
 
-Portal is "an official testing ground that breaks down the boundaries between developers and players." That is probably the most accurate way to define it in this day and age.
+Portal can be defined as an official experimental space that removes the boundary between developers and players. For the current era, that is probably the most accurate way to describe it.
 
-# Difference between "Portal custom" and "existing mode"
+# The Difference Between "Portal Custom" and "Existing Modes"
 
-When creating a new experience in Portal, your first choice is ``Portal Custom'' or ``Existing Mode''.
-This selection will affect the editor you can use afterwards, the degree of freedom, the information automatically displayed when publishing, and the handling of experience points (XP). Below, we will discuss each feature in detail.
+When creating a new experience in Portal, the first choice is between **Portal Custom** and **Existing Mode**.
+This choice affects which editors you can use afterward, how much freedom you have, what information is automatically shown when publishing, and how experience points (XP) are handled. The sections below explain the characteristics of each option.
 
-## A. Portal custom: “Remake” rules and maps
+## A. Portal Custom: Rebuilding Rules and Maps
 
-### What you can do
+### What You Can Do
 
-* Rule editor: You can configure game behavior such as conditional branching, counting, triggers, etc.
-*Map editor: You can edit the space itself, such as placing, moving, scaling, and duplicating objects.
-* UI/AI: Screen display (UI) and AI behavior can also be adjusted with scripts, greatly changing the feel of play.
+* Rule Editor: Build game behavior with conditions, counters, triggers, and similar logic.
+* Map Editor: Edit the space itself by placing, moving, scaling, and duplicating objects.
+* UI and AI: Adjust screen displays (UI) and AI behavior with scripts, allowing you to significantly change how the mode feels to play.
 
-### How it looks when published
+### How It Appears When Published
 
-* The experience details may be labeled as "Custom Logic". However, creators cannot freely add tags.
-* Search and participation paths change depending on the shared code, title, description within 256 characters, thumbnail, and external announcements.
-
-### Experience Points (XP)
-
-*As a general rule, please assume that there are XP restrictions.
-* In particular, custom logic, unique AI, and settings that create extreme score efficiency or destruction efficiency tend to be treated differently from normal progress rewards.
-* Please design for experiences and events, not for XP purposes, and check the latest official information before publishing.
-
-### Suitable applications
-
-* Creating new works that are not bound by existing frameworks, experimenting with cooperation (against AI), racing, mini-games, etc., and creating "highlights" for events.
-
-## B. Existing mode: “Organize” within the range of standard functions
-
-#### What you can do
-
-* **Rule editor/map editor cannot be used. **
-* Instead, you can adjust a wide range of standard customization items (e.g. AI appearance, weapon/equipment restrictions, respawns, tickets, changing the number of objectives, etc.).
-*The experience is similar to that of ``taking over Portal from the BF2042 era without editing the rules.''
-
-### How it looks when published
-
-* The texture is close to standard, making it easy for first-time participants to enter.
-* If you make the intent (e.g. hardcore, AI training, beginners) clear in the title, description, and thumbnail, it will be easier for first-time viewers to judge the content.
+* The experience details may show labels such as "Custom Logic". However, creators cannot freely attach their own tags.
+* Search and join flow depends on the share code, title, description within 256 characters, thumbnail, and external announcements.
 
 ### Experience Points (XP)
 
-* There may be restrictions depending on the settings and official operation.
-* Extreme conditions (such as a large number of defeats occurring in a short period of time) tend to be subject to restrictions.
+* As a general rule, assume that XP restrictions may apply.
+* Settings involving custom logic, custom AI, or extremely efficient score and kill farming are especially likely to be treated differently from normal progression rewards.
+* Design for the experience or event itself rather than for XP, and check the latest official guidance before publishing.
 
-### Suitable applications
+### Best Suited For
 
-* "Easy to play" permanent server based on existing rules, AI practice, weapon binding, hardcore settings, etc.
+* New creations that are not bound by existing frameworks, co-op experiments against AI, races, minigames, and event highlights.
 
-## Key points of comparison
+## B. Existing Modes: Tuning Within the Standard Feature Set
+
+#### What You Can Do
+
+* **The Rule Editor and Map Editor cannot be used.**
+* Instead, you can adjust a wide range of standard customization items, such as AI spawning, weapon and equipment restrictions, respawns, tickets, and objective counts.
+* In practice, this feels close to carrying forward the BF2042-era Portal experience without rule editing.
+
+### How It Appears When Published
+
+* Because it feels close to the standard game, it is easier for first-time participants to join.
+* If the title, description, and thumbnail clearly state the intent, such as hardcore, AI training, or beginner-friendly, first-time players can more easily judge what the experience is about.
+
+### Experience Points (XP)
+
+* XP may still be restricted depending on the settings and official operation.
+* Extreme conditions, such as settings that make many kills possible in a short time, tend to be more likely to be restricted.
+
+### Best Suited For
+
+* Easy-to-join persistent servers based on existing rules, AI practice, weapon restrictions, hardcore settings, and similar use cases.
+
+## Key Comparison
 
 | Perspective | Portal Custom | Existing Mode |
-| ---- | ---- |---- |
-| Editor | Rules/Map Yes | No (adjust with standard items) |
-| Degree of freedom | High (redesigned behavior and space) | Medium (within standard range) |
-| AI/Weapon Restrictions | Possible (+ behavior modification also possible) | Possible (set as standard function) |
-| UI/Production | Custom UI and production can be added | Default display center |
-| XP | Possible limitations | Possible limitations |
-| Main uses | New products/new experience games/events | Permanent operation/for beginners/stable operation |
+| ---- | ---- | ---- |
+| Editors | Rule / map editors available | None (adjust with standard items) |
+| Freedom | High (redesign behavior and space) | Medium (within the standard feature set) |
+| AI / weapon restrictions | Possible (including behavior tweaks) | Possible (through standard features) |
+| UI / presentation | Custom UI and presentation can be added | Mostly standard displays |
+| XP | May be restricted | May be restricted |
+| Main uses | New creations, new experiences, events | Persistent operation, beginner-friendly modes, stable operation |
 
-## Practical tips: Guidelines for selection
+## Practical Tips: How to Choose
 
-* Emphasis on ease of participation: First, solidify the core play in existing modes.
-* Emphasis on originality: Once we see a need, we will “finish it” with Portal customization.
-* The description should be 256 characters or less, and the purpose, recommended number of people, and time required should be shortened to make it easier for first-time visitors to make a decision.
-* **It is easier to get established if you set regular events (days and times) and community announcements (X/Discord, etc.)**.
+* If ease of participation matters most, first solidify the core gameplay with an Existing Mode.
+* If originality matters most, once you can see the need clearly, finish the idea with Portal Custom.
+* Write the description assuming a 256-character limit, and briefly include the purpose, recommended player count, and expected play time so first-time players can decide quickly.
+* **Regular event scheduling (day and time) combined with community announcements (X, Discord, etc.) makes the experience easier to establish.**
 
 ---
 
-📘 **Next Chapter "Chapter 2 How to use Portal Builder and Design Thinking"** So, what kind of game should we make? I would like to think about the basics of game design in BF Portal.
+📘 **In the next chapter, "Chapter 2: How to Use Portal Builder and Design Thinking,"** we will think about what kind of game to make and the basics of game design in BF Portal.
