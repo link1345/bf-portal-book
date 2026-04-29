@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { withBasePath } from "@/lib/basePath";
 import {
   getChapterPath,
   getLocaleHomePath,
@@ -34,7 +35,7 @@ export function BookHome({ locale, chapters }: BookHomeProps) {
         </div>
         <Image
           className="book-cover"
-          src="/images/bf_portal_doc/cover.png"
+          src={withBasePath("/images/bf_portal_doc/cover.png")}
           alt={text.coverAlt}
           width={500}
           height={700}
