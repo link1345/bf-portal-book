@@ -25,7 +25,7 @@ In this chapter, I would like to be able to do the following.
 First, log in to Portal Builder and create a portal for use in the game.
 Portal Builder operates in a browser. Let's start creating a new one right away.
 
-## 1.1 New creation
+## 1 .1 New creation
 
 https://portal.battlefield.com/bf6/ja-jp/experiences
 
@@ -34,7 +34,7 @@ Go to [Portal page](https://portal.battlefield.com/bf6/ja-jp/experiences) and cl
 ![Portal page](/images/bf_portal_doc/2-start-1.png)
 *Portal Builder Home*
 
-## 1.2 Choices between “Portal custom” and “existing mode”
+## 1 .2 Choices between “Portal custom” and “existing mode”
 
 You can choose between "Portal Custom" and "Existing Mode".
 For the difference between "Portal Custom" and "Existing Mode", please check **``Chapter 1: What is Battlefield Portal?'', **``A new unit called 'Community Experience'''**.

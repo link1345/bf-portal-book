@@ -19,13 +19,13 @@ free: true
 
 # 閱讀順序
 
-## 1.查看UI按鈕事件
+## 1. 查看UI按鈕事件
 
 `OnPlayerUIButtonEvent` 是按下 UI 按鈕時的入口點。
 
 它取得在 `mod.GetUIWidgetName(eventUIWidget)` 處按下的按鈕的名稱，並分支到 `StreetButton`、`HQ1Button`、`ReturnButton` 等。
 
-## 2.視圖相機切換
+## 2. 視圖相機切換
 
 切換到固定攝影機採用以下形式：
 
@@ -35,7 +35,7 @@ mod.SetCameraTypeForPlayer(eventPlayer, mod.Cameras.Fixed, 0);
 
 最後一個數字對應於 Godot 端分配給固定相機的 ObjId。換句話說，相機也是使用第 4 章中的 ObjId 帳本進行管理的。
 
-## 3.觀察攝影機運動
+## 3. 觀察攝影機運動
 
 `StartFlyThroughCamera` 有一個隨時間移動的固定相機。
 

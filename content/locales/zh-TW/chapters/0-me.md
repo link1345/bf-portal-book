@@ -37,9 +37,9 @@ free: true
 
 ## 致謝
 
-本書得到了以下人士的審閱和修改： 謹藉此機會表示感謝。
+本書的審閱與修訂得到了以下各位的協助。謹藉此機會致上誠摯感謝。
 
-* [先生。 Fuji](https://x.com/fuji_nice)，[Clan Vol](https://team-vol.com/)代表
+* [fuji](https://x.com/fuji_nice)，[Clan Vol](https://team-vol.com/) 代表
 * [Lab_WLM](https://x.com/Lab_WLM)
 
 

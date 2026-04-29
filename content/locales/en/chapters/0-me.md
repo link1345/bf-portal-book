@@ -37,9 +37,9 @@ The appendix is a **handbook for people who can program but are new to Portal's 
 
 ## Acknowledgments
 
-This book was reviewed and corrected by the following people: I would like to take this opportunity to express my gratitude.
+This book was reviewed and revised with the help of the following people. I would like to take this opportunity to express my sincere gratitude.
 
-* [Mr. Fuji](https://x.com/fuji_nice), the representative of [Clan Vol](https://team-vol.com/)
+* [fuji](https://x.com/fuji_nice), representative of [Clan Vol](https://team-vol.com/)
 * [Lab_WLM](https://x.com/Lab_WLM)
 
 

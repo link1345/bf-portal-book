@@ -21,19 +21,19 @@ free: true
 
 # 閱讀順序
 
-## 1.查看入口事件
+## 1. 查看入口事件
 
 首先，只讀取檔案開頭的事件函數。
 
 `OnGameModeStarted`、`OnPlayerDeployed`、`OnVehicleSpawned`、`OnPlayerInteract` 是遊戲進度的入口。
 
-## 2.查看遊戲狀態
+## 2. 查看遊戲狀態
 
 `GameState` 表示該模式目前處於哪個階段。
 
 是在準備期間、開始計數期間還是在比賽期間？如果您查看此處，您可以看到事件應在哪種狀態下傳遞。
 
-## 3. 查看玩家資料
+## 3 . 查看玩家資料
 
 每位玩家的狀態都發佈在 `PlayerProfile` 上。
 

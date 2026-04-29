@@ -20,19 +20,19 @@ free: true
 
 # 閱讀順序
 
-## 1.視圖初始化
+## 1. 視圖初始化
 
 `OnGameModeStarted` 初始化VL7Cloud的效果並設定WorldIcon的顏色和文字。
 
 使用切換型設備時，首先要了解其目前是開啟還是關閉，這一點很重要。
 
-## 2. 查看 InteractPoint 分支
+## 2 . 查看 InteractPoint 分支
 
 在 `OnPlayerInteract` 中，要切換的目標會根據按下的 InteractPoint 的 ObjId 進行變更。
 
 觀看流程為 `mod.GetObjId(interactPoint)` → 目標標誌反轉 → WorldIcon 更新 → 效果更新。
 
-## 3.查看入侵/退出事件
+## 3. 查看入侵/退出事件
 
 當玩家進入或退出 VL7Cloud 時，會呼叫 `OnPlayerEnterVL7Cloud` 和 `OnPlayerExitVL7Cloud` 。
 

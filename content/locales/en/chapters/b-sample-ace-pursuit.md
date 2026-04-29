@@ -21,25 +21,25 @@ It has all the elements necessary for a larger game mode, such as checkpoints, l
 
 # Reading order
 
-## 1. View course definition
+## 1 . View course definition
 
 First, look at the flow of `RaceTrack`, `Checkpoint`, and `tracks`.
 
 In aircraft racing, the first thing that matters is where to go, in what order, and how many laps. Please make sure that you have the checkpoint position, orientation, and correction flag as data.
 
-## 2. View TrackData
+## 2 . View TrackData
 
 `TrackData` is the core class with one race's worth of state.
 
 Participants, winners, starting count, ending count, game type, selectable aircraft, etc. are gathered here. If you want to know where the race is right now, start by following `TrackData`.
 
-## 3. View PlayerProfile and UI
+## 3 . View PlayerProfile and UI
 
 The status of each player is posted at `PlayerProfile`.
 
 Vehicle selection, driving time, laps, ranking, and scoreboard display change for each player. It's hard to get lost if you read `TrackData` for the whole, `PlayerProfile` for individuals, and UI classes for presentation.
 
-## 4. View termination processing and exit processing
+## 4 . View termination processing and exit processing
 
 `Winner`, `PlayerCompletedTrack`, `PlayerLeftGame`, etc. are important processes that determine how the race ends.
 

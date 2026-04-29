@@ -37,7 +37,7 @@ In this chapter, we'll do the same thing in code (TypeScript). There are three r
 > It may seem difficult, but what you need to do is still the same as in Chapter 5.
 > "Press → Move the landmark forward → Light and sound when you arrive" - First, we will reproduce this with a code.
 
-# 0.1 How to read the code chapter
+# 0 .1 How to read the code chapter
 
 From Chapters 6 to 8, the amount of code suddenly increases.
 It's okay not to try to understand everything from the beginning.
@@ -55,7 +55,7 @@ The code body can look like a spell at first.
 The reading order is: `ids.ts` to view the address, `config.ts` to view the numerical value, `Strings.json` to view the displayed text, and finally `Script.ts` to view the flow.
 It is enough to go back and read the detailed meanings of the functions after they have been executed.
 
-# 0.5 Read `index.d.ts` as a dictionary
+# 0 .5 Read `index.d.ts` as a dictionary
 
 The Portal SDK's TypeScript API is organized at `code/types/mod/index.d.ts` within the SDK.
 
@@ -76,7 +76,7 @@ Think of the opaque type as a tag that points to an entity on the portal side, r
 Enums like `RuntimeSpawn_Common` and `RuntimeSpawn_Abbasid` are candidates that can be generated from TypeScript with `mod.SpawnObject(...)`, rather than explanations of the Object Library that you install manually in Godot.
 Please be aware of the difference that hand-placed items are picked up at `ObjId` like `GetInteractPoint(500)`, and items generated from code are handled by holding the return value of `SpawnObject` in a variable.
 
-# 0.6　Reading table for TypeScript beginners
+# 0 .6　Reading table for TypeScript beginners
 
 | Code | Meaning for beginners |
 | ---- | ---- |
@@ -91,7 +91,7 @@ Functions that can wait like | `async function` | `await mod.Wait(...)` |
 
 When reading code, you don't have to read it as an English sentence. It is enough to distinguish between event, get, wait, display, and state update.
 
-# 0.7 Development loop using templates
+# 0 .7 Development loop using templates
 
 The code in this chapter will be written in the `mods` folder of the template repository.
 
@@ -276,7 +276,7 @@ By dividing the conditional expression into functions such as `hasEnoughPlayersT
 First, convert the minimal loop from Chapter 5 into code.
 Here, we value **“order and reason”** more than “how to write”.
 
-## 3.0 First...
+## 3 .0 First...
 
 Write the code below at the top of the file.
 This is a package (group of programs) that allows you to easily use the SDK provided by the official default.
@@ -290,7 +290,7 @@ In this document, `modlib` will be used with priority in situations where it is 
 Use `mod` only for processes that are not available in `modlib` or for processes that require detailed direct control over the Portal API.
 For more information, see Appendix C "modlib Description".
 
-## 3.1 Initialization at game start
+## 3 .1 Initialization at game start
 
 ``Show the entrance icon'' ``Hide the destination icon.'' Make your “initial posture” clear.
 
@@ -366,7 +366,7 @@ export function OnGameModeStarted() {
 ```
 
 
-## 3.2 Make the start button the “starting point”
+## 3 .2 Make the start button the “starting point”
 
 When pressed, (1) short message → (2) icon switching.
 It is easy for players to understand the order of "words → landmarks → effects".
@@ -396,7 +396,7 @@ export async function OnPlayerInteract(eventPlayer: mod.Player, eventInteractPoi
 }
 ```
 
-## 3.3 When you enter the destination, send out the effect
+## 3 .3 When you enter the destination, send out the effect
 
 The arrival signal is AreaTrigger.
 The moment you enter, **Light (FX) and Sound (SFX)** will play.
@@ -433,7 +433,7 @@ export function OnPlayerEnterAreaTrigger(eventPlayer: mod.Player, eventAreaTrigg
 > If you can move up to this point, you will pass.
 > From here, we will “add” little by little.
 
-## 3.4 Addition 1: Collect (Press to collect)
+## 3 .4 Addition 1: Collect (Press to collect)
 
 Frequently asked request: ``Press the button and everyone will go to the meeting point.''
 There are two ways.
@@ -542,7 +542,7 @@ export function OnPlayerInteract(eventPlayer: mod.Player, eventInteractPoint: mo
 * If you feel that the move is sudden, it is natural to proceed in the following order: Message → Short Wait → Move.
 * Some people may not know what just happened, so it is helpful to display the **destination icon (ICON_TARGET)** again after meeting.
 
-## 3.5 Additional example: Tighten with time (10 seconds defense)
+## 3 .5 Additional example: Tighten with time (10 seconds defense)
 
 A countdown like ``Arrival → Keep for 10 seconds → Success'' is very exciting.
 However, the trick is to handle cancellations (leaving the area) properly.
@@ -593,7 +593,7 @@ export function OnPlayerExitAreaTrigger(eventPlayer: mod.Player, eventAreaTrigge
 * Prepare a flag (in this case, defense) that indicates whether the count is in progress or not.
 * If you decide at the beginning the conditions for interrupting (such as leaving the area), the code will not get lost.
 
-## 3.6 Preventing “abrupt firing” and “repeated firing” (safety device)
+## 3 .6 Preventing “abrupt firing” and “repeated firing” (safety device)
 
 Users may make a mistake or press a button repeatedly just for fun.
 At that time, you can prevent the same process from running over and over again by adding a lock function that prevents it from running under certain conditions.
@@ -673,7 +673,7 @@ export function OnPlayerInteract(eventPlayer: mod.Player, _eventInteractPoint: m
 * By simply creating a path that can only be taken once, 70% of multiple bugs will disappear automatically.
 * Furthermore, if you add the "once every n seconds" guard, it will not break even if you hit it repeatedly.
 
-## 3.7 Visualization (knowing “now” with debug display)
+## 3 .7 Visualization (knowing “now” with debug display)
 
 **"It doesn't work when I press it"** The best way to quickly fix the issue is to be able to see the current status and recent events.
 
@@ -726,7 +726,7 @@ If you want to display player name, remaining seconds, score, etc., remember to 
 * If the condition is unexpected, review the instance of `ConditionState` and the judgment function.
 * If the event has not arrived in the first place, I suspect that you have typed the ID incorrectly.
 
-## 3.8 “Dividing neatly” can be done later
+## 3 .8 “Dividing neatly” can be done later
 
 In the first half, we prioritized "getting things moving first."
 Once you get used to it, it will be easier to modify it by dividing the display (UI/effects), state (`gameStarted`, `targetReached`, etc.) and SDK calls into smaller parts.
@@ -755,7 +755,7 @@ This time, we only summarized three lines, but as you progress in programming, t
 *The order of sorting is ``the ones that I write the most first''.
 * Don't force yourself to aim for complete separation; just "win if it becomes easier to read" is OK.
 
-## 3.9 Common mistakes and easy countermeasures
+## 3 .9 Common mistakes and easy countermeasures
 
 * ID remained -1
   → Re-enter the numbers in the property field. Update ledger and constants together.

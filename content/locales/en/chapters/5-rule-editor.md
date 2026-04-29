@@ -62,14 +62,14 @@ The goal is simple.
 
 ## Procedure
 
-### 1. Determine the initial state (at the start of the game)
+### 1 . Determine the initial state (at the start of the game)
 
 * Initial position WorldIcon (ID:21) → Display
 * WorldIcon at target position (ID:22) → Hide
 
 I'll leave it as. The first place you want to go to is "before the entrance (21)".
 
-### 2. Start from the start button
+### 2 . Start from the start button
 
 Select the event "InteractPoint pressed" and enter 500 in the target ID.
 
@@ -82,7 +82,7 @@ As a reaction,
 Arrange them. **You will now see “Press to start”. **
 By changing the WorldIcon to display the destination, the player will know where to go at a glance.
 
-### 3. Create a performance at your destination
+### 3 . Create a performance at your destination
 
 When the event "When entering AreaTrigger(ID:11)" occurs, as a reaction,
 

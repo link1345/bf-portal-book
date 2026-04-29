@@ -60,13 +60,13 @@ https://portal.battlefield.com/
 本书不详细介绍可视化编辑器或块可视化编程。
 从现在开始，我们将准备使用 TypeScript SDK 和模板存储库进行开发。
 
-## 1.创建github账户
+## 1. 创建github账户
 
 https://github.com/
 
 访问 github 并创建您自己的帐户。
 
-## 2.创建存储库（项目）
+## 2. 创建存储库（项目）
 
 https://github.com/link1345/Battlefield6-SampleTemplate
 
@@ -86,11 +86,11 @@ https://github.com/link1345/Battlefield6-SampleTemplate
 
 ![存储库](/images/bf_portal_doc/3-setup-3.png)
 
-## 3. 使源代码可访问
+## 3 . 使源代码可访问
 
 我想立即接触源代码，但这次我想轻松创建一个环境，所以我想使用“Codespaces”。
 
-:::消息提醒
+:::message alert
 
 这次，我们使用**Codespaces**来轻松构建环境。
 
@@ -121,7 +121,7 @@ https://github.com/link1345/Battlefield6-SampleTemplate
 
 ![SDK设置](/images/bf_portal_doc/3-setup-8.png)
 
-## 4. 模板可以让什么变得更简单？
+## 4 . 模板可以让什么变得更简单？
 
 在本书中，我们使用 [link1345/Battlefield6-SampleTemplate](https://github.com/link1345/Battlefield6-SampleTemplate) 进行 TypeScript 开发。
 
@@ -143,7 +143,7 @@ https://github.com/link1345/Battlefield6-SampleTemplate
 
 当您推送到 GitHub 时，模板中包含的 GitHub Actions 将执行 `npm run lint`。换句话说，您可以在发布之前快速阻止“一开始就可疑”的代码。
 
-## 5. 模板文件夹结构
+## 5 . 模板文件夹结构
 
 前四个要查看的地方是：
 
@@ -157,7 +157,7 @@ https://github.com/link1345/Battlefield6-SampleTemplate
 
 在开发过程中，多个文件被写入`mods`。完成后，运行 `npm run build` 并将生成的 `dist/Script.ts` 和 `dist/Strings.json` 注册到 Portal Web Builder 的 Script 字段中。
 
-:::消息提醒
+:::message alert
 
 在README中，有些地方字符串文件写为`String.json`，但模板中的实际文件是`dist/Strings.json`。本书中写为`dist/Strings.json`。
 

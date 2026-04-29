@@ -141,7 +141,7 @@ const obj = mod.SpawnObject(
 * `Static` 图层中包含的地形和烧毁资产目前无法编辑。
 * 仅将比例更改为统一比例。官方不鼓励使用单独拉伸 X/Y/Z 的非均匀比例。
 
-#2 对移动有效的“噱头”物体列表
+# 2 对移动有效的“噱头”物体列表
 
 与“仅用于外观的配件”不同，涉及游戏行为、事件、范围、UI 等的重要对象主要组织在 `res://objects/entities` 和 `res://objects/gameplay` 中。我们将介绍典型的戈多路径、角色和常见组合。
 
@@ -308,7 +308,7 @@ const obj = mod.SpawnObject(
 账本可以是 Excel、Google Sheets、Markdown 表或 CSV。
 重点不在于工具，而在于将 `ObjId`、用法、Godot 对象、TypeScript 检索函数和测试结果保留在同一位置。
 
-:::留言
+:::message
 如果手动账本管理变得困难，您还可以使用 [hekaron/ObjIdManager](https://github.com/hekaron/ObjIdManager)。
 这是一个为 Battlefield Portal SDK 的 Godot 环境制作的 ObjId 管理插件，允许您列出 Node3D 的 `ObjId`、突出显示重复值、自动编号、导出为 TypeScript 格式等等。
 在本书中，我们将首先使用分类账来解释这个概念，但随着排列对象数量的增加，使用这些工具将更容易减少确认错误和重复ID。
@@ -330,7 +330,7 @@ const obj = mod.SpawnObject(
   对于 `levelRestrictions` 的对象，请再次检查是否有警告。
   测试高度 (Y) 是否会导致气泡或沉入地面，以及 Spawn/Vehicle 周围是否有足够的空间。
 
-:::留言
+:::message
 实用提示：虽然不是官方文档中规定的必填程序，但在放置物体之前和之后检查地形、地面碰撞检测和碰撞状态，可以减少物体沉入地面、轻微漂浮、车辆被夹住等事故。
 :::
 

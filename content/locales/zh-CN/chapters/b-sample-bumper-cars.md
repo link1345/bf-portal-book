@@ -21,19 +21,19 @@ free: true
 
 # 阅读顺序
 
-## 1.查看入口事件
+## 1. 查看入口事件
 
 首先，只读取文件开头的事件函数。
 
 `OnGameModeStarted`、`OnPlayerDeployed`、`OnVehicleSpawned`、`OnPlayerInteract` 是游戏进度的入口。
 
-## 2.查看游戏状态
+## 2. 查看游戏状态
 
 `GameState` 表示该模式当前处于哪个阶段。
 
 是在准备期间、在开始计数期间还是在比赛期间？如果您查看此处，您可以看到事件应在哪种状态下传递。
 
-## 3. 查看玩家资料
+## 3 . 查看玩家资料
 
 每个玩家的状态都发布在 `PlayerProfile` 上。
 

@@ -18,19 +18,19 @@ free: true
 
 # 阅读顺序
 
-## 1.查看事件函数
+## 1. 查看事件函数
 
 以 `export function On...` 形式编写的函数是从 Portal 端调用的入口点。
 
 首先，查看评论，看看什么时候会被调用。一旦理解了这一点，你就会知道该处理该写在哪里。
 
-## 2. 查看与 Godot 放置的联系
+## 2 . 查看与 Godot 放置的联系
 
 `OnPlayerInteract` 和 `OnPlayerEnterAreaTrigger` 连接到位于 Godot 中的 `InteractPoint` 和 `AreaTrigger`。
 
 在 `mod.GetObjId(...)` 上检查按下的内容以及进入的区域。请务必将其与第 4 章中的 ObjId 分类帐一起查看。
 
-## 3.查看常用API
+## 3. 查看常用API
 
 `OnGameModeStarted` 包含您想要首先学习的 API。
 

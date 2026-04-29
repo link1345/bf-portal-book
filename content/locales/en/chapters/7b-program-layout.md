@@ -430,7 +430,7 @@ npm run build
 
 Please do not feel safe just passing through `build`. The build is a combination, not a proof of the correctness of the game.
 
-# 10 How to fix “after separation” (practical flow)
+# 1 0 How to fix “after separation” (practical flow)
 
 I want to change the appearance → Open `ui.ts` (wording, direction, order).
 
@@ -444,7 +444,7 @@ Adjust numbers and wording → Change the value of `config.ts`.
 
 The biggest effect of separating is that the place you touch is uniquely determined.
 
-# 11 Common NGs and countermeasures
+# 1 1 Common NGs and countermeasures
 
 NG: Call API directly from various places
 → Countermeasure: Always go through `ui` or `api`. Do not directly access `setIconVisible` from `main`.
@@ -458,7 +458,7 @@ NG: Copy and paste the flag to prevent multiple firings each time.
 NG: Wording is scattered in the code
 → Countermeasure: Put the text in `Strings.json` and go through `mod.Message` like `ui.say(mod.Message(mod.stringkeys.start))`.
 
-# 12 Gradual refactoring (in order of least scary)
+# 1 2 Gradual refactoring (in order of least scary)
 
 There's no need to "do it all at once." This is the safe order.
 

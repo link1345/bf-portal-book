@@ -174,7 +174,7 @@ There is no need to assume form operation from the beginning.
 * Unable to progress: Emergency stop (disable start → "Adjusting" displayed on lobby sign → rollback to old version).
 * Vandalism: Clarified within the scope of Portal standard functions such as kicks, votes, team locks, etc. (1 line in the description).
 
-# 10 External release notes (example)
+# 1 0 External release notes (example)
 
 There is no place in Portal to write adequate release notes.
 The change history will be left externally, such as in X, Discord, Blog, Note, GitHub README, etc.
@@ -186,7 +186,7 @@ On the Portal side, I only write the version and a short summary if necessary. H
 > * Portal description updated to 8-16 players
 > Known issue: Transport vehicles may get stuck when full (scheduled for improvement in next version)
 
-# 11 “How to read numbers” after publication (easy version)
+# 1 1 “How to read numbers” after publication (easy version)
 
 * Pre-start withdrawal rate: Are there any dropouts in the lobby? → Review the explanation and start guidance.
 *Achievement rate: Entrance → destination arrival rate → icon position and message order.

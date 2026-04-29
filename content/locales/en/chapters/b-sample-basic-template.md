@@ -18,19 +18,19 @@ Rather than a complete game mode, this is a sample to see what event functions t
 
 # Reading order
 
-## 1. View event functions
+## 1 . View event functions
 
 The functions written in the form `export function On...` are the entry points that are called from the Portal side.
 
 First, check the comments to see when it will be called. Once you understand this, you will know where to write the processing.
 
-## 2. See the connection with Godot placements
+## 2 . See the connection with Godot placements
 
 `OnPlayerInteract` and `OnPlayerEnterAreaTrigger` are connected to `InteractPoint` and `AreaTrigger` placed in Godot.
 
 Check what was pressed and what area it entered at `mod.GetObjId(...)`. Be sure to view this together with the ObjId ledger in Chapter 4.
 
-## 3. View frequently used APIs
+## 3 . View frequently used APIs
 
 `OnGameModeStarted` contains the APIs you want to learn first.
 

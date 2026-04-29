@@ -3,8 +3,9 @@ import path from "node:path";
 import * as cheerio from "cheerio";
 import matter from "gray-matter";
 import markdownToHtml from "zenn-markdown-html";
+import { defaultLocale, type Locale } from "@/lib/i18n";
 
-const chaptersDirectory = path.join(process.cwd(), "content", "chapters");
+const localesDirectory = path.join(process.cwd(), "content", "locales");
 const chapterSorter = new Intl.Collator("ja", {
   numeric: true,
   sensitivity: "base",
@@ -69,9 +70,13 @@ function extractHeadings(html: string): ChapterHeading[] {
     .filter((heading) => heading.id && heading.text);
 }
 
-async function readChapterFile(filename: string): Promise<ChapterFile> {
+function getChaptersDirectory(locale: Locale) {
+  return path.join(localesDirectory, locale, "chapters");
+}
+
+async function readChapterFile(filename: string, locale: Locale): Promise<ChapterFile> {
   const slug = slugFromFilename(filename);
-  const filePath = path.join(chaptersDirectory, filename);
+  const filePath = path.join(getChaptersDirectory(locale), filename);
   const file = await fs.readFile(filePath, "utf8");
   const parsed = matter(file);
   const data = parsed.data as ChapterMatter;
@@ -85,10 +90,12 @@ async function readChapterFile(filename: string): Promise<ChapterFile> {
   };
 }
 
-export async function getChapters(): Promise<Chapter[]> {
-  const filenames = await fs.readdir(chaptersDirectory);
+export async function getChapters(locale: Locale = defaultLocale): Promise<Chapter[]> {
+  const filenames = await fs.readdir(getChaptersDirectory(locale));
   const chapters = await Promise.all(
-    filenames.filter((filename) => filename.endsWith(".md")).map(readChapterFile),
+    filenames
+      .filter((filename) => filename.endsWith(".md"))
+      .map((filename) => readChapterFile(filename, locale)),
   );
 
   return chapters
@@ -96,11 +103,14 @@ export async function getChapters(): Promise<Chapter[]> {
     .sort((a, b) => a.order - b.order || chapterSorter.compare(a.slug, b.slug));
 }
 
-export async function getChapter(slug: string): Promise<ChapterWithHtml | null> {
+export async function getChapter(
+  slug: string,
+  locale: Locale = defaultLocale,
+): Promise<ChapterWithHtml | null> {
   const filename = `${slug}.md`;
 
   try {
-    const chapter = await readChapterFile(filename);
+    const chapter = await readChapterFile(filename, locale);
     const html = await markdownToHtml(chapter.content);
 
     return {
@@ -117,8 +127,8 @@ export async function getChapter(slug: string): Promise<ChapterWithHtml | null> 
   }
 }
 
-export async function getAdjacentChapters(slug: string) {
-  const chapters = await getChapters();
+export async function getAdjacentChapters(slug: string, locale: Locale = defaultLocale) {
+  const chapters = await getChapters(locale);
   const index = chapters.findIndex((chapter) => chapter.slug === slug);
 
   return {

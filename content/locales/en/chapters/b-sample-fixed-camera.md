@@ -19,13 +19,13 @@ This is useful when you want to create a camera effect, a spectator-like perspec
 
 # Reading order
 
-## 1. View UI button events
+## 1 . View UI button events
 
 `OnPlayerUIButtonEvent` is the entry point when the UI button is pressed.
 
 It takes the name of the button pressed at `mod.GetUIWidgetName(eventUIWidget)` and branches to `StreetButton`, `HQ1Button`, `ReturnButton`, etc.
 
-## 2. View camera switching
+## 2 . View camera switching
 
 Switching to a fixed camera takes the following form:
 
@@ -35,7 +35,7 @@ mod.SetCameraTypeForPlayer(eventPlayer, mod.Cameras.Fixed, 0);
 
 The last number corresponds to the ObjId assigned to FixedCamera on the Godot side. In other words, cameras are also managed using the ObjId ledger in Chapter 4.
 
-## 3. Watch camera movement
+## 3 . Watch camera movement
 
 `StartFlyThroughCamera` has a fixed camera that moves over time.
 

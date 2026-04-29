@@ -63,7 +63,7 @@ This isn't just a preference, it's a way to make larger code easier to read, eas
 Note that the samples moved under `unsupported` include some writing styles that seem convenient.
 However, this document only uses practices that can be read from the supported samples currently located at `GodotProject/mods`.
 
-## 1. Collect setting values at the beginning
+## 1 . Collect setting values at the beginning
 
 Place the number of participants, time limit, debug flag, vehicle candidates, checkpoint definition, UI name, etc. at the top of the file.
 
@@ -80,7 +80,7 @@ const VEHICLE_POOL = [mod.VehicleList.Quadbike, mod.VehicleList.GolfCart];
 `ids.ts` and `config.ts` in Chapter 7 are also an extension of this idea.
 By simply changing numbers and settings to names, the code becomes much easier to read.
 
-## 2. Divide roles in class when children get older
+## 2 . Divide roles in class when children get older
 
 In larger samples like `BumperCars`, `GibraltarGrandprix`, and `AcePursuit`, state management, player management, and UI management are separated into classes.
 
@@ -97,7 +97,7 @@ At first, just the functions are sufficient. However, as the number of states an
 The important thing in classing is not to increase the number of "named boxes" but to place processes that change for the same reason in the same place.
 For example, if the process of changing the player's Ready state, updating the Ready display, and closing the UI when leaving are scattered, it will definitely be difficult to keep track of them later.
 
-## 3. UI separates create, update, and close
+## 3 . UI separates create, update, and close
 
 The UI is a particularly effective place to use classes.
 In the large sample, the process of creating a widget, the process of updating the display content, and the process of hiding/deleting are separated.

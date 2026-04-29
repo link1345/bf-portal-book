@@ -21,19 +21,19 @@ It contains the basic elements for creating mini-games, such as player equipment
 
 # Reading order
 
-## 1. View entrance events
+## 1 . View entrance events
 
 First, read only the event function at the beginning of the file.
 
 `OnGameModeStarted`, `OnPlayerDeployed`, `OnVehicleSpawned`, `OnPlayerInteract` are the entrances to game progress.
 
-## 2. View GameState
+## 2 . View GameState
 
 `GameState` represents what stage this mode is currently in.
 
 Is it during Ready Up, during the starting count, or during the match? If you look here, you can see in which state the event should pass.
 
-## 3. View PlayerProfile
+## 3 . View PlayerProfile
 
 The status of each player is posted at `PlayerProfile`.
 

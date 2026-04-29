@@ -246,7 +246,7 @@ The tips of the official SDK also mention the number of vehicles, player scannin
 
 The more flashy the production, the more you decide on the upper limit before it gets too heavy. Don't base it on how much it looks, but on how much the players can understand.
 
-# 10 Recipe collection (small parts that can be used as is)
+# 1 0 Recipe collection (small parts that can be used as is)
 ## A) Shake the camera and give a short cheer once on arrival
 
 ```ts

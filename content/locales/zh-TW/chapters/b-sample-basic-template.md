@@ -18,19 +18,19 @@ free: true
 
 # 閱讀順序
 
-## 1.查看事件函數
+## 1. 查看事件函數
 
 以 `export function On...` 形式編寫的函數是從 Portal 端呼叫的入口點。
 
 首先，查看評論，看看什麼時候會被調用。一旦理解了這一點，你就會知道該處理該寫在哪裡。
 
-## 2. 查看與 Godot 放置的聯繫
+## 2 . 查看與 Godot 放置的聯繫
 
 `OnPlayerInteract` 和 `OnPlayerEnterAreaTrigger` 連接到 Godot 中的 `InteractPoint` 和 `AreaTrigger`。
 
 在 `mod.GetObjId(...)` 上檢查按下的內容以及進入的區域。請務必將其與第 4 章中的 ObjId 分類帳一起檢視。
 
-## 3.查看常用API
+## 3. 查看常用API
 
 `OnGameModeStarted` 包含您想要先學習的 API。
 

@@ -20,13 +20,13 @@ free: true
 
 # 阅读顺序
 
-## 1.查看装备奖励
+## 1. 查看装备奖励
 
 Portal Gadget 的分配地址为 `OnPlayerDeployed`。
 
 玩家部署时移交装备的过程在其他模式中也很容易使用。
 
-## 2.查看输入事件
+## 2. 查看输入事件
 
 门户小工具输入是在与正常 `OnPlayerInteract` 不同的事件中接收的。
 
@@ -38,7 +38,7 @@ Portal Gadget 的分配地址为 `OnPlayerDeployed`。
 | `OnPortalGadgetAimStop` | `OnPortalGadgetAimStop` |停止瞄准 |
 | `OnPortalGadgetLaserToggle` | `OnPortalGadgetLaserToggle` |激光开关输入|
 
-## 3.观看 RayCast
+## 3. 观看 RayCast
 
 在此示例中，RayCast 从玩家的视线发射，传送到它击中的点，并创建一个对象。
 

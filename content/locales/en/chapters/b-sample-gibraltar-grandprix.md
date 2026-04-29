@@ -20,19 +20,19 @@ As a Grand Prix format set in Gibraltar, you can check checkpoints, vehicles, ra
 
 # Reading order
 
-## 1. View course definition
+## 1 . View course definition
 
 First, look at the flow of `RaceTrack`, `Checkpoint`, and `tracks`.
 
 In a racing game, ``how to store the course as data'' is more important than logic. Please make sure that the location, direction, and number of laps of the checkpoint are converted into data.
 
-## 2. View TrackData
+## 2 . View TrackData
 
 `TrackData` is a class that has the state of one race.
 
 It will be the focal point for tracking who is participating, whether the race has yet to start, if there is a winner, and if the race is counting down.
 
-## 3. View the UI and vehicles
+## 3 . View the UI and vehicles
 
 In a race, you need to show players where they are next, where they are now, and when it will start.
 

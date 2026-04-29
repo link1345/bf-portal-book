@@ -20,19 +20,19 @@ You can check area invasions, visual effects, equipment additions, and WorldIcon
 
 # Reading order
 
-## 1. View initialization
+## 1 . View initialization
 
 `OnGameModeStarted` initializes the effect of VL7Cloud and sets the color and wording of WorldIcon.
 
 When using a toggle type device, it is important to first be able to see whether it is currently ON or OFF.
 
-## 2. View InteractPoint branches
+## 2 . View InteractPoint branches
 
 In `OnPlayerInteract`, the target to be switched is changed depending on the ObjId of the pressed InteractPoint.
 
 The flow to watch is `mod.GetObjId(interactPoint)` → target flag inversion → WorldIcon update → effect update.
 
-## 3. View intrusion/exit events
+## 3 . View intrusion/exit events
 
 `OnPlayerEnterVL7Cloud` and `OnPlayerExitVL7Cloud` are called when the player enters or exits VL7Cloud.
 

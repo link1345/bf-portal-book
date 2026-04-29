@@ -34,7 +34,7 @@ First of all, organize it. Easily changeable = reviewed each time; Difficult to 
 > Once you can make this distinction, changes will go from being a ``trouble'' to a ``fun adjustment.''
 
 # 2 “Rereading” in line with the evolution of tools
-## 2.1 The number of rule editors increases/changes
+## 2 .1 The number of rule editors increases/changes
 
 * Replacement: When new events and new actions increase, instead of calling them directly from here and there, first create your own calling function in `api.ts` or `ui.ts`. Do not increase the number of locations that can be accessed directly from `main` or `Script.ts`.
 * Check: Is it compatible with the existing onceIn (single pass)? Replace with a structure that prevents multiple firings.
@@ -42,12 +42,12 @@ First of all, organize it. Easily changeable = reviewed each time; Difficult to 
 In programming, such a thin calling function is sometimes called a "wrapper."
 The important thing here is not the terminology, but to have one place to fix it even if the name of the Portal API changes.
 
-## 2.2 Objects in map editor increase
+## 2 .2 Objects in map editor increase
 
 * Interpretation: As per the rules in Chapter 4, just do not duplicate IDs/increase the number of series.
 * Check: Be careful of basemap compatibility for Shared systems. Just look “as usual” to see if the warning mark appears (following the habits in Chapter 4).
 
-## 2.3 Changes in UI standards (notifications, pins, icons)
+## 2 .3 Changes in UI standards (notifications, pins, icons)
 
 * Replacement: ui.say can now be replaced in one place (Chapters 7 and 8).
 * Check: Don't violate the "one thing at a time" principle. Even if a new UI comes, don't use multiple at the same time.

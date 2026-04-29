@@ -20,13 +20,13 @@ The main point is that you can receive the player's intentions using special gad
 
 # Reading order
 
-## 1. View equipment grants
+## 1 . View equipment grants
 
 Portal Gadget is assigned at `OnPlayerDeployed`.
 
 The process of handing over equipment when the player deploys is easy to use in other modes as well.
 
-## 2. View input events
+## 2 . View input events
 
 Portal Gadget input is received in a separate event from the normal `OnPlayerInteract`.
 
@@ -38,7 +38,7 @@ Portal Gadget input is received in a separate event from the normal `OnPlayerInt
 | `OnPortalGadgetAimStop` | Stopped aiming |
 | `OnPortalGadgetLaserToggle` | Laser switching input |
 
-## 3. Watch RayCast
+## 3 . Watch RayCast
 
 In this sample, a RayCast is launched from the player's line of sight, teleporting to the point it hits, and creating an object.
 

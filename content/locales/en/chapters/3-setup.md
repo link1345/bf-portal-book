@@ -60,13 +60,13 @@ Non-uniform scaling that stretches X/Y/Z separately is not officially supported 
 This book does not cover visual editors or block visual programming in detail.
 From here on, we will prepare for development using the TypeScript SDK and template repository.
 
-## 1. Create a github account
+## 1 . Create a github account
 
 https://github.com/
 
 Visit github and create your own account.
 
-## 2. Create a repository (project)
+## 2 . Create a repository (project)
 
 https://github.com/link1345/Battlefield6-SampleTemplate
 
@@ -86,7 +86,7 @@ If the repository (project) is successfully created, it will be displayed as sho
 
 ![repository](/images/bf_portal_doc/3-setup-3.png)
 
-## 3. Make the source code accessible
+## 3 . Make the source code accessible
 
 I want to touch the source code right away, but this time I want to easily create an environment, so I would like to use "Codespaces".
 
@@ -121,7 +121,7 @@ If it is inserted as shown in the figure below, there is no problem.
 
 ![sdk setup](/images/bf_portal_doc/3-setup-8.png)
 
-## 4. What can templates make easier?
+## 4 . What can templates make easier?
 
 In this book, we use [link1345/Battlefield6-SampleTemplate](https://github.com/link1345/Battlefield6-SampleTemplate) for TypeScript development.
 
@@ -143,7 +143,7 @@ This template makes it easy to:
 
 When you push to GitHub, the GitHub Actions included in the template will execute `npm run lint`. In other words, you can quickly stop code that is ``suspicious in the first place'' before it is published.
 
-## 5. Template folder structure
+## 5 . Template folder structure
 
 The first four places to look are:
 
