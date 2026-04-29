@@ -3,6 +3,10 @@ title: "Appendix A-1: Event list"
 free: true
 ---
 
+::::message
+This appendix is currently only a rough machine translation, so the wording may be very awkward. I will revise it properly later. Please bear with me for now.
+::::
+
 # How to read this appendix
 
 This appendix lists the events and actions available in BF6 Portal TypeScript based on the `mod` namespace of the local SDK `books/bf_portal_doc/tmp/bf6-sdk/code/types/mod/index.d.ts`. The reference SDK is `1.2.3.0` along with `sdk.version.json` and `index.d.ts`. Please be sure to search for `index.d.ts` before implementation, as it may increase or decrease with SDK updates.

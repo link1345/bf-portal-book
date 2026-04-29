@@ -3,6 +3,10 @@ title: "Appendix B: Sample program explanation “FixedCameraExample (Fixed came
 free: true
 ---
 
+::::message
+This appendix is currently only a rough machine translation, so the wording may be very awkward. I will revise it properly later. Please bear with me for now.
+::::
+
 # Game overview
 
 `FixedCameraExample` is a sample that switches FixedCamera placed in Godot from the UI button.

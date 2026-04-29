@@ -3,6 +3,10 @@ title: "Appendix B: Sample program explanation “VL7Example (Gas cloud and scre
 free: true
 ---
 
+::::message
+This appendix is currently only a rough machine translation, so the wording may be very awkward. I will revise it properly later. Please bear with me for now.
+::::
+
 # Game overview
 
 `VL7Example` is a sample that combines VL7Cloud, ScreenEffect, SoldierEffect, and WorldIcon to switch the gas cloud effect.

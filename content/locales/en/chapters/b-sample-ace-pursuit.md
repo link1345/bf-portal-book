@@ -3,6 +3,10 @@ title: "Appendix B: Sample program explanation “AcePursuit (Race/Time Survival
 free: true
 ---
 
+::::message
+This appendix is currently only a rough machine translation, so the wording may be very awkward. I will revise it properly later. Please bear with me for now.
+::::
+
 # Game overview
 
 `AcePursuit` is a sample of race/time survival using aircraft.

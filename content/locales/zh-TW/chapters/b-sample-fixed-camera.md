@@ -3,6 +3,10 @@ title: "附錄B：範例程式說明“FixedCameraExample（固定相機和UI按
 free: true
 ---
 
+::::message
+本附錄目前只是粗略的機器翻譯，文字可能非常不自然。我之後會認真修改，暫時請多包涵。
+::::
+
 # 遊戲概述
 
 `FixedCameraExample` 是從 UI 按鈕切換放置在 Godot 中的固定相機的範例。
