@@ -1,61 +1,61 @@
 ---
-title: "Chapter 6: Create your own mode with scripts"
+title: "Chapter 6: Creating Your Own Mode with Scripts"
 free: true
 ---
 
 :::message alert
 
-The code in this chapter is a minimal example to understand the Portal SDK's TypeScript API. Please be sure to check the operation on your local host and on a real device before actually publishing it.
+The code in this chapter is a minimal example for understanding the Portal SDK's TypeScript API. Before publishing for real, always test it on localhost and in actual gameplay.
 
 :::
 
 :::message alert
-Programming using TypeScript begins here, but please **never include Japanese** in the program.
-As of November 1, 2025, Portal's Script feature does not support multi-byte characters such as Japanese. Please use only alphabets, numbers, and some symbols.
+TypeScript programming starts here, but please **never put Japanese text inside the program**.
+As of November 1, 2025, Portal's Script feature does not support multibyte characters such as Japanese. Use only letters, numbers, and some symbols.
 
-In this book, Japanese text is not included in the explanations using code comments. Please read the main text carefully.
+This book does not put Japanese sentences inside code comments. Please read the surrounding text for explanations.
 :::
 
-# 0 “Your own mode” created with scripts
+# 0 Creating "Your Own Mode" with Scripts
 
-> --- Replace Chapters 4 (Place) and 5 (Connect) with "Write and Move"
+> Turning Chapter 4 (placing) and Chapter 5 (connecting) into "write and run"
 
-In Chapter 4, we placed the necessary items on the map and added **ID (address)**.
-In Chapter 5, we designed the flow of signal → destination (ID) → reaction.
+In Chapter 4, we placed the necessary objects on the map and gave them **IDs (addresses)**.
+In Chapter 5, we designed the flow of signal -> target (ID) -> reaction.
 
 In this chapter, we'll do the same thing in code (TypeScript). There are three reasons.
 
-1. Hard to break even when enlarged:
+1. It stays easier to maintain as it grows:
   Writing directly to Portal Web Builder allows you to create things quickly, but when things get complicated, it becomes difficult to see what is being done. Code is easy to search by name and line, and easy to fix.
 
-2. You can use the same process over and over again:
+2. You can reuse the same processing:
   Frequently used processes such as "switching icon display" and "playing sound effects" can be named and made into components.
 
-3. Be able to anticipate mistakes:
+3. You can prevent mistakes earlier:
   You can install a mechanism to prevent problems such as incorrect input of numbers (ID) and problems where the same event occurs over and over again from the beginning.
 
 > It may seem difficult, but what you need to do is still the same as in Chapter 5.
-> "Press → Move the landmark forward → Light and sound when you arrive" - First, we will reproduce this with a code.
+> "Press -> move the marker forward -> play light and sound when the player arrives." First, we will reproduce this in code.
 
-# 0 .1 How to read the code chapter
+# 0.1 How to Read the Code Chapters
 
 From Chapters 6 to 8, the amount of code suddenly increases.
 It's okay not to try to understand everything from the beginning.
 First, just figure out what changes when you touch which file.
 
-| Place to touch first | Role | What you can do first is enough |
+| First place to edit | Role | Enough for the first pass |
 | ---- | ---- | ---- |
 | `ids.ts` / `OBJECT_ID` | Copy the ObjId added in Godot to the code | Do not leave `-1` or duplicates |
 | `config.ts` | Adjustment values for seconds, distance, cooldown, etc. | You can change defense seconds and recommended number of people |
 | `Strings.json` | Register the characters to be displayed on the screen | Prepare the text you want to display in advance |
-| `Script.ts` | Entrance called from Portal | Only the location of the event function is known |
+| `Script.ts` | Entry point called from Portal | Know where the event functions are |
 | `PortalLog.txt` | Operation confirmation log | Check if the event has been fired |
 
-The code body can look like a spell at first.
-The reading order is: `ids.ts` to view the address, `config.ts` to view the numerical value, `Strings.json` to view the displayed text, and finally `Script.ts` to view the flow.
-It is enough to go back and read the detailed meanings of the functions after they have been executed.
+The code may look like a spell at first. That is fine.
+Read in this order: check addresses in `ids.ts`, numbers in `config.ts`, display text in `Strings.json`, and finally the flow in `Script.ts`.
+You can come back to the detailed meaning of each function after you have seen it run.
 
-# 0 .5 Read `index.d.ts` as a dictionary
+# 0.5 Read `index.d.ts` as a Dictionary
 
 The Portal SDK's TypeScript API is organized at `code/types/mod/index.d.ts` within the SDK.
 
@@ -64,7 +64,7 @@ The `mod` namespace in this file is a dictionary of functions and types to call 
 | What you see | Meaning | Examples |
 | ---- | ---- | ---- |
 | `declare namespace mod` | Portal API location | `mod.Wait(...)` |
-| Opaque type | Type that does not allow you to directly touch the entity on the Portal side | `mod.Player`, `mod.WorldIcon` |
+| Opaque type | A type that prevents direct access to the Portal-side entity | `mod.Player`, `mod.WorldIcon` |
 | `export function On...` | Event entrance | `OnPlayerInteract` |
 | `GetObjId` | Read ObjId on Godot | Check ID of pressed InteractPoint |
 | `RuntimeSpawn_...` | Prefab candidates that can be generated with `SpawnObject` | `mod.RuntimeSpawn_Common.AreaTrigger` |
@@ -76,26 +76,26 @@ Think of the opaque type as a tag that points to an entity on the portal side, r
 Enums like `RuntimeSpawn_Common` and `RuntimeSpawn_Abbasid` are candidates that can be generated from TypeScript with `mod.SpawnObject(...)`, rather than explanations of the Object Library that you install manually in Godot.
 Please be aware of the difference that hand-placed items are picked up at `ObjId` like `GetInteractPoint(500)`, and items generated from code are handled by holding the return value of `SpawnObject` in a variable.
 
-# 0 .6　Reading table for TypeScript beginners
+# 0.6 Reading Table for TypeScript Beginners
 
 | Code | Meaning for beginners |
 | ---- | ---- |
 | `export function On...` | Entrance of event called from Portal |
-Functions that can wait like | `async function` | `await mod.Wait(...)` |
+| `async function` | A function that can wait with code such as `await mod.Wait(...)` |
 | `mod.Wait(1)` | Wait 1 second |
-| `mod.GetXxx(id)` | Get placed object with ObjId using Godot |
-| `mod.GetObjId(obj)` | Check the ObjId of the received placement |
+| `mod.GetXxx(id)` | Get a placed object that has an ObjId in Godot |
+| `mod.GetObjId(obj)` | Check the ObjId of the received object |
 | `mod.Message(...)` | Create a message to be displayed on the screen |
 | `mod.CreateVector(x, y, z)` | Create three numbers to use for coordinates, orientation, color, etc. |
 | `const OBJECT_ID = ...` | A copy of the ObjId ledger on the code side |
 
 When reading code, you don't have to read it as an English sentence. It is enough to distinguish between event, get, wait, display, and state update.
 
-# 0 .7 Development loop using templates
+# 0.7 Development Loop Using the Template
 
 The code in this chapter will be written in the `mods` folder of the template repository.
 
-Rather than writing by pasting it directly into Portal Web Builder, I develop it using the following flow.
+Instead of pasting code directly into Portal Web Builder while writing it, develop with the following flow.
 
 1. Write TypeScript under `mods`.
 2. Check the grammar and writing style at `npm run lint`.
@@ -106,23 +106,23 @@ Rather than writing by pasting it directly into Portal Web Builder, I develop it
 
 ```mermaid
 flowchart TD
-  mods["1. modsに<br/>TypeScriptを書く"]
-  lint["2. npm run lint<br/>文法と書き方を確認"]
-  test["3. npm run test<br/>小さな関数を確認"]
-  build["4. npm run build<br/>distを生成"]
-  portal["5. dist/Script.ts と<br/>dist/Strings.json を<br/>Portal Web Builderへ登録"]
-  play["6. ゲーム内で実機確認"]
-  log["7. PortalLog.txtを見る"]
-  ok{"修正が<br/>必要？"}
+  mods["1. Write TypeScript<br/>in mods"]
+  lint["2. npm run lint<br/>check syntax and style"]
+  test["3. npm run test<br/>check small functions"]
+  build["4. npm run build<br/>generate dist"]
+  portal["5. Register dist/Script.ts<br/>and dist/Strings.json<br/>in Portal Web Builder"]
+  play["6. Test in game"]
+  log["7. Check PortalLog.txt"]
+  ok{"Need<br/>changes?"}
 
   mods --> lint --> test --> build --> portal --> play --> log --> ok
-  ok -- "はい" --> mods
-  ok -- "いいえ" --> done["公開前チェックへ"]
+  ok -- "Yes" --> mods
+  ok -- "No" --> done["Pre-publish checks"]
 ```
 
 The entry point of this loop is `mods` and the exit point is Portal Web Builder.
 The code written separately for `mods` is combined into one `dist/Script.ts` that can be passed to the portal using `npm run build`.
-If you want to use the characters displayed on the screen, please also check `Strings.json`.
+If you use text displayed on screen, check `Strings.json` as well.
 
 The success screen is not the only thing you should see after moving in-game.
 Check at `PortalLog.txt` whether the intended event was fired, whether the same process is running over and over again, and whether the variables and ObjId are as expected.
@@ -133,16 +133,16 @@ Portal Web Builder is the place for final confirmation and uploading, and `mods`
 
 Initially, just `mods/Script.ts` is fine. Once you get used to it, divide it into `mods/ids.ts`, `mods/ui.ts`, and `mods/game.ts` as in Chapter 7. Even if you separate them, `npm run build` will be combined into one `dist/Script.ts` at the end.
 
-## How to use commands
+## Choosing Commands
 
 | Timing | Command to execute |
 | ---- | ---- |
 | Immediately after writing the code | `npm run lint` |
-| I want to automatically correct | `npm run lint:fix` |
+| You want automatic fixes | `npm run lint:fix` |
 | I want to check the behavior of the function | `npm run test` |
 | Before registering on Portal | `npm run build` |
 
-`npm run build` is not a command that guarantees its correctness. This command combines multiple files into one. Before publishing, please be sure to pass through `lint`, `test`, and `build` in this order. If you land on your side, you'll fall spectacularly later.
+`npm run build` does not prove the logic is correct. It combines multiple files into one. Before publishing, always run `lint`, `test`, and `build` in that order. If you skip the checks, you will trip over it later.
 
 ## Test IDs and small functions with Vitest
 
@@ -167,7 +167,7 @@ Therefore, check the actual placement on the Godot side using the ledger and Obj
 
 Please separate the processing of the game itself into functions as much as possible to make it easier to test. If you write everything inside the event function, testing will quickly become complicated.
 
-# 1 First preparation: Name the ID (this is the most important)
+# 1 First Preparation: Give IDs Names (This Is the Most Important Part)
 
 If the ID is a number, it will be difficult to understand.
 For example, even if it says 21, I can't immediately remember whether it's an "entrance icon" or a "destination icon." Therefore, give the ID a name (constant).
@@ -205,19 +205,19 @@ const OBJECT_ID = {
 * Typing errors will be reduced (accidents of swapping 21 and 22 will disappear).
 * Even if you change the ID later, just modifying the one line above will fix the whole thing.
 
-### Stumble prevention
+### Avoiding Pitfalls
 * Be sure to check that **-1 (unset)** is not confused here.
 * Check that there are no duplicates of the same type.
 * If you are unsure, put the ledger from Chapter 4 next to you and check it out loud one by one.
 
-# 2 Remember “Where are you now?” (Status box)
+# 2 Remember "Where Are We Now?" (State Box)
 
 There are stages in the game's progress, such as ``Before it begins,'' ``Beginning,'' and ``Arrived.''
 Keeping this in mind in your code will prevent you from running through the same event over and over again.
 
 ## How do you write it?
 
-In this document, `modlib.ConditionState` is used with priority for progress management and prevention of multiple firings.
+In this book, `modlib.ConditionState` is preferred for progress management and preventing repeated firing.
 
 There are ways to have a stage name like `type Phase = "Idle" | "Started"`, but in Portal there are many situations where you want to process something only once at the moment a condition is met.
 `ConditionState` fits the bill perfectly.
@@ -265,18 +265,18 @@ By dividing the conditional expression into functions such as `hasEnoughPlayersT
 
 * “It would be a problem if you pass “arrived” again after arriving” → Pass `isTargetReached()` to `ConditionState`
 
-## Stumble prevention
+## Avoiding Pitfalls
 
 * Conditional expressions must be divided into functions starting with `has...` / `is...` / `can...`.
 * Prepare one `ConditionState` for each condition. Do not use the same instance for start and arrival.
 * When debugging, it is easier to trace the cause by posting the return value of the conditional function to `console.log`.
 
-# 3 First code execution (copy "Press → Landmark → Arrival → Light and sound")
+# 3 First Code Run (Copy "Press -> Marker -> Arrival -> Light and Sound")
 
 First, convert the minimal loop from Chapter 5 into code.
 Here, we value **“order and reason”** more than “how to write”.
 
-## 3 .0 First...
+## 3.0 First...
 
 Write the code below at the top of the file.
 This is a package (group of programs) that allows you to easily use the SDK provided by the official default.
@@ -290,15 +290,15 @@ In this document, `modlib` will be used with priority in situations where it is 
 Use `mod` only for processes that are not available in `modlib` or for processes that require detailed direct control over the Portal API.
 For more information, see Appendix C "modlib Description".
 
-## 3 .1 Initialization at game start
+## 3.1 Initialization at Game Start
 
-``Show the entrance icon'' ``Hide the destination icon.'' Make your “initial posture” clear.
+"Show the entrance icon" and "hide the destination icon." Make the initial state clear.
 
 The code below shows and hides WorldIcon.
 
-* The VisibleWorldIcon function is a function that can display or hide the icon.
-* The display of the WorldIcon icon and text is switched by calling mod.EnableWorldIconImage and mod.EnableWorldIconText provided by the SDK.
-* Hooks the SDK's OnGameModeStarted event, which indicates the start of the game, and performs **``When the game mode starts, ``set the current game state'' and ``show/hide the icon.''**
+* The VisibleWorldIcon function shows or hides an icon.
+* It switches the WorldIcon image and text by calling `mod.EnableWorldIconImage` and `mod.EnableWorldIconText`, which are provided by the SDK.
+* It hooks the SDK's `OnGameModeStarted` event and performs **"when the game mode starts, reset the current game state and show/hide icons."**
 
 ```ts
 /**
@@ -366,7 +366,7 @@ export function OnGameModeStarted() {
 ```
 
 
-## 3 .2 Make the start button the “starting point”
+## 3.2 Make the Start Button the Starting Point
 
 When pressed, (1) short message → (2) icon switching.
 It is easy for players to understand the order of "words → landmarks → effects".
@@ -396,7 +396,7 @@ export async function OnPlayerInteract(eventPlayer: mod.Player, eventInteractPoi
 }
 ```
 
-## 3 .3 When you enter the destination, send out the effect
+## 3.3 Play Effects When the Player Enters the Destination
 
 The arrival signal is AreaTrigger.
 The moment you enter, **Light (FX) and Sound (SFX)** will play.
@@ -427,21 +427,21 @@ export function OnPlayerEnterAreaTrigger(eventPlayer: mod.Player, eventAreaTrigg
 ### When things don't go well
 
 * ID input error (21/22/11/500/901/951)
-* AreaTrigger's **height (Y)** is insufficient and passes the judgment
+* The **height (Y)** of the AreaTrigger is too small, letting the player pass through without detection
 * Check if "double press" and "multiple arrival" are stopped using `ConditionState` and `is...` functions
 
 > If you can move up to this point, you will pass.
 > From here, we will “add” little by little.
 
-## 3 .4 Addition 1: Collect (Press to collect)
+## 3.4 Addition 1: Gather Players (Press to Gather)
 
-Frequently asked request: ``Press the button and everyone will go to the meeting point.''
+Common request: "Press the button and send everyone to the meeting point."
 There are two ways.
 
 * Respawn: Call back to specified SpawnPoint
 * Movement (teleport): move to coordinates
 
-### Respawn: Call back to specified SpawnPoint
+### Respawn: Send Players Back to a Specific SpawnPoint
 
 The program below moves to a specific SpawnPoint.
 **If you set a SpawnPoint on the map, you can spawn at that location**.
@@ -487,12 +487,12 @@ export function OnPlayerInteract(eventPlayer: mod.Player, eventInteractPoint: mo
 ```
 
 
-### Movement (teleport): Move to coordinates (easy)
+### Movement (Teleport): Move to Coordinates (Easy)
 
 The program below moves to a specific object.
 **Can be any object and spawn at the location of that object**.
-With "Respawn: Call back to specified SpawnPoint", you can only fly to the SpawnPoint object, but with this method you can fly anywhere as long as the Obj Id is specified in advance.
-**For example, it is possible to fly even at the "player position" whose position changes dynamically, or the "position of a flower bed object" which is a static object with no characteristics.**
+With "Respawn: send players back to a specific SpawnPoint", you can only move them to a SpawnPoint. With this method, you can move them anywhere as long as an ObjId is assigned in advance.
+**For example, you can move players to a dynamically changing position such as another player's location, or to the position of a plain static object such as a flower bed.**
 
 However, the code will be a bit long, so if you always want to teleport to the same location, you should use "Respawn: Call back to the specified SpawnPoint".
 
@@ -542,9 +542,9 @@ export function OnPlayerInteract(eventPlayer: mod.Player, eventInteractPoint: mo
 * If you feel that the move is sudden, it is natural to proceed in the following order: Message → Short Wait → Move.
 * Some people may not know what just happened, so it is helpful to display the **destination icon (ICON_TARGET)** again after meeting.
 
-## 3 .5 Additional example: Tighten with time (10 seconds defense)
+## 3.5 Additional Example: End with Time (10-Second Defense)
 
-A countdown like ``Arrival → Keep for 10 seconds → Success'' is very exciting.
+A countdown like "arrive -> hold for 10 seconds -> success" creates tension.
 However, the trick is to handle cancellations (leaving the area) properly.
 
 ### Example: 10 seconds count on arrival, message on successful defense
@@ -573,7 +573,7 @@ async function startDefense(seconds: number) {
 	modlib.ShowEventGameModeMessage(mod.Message(mod.stringkeys.success), team);
 }
 
-// If you want to "Stop when it comes out"
+// If you want to stop when the player exits
 export function OnPlayerExitAreaTrigger(eventPlayer: mod.Player, eventAreaTrigger: mod.AreaTrigger) {
 	if (targetReached) {
 		// Allow the target area to trigger again.
@@ -590,12 +590,12 @@ export function OnPlayerExitAreaTrigger(eventPlayer: mod.Player, eventAreaTrigge
 
 ### Tips:
 
-* Prepare a flag (in this case, defense) that indicates whether the count is in progress or not.
+* Prepare a flag (here, defending) that indicates whether the count is in progress.
 * If you decide at the beginning the conditions for interrupting (such as leaving the area), the code will not get lost.
 
-## 3 .6 Preventing “abrupt firing” and “repeated firing” (safety device)
+## 3.6 Preventing Accidental Firing and Button Mashing (Safety Devices)
 
-Users may make a mistake or press a button repeatedly just for fun.
+Players may operate something by mistake or press a button repeatedly for fun.
 At that time, you can prevent the same process from running over and over again by adding a lock function that prevents it from running under certain conditions.
 
 Below is an example of locking that can be easily implemented.
@@ -639,9 +639,9 @@ export function OnPlayerInteract(eventPlayer: mod.Player, eventInteractPoint: mo
 }
 ```
 
-### Countermeasure: Prevent events from being hit repeatedly in a short period of time
+### Countermeasure: Prevent Events from Firing Repeatedly in a Short Time
 
-**If you want to play some sound when a button is pressed, etc., and you don't want the sound to play for a short time**, you can implement it as shown below.
+**When pressing a button plays a sound or similar effect, and repeated playback in a short time would be a problem**, you can implement it as shown below.
 
 ```ts
 import * as modlib from "modlib";
@@ -671,11 +671,11 @@ export function OnPlayerInteract(eventPlayer: mod.Player, _eventInteractPoint: m
 ### Tips:
 
 * By simply creating a path that can only be taken once, 70% of multiple bugs will disappear automatically.
-* Furthermore, if you add the "once every n seconds" guard, it will not break even if you hit it repeatedly.
+* If you also add a "once every n seconds" guard, repeated pressing will not break the flow.
 
-## 3 .7 Visualization (knowing “now” with debug display)
+## 3.7 Visualization (Know the Current State with Debug Display)
 
-**"It doesn't work when I press it"** The best way to quickly fix the issue is to be able to see the current status and recent events.
+To quickly fix **"I pressed it, but nothing happened"**, it is strongest to make the current state and recent events visible.
 
 ### If you want to output it as a log and check it
 
@@ -714,7 +714,7 @@ modlib.ShowNotificationMessage(mod.Message(mod.stringkeys.debugPlayer, eventPlay
 modlib.ShowNotificationMessage(mod.Message(mod.stringkeys.debugObjId, objId), eventPlayer);
 ```
 
-The screen will display something like `player:<プレイヤー名>` or `obj:500`.
+The screen will display something like `player:<player name>` or `obj:500`.
 `mod.Message` accepts up to three additional values in addition to the string key.
 If you want to display player name, remaining seconds, score, etc., remember to put the text in `Strings.json` and pass only the value that changes as an argument to `mod.Message`.
 
@@ -724,12 +724,12 @@ If you want to display player name, remaining seconds, score, etc., remember to 
 * Exceptions and unexpected branches are recorded as short alphanumeric characters in the log.
 * If it doesn't work, first log the return value of `isStartInteract()` or `isTargetReached()`.
 * If the condition is unexpected, review the instance of `ConditionState` and the judgment function.
-* If the event has not arrived in the first place, I suspect that you have typed the ID incorrectly.
+* If the event itself has not arrived, suspect an ID typo first.
 
-## 3 .8 “Dividing neatly” can be done later
+## 3.8 "Clean Separation" Can Come Later
 
-In the first half, we prioritized "getting things moving first."
-Once you get used to it, it will be easier to modify it by dividing the display (UI/effects), state (`gameStarted`, `targetReached`, etc.) and SDK calls into smaller parts.
+In the first half, we prioritized getting things moving first.
+Once you get used to it, modifications become easier if you split display (UI/effects), state (`gameStarted`, `targetReached`, etc.), and SDK calls into smaller pieces.
 
 For example, by collecting the processing as a function like the one shown below in "3.1 Initialization at Game Start", you can combine three lines of code into one line by simply writing `VisibleWorldIcon(**,**)`.
 
@@ -752,10 +752,10 @@ This time, we only summarized three lines, but as you progress in programming, t
 
 ### Tips:
 
-*The order of sorting is ``the ones that I write the most first''.
-* Don't force yourself to aim for complete separation; just "win if it becomes easier to read" is OK.
+* Split things in the order of what you write most often.
+* Do not force perfect separation. If it becomes easier to read, that is already a win.
 
-## 3 .9 Common mistakes and easy countermeasures
+## 3.9 Common Mistakes and Simple Fixes
 
 * ID remained -1
   → Re-enter the numbers in the property field. Update ledger and constants together.
@@ -763,26 +763,26 @@ This time, we only summarized three lines, but as you progress in programming, t
   → Check whether there are any duplications within the same type. Mark the ledger with an ○.
 * Nothing happens when I press it
   → Check whether `OnPlayerInteract` is the correct ID, whether `isStartInteract()` becomes `true`, and whether it is caught by the guard of `ConditionState`.
-*Nothing comes out when I arrive
+* Nothing appears when I arrive
   → The height (Y) of `AreaTrigger` is often insufficient.
 * Constant sound and light
   → Prepare a process to stop when exiting (`OnPlayerExitAreaTrigger`).
-* Goes crazy with repeated hits
+* Repeated pressing breaks the flow
   → Add processing to apply restrictions such as `throttle` (thinning) and `ConditionState` (only once).
-* You won't understand if you read it later
+* I cannot understand it when I read it later
   → Prioritize “short English messages” and “name on ID”.
 
 # Conclusion
 
 * **Name the ID (constant)**
-* Now have somewhere (staged with state flags like `gameStarted` and `ConditionState`).
-* Press → Landmark → Arrival → Do not break the minimum loop of light and sound.
-* Addition little by little (set/vehicle/AI/time).
+* Keep track of where the game is now (state flags such as `gameStarted`, plus `ConditionState`).
+* Do not break the minimum loop: press -> marker -> arrival -> light and sound.
+* Add things little by little (gathering / vehicles / AI / time).
 * Once you get used to it, give **names (small functions)** to frequently used processes to make them easier to read.
 
 As long as you follow this flow, even beginners can **run their own mode**.
 Difficult optimization and large-scale design can be done later. First of all, "It starts when you press it, and when it arrives, it emits a pleasant light and sound." Let's create this with our own hands.
 
-# Guide to the next section
+# Guide to the Next Section
 
-📘 **Next chapter "Small design that neatly divides"** Now, let's build a program and think about how to divide the processing groups of the program so that it can continue to be used with minimal changes in the future after the program has been developed.
+📘 **In the next chapter, "Small Design for Clean Separation",** we will think about how to split groups of program logic so that the program can keep being used in the future with minimal changes after development.
