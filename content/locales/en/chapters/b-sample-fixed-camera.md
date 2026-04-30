@@ -1,35 +1,31 @@
 ---
-title: "Appendix B: Sample program explanation “FixedCameraExample (Fixed camera and UI button)”"
+title: "Appendix B: Sample Program Commentary “FixedCameraExample (Fixed camera and UI button)”"
 free: true
 ---
 
-::::message
-This appendix is currently only a rough machine translation, so the wording may be very awkward. I will revise it properly later. Please bear with me for now.
-::::
-
-# Game overview
+# Game Overview
 
 `FixedCameraExample` is a sample that switches FixedCamera placed in Godot from the UI button.
 
 This is useful when you want to create a camera effect, a spectator-like perspective, or a highlight before the event starts.
 
-# Main contents
+# Main Topics
 
-* Started UI creation and camera movement process at `OnGameModeStarted`.
+* Start UI creation and camera movement processing at `OnGameModeStarted`.
 * Determine which UI button was pressed at `OnPlayerUIButtonEvent`.
 * Changed player camera to fixed camera at `mod.SetCameraTypeForPlayer`.
 * Moved camera at `mod.MoveObjectOverTime`, `mod.SetObjectTransformOverTime`.
 * Assemble the UI with `AddUIContainer`, `AddUIButton`, `AddUIText`.
 
-# Reading order
+# Reading Order
 
-## 1 . View UI button events
+## 1. Check UI button events
 
 `OnPlayerUIButtonEvent` is the entry point when the UI button is pressed.
 
 It takes the name of the button pressed at `mod.GetUIWidgetName(eventUIWidget)` and branches to `StreetButton`, `HQ1Button`, `ReturnButton`, etc.
 
-## 2 . View camera switching
+## 2. Check camera switching
 
 Switching to a fixed camera takes the following form:
 
@@ -39,13 +35,13 @@ mod.SetCameraTypeForPlayer(eventPlayer, mod.Cameras.Fixed, 0);
 
 The last number corresponds to the ObjId assigned to FixedCamera on the Godot side. In other words, cameras are also managed using the ObjId ledger in Chapter 4.
 
-## 3 . Watch camera movement
+## 3. Check camera movement
 
-`StartFlyThroughCamera` has a fixed camera that moves over time.
+`StartFlyThroughCamera` moves a fixed camera over time.
 
-By using `SetObjectTransformOverTime`, you can create a slow-moving production camera instead of just a fixed viewpoint.
+By using `SetObjectTransformOverTime`, you can create a slowly moving presentation camera instead of a viewpoint that simply stays fixed.
 
-# Tips
+# Small Tips
 
 The back button takes you back to `mod.Cameras.FirstPerson`.
 

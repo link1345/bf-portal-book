@@ -1,18 +1,14 @@
 ---
-title: "Appendix B: Sample program explanation “Gibraltar Grandprix (ground race)”"
+title: "Appendix B: Sample Program Commentary “Gibraltar Grandprix (ground race)”"
 free: true
 ---
 
-::::message
-This appendix is currently only a rough machine translation, so the wording may be very awkward. I will revise it properly later. Please bear with me for now.
-::::
+# Game Overview
 
-# Game overview
-
-`GibraltarGrandprix` is a checkpoint based ground race sample.
+`GibraltarGrandprix` is a checkpoint-based ground race sample.
 As a Grand Prix format set in Gibraltar, you can check checkpoints, vehicles, ranking UI, and countdown.
 
-# Main contents
+# Main Topics
 
 * Define course data at `RaceTrack` and `Checkpoint`.
 * Manage the entire race state at `TrackData`.
@@ -22,27 +18,27 @@ As a Grand Prix format set in Gibraltar, you can check checkpoints, vehicles, ra
 * Handle in-race events at `OnVehicleSpawned`, `OnPlayerDeployed`, `OnPlayerDied`, etc.
 * Receive UI operations such as vehicle selection at `OnPlayerUIButtonEvent`.
 
-# Reading order
+# Reading Order
 
-## 1 . View course definition
+## 1. Check course definition
 
 First, look at the flow of `RaceTrack`, `Checkpoint`, and `tracks`.
 
-In a racing game, ``how to store the course as data'' is more important than logic. Please make sure that the location, direction, and number of laps of the checkpoint are converted into data.
+In a racing game, "how to store the course as data" is more important than the logic itself. Check how checkpoint positions, directions, and lap counts are converted into data.
 
-## 2 . View TrackData
+## 2. Check TrackData
 
 `TrackData` is a class that has the state of one race.
 
-It will be the focal point for tracking who is participating, whether the race has yet to start, if there is a winner, and if the race is counting down.
+It is the central place for tracking who is participating, whether the race has started, whether there is a winner, and whether the race is counting down.
 
-## 3 . View the UI and vehicles
+## 3. Check the UI and vehicles
 
 In a race, you need to show players where they are next, where they are now, and when it will start.
 
 Check which class is responsible for WorldIcon, Scoreboard UI, Start Countdown, and Vehicle Select UI.
 
-# Tips
+# Small Tips
 
 `GibraltarGrandprix` is a race sample.
 
@@ -50,4 +46,4 @@ Check which class is responsible for WorldIcon, Scoreboard UI, Start Countdown, 
 
 `GibraltarGrandprix` is an excellent material for checkpoint games.
 
-By reading the course data, participant management, vehicle management, and ranking UI separately, it can also be applied to "order-by-goal mode" other than races.
+If you read the course data, participant management, vehicle management, and ranking UI separately, you can also apply the pattern to non-race modes where players pass goals in order.

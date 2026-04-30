@@ -1,11 +1,7 @@
 ---
-title: "附錄B：範例程式說明“BumperCars（車輛小遊戲）”"
+title: "附錄 B：範例程式說明“BumperCars（車輛小遊戲）”"
 free: true
 ---
-
-::::message
-本附錄目前只是粗略的機器翻譯，文字可能非常不自然。我之後會認真修改，暫時請多包涵。
-::::
 
 # 遊戲概述
 
@@ -16,8 +12,8 @@ free: true
 # 主要內容
 
 * 遊戲初始化、AutoSpawn 設定和 InteractPoint 控制位於 `OnGameModeStarted`。
-* 刪除武器並限制火力輸入 `OnPlayerDeployed`。
-* 在 `OnVehicleSpawned` 的遊戲管理中新增了出現的車輛。
+* 在 `OnPlayerDeployed` 移除武器並限制開火輸入。
+* 在 `OnVehicleSpawned` 將生成的車輛加入遊戲管理。
 * 在 `OnPlayerInteract` 接收 Ready Up 和偵錯操作。
 * 使用 `GameState` 和 `HoH_GameHandler` 追蹤進度。
 * 在 `PlayerProfile` 管理每位玩家的狀態。
@@ -35,22 +31,22 @@ free: true
 
 `GameState` 表示該模式目前處於哪個階段。
 
-是在準備期間、開始計數期間還是在比賽期間？如果您查看此處，您可以看到事件應在哪種狀態下傳遞。
+是在 Ready Up 階段、開始倒數階段，還是比賽中？看這裡就能知道事件應該在哪種狀態下通過。
 
-## 3 . 查看玩家資料
+## 3. 查看玩家資料
 
-每位玩家的狀態都發佈在 `PlayerProfile` 上。
+每位玩家的狀態都集中在 `PlayerProfile` 中。
 
 在玩家加入、離開、死亡或重生的遊戲中，將玩家資訊收集在一處可以更輕鬆地進行追蹤。
 
-# 提示
+# 小技巧
 
 重要的是，`OnPlayerDeployed` 刪除了武器並限制了火力輸入。
 
-在載具小遊戲中，如果繼續正常的FPS操作，遊戲玩法就會被破壞。首先擦除該模式不需要的輸入和裝置會更安全。
+在載具小遊戲中，如果保留普通 FPS 操作，遊戲玩法就會被破壞。先移除這個模式不需要的輸入和裝備會更安全。
 
 # 結論
 
 `BumperCars` 是一個範例，展示了迷你遊戲 Portal 模式的框架。
 
-當您想同時了解車輛、Ready Up、狀態管理、UI 和玩家管理時，值得一讀。
+當你想同時了解車輛、Ready Up、狀態管理、UI 和玩家管理時，值得一讀。

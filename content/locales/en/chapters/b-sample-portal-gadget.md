@@ -1,36 +1,32 @@
 ---
-title: "Appendix B: Sample program explanation “PortalGadgetExample (dedicated gadget input)”"
+title: "Appendix B: Sample Program Commentary “PortalGadgetExample (dedicated gadget input)”"
 free: true
 ---
 
-::::message
-This appendix is currently only a rough machine translation, so the wording may be very awkward. I will revise it properly later. Please bear with me for now.
-::::
-
-# Game overview
+# Game Overview
 
 `PortalGadgetExample` is a sample that allows the player to have a Portal Gadget and receives input such as aiming, shooting, and laser switching using a script.
 
 The main point is that you can receive the player's intentions using special gadgets, rather than using substitute operations such as "crouch and execute".
 
-# Main contents
+# Main Topics
 
-* Added Portal Gadget at `mod.AddEquipment(player, mod.Gadgets.Misc_PortalGadget)`.
-* Receive shooting input at `OnPortalGadgetFireStart`, `OnPortalGadgetFireStop`.
+* Add the Portal Gadget with `mod.AddEquipment(player, mod.Gadgets.Misc_PortalGadget)`.
+* Receive fire input at `OnPortalGadgetFireStart`, `OnPortalGadgetFireStop`.
 * Receive aiming input at `OnPortalGadgetAimStart`, `OnPortalGadgetAimStop`.
 * Enable/disable the mode with `OnPortalGadgetLaserToggle`.
 * Use player gaze direction with `RayCast`, `OnRayCastHit`, `OnRayCastMissed`.
 * Switch between teleport mode and object creation mode with `InteractPoint`.
 
-# Reading order
+# Reading Order
 
-## 1 . View equipment grants
+## 1. Check equipment grants
 
 Portal Gadget is assigned at `OnPlayerDeployed`.
 
 The process of handing over equipment when the player deploys is easy to use in other modes as well.
 
-## 2 . View input events
+## 2. Check input events
 
 Portal Gadget input is received in a separate event from the normal `OnPlayerInteract`.
 
@@ -42,13 +38,13 @@ Portal Gadget input is received in a separate event from the normal `OnPlayerInt
 | `OnPortalGadgetAimStop` | Stopped aiming |
 | `OnPortalGadgetLaserToggle` | Laser switching input |
 
-## 3 . Watch RayCast
+## 3. Check RayCast
 
 In this sample, a RayCast is launched from the player's line of sight, teleporting to the point it hits, and creating an object.
 
 The flow you should see is `GetRayCastVectors` → `mod.RayCast` → `OnRayCastHit` / `OnRayCastMissed`.
 
-# Tips
+# Small Tips
 
 It has the current mode as a number, like `currentSwitchMode`. If you create it yourself, it will be easier to read if you use a string type like `"Teleport"` or `"SpawnObject"`.
 
