@@ -5,6 +5,12 @@ free: true
 
 In this chapter, we will organize where placeable objects come from, what can be placed on each map, and which objects matter for gameplay. We will match the actual Godot entities (`.tscn`) with their Portal-side names. By the end, you will prepare everything in a form that later rule design and TypeScript implementation can reference and control: objects have IDs, and those IDs are recorded in a ledger.
 
+:::message
+When looking for placeable objects, use [BF6 Object Guide](https://link1345.github.io/bf6-object-website/) as a companion reference.
+It is a placeable object index website that lets you narrow candidates by map, tag, and keyword search.
+Use it for the first pass of candidate hunting before doing the final check in Godot or `asset_types.json`; it reduces the time spent browsing the Object Library by hand.
+:::
+
 # 1 What "Placeable Objects" Really Are: `res://objects` and Map Dependencies
 
 **Objects you can place on a map are limited to files inside Godot's `res://objects` file system.** In addition, **the range of placeable objects depends on which map you use as the base for editing.** **As of April 21, 2026, the Portal SDK available here (version 1.2.3.0) is structured as follows.**
