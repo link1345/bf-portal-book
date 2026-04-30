@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ChapterReader } from "@/components/ChapterReader";
 import { getAdjacentChapters, getChapter, getChapters } from "@/lib/chapters";
-import { defaultLocale } from "@/lib/i18n";
+import { defaultLocale, uiText } from "@/lib/i18n";
 
 type ChapterPageProps = {
   params: Promise<{
@@ -32,7 +32,7 @@ export async function generateMetadata({
 
   return {
     title: chapter.title,
-    description: chapter.description,
+    description: chapter.description || uiText[defaultLocale].bookDescription,
   };
 }
 
