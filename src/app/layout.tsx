@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
+import { uiText, defaultLocale } from "@/lib/i18n";
 import "zenn-content-css";
 import "./globals.css";
 
@@ -8,7 +9,7 @@ export const metadata: Metadata = {
     default: "BF Portal Book",
     template: "%s | BF Portal Book",
   },
-  description: "Zenn記法のMarkdownから生成する静的Web書籍サイトです。",
+  description: uiText[defaultLocale].bookDescription,
 };
 
 export default function RootLayout({
