@@ -45,4 +45,4 @@ TypeScriptの文法は、「[サバイバルTypeScript](https://typescriptbook.j
 
 ## 変更履歴
 
-2026-04-24: 初稿
+2026-04-30: 初稿
