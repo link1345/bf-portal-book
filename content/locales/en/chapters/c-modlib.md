@@ -1,26 +1,23 @@
 ---
-title: "Appendix C: modlib explanation Auxiliary library that makes SDK a little easier to use"
+title: "Appendix C: modlib Guide: Helper Library for Making the SDK Easier to Use"
 free: true
 ---
 
-::::message
-This appendix is currently only a rough machine translation, so the wording may be very awkward. I will revise it properly later. Please bear with me for now.
-::::
 
 # What is modlib?
 
 `modlib` is an auxiliary library for TypeScript shipped with the BF6 Portal SDK.
 The location is `code/modlib/index.ts`.
 
-Portal's main API is located in `mod` namespace.
-For example, functions like `mod.DisplayNotificationMessage`, `mod.GetObjId`, `mod.AllPlayers`, `mod.AddUIText`.
+Portal's main API lives in the `mod` namespace.
+For example, it includes functions such as `mod.DisplayNotificationMessage`, `mod.GetObjId`, `mod.AllPlayers`, and `mod.AddUIText`.
 
 On the other hand, `modlib` is not a direct replacement for `mod`.
-This is a "useful function collection" that builds on top of `mod` to shorten frequently written processes and hide some of Portal's unique difficulties in handling.
+It is a collection of helper functions that sits on top of `mod`, shortens common code, and hides some of Portal's awkward parts.
 
-In this document, we will prioritize using `modlib` as a basic policy.
-Please consider `modlib` first for the processes provided in `modlib`, such as notifications, acquiring players in the team, converting portal arrays, firing conditions only once, and generating UI.
-Use `mod` directly only for functions that are not available in `modlib` or for processes whose behavior you want to control in detail.
+As a basic rule, this book uses `modlib` first.
+For notifications, getting players on a team, converting Portal arrays, firing a condition only once, UI generation, and other helpers that `modlib` provides, consider `modlib` first.
+Use `mod` directly only when `modlib` does not provide the feature, or when you need fine control over behavior.
 
 When using it, load it at the beginning of the script.
 
@@ -36,41 +33,41 @@ export function OnPlayerJoinGame(eventPlayer: mod.Player): void {
 }
 ```
 
-# Relationship between mod and modlib
+# Relationship Between mod and modlib
 
-`mod` is Portal's official API body.
-The functions that actually issue commands to Portal, such as in-game events, player operations, UI generation, sounds, vehicles, objectives, and coordinate calculations, are basically located at `mod`.
+`mod` is Portal's official API itself.
+Functions that actually issue commands to Portal, such as in-game events, player operations, UI generation, sounds, vehicles, objectives, and coordinate calculations, are basically in `mod`.
 
 `modlib` is an auxiliary layer created using `mod`.
 For example:
 
-| Types | Writing directly with mod | What modlib can help with |
+| Type | When writing directly with mod | How modlib helps |
 | --- | --- | --- |
-| Notification display | It is necessary to call functions differently depending on whether there is a target or not | Summary at `ShowNotificationMessage` |
-| Get players on the team | Turn `AllPlayers` and compare `GetTeam` | Summarize with `getPlayersInTeam` |
+| Notification display | You need to choose different calls depending on whether there is a target | `ShowNotificationMessage` wraps that difference |
+| Get players on a team | Loop over `AllPlayers` and compare `GetTeam` | `getPlayersInTeam` wraps it |
 | Portal array processing | Read `mod.Array` with `CountOf` / `ValueInArray` | Convert to JavaScript array with `ConvertArray` |
-| Fire the condition only once | Have your own state flag | Use `ConditionState` and `get...Condition` |
+| Fire a condition only once | Keep your own state flag | Use `ConditionState` and `get...Condition` |
 | UI generation | The arguments for `AddUIText` and `AddUIContainer` are long | You can write in JSON style with `ParseUI` |
 
-In other words, `modlib` is a "toolbox that makes Portal's standard API a little easier to use like TypeScript."
+In other words, `modlib` is a toolbox that makes Portal's standard API feel a little more like ordinary TypeScript.
 
-# Use order policy
+# Usage Policy
 
-The recommendation in this book is to use `modlib` first, and then use `mod` directly only when necessary.
+This book recommends using `modlib` first, then using `mod` directly only where necessary.
 
 The reason is simple.
-`modlib` summarizes troublesome processes that often occur in portal production in a short and safe manner.
-Rather than scanning `AllPlayers` every time, calling whether there is a notification target or not, or listing long UI arguments, it will be easier to read if you first use the `modlib` function.
+`modlib` wraps annoying tasks that often appear in Portal creation so they can be written more briefly and safely.
+Instead of scanning `AllPlayers` every time, branching notification calls by target, or lining up long UI arguments, code is easier to read if you use `modlib` first.
 
 The usage is as follows.
 
-| Status | Recommendations |
+| Situation | Recommendation |
 | --- | --- |
-| I want to perform notifications, team acquisition, array conversion, condition management, and UI generation | First, use `modlib` |
-| Writing notification display many times | Using `modlib.ShowNotificationMessage` etc. |
-| Increased scanning of `mod.Array` | Use of `ConvertArray` and `FilteredArray` |
+| You want notifications, team lookup, array conversion, condition management, or UI generation | Use `modlib` first |
+| You write notification display code repeatedly | Use `modlib.ShowNotificationMessage` and related helpers |
+| `mod.Array` traversal is increasing | Use `ConvertArray` or `FilteredArray` |
 | I want to process only the moment the condition becomes true with `Ongoing...` | Use `ConditionState` / `get...Condition` |
-| Create a large amount of UI | Consider `ParseUI` |
+| You create a lot of UI | Consider `ParseUI` |
 | I want to use Portal API that is not available in `modlib` | Use `mod` directly |
 | I don't understand the behavior and want to debug it | Read the contents of `modlib` and revert to calling `mod` directly if necessary |
 
@@ -78,23 +75,23 @@ However, the content of `modlib` is TypeScript code that calls the `mod` API.
 Even if you prefer to use `modlib`, it is a good idea to be able to read `index.ts` when you get stuck.
 Please refer to this Appendix C as a dictionary for function-by-function details.
 
-# Overall configuration
+# Overall Structure
 
 `index.ts` can be roughly divided into the following five parts.
 
-| Scope | Contents |
+| Area | Contents |
 | --- | --- |
-| Assistance with strings, conditions, and arrays | `Concat`, `And`, `ConvertArray`, `FilteredArray`, etc. |
+| String, condition, and array helpers | `Concat`, `And`, `ConvertArray`, `FilteredArray`, etc. |
 | ObjId and condition state | `getPlayerId`, `ConditionState`, `getPlayerCondition`, etc. |
-| Team assistance | `getPlayersInTeam` |
-| JSON style UI generation | `ParseUI` and internal `__addUI...` system |
+| Team helpers | `getPlayersInTeam` |
+| JSON-like UI generation | `ParseUI` and internal `__addUI...` helpers |
 | Notification/Message display | `ShowNotificationMessage`, `ShowEventGameModeMessage`, `DisplayCustomNotificationMessage`, etc. |
 
 There are also functions in the file that start with `__`, such as `__asModVector`, `__addUIText`, and so on.
 These are for internal implementation.
 Basically, instead of calling it directly from the outside, use the public `export function`.
 
-# Basic grammar aid
+# Basic Syntax Helpers
 
 ## Concat
 
@@ -103,10 +100,10 @@ modlib.Concat("A", "B");
 ```
 
 Concatenates two strings.
-There is also `mod.Concat` on the Portal API side, but `modlib.Concat` simply combines ordinary TypeScript strings with `+`.
+Portal API also has `mod.Concat`, but `modlib.Concat` simply joins ordinary TypeScript strings with `+`.
 
-The application is simple.
-It can be used when you want to assemble strings.
+Its use is simple.
+Use it when you want to assemble strings.
 However, in TypeScript, template strings are often easier to read.
 
 ```ts
@@ -140,8 +137,8 @@ if (modlib.AndFn(
 }
 ```
 
-`AndFn` receives multiple "functions that return boolean values" rather than boolean values ​​themselves.
-Execute in order from the left, and if `false` is reached in the middle, the rest will not be executed.
+`AndFn` receives multiple functions that return boolean values, rather than boolean values themselves.
+It executes them from left to right, and if one returns `false`, the remaining functions are not executed.
 
 By placing heavy conditions or conditions for which you want to avoid side effects later, you can reduce unnecessary processing.
 
@@ -158,7 +155,7 @@ const label = modlib.IfThenElse(
 If the condition is `true`, it will return the result of `ifTrue()`, and if the condition is `false`, it will return the result of `ifFalse()`.
 
 It is similar to `mod.IfThenElse`, but `modlib.IfThenElse` is a form of passing a function.
-This can be used when you want to evaluate only the necessary side.
+Use this when you want to evaluate only the side that is needed.
 
 ## Equals
 
@@ -172,14 +169,14 @@ Internally it calls `mod.Equals(a, b)`.
 However, if either is `null`, then `debugger` is included.
 
 This is an implementation intended to "make it easier to notice null comparisons," but please be careful in code before publication.
-Although this is useful for investigating the cause, it may cause the debugger to stop unintentionally.
+This is useful while investigating a cause, but it can also stop the debugger unexpectedly.
 
-# Help handling Portal arrays
+# Helpers for Handling Portal Arrays
 
 `mod.Array` in the Portal SDK is not a normal JavaScript array.
 You should read `mod.CountOf` and `mod.ValueInArray` instead of `for ... of` and `array.length`.
 
-There is a function at `modlib` that fills in this difference.
+`modlib` provides functions that bridge this gap.
 
 ## ConvertArray
 
@@ -187,15 +184,15 @@ There is a function at `modlib` that fills in this difference.
 const players = modlib.ConvertArray(mod.AllPlayers()) as mod.Player[];
 ```
 
-Convert `mod.Array` to a JavaScript array.
+Converts `mod.Array` to a JavaScript array.
 
 Internally, the flow is as follows.
 
 1. Get the number of elements with `mod.CountOf(array)`
-2. Read one by one at `mod.ValueInArray(array, i)`
+2. Read each item with `mod.ValueInArray(array, i)`
 3. `push` to JavaScript array
 
-This is useful when you want to treat the results of `AllPlayers()` or `GetPlayersOnPoint()` like TypeScript.
+This is useful when you want to handle the result of `AllPlayers()` or `GetPlayersOnPoint()` like an ordinary TypeScript array.
 
 ## FilteredArray
 
@@ -261,7 +258,7 @@ What you receive here is `any[]` instead of `mod.Array`.
 
 It is assumed that it will be used after converting with `ConvertArray`.
 
-# Assistance in obtaining ObjId
+# ObjId Helpers
 
 ## getPlayerId
 
@@ -288,12 +285,12 @@ const eventTeamId = modlib.getTeamId(eventTeam);
 const teamId = modlib.getTeamId(team);
 ```
 
-# Handle the "rise" of conditions
+# Handling the Rising Edge of Conditions
 
 In Portal, `Ongoing...` series events are called continuously.
-If you run the process while the condition is true, the same notification, the same score addition, and the same spawn will be executed over and over again.
+If you run processing for the entire time a condition is true, the same notification, score addition, or spawn can execute again and again.
 
-Therefore, `modlib` has state management that "passes through only the moment it changes from false to true."
+For this, `modlib` provides state management that lets processing pass only at the moment a value changes from false to true.
 
 ## ConditionState
 
@@ -322,15 +319,15 @@ export function OngoingGlobal(): void {
 | --- | --- | --- | --- |
 | false | false | false | Condition not met yet |
 | false | true | true | The moment the condition is met |
-| true | true | false | Established, but will no longer be accepted |
-| true | false | false | reset |
+| true | true | false | Still true, but do not pass again |
+| true | false | false | Reset |
 
 In other words, it will only pass once while `true` continues.
 Once you return to `false`, it will pass through the next `true` once again.
 
 We recommend that you do not write long conditional expressions directly in `update()`.
 If you divide it into decision functions like `hasEnoughPlayersToStart()`, `isStartInteract()`, `canReachTarget()`, you can read "what it is waiting for" by the name.
-Please write comments for code posted on the portal in short English to avoid multi-byte characters.
+For code pasted into Portal, write comments in short English to avoid multibyte characters.
 
 ## getGlobalCondition
 
@@ -400,7 +397,7 @@ The following function has a conditional state for each object.
 
 Internally, `mod.GetObjId(obj)` is used to distribute the state array for each ObjId.
 
-# Get players in team
+# Get Players on a Team
 
 ## getPlayersInTeam
 
@@ -425,7 +422,7 @@ for (const player of modlib.getPlayersInTeam(mod.GetTeam(1))) {
 }
 ```
 
-# Create UI in JSON style ParseUI
+# Create UI in JSON-like Style with ParseUI
 
 `ParseUI` is a function that allows you to write long arguments for `AddUIContainer`, `AddUIText`, `AddUIImage`, and `AddUIButton` as JSON-like objects.
 
@@ -457,15 +454,15 @@ const root = modlib.ParseUI({
 | type | Function called internally | What it creates |
 | --- | --- | --- |
 | `Container` | `mod.AddUIContainer` | UI parent frame |
-| `Text` | `mod.AddUIText` | Character display |
+| `Text` | `mod.AddUIText` | Text display |
 | `Image` | `mod.AddUIImage` | Image display |
 | `Button` | `mod.AddUIButton` | UI button |
 
-By using `children`, you can hang Text and Buttons under the Container.
+With `children`, you can attach Text and Button widgets under a Container.
 
 ## Coordinates and colors can also be written as arrays
 
-`ParseUI` Internally, `__asModVector` is used which converts `number[]` to `mod.Vector`.
+Inside `ParseUI`, `__asModVector` converts `number[]` to `mod.Vector`.
 
 ```ts
 position: [50, 100]
@@ -479,8 +476,8 @@ If there are 3 elements, it will be X/Y/Z.
 ## Notes on textLabel and Message
 
 Text `textLabel` is internally converted to `mod.Message(textLabel)` if it is a string.
-However, it is basic to pre-register the characters shown on the player's screen at `Strings.json`.
-Please use the `Strings.json` key for characters that appear on the screen, such as `textLabel`, notifications, WorldIcon text, `SetUITextLabel`, etc.
+As a rule, text shown on the player's screen should be registered in `Strings.json` in advance.
+For text that appears on screen, such as `textLabel`, notifications, WorldIcon text, and `SetUITextLabel`, use keys from `Strings.json`.
 
 ```ts
 textLabel: mod.Message(mod.stringkeys.start)
@@ -534,7 +531,7 @@ Since UI tends to be expensive to generate, the basic policy is as follows.
 
 In particular, avoid continuously calling `ParseUI` in the `Ongoing...` series.
 
-# Notification/message display assistance
+# Notification and Message Display Helpers
 
 ## ShowNotificationMessage
 
@@ -599,10 +596,10 @@ modlib.ClearCustomNotificationMessage(
 ```
 
 Delete the custom notification UI for the specified slot.
-If there is no target, it will be deleted from all players, if it is `Player` it will be deleted from the individual, if it is `Team` it will be deleted from the whole team.
+If there is no target, it is deleted for all players. If the target is `Player`, it is deleted for that player. If the target is `Team`, it is deleted for every player on that team.
 
 Internally, `FindUIWidgetWithName` and `DeleteUIWidget` are used.
-Wrapped in `try/catch` in case nothing is found to be deleted.
+It is wrapped in `try/catch` in case the target to delete is not found.
 
 ## ClearAllCustomNotificationMessages
 
@@ -664,14 +661,14 @@ Delete HeaderText, MessageText1, MessageText2, MessageText3, and MessageText4 in
 | `ClearAllCustomNotificationMessages(target)` | Delete all custom notifications for the specified player |
 | `ClearCustomNotificationMessage(custom, target)` | Delete specified custom notification slot |
 
-# Points to note in practice
+# Practical Notes
 
-## Basically prioritize modlib and use mods only where necessary
+## Prefer modlib by Default, and Use mod Only Where Needed
 
-In this document, we will prioritize using `modlib` during implementation.
-Please use the ones provided in `modlib` first, such as `ShowNotificationMessage`, `getTeamId`, `ConvertArray`, `ConditionState`, `ParseUI`.
+In this book, implementation uses `modlib` first.
+Use what `modlib` already provides first, such as `ShowNotificationMessage`, `getTeamId`, `ConvertArray`, `ConditionState`, and `ParseUI`.
 
-Then, use `mod` only for functions that are not available in `modlib` or for processes where you want to directly control detailed arguments of `mod`.
+Then use `mod` only for features that are not available in `modlib`, or for code where you need direct control over detailed `mod` arguments.
 If it doesn't work, check which `mod` function is called within `modlib`.
 For example, if `ShowNotificationMessage` is behaving strangely, look at how `mod.DisplayNotificationMessage` is finally called.
 
@@ -679,7 +676,7 @@ For example, if `ShowNotificationMessage` is behaving strangely, look at how `mo
 
 `ConvertArray(mod.AllPlayers())`, `getPlayersInTeam`, and `ParseUI` are useful, but calling them every frame becomes expensive.
 
-This is an example that I would especially like to avoid.
+Here is an example to avoid in particular.
 
 ```ts
 export function OngoingGlobal(): void {
@@ -696,11 +693,11 @@ Internally, conditions are checked every 0.2 seconds.
 
 For processes that require strict timing, prioritize dedicated state management and events.
 
-## Create a ledger of Condition number
+## Keep a Ledger of Condition Numbers
 
 The numbers `getGlobalCondition(0)` and `getPlayerCondition(player, 2)` become meaningless as they increase.
 
-It is safe to keep it constant.
+It is safer to define constants.
 
 ```ts
 const CONDITION_READY = 0;
@@ -709,7 +706,7 @@ const CONDITION_LOW_HEALTH = 1;
 const readyState = modlib.getGlobalCondition(CONDITION_READY);
 ```
 
-Please create a ledger for the Condition number in the same way as the ObjId ledger.
+Keep a ledger for Condition numbers just like the ObjId ledger.
 
 ## Don't let UI names collide
 
@@ -722,7 +719,7 @@ If you have a player-based UI, including ObjId in the name will reduce accidents
 const name = `Timer_${mod.GetObjId(eventPlayer)}`;
 ```
 
-# These 5 things to remember first
+# The First 5 Things to Remember
 
 You don't need to memorize everything at once.
 Initially, the following five are sufficient.
@@ -732,15 +729,15 @@ Initially, the following five are sufficient.
 | `ShowNotificationMessage` | You can write short notifications in the upper right |
 | `getTeamId` | Team comparisons are easier to read |
 | `ConvertArray` | `mod.Array` can be treated as a normal array |
-| `ConditionState` / `getGlobalCondition` | Prevents multiple ignitions |
+| `ConditionState` / `getGlobalCondition` | Prevents repeated firing |
 | `ParseUI` | Create complex UIs at once |
 
 # Summary
 
-`modlib` is an auxiliary library to use BF6 Portal SDK easily.
+`modlib` is a helper library for using the BF6 Portal SDK more easily.
 
 However, it is not a magic library.
-Inside is TypeScript code that calls the `mod` API.
+Inside, it is TypeScript code that calls the `mod` API.
 That's why when you have trouble, you can follow the mechanism by reading `index.ts`.
 
 In this book, we recommend using `modlib` first, and then directly using `mod` only where necessary.
