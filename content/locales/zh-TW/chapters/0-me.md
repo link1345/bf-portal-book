@@ -46,3 +46,4 @@ free: true
 ## 變更日誌
 
 2026-04-30：初稿
+2026-05-01：新增關於 BF6 Portal TypeScript MCP 伺服器，以及把狀況和日誌交給 AI 來撰寫 Portal 程式碼的章節

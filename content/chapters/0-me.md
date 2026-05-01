@@ -46,3 +46,4 @@ TypeScriptの文法は、「[サバイバルTypeScript](https://typescriptbook.j
 ## 変更履歴
 
 2026-04-30: 初稿
+2026-05-01: BF6 Portal TypeScript MCPサーバーと、AIに状況・ログを渡してPortalコードを作る進め方の章を追加
