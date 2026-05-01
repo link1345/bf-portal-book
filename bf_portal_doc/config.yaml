@@ -16,6 +16,7 @@ chapters:
   - 7b-program-layout
   - 8-action
   - 9-server
+  - 9b-codex-mcp
   - 10-end
   - a-event
   - a-action-core
