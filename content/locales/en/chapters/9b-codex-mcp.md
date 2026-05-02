@@ -59,8 +59,24 @@ https://github.com/link1345/bf6-portal-typescript-mcp
 If you tell the AI, "If you do not know a Portal API, use MCP to check it before writing code," the AI can write code while referring to SDK information instead of making you search `index.d.ts` every time.
 
 Think of MCP as a dictionary you give to the AI.
+Rather than something humans directly operate and memorize APIs from, it is easier to think of it as a tool for telling the AI, "If you do not know something, look it up with MCP."
+
 However, MCP alone does not reveal real in-game behavior.
 Humans still need to provide what happened in-game and what appeared in the logs.
+
+If you get stuck on MCP setup or usage, it is fine to ask the Codex AI directly.
+
+```text
+I want to set up bf6_portal_typescript_mcp.
+Please look at my current settings screen and error, then tell me what is missing.
+```
+
+```text
+If there is anything unclear about Portal APIs, use MCP to look it up before answering.
+```
+
+When asking AI, include the error message, what you entered in the settings screen, and the SDK folder location.
+That will make the conversation much faster.
 
 # 3 Configure the MCP Server in Codex App
 
@@ -93,6 +109,34 @@ Replace `/path/to/bf6-portal-sdk` with the location of your Portal SDK.
 As a guide, specify the location where you can find `code/types/mod/index.d.ts`.
 
 After setup, you are ready if `bf6_portal_typescript_mcp` is available in the Codex tool list.
+
+## Checks When It Does Not Work
+
+If it does not work after setup, check the following in order.
+
+* Whether `npx` is available.
+* Whether the folder specified by `--sdk_path` contains `code/types/mod/index.d.ts`.
+* Whether you restarted Codex App after changing the settings.
+* Whether `bf6_portal_typescript_mcp` appears in the Codex tool list.
+* Whether the server name is short and easy to recognize.
+
+If the server name is hard to understand, the AI may not know which MCP server to use.
+OpenAI's Docs MCP explanation also recommends explicit instructions to the AI or writing the instruction in `AGENTS.md` when you want a specific MCP server to be used.
+
+https://developers.openai.com/learn/docs-mcp
+
+## Also Check Codex App Settings
+
+In Codex App Settings, you can adjust not only MCP, but also appearance, personality, and custom instructions.
+If you want to use Japanese, adding a custom instruction like the following can keep explanations in Japanese while preserving code and logs.
+
+```text
+Please explain in Japanese.
+Keep code, function names, and logs in their original English.
+```
+
+If code, function names, and logs are translated into Japanese too, the result may no longer be usable in Portal.
+A safe split is: explanations in Japanese, code and API names in English.
 
 # 4 The First Request to Give AI
 
@@ -163,7 +207,7 @@ Bad example:
 The Apple does not appear. Please fix it.
 ```
 
-This does not tell whether the problem is loading, an event not firing, a coordinate mistake, or a Prefab mismatch.
+This does not tell whether the problem is loading, an event not firing, a coordinate mistake, or the wrong object.
 
 Good example:
 
@@ -306,7 +350,64 @@ This format works with Codex and with other AIs.
 You do not need to give the AI a perfect theory.
 Give it the goal, state, logs, and suspicious points.
 
-# 10 Notes for This Workflow
+# 10 Common Beginner Stumbling Points
+
+## AI Does Not Use MCP Even Though It Is Configured
+
+Even if a tool is available, the AI will not always choose the best one automatically every time.
+When Portal API details are unclear, explicitly write "use MCP to look it up" in your request.
+
+```text
+bf6_portal_typescript_mcp is available.
+If you are unsure about Portal APIs or enums, check them with MCP before writing code.
+```
+
+If writing this every time is annoying, it is also useful to write the same policy in the project's `AGENTS.md`.
+
+## I Cannot Read the English Error Message
+
+You do not need to force yourself to translate error messages.
+Paste the error into AI as-is, and ask for the cause and next checks in Japanese.
+
+```text
+The following error appeared.
+I am not good at English, so please explain the cause and check steps in Japanese.
+However, keep code and function names in English.
+
+...
+```
+
+If you shorten the error too much, the cause may disappear.
+Even when the log is long, keep the first error, the last error, and the operation you performed.
+
+## Codex Replies in English
+
+Specify Japanese answers in Codex App Settings or custom instructions.
+However, also write that Portal code, API names, logs, and file names should remain in English.
+
+The part that can be Japanese is the explanation.
+If the inside of the code is translated into Japanese, it can break when copied.
+
+## Rate Limits Feel Scary
+
+OpenAI rate limits are measured across multiple dimensions such as request count and token count, and they also vary by model.
+
+https://developers.openai.com/api/docs/guides/rate-limits
+
+`fast` is not a mode for using tokens carelessly.
+Because replies are fast, it becomes easy to send many requests in a short time.
+Also, if you paste long logs or long code in full every time, token usage grows and the limit can feel close.
+
+If that feels scary, split the work like this.
+
+* Paste only the log sections that seem relevant first.
+* Do not ask for a large fix all at once; ask "first, just identify the cause."
+* Do not paste the full code every time; focus on what changed since last time and the error that appeared.
+* Do not repeat the same explanation again and again; organize it as goal, phenomenon, log excerpt, and request.
+
+Fast modes are useful, but it is safer not to think of them as saving modes.
+
+# 11 Notes for This Workflow
 
 * It is fine to assume AI will write the code.
 * Humans provide the goal, phenomenon, and logs.
