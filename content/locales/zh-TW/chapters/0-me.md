@@ -47,3 +47,4 @@ free: true
 
 2026-04-30：初稿
 2026-05-01：新增關於 BF6 Portal TypeScript MCP 伺服器，以及把狀況和日誌交給 AI 來撰寫 Portal 程式碼的章節
+2026-05-02：補充關於 Codex App 中 MCP 設定、向 AI 提問的方法，以及 Rate limit 的說明

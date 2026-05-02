@@ -47,3 +47,4 @@ This book was reviewed and revised with the help of the following people. I woul
 
 2026-04-30: First draft
 2026-05-01: Added a chapter about the BF6 Portal TypeScript MCP server and the workflow for giving AI the situation and logs to build Portal code
+2026-05-02: Added supplemental notes about MCP setup in Codex App, how to ask AI for help, and rate limits
