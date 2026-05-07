@@ -249,10 +249,11 @@ If you need words like "capture" or "owning team", use `CapturePoint`. If you wa
 * Role: Defines the spawn position and content of fixed weapons.
 * Practical point: Watch physical interference with sight lines, incoming-fire paths, and cover. Keep room to control removal or relocation through IDs.
 
-## SurroundingCombatArea (HQ Buffer)
+## CombatArea SurroundingVolume (HQ Buffer)
 
-* Entity: `res://objects/gameplay/common/SurroundingCombatArea.tscn`
-* Role: Sets a restricted area around HQ in Conquest-style modes so enemies cannot enter the HQ.
+* Entity: `res://objects/gameplay/common/CombatArea.tscn`
+* Role: Uses `CombatArea`'s `SurroundingVolume` to set a surrounding area around HQ in Conquest-style modes where enemies have limited access.
+* Note: This is not a separate placeable object named `SurroundingCombatArea.tscn`. Use `CombatArea` with `CombatVolume` / `ExclusionVolume` / `SurroundingVolume` configured.
 * Practical point: Make it strong only near HQ. If it is too wide, attackers lose room to play.
 
 ## VehicleSpawner (Vehicle Spawning)

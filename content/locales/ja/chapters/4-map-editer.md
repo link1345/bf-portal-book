@@ -249,10 +249,11 @@ TypeScript側では `mod.GetVL7Cloud(id)` で取得し、`mod.SetVL7CloudEffects
 * 役割：固定武器の出現位置・内容を定義。
 * 実務の肝：視界・被弾通路・遮蔽の物理干渉に注意。IDで“撤去／再配置”の制御余地を確保。
 
-## SurroundingCombatArea（HQの防波堤）
+## CombatArea の SurroundingVolume（HQの防波堤）
 
-* 実体：`res://objects/gameplay/common/SurroundingCombatArea.tscn`
-* 役割：コンクエスト系でHQに敵が侵入しないよう、HQ周囲の禁止域を設定。
+* 実体：`res://objects/gameplay/common/CombatArea.tscn`
+* 役割：`CombatArea` の `SurroundingVolume` で、コンクエスト系のHQ周囲に敵が侵入しにくい周辺エリアを設定。
+* 補足：`SurroundingCombatArea.tscn` という独立した設置オブジェクトではありません。`CombatArea` に `CombatVolume` / `ExclusionVolume` / `SurroundingVolume` を設定して使います。
 * 実務の肝：HQ近傍だけを強めに。広げすぎると攻め手が窒息します。
 
 ## VehicleSpawner（車両出現）

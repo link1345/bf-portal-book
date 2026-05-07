@@ -249,10 +249,11 @@ TypeScript 側用 `mod.GetVL7Cloud(id)` 取得，並用 `mod.SetVL7CloudEffects(
 * 作用：定義固定武器的出現位置和內容。
 * 實務要點：注意視野、受擊路線、掩體的物理干涉。用 ID 保留「撤去 / 重新配置」的控制空間。
 
-## SurroundingCombatArea（HQ 的防線）
+## CombatArea 的 SurroundingVolume（HQ 的防線）
 
-* 實體：`res://objects/gameplay/common/SurroundingCombatArea.tscn`
-* 作用：在征服類玩法中，設定 HQ 周圍的禁止區域，防止敵人進入 HQ。
+* 實體：`res://objects/gameplay/common/CombatArea.tscn`
+* 作用：透過 `CombatArea` 的 `SurroundingVolume`，在征服類玩法中設定 HQ 周圍的周邊區域，限制敵人進入。
+* 補充：這不是名為 `SurroundingCombatArea.tscn` 的獨立可放置物件。請設定 `CombatArea` 的 `CombatVolume` / `ExclusionVolume` / `SurroundingVolume` 使用。
 * 實務要點：只在 HQ 附近加強。擴得太大，進攻方會失去行動空間。
 
 ## VehicleSpawner（載具生成）
