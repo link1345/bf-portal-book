@@ -2,6 +2,16 @@
 
 Zenn記法のMarkdownをReact/Next.jsで表示する静的Web書籍サイトです。
 
+## Questions / Support
+
+If you have questions or feedback, feel free to contact me on the Battlefield Portal Discord server 😄
+(ご質問やご意見がありましたら、PlumRiceのDiscordサーバーでお気軽にご連絡ください)
+
+Please use the appropriate thread/channel for discussions related to this project.
+(このプロジェクトに関する議論は、適切なスレッド／チャンネルをご利用ください。)
+
+https://discord.gg/Zy65k8AxH2
+
 ## Commands
 
 依存関係はbunで管理します。
