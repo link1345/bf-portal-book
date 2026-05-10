@@ -10,6 +10,9 @@ export const metadata: Metadata = {
     template: "%s | BF Portal Book",
   },
   description: uiText[defaultLocale].bookDescription,
+  verification: {
+    google: "MnTAVU2rjTNXby0Ae3O6a6gnhH6lIkklglwdDAGDIQE",
+  },
 };
 
 export default function RootLayout({
