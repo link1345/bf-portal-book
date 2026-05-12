@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://link1345.github.io/bf-portal-book/sitemap.xml
