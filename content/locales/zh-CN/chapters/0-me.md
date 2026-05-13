@@ -48,3 +48,4 @@ free: true
 2026-04-30：初稿
 2026-05-01：新增关于 BF6 Portal TypeScript MCP 服务器，以及把状况和日志交给 AI 来编写 Portal 代码的章节
 2026-05-02：补充关于 Codex App 中 MCP 设置、向 AI 提问的方法，以及 Rate limit 的说明
+2026-05-13：对应官方 SDK v1.3.1.0。补充 `HybridExample`、`CustomCQ`、`mod.strings`、Radio 系 Music 常量、新增装备常量，以及 `VehicleSpawner` 的 `EnableRespawn` 变更说明
