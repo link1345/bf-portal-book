@@ -39,6 +39,9 @@ If you come across an API you don't know, first search for the function name at 
 | `VL7Example` | You can check entry/exit events of special objects |
 | `BumperCars` | Read as an example of small game loops, vehicles, and state management |
 | `GibraltarGrandprix` | Read as an example of races, checkpoints, ranking UI, and vehicle selection |
+| `AcePursuit` | Read as an example of aircraft racing, time limits, and state management |
+| `HybridExample` | Read as an example of calling TypeScript from Portal blocks and returning values into variables or UI |
+| `CustomCQ` | Read as an example of a large Conquest-style template, ObjID design, and multi-map support |
 
 For beginners, `_StartHere_BasicTemplate` is enough. Larger samples are appealing because they already work, but they contain too much information to use as a first lesson.
 
@@ -82,7 +85,7 @@ By simply changing numbers and settings to names, the code becomes much easier t
 
 ## 2. Split responsibilities into classes once the code grows
 
-In larger samples like `BumperCars`, `GibraltarGrandprix`, and `AcePursuit`, state management, player management, and UI management are separated into classes.
+In larger samples like `BumperCars`, `GibraltarGrandprix`, `AcePursuit`, and `CustomCQ`, state management, player management, and UI management are separated into classes or grouped rule areas.
 
 This doesn't mean that you should turn all your Portal code into a class.
 At first, just the functions are sufficient. However, as the number of states and UI for each player increases, it will be easier to read if you separate them into classes based on their responsibilities.
@@ -125,7 +128,7 @@ By simply separating "create," "update," and "close," it becomes easier to add p
 
 Official samples are strong learning material if you read them in the correct order.
 
-First, treat `docs/pages` and `index.d.ts` as dictionaries, and learn the event shape with `_StartHere_BasicTemplate`. Then read the purpose-built samples under `GodotProject/mods`.
+First, treat `docs/pages` and `index.d.ts` as dictionaries, and learn the event shape with `_StartHere_BasicTemplate`. Then read the purpose-built samples under `GodotProject/mods`. SDK 1.3.1.0 adds `HybridExample` and `CustomCQ`, giving you examples of mixed block/TypeScript logic and a full-scale mode template.
 Then, rather than copying the entire contents of the sample, please incorporate the grouping of setting values, separation of responsibilities using classes, and UI management patterns into your own code. Appendix B of this book also covers only the samples located in this folder.
 
 ---

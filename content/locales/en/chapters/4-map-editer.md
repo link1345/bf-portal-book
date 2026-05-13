@@ -13,7 +13,7 @@ Use it for the first pass of candidate hunting before doing the final check in G
 
 # 1 What "Placeable Objects" Really Are: `res://objects` and Map Dependencies
 
-**Objects you can place on a map are limited to files inside Godot's `res://objects` file system.** In addition, **the range of placeable objects depends on which map you use as the base for editing.** **As of April 21, 2026, the Portal SDK available here (version 1.2.3.0) is structured as follows.**
+**Objects you can place on a map are limited to files inside Godot's `res://objects` file system.** In addition, **the range of placeable objects depends on which map you use as the base for editing.** **As of May 13, 2026, the Portal SDK available here (version 1.3.1.0) is structured as follows.**
 
 The SDK structure may change through updates. Before working, check `sdk.version.json` directly under the SDK. If it differs from this book, prioritize the SDK's `docs/pages/spatial_editor.html` and `code/types/mod/index.d.ts`.
 
@@ -56,6 +56,7 @@ For example, `AAGun_01` is defined as follows.
 
 In this case, `AAGun_01` is an asset under `Props` and is restricted to `MP_Battery`.
 On the other hand, gameplay assets such as `AI_Spawner`, `AreaTrigger`, `WorldIcon`, and `VehicleSpawner` have `levelRestrictions: []` in the SDK available here.
+In SDK 1.3.1.0, the `VehicleSpawner`-related property name changed from `DisableRespawn` to `EnableRespawn`, and its default is now `true`. When porting from old notes or templates, read it as a flag that enables respawn, not a flag that disables it.
 Empty arrays, or entries with no restriction field, are candidates for common use. Still, SDK updates and editor warnings take priority.
 
 In practice, check in this order.
@@ -89,7 +90,7 @@ flowchart TD
 ```
 
 Folder names, official Level names, and Map IDs do not always match.
-In the SDK's `docs/pages/spatial_editor.html`, the available Levels are organized as follows (as of April 21, 2026, SDK 1.2.3.0).
+In the SDK's `docs/pages/spatial_editor.html` and `FbExportData/level_info.json`, the available Levels are organized as follows (as of May 13, 2026, SDK 1.3.1.0).
 
 | Official Level Name | Map ID |
 | ---- | ---- |

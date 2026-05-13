@@ -5,7 +5,9 @@ free: true
 
 # How to read this appendix
 
-This appendix lists the events and actions available in BF6 Portal TypeScript based on the `mod` namespace of the local SDK `books/bf_portal_doc/tmp/bf6-sdk/code/types/mod/index.d.ts`. The reference SDK is `1.2.3.0` along with `sdk.version.json` and `index.d.ts`. Please be sure to search for `index.d.ts` before implementation, as it may increase or decrease with SDK updates.
+This appendix lists the events and actions available in BF6 Portal TypeScript based on the `mod` namespace of the official SDK `code/types/mod/index.d.ts`. The reference SDK is `1.3.1.0` according to `index.d.ts`. Please be sure to search for `index.d.ts` before implementation, as it may increase or decrease with SDK updates.
+
+SDK 1.3.1.0 adds `mod.strings`, `MusicPackages.Radio`, `Radio_*` music events and parameters, and several weapon and gadget constants. `HybridExample` is a concrete example of reading raw string values through `mod.strings[key]`.
 
 In TypeScript, events are written as `export function On...` or `export function Ongoing...`. Actions and value retrieval are called with `mod.`, such as `mod.Set...`, `mod.Get...`, `mod.Create...`.
 

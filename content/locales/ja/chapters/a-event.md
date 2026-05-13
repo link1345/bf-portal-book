@@ -5,7 +5,9 @@ free: true
 
 # この付録の読み方
 
-この付録は、ローカルSDK `books/bf_portal_doc/tmp/bf6-sdk/code/types/mod/index.d.ts` の `mod` namespaceをもとに、BF6 Portal TypeScriptで使えるイベントとアクションを一覧化したものです。基準SDKは `sdk.version.json` と `index.d.ts` に合わせて `1.2.3.0` です。SDK更新で増減する可能性があるので、実装前には必ず手元の `index.d.ts` を検索してください。
+この付録は、公式SDK `code/types/mod/index.d.ts` の `mod` namespaceをもとに、BF6 Portal TypeScriptで使えるイベントとアクションを一覧化したものです。基準SDKは `index.d.ts` に合わせて `1.3.1.0` です。SDK更新で増減する可能性があるので、実装前には必ず手元の `index.d.ts` を検索してください。
+
+SDK 1.3.1.0では、文字列実体を参照する `mod.strings`、`MusicPackages.Radio` と `Radio_*` 系の音楽イベント・パラメータ、いくつかの武器・ガジェット定数が追加されています。特に `HybridExample` は `mod.strings[key]` を使って文字列JSONの値を直接読む例になっています。
 
 TypeScriptでは、イベントは `export function On...` または `export function Ongoing...` として書きます。アクションや値取得は `mod.Set...`、`mod.Get...`、`mod.Create...` のように `mod.` を付けて呼びます。
 

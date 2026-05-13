@@ -39,6 +39,9 @@ SDK 包含官方範例。如果一上來就閱讀大型範例，UI、AI、車輛
 | `VL7Example` | 可以查看特殊物件的進入 / 退出事件 |
 | `BumperCars` | 閱讀小遊戲循環、車輛和狀態管理的範例 |
 | `GibraltarGrandprix` | 閱讀比賽、檢查點、名次 UI 和車輛選擇的範例 |
+| `AcePursuit` | 閱讀飛機競速、時間限制、狀態管理的範例 |
+| `HybridExample` | 閱讀從 Portal 區塊呼叫 TypeScript，並把回傳值交給變數或 UI 的範例 |
+| `CustomCQ` | 閱讀大型 Conquest 風格範本、ObjID 設計、多地圖支援的範例 |
 
 對於初學者來說，`_StartHere_BasicTemplate` 就足夠了。複雜範例作為可執行的成品很有吸引力，但資訊量太大，不適合作為最開始的教材。
 
@@ -82,7 +85,7 @@ const VEHICLE_POOL = [mod.VehicleList.Quadbike, mod.VehicleList.GolfCart];
 
 ## 2. 當程式碼變大後，用類別劃分職責
 
-在較大的範例中，例如 `BumperCars`、`GibraltarGrandprix` 和 `AcePursuit`，狀態管理、玩家管理和 UI 管理被分為不同的類別。
+在較大的範例中，例如 `BumperCars`、`GibraltarGrandprix`、`AcePursuit` 和 `CustomCQ`，狀態管理、玩家管理和 UI 管理被分為不同的類別或規則區塊。
 
 這並不意味著你應該將所有 Portal 程式碼變成一個類別。
 一開始只用函式就足夠了。然而，隨著每個玩家的狀態和 UI 數量的增加，如果你根據職責將它們分成不同的類，將會更容易閱讀。
@@ -125,7 +128,7 @@ class ReadyUpUI {
 
 只要按正確順序閱讀，官方範例就是很強的學習材料。
 
-首先，把 `docs/pages` 和 `index.d.ts` 當作字典，並用 `_StartHere_BasicTemplate` 掌握事件的形狀。然後閱讀 `GodotProject/mods` 下依目的分類的範例。
+首先，把 `docs/pages` 和 `index.d.ts` 當作字典，並用 `_StartHere_BasicTemplate` 掌握事件的形狀。然後閱讀 `GodotProject/mods` 下依目的分類的範例。SDK 1.3.1.0 追加了 `HybridExample` 和 `CustomCQ`，可以學習區塊與 TypeScript 混合使用，以及完整規模的模式範本。
 接著，不要照搬範例的全部內容，而是把設定值集中管理、用類別分離職責、UI 管理方式這些寫法吸收到自己的程式碼中。本書的附錄 B 也只介紹這個資料夾中的範例。
 
 ---

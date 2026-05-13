@@ -5,7 +5,9 @@ free: true
 
 # 如何閱讀本附錄
 
-本附錄基於本地 SDK `books/bf_portal_doc/tmp/bf6-sdk/code/types/mod/index.d.ts` 的 `mod` 命名空間列出了 BF6 Portal TypeScript 中可用的事件和動作。參考 SDK 為 `1.2.3.0`、`sdk.version.json` 和 `index.d.ts`。請務必在實作前搜尋 `index.d.ts`，因為它可能會隨著 SDK 更新而增加或減少。
+本附錄基於官方 SDK `code/types/mod/index.d.ts` 的 `mod` 命名空間列出了 BF6 Portal TypeScript 中可用的事件和動作。參考 SDK 以 `index.d.ts` 為準，為 `1.3.1.0`。請務必在實作前搜尋 `index.d.ts`，因為它可能會隨著 SDK 更新而增加或減少。
+
+SDK 1.3.1.0 追加了 `mod.strings`、`MusicPackages.Radio`、`Radio_*` 系音樂事件和參數，以及若干武器和 Gadget 常數。`HybridExample` 是透過 `mod.strings[key]` 直接讀取字串值的具體範例。
 
 在 TypeScript 中，事件被寫為 `export function On...` 或 `export function Ongoing...`。使用 `mod.` 呼叫動作和值取得，例如 `mod.Set...`、`mod.Get...`、`mod.Create...`。
 

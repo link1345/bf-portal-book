@@ -13,7 +13,7 @@ free: true
 
 # 1 “可以放置的东西”的本质：`res://objects` 与地图依赖
 
-**地图上可以放置的对象，仅限于 Godot 文件系统 `res://objects` 内的对象。** 此外，**根据以哪张地图为基础进行编辑，可放置对象的范围也会受到限制。** **截至 2026 年 4 月 21 日，手头的 Portal SDK（版本：1.2.3.0）结构如下。**
+**地图上可以放置的对象，仅限于 Godot 文件系统 `res://objects` 内的对象。** 此外，**根据以哪张地图为基础进行编辑，可放置对象的范围也会受到限制。** **截至 2026 年 5 月 13 日，手头的 Portal SDK（版本：1.3.1.0）结构如下。**
 
 SDK 可能会随着更新而改变结构。开始作业前，请确认 SDK 根目录下的 `sdk.version.json`。如果与本书不同，请优先参考 SDK 内的 `docs/pages/spatial_editor.html` 和 `code/types/mod/index.d.ts`。
 
@@ -56,6 +56,7 @@ Godot 的实际文件夹示例：
 
 这种情况下，可以理解为 `AAGun_01` 是 `Props` 下的资产，并且被限制为面向 `MP_Battery`。
 另一方面，`AI_Spawner`、`AreaTrigger`、`WorldIcon`、`VehicleSpawner` 等游戏规则用资产，在手头 SDK 中是 `levelRestrictions: []`。
+SDK 1.3.1.0 中，`VehicleSpawner` 相关属性名从 `DisableRespawn` 变为 `EnableRespawn`，默认值也变为 `true`。从旧笔记或模板移植时，请把它理解为“启用重生”的标志，而不是“禁用重生”的标志。
 空数组或没有限制项的对象，可以作为通用候选，但仍以 SDK 更新后的内容和编辑器侧警告为准。
 
 实务中，按下面顺序确认比较安全。
@@ -89,7 +90,7 @@ flowchart TD
 ```
 
 文件夹名、官方 Level Name、Map ID 可能并不一致。
-SDK 的 `docs/pages/spatial_editor.html` 中，可用 Level 整理如下（截至 2026 年 4 月 21 日，SDK 1.2.3.0）。
+SDK 的 `docs/pages/spatial_editor.html` 和 `FbExportData/level_info.json` 中，可用 Level 整理如下（截至 2026 年 5 月 13 日，SDK 1.3.1.0）。
 
 | 官方 Level Name | Map ID |
 | ---- | ---- |
