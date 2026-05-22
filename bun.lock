@@ -3,7 +3,7 @@
   "configVersion": 0,
   "workspaces": {
     "": {
-      "name": "bf-portal-book",
+      "name": "",
       "dependencies": {
         "cheerio": "^1.2.0",
         "gray-matter": "^4.0.3",
