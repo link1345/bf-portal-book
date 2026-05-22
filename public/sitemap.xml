@@ -1,1082 +1,1082 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://bf6-book.orizika.com/</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW" />
-    <lastmod>2026-05-13T04:47:46.929Z</lastmod>
+    <loc>https://link1345.github.io/bf-portal-book//</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW" />
+    <lastmod>2026-05-13T04:55:03.897Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1</priority>
   </url>
   <url>
-    <loc>https://bf6-book.orizika.com/en</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW" />
-    <lastmod>2026-05-13T04:47:46.929Z</lastmod>
+    <loc>https://link1345.github.io/bf-portal-book//en</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW" />
+    <lastmod>2026-05-13T04:55:03.897Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bf6-book.orizika.com/zh-CN</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW" />
-    <lastmod>2026-05-13T04:47:46.929Z</lastmod>
+    <loc>https://link1345.github.io/bf-portal-book//zh-CN</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW" />
+    <lastmod>2026-05-13T04:55:03.897Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bf6-book.orizika.com/zh-TW</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW" />
-    <lastmod>2026-05-13T04:47:46.929Z</lastmod>
+    <loc>https://link1345.github.io/bf-portal-book//zh-TW</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW" />
+    <lastmod>2026-05-13T04:55:03.897Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bf6-book.orizika.com/chapters/0-me</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/0-me" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/0-me" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/0-me" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/0-me" />
-    <lastmod>2026-05-13T04:12:31.148Z</lastmod>
+    <loc>https://link1345.github.io/bf-portal-book//chapters/0-me</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/0-me" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/0-me" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/0-me" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/0-me" />
+    <lastmod>2026-05-13T04:55:03.897Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bf6-book.orizika.com/en/chapters/0-me</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/0-me" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/0-me" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/0-me" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/0-me" />
-    <lastmod>2026-05-13T04:12:31.148Z</lastmod>
+    <loc>https://link1345.github.io/bf-portal-book//en/chapters/0-me</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/0-me" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/0-me" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/0-me" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/0-me" />
+    <lastmod>2026-05-13T04:55:03.897Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://bf6-book.orizika.com/zh-CN/chapters/0-me</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/0-me" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/0-me" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/0-me" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/0-me" />
-    <lastmod>2026-05-13T04:12:31.148Z</lastmod>
+    <loc>https://link1345.github.io/bf-portal-book//zh-CN/chapters/0-me</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/0-me" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/0-me" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/0-me" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/0-me" />
+    <lastmod>2026-05-13T04:55:03.897Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://bf6-book.orizika.com/zh-TW/chapters/0-me</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/0-me" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/0-me" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/0-me" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/0-me" />
-    <lastmod>2026-05-13T04:12:31.148Z</lastmod>
+    <loc>https://link1345.github.io/bf-portal-book//zh-TW/chapters/0-me</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/0-me" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/0-me" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/0-me" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/0-me" />
+    <lastmod>2026-05-13T04:55:03.897Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://bf6-book.orizika.com/chapters/1-what-bf-portal</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/1-what-bf-portal" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/1-what-bf-portal" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/1-what-bf-portal" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/1-what-bf-portal" />
-    <lastmod>2026-05-13T04:12:31.149Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://bf6-book.orizika.com/en/chapters/1-what-bf-portal</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/1-what-bf-portal" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/1-what-bf-portal" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/1-what-bf-portal" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/1-what-bf-portal" />
-    <lastmod>2026-05-13T04:12:31.149Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://bf6-book.orizika.com/zh-CN/chapters/1-what-bf-portal</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/1-what-bf-portal" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/1-what-bf-portal" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/1-what-bf-portal" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/1-what-bf-portal" />
-    <lastmod>2026-05-13T04:12:31.149Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://bf6-book.orizika.com/zh-TW/chapters/1-what-bf-portal</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/1-what-bf-portal" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/1-what-bf-portal" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/1-what-bf-portal" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/1-what-bf-portal" />
-    <lastmod>2026-05-13T04:12:31.149Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://bf6-book.orizika.com/chapters/10-end</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/10-end" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/10-end" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/10-end" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/10-end" />
+    <loc>https://link1345.github.io/bf-portal-book//chapters/1-what-bf-portal</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/1-what-bf-portal" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/1-what-bf-portal" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/1-what-bf-portal" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/1-what-bf-portal" />
     <lastmod>2026-05-13T04:12:31.149Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bf6-book.orizika.com/en/chapters/10-end</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/10-end" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/10-end" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/10-end" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/10-end" />
+    <loc>https://link1345.github.io/bf-portal-book//en/chapters/1-what-bf-portal</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/1-what-bf-portal" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/1-what-bf-portal" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/1-what-bf-portal" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/1-what-bf-portal" />
     <lastmod>2026-05-13T04:12:31.149Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://bf6-book.orizika.com/zh-CN/chapters/10-end</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/10-end" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/10-end" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/10-end" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/10-end" />
+    <loc>https://link1345.github.io/bf-portal-book//zh-CN/chapters/1-what-bf-portal</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/1-what-bf-portal" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/1-what-bf-portal" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/1-what-bf-portal" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/1-what-bf-portal" />
     <lastmod>2026-05-13T04:12:31.149Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://bf6-book.orizika.com/zh-TW/chapters/10-end</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/10-end" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/10-end" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/10-end" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/10-end" />
+    <loc>https://link1345.github.io/bf-portal-book//zh-TW/chapters/1-what-bf-portal</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/1-what-bf-portal" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/1-what-bf-portal" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/1-what-bf-portal" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/1-what-bf-portal" />
     <lastmod>2026-05-13T04:12:31.149Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://bf6-book.orizika.com/chapters/2-start</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/2-start" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/2-start" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/2-start" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/2-start" />
+    <loc>https://link1345.github.io/bf-portal-book//chapters/10-end</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/10-end" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/10-end" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/10-end" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/10-end" />
     <lastmod>2026-05-13T04:12:31.149Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bf6-book.orizika.com/en/chapters/2-start</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/2-start" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/2-start" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/2-start" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/2-start" />
+    <loc>https://link1345.github.io/bf-portal-book//en/chapters/10-end</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/10-end" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/10-end" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/10-end" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/10-end" />
     <lastmod>2026-05-13T04:12:31.149Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://bf6-book.orizika.com/zh-CN/chapters/2-start</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/2-start" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/2-start" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/2-start" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/2-start" />
+    <loc>https://link1345.github.io/bf-portal-book//zh-CN/chapters/10-end</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/10-end" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/10-end" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/10-end" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/10-end" />
     <lastmod>2026-05-13T04:12:31.149Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://bf6-book.orizika.com/zh-TW/chapters/2-start</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/2-start" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/2-start" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/2-start" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/2-start" />
+    <loc>https://link1345.github.io/bf-portal-book//zh-TW/chapters/10-end</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/10-end" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/10-end" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/10-end" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/10-end" />
     <lastmod>2026-05-13T04:12:31.149Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://bf6-book.orizika.com/chapters/3-setup</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/3-setup" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/3-setup" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/3-setup" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/3-setup" />
-    <lastmod>2026-05-13T04:47:36.072Z</lastmod>
+    <loc>https://link1345.github.io/bf-portal-book//chapters/2-start</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/2-start" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/2-start" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/2-start" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/2-start" />
+    <lastmod>2026-05-13T04:12:31.149Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bf6-book.orizika.com/en/chapters/3-setup</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/3-setup" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/3-setup" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/3-setup" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/3-setup" />
-    <lastmod>2026-05-13T04:47:36.072Z</lastmod>
+    <loc>https://link1345.github.io/bf-portal-book//en/chapters/2-start</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/2-start" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/2-start" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/2-start" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/2-start" />
+    <lastmod>2026-05-13T04:12:31.149Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://bf6-book.orizika.com/zh-CN/chapters/3-setup</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/3-setup" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/3-setup" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/3-setup" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/3-setup" />
-    <lastmod>2026-05-13T04:47:36.072Z</lastmod>
+    <loc>https://link1345.github.io/bf-portal-book//zh-CN/chapters/2-start</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/2-start" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/2-start" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/2-start" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/2-start" />
+    <lastmod>2026-05-13T04:12:31.149Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://bf6-book.orizika.com/zh-TW/chapters/3-setup</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/3-setup" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/3-setup" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/3-setup" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/3-setup" />
-    <lastmod>2026-05-13T04:47:36.072Z</lastmod>
+    <loc>https://link1345.github.io/bf-portal-book//zh-TW/chapters/2-start</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/2-start" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/2-start" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/2-start" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/2-start" />
+    <lastmod>2026-05-13T04:12:31.149Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://bf6-book.orizika.com/chapters/4-map-editer</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/4-map-editer" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/4-map-editer" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/4-map-editer" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/4-map-editer" />
-    <lastmod>2026-05-13T04:47:36.138Z</lastmod>
+    <loc>https://link1345.github.io/bf-portal-book//chapters/3-setup</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/3-setup" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/3-setup" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/3-setup" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/3-setup" />
+    <lastmod>2026-05-13T04:52:19.128Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bf6-book.orizika.com/en/chapters/4-map-editer</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/4-map-editer" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/4-map-editer" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/4-map-editer" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/4-map-editer" />
-    <lastmod>2026-05-13T04:47:36.138Z</lastmod>
+    <loc>https://link1345.github.io/bf-portal-book//en/chapters/3-setup</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/3-setup" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/3-setup" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/3-setup" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/3-setup" />
+    <lastmod>2026-05-13T04:52:19.128Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://bf6-book.orizika.com/zh-CN/chapters/4-map-editer</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/4-map-editer" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/4-map-editer" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/4-map-editer" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/4-map-editer" />
-    <lastmod>2026-05-13T04:47:36.138Z</lastmod>
+    <loc>https://link1345.github.io/bf-portal-book//zh-CN/chapters/3-setup</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/3-setup" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/3-setup" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/3-setup" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/3-setup" />
+    <lastmod>2026-05-13T04:52:19.128Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://bf6-book.orizika.com/zh-TW/chapters/4-map-editer</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/4-map-editer" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/4-map-editer" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/4-map-editer" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/4-map-editer" />
-    <lastmod>2026-05-13T04:47:36.138Z</lastmod>
+    <loc>https://link1345.github.io/bf-portal-book//zh-TW/chapters/3-setup</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/3-setup" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/3-setup" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/3-setup" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/3-setup" />
+    <lastmod>2026-05-13T04:52:19.128Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://bf6-book.orizika.com/chapters/5-rule-editor</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/5-rule-editor" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/5-rule-editor" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/5-rule-editor" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/5-rule-editor" />
+    <loc>https://link1345.github.io/bf-portal-book//chapters/4-map-editer</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/4-map-editer" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/4-map-editer" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/4-map-editer" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/4-map-editer" />
+    <lastmod>2026-05-13T04:47:36.137Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://link1345.github.io/bf-portal-book//en/chapters/4-map-editer</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/4-map-editer" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/4-map-editer" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/4-map-editer" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/4-map-editer" />
+    <lastmod>2026-05-13T04:47:36.137Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://link1345.github.io/bf-portal-book//zh-CN/chapters/4-map-editer</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/4-map-editer" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/4-map-editer" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/4-map-editer" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/4-map-editer" />
+    <lastmod>2026-05-13T04:47:36.137Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://link1345.github.io/bf-portal-book//zh-TW/chapters/4-map-editer</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/4-map-editer" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/4-map-editer" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/4-map-editer" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/4-map-editer" />
+    <lastmod>2026-05-13T04:47:36.137Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://link1345.github.io/bf-portal-book//chapters/5-rule-editor</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/5-rule-editor" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/5-rule-editor" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/5-rule-editor" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/5-rule-editor" />
     <lastmod>2026-05-13T04:12:31.151Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bf6-book.orizika.com/en/chapters/5-rule-editor</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/5-rule-editor" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/5-rule-editor" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/5-rule-editor" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/5-rule-editor" />
+    <loc>https://link1345.github.io/bf-portal-book//en/chapters/5-rule-editor</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/5-rule-editor" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/5-rule-editor" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/5-rule-editor" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/5-rule-editor" />
     <lastmod>2026-05-13T04:12:31.151Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://bf6-book.orizika.com/zh-CN/chapters/5-rule-editor</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/5-rule-editor" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/5-rule-editor" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/5-rule-editor" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/5-rule-editor" />
+    <loc>https://link1345.github.io/bf-portal-book//zh-CN/chapters/5-rule-editor</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/5-rule-editor" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/5-rule-editor" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/5-rule-editor" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/5-rule-editor" />
     <lastmod>2026-05-13T04:12:31.151Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://bf6-book.orizika.com/zh-TW/chapters/5-rule-editor</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/5-rule-editor" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/5-rule-editor" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/5-rule-editor" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/5-rule-editor" />
+    <loc>https://link1345.github.io/bf-portal-book//zh-TW/chapters/5-rule-editor</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/5-rule-editor" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/5-rule-editor" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/5-rule-editor" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/5-rule-editor" />
     <lastmod>2026-05-13T04:12:31.151Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://bf6-book.orizika.com/chapters/6b-development</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/6b-development" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/6b-development" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/6b-development" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/6b-development" />
+    <loc>https://link1345.github.io/bf-portal-book//chapters/6b-development</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/6b-development" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/6b-development" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/6b-development" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/6b-development" />
     <lastmod>2026-05-13T04:12:31.152Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bf6-book.orizika.com/en/chapters/6b-development</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/6b-development" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/6b-development" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/6b-development" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/6b-development" />
+    <loc>https://link1345.github.io/bf-portal-book//en/chapters/6b-development</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/6b-development" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/6b-development" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/6b-development" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/6b-development" />
     <lastmod>2026-05-13T04:12:31.152Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://bf6-book.orizika.com/zh-CN/chapters/6b-development</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/6b-development" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/6b-development" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/6b-development" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/6b-development" />
+    <loc>https://link1345.github.io/bf-portal-book//zh-CN/chapters/6b-development</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/6b-development" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/6b-development" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/6b-development" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/6b-development" />
     <lastmod>2026-05-13T04:12:31.152Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://bf6-book.orizika.com/zh-TW/chapters/6b-development</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/6b-development" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/6b-development" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/6b-development" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/6b-development" />
+    <loc>https://link1345.github.io/bf-portal-book//zh-TW/chapters/6b-development</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/6b-development" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/6b-development" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/6b-development" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/6b-development" />
     <lastmod>2026-05-13T04:12:31.152Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://bf6-book.orizika.com/chapters/7b-program-layout</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/7b-program-layout" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/7b-program-layout" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/7b-program-layout" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/7b-program-layout" />
+    <loc>https://link1345.github.io/bf-portal-book//chapters/7b-program-layout</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/7b-program-layout" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/7b-program-layout" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/7b-program-layout" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/7b-program-layout" />
+    <lastmod>2026-05-13T04:12:31.152Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://link1345.github.io/bf-portal-book//en/chapters/7b-program-layout</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/7b-program-layout" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/7b-program-layout" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/7b-program-layout" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/7b-program-layout" />
+    <lastmod>2026-05-13T04:12:31.152Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://link1345.github.io/bf-portal-book//zh-CN/chapters/7b-program-layout</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/7b-program-layout" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/7b-program-layout" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/7b-program-layout" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/7b-program-layout" />
+    <lastmod>2026-05-13T04:12:31.152Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://link1345.github.io/bf-portal-book//zh-TW/chapters/7b-program-layout</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/7b-program-layout" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/7b-program-layout" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/7b-program-layout" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/7b-program-layout" />
+    <lastmod>2026-05-13T04:12:31.152Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://link1345.github.io/bf-portal-book//chapters/8-action</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/8-action" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/8-action" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/8-action" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/8-action" />
+    <lastmod>2026-05-13T04:12:31.152Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://link1345.github.io/bf-portal-book//en/chapters/8-action</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/8-action" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/8-action" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/8-action" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/8-action" />
+    <lastmod>2026-05-13T04:12:31.152Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://link1345.github.io/bf-portal-book//zh-CN/chapters/8-action</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/8-action" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/8-action" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/8-action" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/8-action" />
+    <lastmod>2026-05-13T04:12:31.152Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://link1345.github.io/bf-portal-book//zh-TW/chapters/8-action</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/8-action" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/8-action" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/8-action" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/8-action" />
+    <lastmod>2026-05-13T04:12:31.152Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://link1345.github.io/bf-portal-book//chapters/9-server</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/9-server" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/9-server" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/9-server" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/9-server" />
+    <lastmod>2026-05-13T04:12:31.152Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://link1345.github.io/bf-portal-book//en/chapters/9-server</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/9-server" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/9-server" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/9-server" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/9-server" />
+    <lastmod>2026-05-13T04:12:31.152Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://link1345.github.io/bf-portal-book//zh-CN/chapters/9-server</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/9-server" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/9-server" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/9-server" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/9-server" />
+    <lastmod>2026-05-13T04:12:31.152Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://link1345.github.io/bf-portal-book//zh-TW/chapters/9-server</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/9-server" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/9-server" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/9-server" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/9-server" />
+    <lastmod>2026-05-13T04:12:31.152Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://link1345.github.io/bf-portal-book//chapters/9b-codex-mcp</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/9b-codex-mcp" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/9b-codex-mcp" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/9b-codex-mcp" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/9b-codex-mcp" />
+    <lastmod>2026-05-13T04:12:31.152Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://link1345.github.io/bf-portal-book//en/chapters/9b-codex-mcp</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/9b-codex-mcp" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/9b-codex-mcp" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/9b-codex-mcp" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/9b-codex-mcp" />
+    <lastmod>2026-05-13T04:12:31.152Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://link1345.github.io/bf-portal-book//zh-CN/chapters/9b-codex-mcp</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/9b-codex-mcp" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/9b-codex-mcp" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/9b-codex-mcp" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/9b-codex-mcp" />
+    <lastmod>2026-05-13T04:12:31.152Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://link1345.github.io/bf-portal-book//zh-TW/chapters/9b-codex-mcp</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/9b-codex-mcp" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/9b-codex-mcp" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/9b-codex-mcp" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/9b-codex-mcp" />
+    <lastmod>2026-05-13T04:12:31.152Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://link1345.github.io/bf-portal-book//chapters/a-action-core</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/a-action-core" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/a-action-core" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/a-action-core" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/a-action-core" />
     <lastmod>2026-05-13T04:12:31.153Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bf6-book.orizika.com/en/chapters/7b-program-layout</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/7b-program-layout" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/7b-program-layout" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/7b-program-layout" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/7b-program-layout" />
+    <loc>https://link1345.github.io/bf-portal-book//en/chapters/a-action-core</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/a-action-core" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/a-action-core" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/a-action-core" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/a-action-core" />
     <lastmod>2026-05-13T04:12:31.153Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://bf6-book.orizika.com/zh-CN/chapters/7b-program-layout</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/7b-program-layout" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/7b-program-layout" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/7b-program-layout" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/7b-program-layout" />
+    <loc>https://link1345.github.io/bf-portal-book//zh-CN/chapters/a-action-core</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/a-action-core" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/a-action-core" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/a-action-core" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/a-action-core" />
     <lastmod>2026-05-13T04:12:31.153Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://bf6-book.orizika.com/zh-TW/chapters/7b-program-layout</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/7b-program-layout" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/7b-program-layout" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/7b-program-layout" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/7b-program-layout" />
+    <loc>https://link1345.github.io/bf-portal-book//zh-TW/chapters/a-action-core</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/a-action-core" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/a-action-core" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/a-action-core" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/a-action-core" />
     <lastmod>2026-05-13T04:12:31.153Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://bf6-book.orizika.com/chapters/8-action</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/8-action" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/8-action" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/8-action" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/8-action" />
+    <loc>https://link1345.github.io/bf-portal-book//chapters/a-action-ui</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/a-action-ui" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/a-action-ui" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/a-action-ui" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/a-action-ui" />
     <lastmod>2026-05-13T04:12:31.153Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bf6-book.orizika.com/en/chapters/8-action</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/8-action" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/8-action" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/8-action" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/8-action" />
+    <loc>https://link1345.github.io/bf-portal-book//en/chapters/a-action-ui</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/a-action-ui" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/a-action-ui" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/a-action-ui" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/a-action-ui" />
     <lastmod>2026-05-13T04:12:31.153Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://bf6-book.orizika.com/zh-CN/chapters/8-action</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/8-action" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/8-action" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/8-action" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/8-action" />
+    <loc>https://link1345.github.io/bf-portal-book//zh-CN/chapters/a-action-ui</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/a-action-ui" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/a-action-ui" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/a-action-ui" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/a-action-ui" />
     <lastmod>2026-05-13T04:12:31.153Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://bf6-book.orizika.com/zh-TW/chapters/8-action</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/8-action" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/8-action" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/8-action" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/8-action" />
+    <loc>https://link1345.github.io/bf-portal-book//zh-TW/chapters/a-action-ui</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/a-action-ui" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/a-action-ui" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/a-action-ui" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/a-action-ui" />
     <lastmod>2026-05-13T04:12:31.153Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://bf6-book.orizika.com/chapters/9-server</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/9-server" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/9-server" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/9-server" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/9-server" />
-    <lastmod>2026-05-13T04:12:31.153Z</lastmod>
+    <loc>https://link1345.github.io/bf-portal-book//chapters/a-event</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/a-event" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/a-event" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/a-event" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/a-event" />
+    <lastmod>2026-05-13T04:50:58.413Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bf6-book.orizika.com/en/chapters/9-server</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/9-server" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/9-server" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/9-server" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/9-server" />
-    <lastmod>2026-05-13T04:12:31.153Z</lastmod>
+    <loc>https://link1345.github.io/bf-portal-book//en/chapters/a-event</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/a-event" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/a-event" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/a-event" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/a-event" />
+    <lastmod>2026-05-13T04:50:58.413Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://bf6-book.orizika.com/zh-CN/chapters/9-server</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/9-server" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/9-server" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/9-server" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/9-server" />
-    <lastmod>2026-05-13T04:12:31.153Z</lastmod>
+    <loc>https://link1345.github.io/bf-portal-book//zh-CN/chapters/a-event</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/a-event" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/a-event" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/a-event" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/a-event" />
+    <lastmod>2026-05-13T04:50:58.413Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://bf6-book.orizika.com/zh-TW/chapters/9-server</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/9-server" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/9-server" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/9-server" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/9-server" />
-    <lastmod>2026-05-13T04:12:31.153Z</lastmod>
+    <loc>https://link1345.github.io/bf-portal-book//zh-TW/chapters/a-event</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/a-event" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/a-event" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/a-event" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/a-event" />
+    <lastmod>2026-05-13T04:50:58.413Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://bf6-book.orizika.com/chapters/9b-codex-mcp</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/9b-codex-mcp" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/9b-codex-mcp" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/9b-codex-mcp" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/9b-codex-mcp" />
-    <lastmod>2026-05-13T04:12:31.153Z</lastmod>
+    <loc>https://link1345.github.io/bf-portal-book//chapters/b-sample-0-intro</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/b-sample-0-intro" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/b-sample-0-intro" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/b-sample-0-intro" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/b-sample-0-intro" />
+    <lastmod>2026-05-13T04:47:46.928Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bf6-book.orizika.com/en/chapters/9b-codex-mcp</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/9b-codex-mcp" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/9b-codex-mcp" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/9b-codex-mcp" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/9b-codex-mcp" />
-    <lastmod>2026-05-13T04:12:31.153Z</lastmod>
+    <loc>https://link1345.github.io/bf-portal-book//en/chapters/b-sample-0-intro</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/b-sample-0-intro" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/b-sample-0-intro" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/b-sample-0-intro" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/b-sample-0-intro" />
+    <lastmod>2026-05-13T04:47:46.928Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://bf6-book.orizika.com/zh-CN/chapters/9b-codex-mcp</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/9b-codex-mcp" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/9b-codex-mcp" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/9b-codex-mcp" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/9b-codex-mcp" />
-    <lastmod>2026-05-13T04:12:31.153Z</lastmod>
+    <loc>https://link1345.github.io/bf-portal-book//zh-CN/chapters/b-sample-0-intro</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/b-sample-0-intro" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/b-sample-0-intro" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/b-sample-0-intro" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/b-sample-0-intro" />
+    <lastmod>2026-05-13T04:47:46.928Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://bf6-book.orizika.com/zh-TW/chapters/9b-codex-mcp</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/9b-codex-mcp" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/9b-codex-mcp" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/9b-codex-mcp" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/9b-codex-mcp" />
-    <lastmod>2026-05-13T04:12:31.153Z</lastmod>
+    <loc>https://link1345.github.io/bf-portal-book//zh-TW/chapters/b-sample-0-intro</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/b-sample-0-intro" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/b-sample-0-intro" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/b-sample-0-intro" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/b-sample-0-intro" />
+    <lastmod>2026-05-13T04:47:46.928Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://bf6-book.orizika.com/chapters/a-action-core</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/a-action-core" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/a-action-core" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/a-action-core" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/a-action-core" />
+    <loc>https://link1345.github.io/bf-portal-book//chapters/b-sample-ace-pursuit</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/b-sample-ace-pursuit" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/b-sample-ace-pursuit" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/b-sample-ace-pursuit" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/b-sample-ace-pursuit" />
     <lastmod>2026-05-13T04:12:31.154Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bf6-book.orizika.com/en/chapters/a-action-core</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/a-action-core" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/a-action-core" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/a-action-core" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/a-action-core" />
+    <loc>https://link1345.github.io/bf-portal-book//en/chapters/b-sample-ace-pursuit</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/b-sample-ace-pursuit" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/b-sample-ace-pursuit" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/b-sample-ace-pursuit" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/b-sample-ace-pursuit" />
     <lastmod>2026-05-13T04:12:31.154Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://bf6-book.orizika.com/zh-CN/chapters/a-action-core</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/a-action-core" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/a-action-core" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/a-action-core" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/a-action-core" />
+    <loc>https://link1345.github.io/bf-portal-book//zh-CN/chapters/b-sample-ace-pursuit</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/b-sample-ace-pursuit" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/b-sample-ace-pursuit" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/b-sample-ace-pursuit" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/b-sample-ace-pursuit" />
     <lastmod>2026-05-13T04:12:31.154Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://bf6-book.orizika.com/zh-TW/chapters/a-action-core</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/a-action-core" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/a-action-core" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/a-action-core" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/a-action-core" />
+    <loc>https://link1345.github.io/bf-portal-book//zh-TW/chapters/b-sample-ace-pursuit</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/b-sample-ace-pursuit" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/b-sample-ace-pursuit" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/b-sample-ace-pursuit" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/b-sample-ace-pursuit" />
     <lastmod>2026-05-13T04:12:31.154Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://bf6-book.orizika.com/chapters/a-action-ui</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/a-action-ui" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/a-action-ui" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/a-action-ui" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/a-action-ui" />
+    <loc>https://link1345.github.io/bf-portal-book//chapters/b-sample-basic-template</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/b-sample-basic-template" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/b-sample-basic-template" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/b-sample-basic-template" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/b-sample-basic-template" />
     <lastmod>2026-05-13T04:12:31.154Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bf6-book.orizika.com/en/chapters/a-action-ui</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/a-action-ui" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/a-action-ui" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/a-action-ui" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/a-action-ui" />
+    <loc>https://link1345.github.io/bf-portal-book//en/chapters/b-sample-basic-template</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/b-sample-basic-template" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/b-sample-basic-template" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/b-sample-basic-template" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/b-sample-basic-template" />
     <lastmod>2026-05-13T04:12:31.154Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://bf6-book.orizika.com/zh-CN/chapters/a-action-ui</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/a-action-ui" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/a-action-ui" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/a-action-ui" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/a-action-ui" />
+    <loc>https://link1345.github.io/bf-portal-book//zh-CN/chapters/b-sample-basic-template</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/b-sample-basic-template" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/b-sample-basic-template" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/b-sample-basic-template" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/b-sample-basic-template" />
     <lastmod>2026-05-13T04:12:31.154Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://bf6-book.orizika.com/zh-TW/chapters/a-action-ui</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/a-action-ui" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/a-action-ui" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/a-action-ui" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/a-action-ui" />
+    <loc>https://link1345.github.io/bf-portal-book//zh-TW/chapters/b-sample-basic-template</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/b-sample-basic-template" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/b-sample-basic-template" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/b-sample-basic-template" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/b-sample-basic-template" />
     <lastmod>2026-05-13T04:12:31.154Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://bf6-book.orizika.com/chapters/a-event</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/a-event" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/a-event" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/a-event" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/a-event" />
-    <lastmod>2026-05-13T04:47:36.202Z</lastmod>
+    <loc>https://link1345.github.io/bf-portal-book//chapters/b-sample-bumper-cars</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/b-sample-bumper-cars" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/b-sample-bumper-cars" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/b-sample-bumper-cars" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/b-sample-bumper-cars" />
+    <lastmod>2026-05-13T04:12:31.154Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bf6-book.orizika.com/en/chapters/a-event</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/a-event" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/a-event" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/a-event" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/a-event" />
-    <lastmod>2026-05-13T04:47:36.202Z</lastmod>
+    <loc>https://link1345.github.io/bf-portal-book//en/chapters/b-sample-bumper-cars</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/b-sample-bumper-cars" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/b-sample-bumper-cars" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/b-sample-bumper-cars" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/b-sample-bumper-cars" />
+    <lastmod>2026-05-13T04:12:31.154Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://bf6-book.orizika.com/zh-CN/chapters/a-event</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/a-event" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/a-event" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/a-event" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/a-event" />
-    <lastmod>2026-05-13T04:47:36.202Z</lastmod>
+    <loc>https://link1345.github.io/bf-portal-book//zh-CN/chapters/b-sample-bumper-cars</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/b-sample-bumper-cars" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/b-sample-bumper-cars" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/b-sample-bumper-cars" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/b-sample-bumper-cars" />
+    <lastmod>2026-05-13T04:12:31.154Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://bf6-book.orizika.com/zh-TW/chapters/a-event</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/a-event" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/a-event" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/a-event" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/a-event" />
-    <lastmod>2026-05-13T04:47:36.202Z</lastmod>
+    <loc>https://link1345.github.io/bf-portal-book//zh-TW/chapters/b-sample-bumper-cars</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/b-sample-bumper-cars" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/b-sample-bumper-cars" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/b-sample-bumper-cars" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/b-sample-bumper-cars" />
+    <lastmod>2026-05-13T04:12:31.154Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://bf6-book.orizika.com/chapters/b-sample-0-intro</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/b-sample-0-intro" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/b-sample-0-intro" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/b-sample-0-intro" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/b-sample-0-intro" />
-    <lastmod>2026-05-13T04:47:46.929Z</lastmod>
+    <loc>https://link1345.github.io/bf-portal-book//chapters/b-sample-custom-cq</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/b-sample-custom-cq" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/b-sample-custom-cq" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/b-sample-custom-cq" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/b-sample-custom-cq" />
+    <lastmod>2026-05-13T04:43:03.523Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bf6-book.orizika.com/en/chapters/b-sample-0-intro</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/b-sample-0-intro" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/b-sample-0-intro" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/b-sample-0-intro" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/b-sample-0-intro" />
-    <lastmod>2026-05-13T04:47:46.929Z</lastmod>
+    <loc>https://link1345.github.io/bf-portal-book//en/chapters/b-sample-custom-cq</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/b-sample-custom-cq" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/b-sample-custom-cq" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/b-sample-custom-cq" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/b-sample-custom-cq" />
+    <lastmod>2026-05-13T04:43:03.523Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://bf6-book.orizika.com/zh-CN/chapters/b-sample-0-intro</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/b-sample-0-intro" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/b-sample-0-intro" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/b-sample-0-intro" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/b-sample-0-intro" />
-    <lastmod>2026-05-13T04:47:46.929Z</lastmod>
+    <loc>https://link1345.github.io/bf-portal-book//zh-CN/chapters/b-sample-custom-cq</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/b-sample-custom-cq" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/b-sample-custom-cq" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/b-sample-custom-cq" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/b-sample-custom-cq" />
+    <lastmod>2026-05-13T04:43:03.523Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://bf6-book.orizika.com/zh-TW/chapters/b-sample-0-intro</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/b-sample-0-intro" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/b-sample-0-intro" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/b-sample-0-intro" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/b-sample-0-intro" />
-    <lastmod>2026-05-13T04:47:46.929Z</lastmod>
+    <loc>https://link1345.github.io/bf-portal-book//zh-TW/chapters/b-sample-custom-cq</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/b-sample-custom-cq" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/b-sample-custom-cq" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/b-sample-custom-cq" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/b-sample-custom-cq" />
+    <lastmod>2026-05-13T04:43:03.523Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://bf6-book.orizika.com/chapters/b-sample-ace-pursuit</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/b-sample-ace-pursuit" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/b-sample-ace-pursuit" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/b-sample-ace-pursuit" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/b-sample-ace-pursuit" />
-    <lastmod>2026-05-13T04:12:31.155Z</lastmod>
+    <loc>https://link1345.github.io/bf-portal-book//chapters/b-sample-fixed-camera</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/b-sample-fixed-camera" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/b-sample-fixed-camera" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/b-sample-fixed-camera" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/b-sample-fixed-camera" />
+    <lastmod>2026-05-13T04:12:31.154Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bf6-book.orizika.com/en/chapters/b-sample-ace-pursuit</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/b-sample-ace-pursuit" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/b-sample-ace-pursuit" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/b-sample-ace-pursuit" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/b-sample-ace-pursuit" />
-    <lastmod>2026-05-13T04:12:31.155Z</lastmod>
+    <loc>https://link1345.github.io/bf-portal-book//en/chapters/b-sample-fixed-camera</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/b-sample-fixed-camera" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/b-sample-fixed-camera" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/b-sample-fixed-camera" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/b-sample-fixed-camera" />
+    <lastmod>2026-05-13T04:12:31.154Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://bf6-book.orizika.com/zh-CN/chapters/b-sample-ace-pursuit</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/b-sample-ace-pursuit" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/b-sample-ace-pursuit" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/b-sample-ace-pursuit" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/b-sample-ace-pursuit" />
-    <lastmod>2026-05-13T04:12:31.155Z</lastmod>
+    <loc>https://link1345.github.io/bf-portal-book//zh-CN/chapters/b-sample-fixed-camera</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/b-sample-fixed-camera" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/b-sample-fixed-camera" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/b-sample-fixed-camera" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/b-sample-fixed-camera" />
+    <lastmod>2026-05-13T04:12:31.154Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://bf6-book.orizika.com/zh-TW/chapters/b-sample-ace-pursuit</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/b-sample-ace-pursuit" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/b-sample-ace-pursuit" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/b-sample-ace-pursuit" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/b-sample-ace-pursuit" />
-    <lastmod>2026-05-13T04:12:31.155Z</lastmod>
+    <loc>https://link1345.github.io/bf-portal-book//zh-TW/chapters/b-sample-fixed-camera</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/b-sample-fixed-camera" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/b-sample-fixed-camera" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/b-sample-fixed-camera" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/b-sample-fixed-camera" />
+    <lastmod>2026-05-13T04:12:31.154Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://bf6-book.orizika.com/chapters/b-sample-basic-template</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/b-sample-basic-template" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/b-sample-basic-template" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/b-sample-basic-template" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/b-sample-basic-template" />
-    <lastmod>2026-05-13T04:12:31.155Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://bf6-book.orizika.com/en/chapters/b-sample-basic-template</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/b-sample-basic-template" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/b-sample-basic-template" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/b-sample-basic-template" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/b-sample-basic-template" />
-    <lastmod>2026-05-13T04:12:31.155Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://bf6-book.orizika.com/zh-CN/chapters/b-sample-basic-template</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/b-sample-basic-template" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/b-sample-basic-template" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/b-sample-basic-template" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/b-sample-basic-template" />
-    <lastmod>2026-05-13T04:12:31.155Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://bf6-book.orizika.com/zh-TW/chapters/b-sample-basic-template</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/b-sample-basic-template" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/b-sample-basic-template" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/b-sample-basic-template" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/b-sample-basic-template" />
-    <lastmod>2026-05-13T04:12:31.155Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://bf6-book.orizika.com/chapters/b-sample-bumper-cars</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/b-sample-bumper-cars" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/b-sample-bumper-cars" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/b-sample-bumper-cars" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/b-sample-bumper-cars" />
+    <loc>https://link1345.github.io/bf-portal-book//chapters/b-sample-gibraltar-grandprix</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/b-sample-gibraltar-grandprix" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/b-sample-gibraltar-grandprix" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/b-sample-gibraltar-grandprix" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/b-sample-gibraltar-grandprix" />
     <lastmod>2026-05-13T04:12:31.155Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bf6-book.orizika.com/en/chapters/b-sample-bumper-cars</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/b-sample-bumper-cars" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/b-sample-bumper-cars" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/b-sample-bumper-cars" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/b-sample-bumper-cars" />
+    <loc>https://link1345.github.io/bf-portal-book//en/chapters/b-sample-gibraltar-grandprix</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/b-sample-gibraltar-grandprix" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/b-sample-gibraltar-grandprix" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/b-sample-gibraltar-grandprix" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/b-sample-gibraltar-grandprix" />
     <lastmod>2026-05-13T04:12:31.155Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://bf6-book.orizika.com/zh-CN/chapters/b-sample-bumper-cars</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/b-sample-bumper-cars" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/b-sample-bumper-cars" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/b-sample-bumper-cars" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/b-sample-bumper-cars" />
+    <loc>https://link1345.github.io/bf-portal-book//zh-CN/chapters/b-sample-gibraltar-grandprix</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/b-sample-gibraltar-grandprix" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/b-sample-gibraltar-grandprix" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/b-sample-gibraltar-grandprix" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/b-sample-gibraltar-grandprix" />
     <lastmod>2026-05-13T04:12:31.155Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://bf6-book.orizika.com/zh-TW/chapters/b-sample-bumper-cars</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/b-sample-bumper-cars" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/b-sample-bumper-cars" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/b-sample-bumper-cars" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/b-sample-bumper-cars" />
+    <loc>https://link1345.github.io/bf-portal-book//zh-TW/chapters/b-sample-gibraltar-grandprix</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/b-sample-gibraltar-grandprix" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/b-sample-gibraltar-grandprix" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/b-sample-gibraltar-grandprix" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/b-sample-gibraltar-grandprix" />
     <lastmod>2026-05-13T04:12:31.155Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://bf6-book.orizika.com/chapters/b-sample-custom-cq</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/b-sample-custom-cq" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/b-sample-custom-cq" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/b-sample-custom-cq" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/b-sample-custom-cq" />
-    <lastmod>2026-05-13T04:43:03.524Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://bf6-book.orizika.com/en/chapters/b-sample-custom-cq</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/b-sample-custom-cq" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/b-sample-custom-cq" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/b-sample-custom-cq" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/b-sample-custom-cq" />
-    <lastmod>2026-05-13T04:43:03.524Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://bf6-book.orizika.com/zh-CN/chapters/b-sample-custom-cq</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/b-sample-custom-cq" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/b-sample-custom-cq" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/b-sample-custom-cq" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/b-sample-custom-cq" />
-    <lastmod>2026-05-13T04:43:03.524Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://bf6-book.orizika.com/zh-TW/chapters/b-sample-custom-cq</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/b-sample-custom-cq" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/b-sample-custom-cq" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/b-sample-custom-cq" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/b-sample-custom-cq" />
-    <lastmod>2026-05-13T04:43:03.524Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://bf6-book.orizika.com/chapters/b-sample-fixed-camera</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/b-sample-fixed-camera" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/b-sample-fixed-camera" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/b-sample-fixed-camera" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/b-sample-fixed-camera" />
-    <lastmod>2026-05-13T04:12:31.155Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://bf6-book.orizika.com/en/chapters/b-sample-fixed-camera</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/b-sample-fixed-camera" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/b-sample-fixed-camera" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/b-sample-fixed-camera" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/b-sample-fixed-camera" />
-    <lastmod>2026-05-13T04:12:31.155Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://bf6-book.orizika.com/zh-CN/chapters/b-sample-fixed-camera</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/b-sample-fixed-camera" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/b-sample-fixed-camera" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/b-sample-fixed-camera" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/b-sample-fixed-camera" />
-    <lastmod>2026-05-13T04:12:31.155Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://bf6-book.orizika.com/zh-TW/chapters/b-sample-fixed-camera</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/b-sample-fixed-camera" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/b-sample-fixed-camera" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/b-sample-fixed-camera" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/b-sample-fixed-camera" />
-    <lastmod>2026-05-13T04:12:31.155Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://bf6-book.orizika.com/chapters/b-sample-gibraltar-grandprix</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/b-sample-gibraltar-grandprix" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/b-sample-gibraltar-grandprix" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/b-sample-gibraltar-grandprix" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/b-sample-gibraltar-grandprix" />
-    <lastmod>2026-05-13T04:12:31.156Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://bf6-book.orizika.com/en/chapters/b-sample-gibraltar-grandprix</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/b-sample-gibraltar-grandprix" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/b-sample-gibraltar-grandprix" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/b-sample-gibraltar-grandprix" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/b-sample-gibraltar-grandprix" />
-    <lastmod>2026-05-13T04:12:31.156Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://bf6-book.orizika.com/zh-CN/chapters/b-sample-gibraltar-grandprix</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/b-sample-gibraltar-grandprix" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/b-sample-gibraltar-grandprix" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/b-sample-gibraltar-grandprix" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/b-sample-gibraltar-grandprix" />
-    <lastmod>2026-05-13T04:12:31.156Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://bf6-book.orizika.com/zh-TW/chapters/b-sample-gibraltar-grandprix</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/b-sample-gibraltar-grandprix" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/b-sample-gibraltar-grandprix" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/b-sample-gibraltar-grandprix" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/b-sample-gibraltar-grandprix" />
-    <lastmod>2026-05-13T04:12:31.156Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://bf6-book.orizika.com/chapters/b-sample-hybrid-example</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/b-sample-hybrid-example" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/b-sample-hybrid-example" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/b-sample-hybrid-example" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/b-sample-hybrid-example" />
+    <loc>https://link1345.github.io/bf-portal-book//chapters/b-sample-hybrid-example</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/b-sample-hybrid-example" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/b-sample-hybrid-example" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/b-sample-hybrid-example" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/b-sample-hybrid-example" />
     <lastmod>2026-05-13T04:40:57.800Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bf6-book.orizika.com/en/chapters/b-sample-hybrid-example</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/b-sample-hybrid-example" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/b-sample-hybrid-example" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/b-sample-hybrid-example" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/b-sample-hybrid-example" />
+    <loc>https://link1345.github.io/bf-portal-book//en/chapters/b-sample-hybrid-example</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/b-sample-hybrid-example" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/b-sample-hybrid-example" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/b-sample-hybrid-example" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/b-sample-hybrid-example" />
     <lastmod>2026-05-13T04:40:57.800Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://bf6-book.orizika.com/zh-CN/chapters/b-sample-hybrid-example</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/b-sample-hybrid-example" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/b-sample-hybrid-example" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/b-sample-hybrid-example" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/b-sample-hybrid-example" />
+    <loc>https://link1345.github.io/bf-portal-book//zh-CN/chapters/b-sample-hybrid-example</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/b-sample-hybrid-example" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/b-sample-hybrid-example" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/b-sample-hybrid-example" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/b-sample-hybrid-example" />
     <lastmod>2026-05-13T04:40:57.800Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://bf6-book.orizika.com/zh-TW/chapters/b-sample-hybrid-example</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/b-sample-hybrid-example" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/b-sample-hybrid-example" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/b-sample-hybrid-example" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/b-sample-hybrid-example" />
+    <loc>https://link1345.github.io/bf-portal-book//zh-TW/chapters/b-sample-hybrid-example</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/b-sample-hybrid-example" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/b-sample-hybrid-example" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/b-sample-hybrid-example" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/b-sample-hybrid-example" />
     <lastmod>2026-05-13T04:40:57.800Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://bf6-book.orizika.com/chapters/b-sample-portal-gadget</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/b-sample-portal-gadget" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/b-sample-portal-gadget" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/b-sample-portal-gadget" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/b-sample-portal-gadget" />
+    <loc>https://link1345.github.io/bf-portal-book//chapters/b-sample-portal-gadget</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/b-sample-portal-gadget" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/b-sample-portal-gadget" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/b-sample-portal-gadget" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/b-sample-portal-gadget" />
+    <lastmod>2026-05-13T04:12:31.155Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://link1345.github.io/bf-portal-book//en/chapters/b-sample-portal-gadget</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/b-sample-portal-gadget" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/b-sample-portal-gadget" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/b-sample-portal-gadget" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/b-sample-portal-gadget" />
+    <lastmod>2026-05-13T04:12:31.155Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://link1345.github.io/bf-portal-book//zh-CN/chapters/b-sample-portal-gadget</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/b-sample-portal-gadget" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/b-sample-portal-gadget" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/b-sample-portal-gadget" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/b-sample-portal-gadget" />
+    <lastmod>2026-05-13T04:12:31.155Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://link1345.github.io/bf-portal-book//zh-TW/chapters/b-sample-portal-gadget</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/b-sample-portal-gadget" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/b-sample-portal-gadget" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/b-sample-portal-gadget" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/b-sample-portal-gadget" />
+    <lastmod>2026-05-13T04:12:31.155Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://link1345.github.io/bf-portal-book//chapters/b-sample-vl7</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/b-sample-vl7" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/b-sample-vl7" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/b-sample-vl7" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/b-sample-vl7" />
+    <lastmod>2026-05-13T04:12:31.155Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://link1345.github.io/bf-portal-book//en/chapters/b-sample-vl7</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/b-sample-vl7" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/b-sample-vl7" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/b-sample-vl7" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/b-sample-vl7" />
+    <lastmod>2026-05-13T04:12:31.155Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://link1345.github.io/bf-portal-book//zh-CN/chapters/b-sample-vl7</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/b-sample-vl7" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/b-sample-vl7" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/b-sample-vl7" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/b-sample-vl7" />
+    <lastmod>2026-05-13T04:12:31.155Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://link1345.github.io/bf-portal-book//zh-TW/chapters/b-sample-vl7</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/b-sample-vl7" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/b-sample-vl7" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/b-sample-vl7" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/b-sample-vl7" />
+    <lastmod>2026-05-13T04:12:31.155Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://link1345.github.io/bf-portal-book//chapters/c-modlib</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/c-modlib" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/c-modlib" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/c-modlib" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/c-modlib" />
     <lastmod>2026-05-13T04:12:31.156Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bf6-book.orizika.com/en/chapters/b-sample-portal-gadget</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/b-sample-portal-gadget" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/b-sample-portal-gadget" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/b-sample-portal-gadget" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/b-sample-portal-gadget" />
+    <loc>https://link1345.github.io/bf-portal-book//en/chapters/c-modlib</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/c-modlib" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/c-modlib" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/c-modlib" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/c-modlib" />
     <lastmod>2026-05-13T04:12:31.156Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://bf6-book.orizika.com/zh-CN/chapters/b-sample-portal-gadget</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/b-sample-portal-gadget" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/b-sample-portal-gadget" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/b-sample-portal-gadget" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/b-sample-portal-gadget" />
+    <loc>https://link1345.github.io/bf-portal-book//zh-CN/chapters/c-modlib</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/c-modlib" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/c-modlib" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/c-modlib" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/c-modlib" />
     <lastmod>2026-05-13T04:12:31.156Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://bf6-book.orizika.com/zh-TW/chapters/b-sample-portal-gadget</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/b-sample-portal-gadget" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/b-sample-portal-gadget" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/b-sample-portal-gadget" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/b-sample-portal-gadget" />
+    <loc>https://link1345.github.io/bf-portal-book//zh-TW/chapters/c-modlib</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://link1345.github.io/bf-portal-book//chapters/c-modlib" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://link1345.github.io/bf-portal-book//en/chapters/c-modlib" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://link1345.github.io/bf-portal-book//zh-CN/chapters/c-modlib" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://link1345.github.io/bf-portal-book//zh-TW/chapters/c-modlib" />
     <lastmod>2026-05-13T04:12:31.156Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://bf6-book.orizika.com/chapters/b-sample-vl7</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/b-sample-vl7" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/b-sample-vl7" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/b-sample-vl7" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/b-sample-vl7" />
-    <lastmod>2026-05-13T04:12:31.156Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://bf6-book.orizika.com/en/chapters/b-sample-vl7</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/b-sample-vl7" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/b-sample-vl7" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/b-sample-vl7" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/b-sample-vl7" />
-    <lastmod>2026-05-13T04:12:31.156Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://bf6-book.orizika.com/zh-CN/chapters/b-sample-vl7</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/b-sample-vl7" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/b-sample-vl7" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/b-sample-vl7" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/b-sample-vl7" />
-    <lastmod>2026-05-13T04:12:31.156Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://bf6-book.orizika.com/zh-TW/chapters/b-sample-vl7</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/b-sample-vl7" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/b-sample-vl7" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/b-sample-vl7" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/b-sample-vl7" />
-    <lastmod>2026-05-13T04:12:31.156Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://bf6-book.orizika.com/chapters/c-modlib</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/c-modlib" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/c-modlib" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/c-modlib" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/c-modlib" />
-    <lastmod>2026-05-13T04:12:31.157Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://bf6-book.orizika.com/en/chapters/c-modlib</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/c-modlib" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/c-modlib" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/c-modlib" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/c-modlib" />
-    <lastmod>2026-05-13T04:12:31.157Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://bf6-book.orizika.com/zh-CN/chapters/c-modlib</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/c-modlib" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/c-modlib" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/c-modlib" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/c-modlib" />
-    <lastmod>2026-05-13T04:12:31.157Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://bf6-book.orizika.com/zh-TW/chapters/c-modlib</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://bf6-book.orizika.com/chapters/c-modlib" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://bf6-book.orizika.com/en/chapters/c-modlib" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bf6-book.orizika.com/zh-CN/chapters/c-modlib" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bf6-book.orizika.com/zh-TW/chapters/c-modlib" />
-    <lastmod>2026-05-13T04:12:31.157Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
