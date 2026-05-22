@@ -19,7 +19,7 @@ async function getSiteUrl() {
     const cname = await fs.readFile(path.join(process.cwd(), "CNAME"), "utf8");
     return `https://${trimTrailingSlash(cname.trim())}`;
   } catch {
-    return "https://link1345.github.io/bf-portal-book/";
+    return "https://link1345.github.io/bf-portal-book";
   }
 }
 
