@@ -2,8 +2,8 @@
   "lockfileVersion": 1,
   "configVersion": 0,
   "workspaces": {
-    "bf-portal-book": {
-      "name": "",
+    "": {
+      "name": "bf-portal-book",
       "dependencies": {
         "cheerio": "^1.2.0",
         "gray-matter": "^4.0.3",
