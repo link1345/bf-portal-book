@@ -6,7 +6,7 @@ free: true
 本章会整理“可以放置的东西来自哪里”“哪些地图可以放哪些东西”“哪些对象会影响游戏行为”等问题，并把 Godot 中的实际实体（`.tscn`）和 Portal 侧的名称对应起来。最终目标是准备到这样一种状态：后续的规则设计和 TypeScript 实现可以引用和控制这些对象，也就是已经赋予 ID，并整理成台账。
 
 :::message
-查找可放置对象时，也可以配合使用 [BF6 Object Guide](https://link1345.github.io/bf6-object-website/)。
+查找可放置对象时，也可以配合使用 [BF6 Object Guide](https://bf6-book.orizika.com/)。
 这是一个可放置对象列表网站，可以按地图、标签和关键词搜索来筛选候选对象。
 在 Godot 或 `asset_types.json` 中做最终确认之前，先用它来寻找候选对象，可以减少手动翻找 Object Library 的时间。
 :::

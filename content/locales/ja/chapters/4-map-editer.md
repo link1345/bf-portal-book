@@ -6,7 +6,7 @@ free: true
 この章では、「置けるものはどこから来ているのか」「どのマップで何が置けるのか」「動作に関わる重要オブジェクトは何か」をGodotの実体（`.tscn`）とPortal側の名称を一致させて整理します。最終的に、 **後続のルール設計とTypeScript実装から参照・制御できる形（＝IDが付与され、台帳化された状態）** まで準備します。
 
 :::message
-設置できるオブジェクトを探すときは、[BF6 Object Guide](https://link1345.github.io/bf6-object-website/) も併用してください。
+設置できるオブジェクトを探すときは、[BF6 Object Guide](https://bf6-book.orizika.com/) も併用してください。
 マップ別・タグ別・キーワード検索で候補を絞り込める、設置可能オブジェクトの一覧Webサイトです。
 Godotや `asset_types.json` で最終確認する前の「候補探し」に使うと、Object Libraryを手探りで眺め続ける時間を減らせます。
 :::
