@@ -10,8 +10,9 @@ The code in this chapter is a minimal example for understanding the Portal SDK's
 :::
 
 :::message alert
-TypeScript programming starts here, but please **never put Japanese text inside the program**.
+TypeScript programming starts here, but please **never put Japanese or other multibyte characters inside the program**.
 As of November 1, 2025, Portal's Script feature does not support multibyte characters such as Japanese. Use only letters, numbers, and some symbols.
+When ChatGPT or another AI writes code, special Unicode characters can slip in, such as dashes that look like hyphens (`—`, `–`) or smart quotes that look like normal quotes (`“`, `”`, `‘`, `’`). These also cause problems on the Portal side, so before pasting code, replace them with ASCII `-`, `"`, and `'`, or rewrite the code so it does not use them.
 
 This book does not put Japanese sentences inside code comments. Please read the surrounding text for explanations.
 :::
