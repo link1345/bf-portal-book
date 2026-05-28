@@ -20,6 +20,9 @@
 # production
 /build
 
+# generated GitHub Pages fallback redirects
+/public/bf-portal-book/
+
 # misc
 .DS_Store
 *.pem
