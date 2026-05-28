@@ -106,11 +106,11 @@ ui.say(mod.Message(mod.stringkeys.defendSeconds, t));
 ## 実装の型
 
 ```ts
-// 案内の基本（6章の guide を利用）
-ui.guide(ICON_ENTRANCE, ICON_TARGET);  // 入口OFF → 目的地ON
+// Basic guide flow using guide from chapter 6
+ui.guide(ICON_ENTRANCE, ICON_TARGET);  // Entrance off, target on
 
-// 到達時
-ui.guide(ICON_TARGET, undefined);      // 目的地OFF（次があるならここでON）
+// When reached
+ui.guide(ICON_TARGET, undefined);      // Target off; enable the next icon here if needed
 ```
 
 ## つまずき対策
@@ -150,11 +150,11 @@ FXは遠くから気づき、近くで納得が理想。遠距離には点滅・
 
 ```ts
 function celebrate() {
-  api.playFX(FX_GOAL);   // ワンショット想定
-  playSfxCooled(SFX_GOAL); // 7.3のクールダウン版
+  api.playFX(FX_GOAL);   // One-shot FX
+  playSfxCooled(SFX_GOAL); // Cooldown version from 7.3
 }
 
-// ループ物は必ず停止側も
+// Always stop looped FX
 onEnterArea(AREA_TARGET, () => api.playFX(FX_GOAL));
 onLeaveArea(AREA_TARGET, () => api.stopFX(FX_GOAL));
 ```
@@ -194,7 +194,7 @@ const updateDistance = debounce(500, (playerPos: Vector3, targetPos: Vector3) =>
 ```ts
 type Prio = "high"|"mid"|"low";
 function playSfxPrio(id: number, prio: Prio) {
-  if (prio === "low" && Date.now() - lastSfxAt < 2000) return; // 直近に鳴ってたら抑制
+  if (prio === "low" && Date.now() - lastSfxAt < 2000) return; // Suppress recent low-priority SFX
   playSfxCooled(id);
 }
 ```
@@ -218,7 +218,7 @@ function playSfxPrio(id: number, prio: Prio) {
 ## 実装の型（例）
 ```
 const debug = { on: true };
-function dbg(line: string) { if (!debug.on) return; /* 画面端に小さく */ }
+function dbg(line: string) { if (!debug.on) return; /* Small text at the screen edge */ }
 
 function dump() { dbg(`phase=${Phase[state.phase]} time=${remainSec}`); }
 
@@ -253,9 +253,9 @@ onLeaveArea(AREA_TARGET, () => dbg("Leave:Target"));
 let cheered = false;
 function celebrateOnce() {
   if (cheered) return; cheered = true;
-  ui.celebrate(FX_GOAL, SFX_GOAL);    // 光と音
-  api.shakeCameraAll?.(0.4, 600);      // APIがあれば：強さ0.4/600ms
-  setTimeout(()=> cheered = false, 3000); // 3秒は再発しない
+  ui.celebrate(FX_GOAL, SFX_GOAL);    // Light and sound
+  api.shakeCameraAll?.(0.4, 600);      // If available: strength 0.4 for 600 ms
+  setTimeout(()=> cheered = false, 3000); // Prevent repeats for 3 seconds
 }
 ```
 

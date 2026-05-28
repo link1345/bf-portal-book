@@ -107,11 +107,11 @@ Placing it **slightly before an entrance or corner** makes the route easier to f
 ## Implementation Pattern
 
 ```ts
-// Basic guidance using the Chapter 6 guide helper
-ui.guide(ICON_ENTRANCE, ICON_TARGET);  // entrance OFF -> target ON
+// Basic guide flow using guide from chapter 6
+ui.guide(ICON_ENTRANCE, ICON_TARGET);  // Entrance off, target on
 
-// On arrival
-ui.guide(ICON_TARGET, undefined);      // target OFF (turn the next one ON here if needed)
+// When reached
+ui.guide(ICON_TARGET, undefined);      // Target off; enable the next icon here if needed
 ```
 
 ## Avoiding Common Problems
@@ -154,11 +154,11 @@ For long distance, prioritize visibility with blinking, pillars, or arrows. For 
 
 ```ts
 function celebrate() {
-  api.playFX(FX_GOAL);   // Assume one-shot FX
-  playSfxCooled(SFX_GOAL); // Cooldown version from 8.3
+  api.playFX(FX_GOAL);   // One-shot FX
+  playSfxCooled(SFX_GOAL); // Cooldown version from 7.3
 }
 
-// Looping effects must also have a stop path
+// Always stop looped FX
 onEnterArea(AREA_TARGET, () => api.playFX(FX_GOAL));
 onLeaveArea(AREA_TARGET, () => api.stopFX(FX_GOAL));
 ```
@@ -201,7 +201,7 @@ Set priority and process high -> mid -> low. Suppress low-priority effects when 
 ```ts
 type Prio = "high"|"mid"|"low";
 function playSfxPrio(id: number, prio: Prio) {
-  if (prio === "low" && Date.now() - lastSfxAt < 2000) return; // Suppress if something played recently
+  if (prio === "low" && Date.now() - lastSfxAt < 2000) return; // Suppress recent low-priority SFX
   playSfxCooled(id);
 }
 ```
@@ -226,7 +226,7 @@ A small HUD only you can see, showing phase, remaining seconds, and the latest e
 ## Implementation Pattern
 ```
 const debug = { on: true };
-function dbg(line: string) { if (!debug.on) return; /* small text at screen edge */ }
+function dbg(line: string) { if (!debug.on) return; /* Small text at the screen edge */ }
 
 function dump() { dbg(`phase=${Phase[state.phase]} time=${remainSec}`); }
 
@@ -265,8 +265,8 @@ let cheered = false;
 function celebrateOnce() {
   if (cheered) return; cheered = true;
   ui.celebrate(FX_GOAL, SFX_GOAL);    // Light and sound
-  api.shakeCameraAll?.(0.4, 600);      // If available: strength 0.4 / 600ms
-  setTimeout(()=> cheered = false, 3000); // Do not trigger again for 3 seconds
+  api.shakeCameraAll?.(0.4, 600);      // If available: strength 0.4 for 600 ms
+  setTimeout(()=> cheered = false, 3000); // Prevent repeats for 3 seconds
 }
 ```
 
