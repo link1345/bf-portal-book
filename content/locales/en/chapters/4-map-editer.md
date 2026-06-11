@@ -13,7 +13,7 @@ Use it for the first pass of candidate hunting before doing the final check in G
 
 # 1 What "Placeable Objects" Really Are: `res://objects` and Map Dependencies
 
-**Objects you can place on a map are limited to files inside Godot's `res://objects` file system.** In addition, **the range of placeable objects depends on which map you use as the base for editing.** **As of May 13, 2026, the Portal SDK available here (version 1.3.1.0) is structured as follows.**
+**Objects you can place on a map are limited to files inside Godot's `res://objects` file system.** In addition, **the range of placeable objects depends on which map you use as the base for editing.** **As of June 12, 2026, the Portal SDK available here (version 1.3.2.0) is structured as follows.**
 
 The SDK structure may change through updates. Before working, check `sdk.version.json` directly under the SDK. If it differs from this book, prioritize the SDK's `docs/pages/spatial_editor.html` and `code/types/mod/index.d.ts`.
 
@@ -90,7 +90,7 @@ flowchart TD
 ```
 
 Folder names, official Level names, and Map IDs do not always match.
-In the SDK's `docs/pages/spatial_editor.html` and `FbExportData/level_info.json`, the available Levels are organized as follows (as of May 13, 2026, SDK 1.3.1.0).
+In the SDK's `docs/pages/spatial_editor.html` and `FbExportData/level_info.json`, the available Levels are organized as follows (as of June 12, 2026, SDK 1.3.2.0).
 
 | Official Level Name | Map ID |
 | ---- | ---- |
@@ -114,6 +114,7 @@ In the SDK's `docs/pages/spatial_editor.html` and `FbExportData/level_info.json`
 | New Sobek City | MP_Outskirts |
 | Portal Sandbox | MP_Portal_Sand |
 | Hagental Base | MP_Subsurface |
+| Railway to Golmud | MP_GolmudRailway |
 | Mirak Valley | MP_Tungsten |
 
 Note: The official docs' Available Levels table writes `MP_Firestorm`, but the local SDK's `asset_types.json` and Godot level files also use `MP_FireStorm`. When searching `levelRestrictions`, prioritize the notation used in the SDK's actual data.

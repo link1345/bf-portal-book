@@ -18,6 +18,7 @@ free: true
 | `DisplayHighlightedWorldLogMessage` | 在小地图上的世界日志上显示强调的消息约 6 秒。如果没有指定目标，则会向所有人显示。 3 种重载。 | message: Message | 无 | `mod.DisplayHighlightedWorldLogMessage(mod.Message(mod.stringkeys.ok));` |
 | `DisplayNotificationMessage` | 在屏幕右上角显示通知消息约 6 秒。你还可以指定目标玩家或队伍。 3 种重载。 | message: Message | 无 | `mod.DisplayNotificationMessage(mod.Message(mod.stringkeys.start), eventPlayer);` |
 | `SendErrorReport` | 发送一条在管理菜单中显示为错误的消息。 | message: Message | 无 | `mod.SendErrorReport(...);` |
+| `SendPortalLogToAdmin` | 将专用服务器托管的当前会话的 Portal 日志发送到管理员客户端。本地托管或没有管理员时不会发生任何事。 | 无 | 无 | `mod.SendPortalLogToAdmin();` |
 | `SetScoreboardColumnNames` | 设置自定义计分板列名称。 5 种重载。 | column1Name: Message, column2Name: Message, column3Name: Message, column4Name: Message, column5Name: Message | 无 | `mod.SetScoreboardColumnNames(...);` |
 | `SetScoreboardColumnWidths` | 设置自定义计分板的列宽比例。 5 种重载。 | column1Width: number, column2Width: number, column3Width: number, column4Width: number, column5Width: number | 无 | `mod.SetScoreboardColumnWidths(...);` |
 | `SetScoreboardHeader` | 设置计分板左上角显示的标题名称。 2 种重载。 | team1Name: Message, team2Name: Message | 无 | `mod.SetScoreboardHeader(...);` |

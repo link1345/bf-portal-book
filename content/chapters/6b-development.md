@@ -691,6 +691,23 @@ export function OnPlayerInteract(eventPlayer: mod.Player, _eventInteractPoint: m
 console.log("message!");
 ```
 
+SDK 1.3.2.0では、`mod.SendPortalLogToAdmin()` も追加されています。
+これは「ホスト」、つまり専用サーバーでセッションをホスティングしているときに、現在のセッションのPortalログを管理者クライアントへ送る関数です。
+送信された内容は、管理者クライアント側の `PortalLog.txt` に書き込まれます。
+
+```ts
+mod.SendPortalLogToAdmin();
+```
+
+`console.log` は「ログに何を書くか」を自分で指定するものです。
+一方、`SendPortalLogToAdmin` は「専用サーバー上のPortalログを、管理者のローカル環境へ渡す」ためのものです。
+「ローカルでホスト」の場合は、Portalログが最初からローカルで利用できるため、この関数を呼んでも何も起こりません。
+また、管理者が存在しない場合も何も起こりません。
+
+セッションごとに有効なログ送信数には制限があります。
+そのため、常時・高頻度に呼ぶ関数ではありません。
+デバッグ用のボタン、管理者向けのInteractPoint、試合終了時の調査用など、管理者がログを受け取りたい場面だけで呼びます。
+
 ### 画面上で確認したい場合
 
 下記のように書くと、ゲーム画面内にメッセージが登場します。

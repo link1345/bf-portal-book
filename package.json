@@ -5,12 +5,12 @@
   "packageManager": "bun@1.3.9",
   "scripts": {
     "dev": "next dev",
-    "prebuild": "node scripts/generate-sitemap.mjs && node scripts/generate-github-pages-redirects.mjs",
-    "generate:redirects": "node scripts/generate-github-pages-redirects.mjs",
-    "generate:sitemap": "node scripts/generate-sitemap.mjs",
-    "build": "next build",
-    "start": "next start",
-    "lint": "eslint"
+    "prebuild": "bun scripts/generate-sitemap.mjs && bun scripts/generate-github-pages-redirects.mjs",
+    "generate:redirects": "bun scripts/generate-github-pages-redirects.mjs",
+    "generate:sitemap": "bun scripts/generate-sitemap.mjs",
+    "build": "bun node_modules/next/dist/bin/next build",
+    "start": "bun node_modules/next/dist/bin/next start",
+    "lint": "bun node_modules/eslint/bin/eslint.js"
   },
   "dependencies": {
     "cheerio": "^1.2.0",

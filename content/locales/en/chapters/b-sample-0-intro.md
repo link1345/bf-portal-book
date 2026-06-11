@@ -41,6 +41,8 @@ If you come across an API you don't know, first search for the function name at 
 | `GibraltarGrandprix` | Read as an example of races, checkpoints, ranking UI, and vehicle selection |
 | `AcePursuit` | Read as an example of aircraft racing, time limits, and state management |
 | `HybridExample` | Read as an example of calling TypeScript from Portal blocks and returning values into variables or UI |
+| `NightModeExample` | Read as an example of night screen effects, NVG equipment, SFX switching, and VFX color changes |
+| `GolmudTrainExample` | Read as an example of Railway to Golmud train control, train location lookup, and moving objectives |
 | `CustomCQ` | Read as an example of a large Conquest-style template, ObjID design, and multi-map support |
 
 For beginners, `_StartHere_BasicTemplate` is enough. Larger samples are appealing because they already work, but they contain too much information to use as a first lesson.
@@ -128,7 +130,7 @@ By simply separating "create," "update," and "close," it becomes easier to add p
 
 Official samples are strong learning material if you read them in the correct order.
 
-First, treat `docs/pages` and `index.d.ts` as dictionaries, and learn the event shape with `_StartHere_BasicTemplate`. Then read the purpose-built samples under `GodotProject/mods`. SDK 1.3.1.0 adds `HybridExample` and `CustomCQ`, giving you examples of mixed block/TypeScript logic and a full-scale mode template.
+First, treat `docs/pages` and `index.d.ts` as dictionaries, and learn the event shape with `_StartHere_BasicTemplate`. Then read the purpose-built samples under `GodotProject/mods`. SDK 1.3.2.0 also adds `NightModeExample` and `GolmudTrainExample` as reading targets, giving you examples of night effects, NVG, train control, and `MP_GolmudRailway`-specific events.
 Then, rather than copying the entire contents of the sample, please incorporate the grouping of setting values, separation of responsibilities using classes, and UI management patterns into your own code. Appendix B of this book also covers only the samples located in this folder.
 
 ---

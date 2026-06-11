@@ -691,6 +691,23 @@ No message will appear in-game, but unlike `ShowNotificationMessage` described b
 console.log("message!");
 ```
 
+SDK 1.3.2.0 also adds `mod.SendPortalLogToAdmin()`.
+When the session is hosted by a "Host", meaning a dedicated server, this function sends the current session's Portal log to the admin client.
+The received log is written to `PortalLog.txt` on the admin client's machine.
+
+```ts
+mod.SendPortalLogToAdmin();
+```
+
+Use `console.log` when you want to choose what to write into the log.
+Use `SendPortalLogToAdmin` when you want to pass the Portal log from the dedicated server to the admin's local environment.
+If the experience is "hosted locally", the Portal log is already available locally, so this function does nothing.
+It also does nothing if no admin exists.
+
+The number of valid log sends is limited per session.
+For that reason, do not call this constantly or from a high-frequency loop.
+Use it only when an admin actually needs to receive the log, such as from a debug button, an admin-only InteractPoint, or an investigation trigger at the end of a match.
+
 ### If you want to check on the screen
 
 If you write the following, a message will appear on the game screen.

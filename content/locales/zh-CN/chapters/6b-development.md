@@ -692,6 +692,23 @@ export function OnPlayerInteract(eventPlayer: mod.Player, _eventInteractPoint: m
 console.log("message!");
 ```
 
+SDK 1.3.2.0 还新增了 `mod.SendPortalLogToAdmin()`。
+在由“Host”，也就是专用服务器托管当前会话时，这个函数会把当前会话的 Portal 日志发送到管理员客户端。
+发送后的内容会写入管理员客户端上的 `PortalLog.txt`。
+
+```ts
+mod.SendPortalLogToAdmin();
+```
+
+`console.log` 用于自己指定要写入日志的内容。
+而 `SendPortalLogToAdmin` 用于把专用服务器上的 Portal 日志交给管理员的本地环境。
+如果是“本地托管”，Portal 日志本来就可以在本地使用，因此调用这个函数不会发生任何事。
+如果不存在管理员，也不会发生任何事。
+
+每个会话中有效的日志发送次数有限制。
+因此，不要持续调用它，也不要在高频循环中调用它。
+只在管理员确实需要接收日志时调用，例如调试按钮、管理员用 InteractPoint、比赛结束时的调查触发点。
+
 ### 如果你想在屏幕上查看
 
 写下以下内容后，游戏画面上会出现一条消息。

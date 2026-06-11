@@ -5,9 +5,10 @@ free: true
 
 # 如何閱讀本附錄
 
-本附錄基於官方 SDK `code/types/mod/index.d.ts` 的 `mod` 命名空間列出了 BF6 Portal TypeScript 中可用的事件和動作。參考 SDK 以 `index.d.ts` 為準，為 `1.3.1.0`。請務必在實作前搜尋 `index.d.ts`，因為它可能會隨著 SDK 更新而增加或減少。
+本附錄基於官方 SDK `code/types/mod/index.d.ts` 的 `mod` 命名空間列出了 BF6 Portal TypeScript 中可用的事件和動作。參考 SDK 以 `index.d.ts` 為準，為 `1.3.2.0`。請務必在實作前搜尋 `index.d.ts`，因為它可能會隨著 SDK 更新而增加或減少。
 
 SDK 1.3.1.0 追加了 `mod.strings`、`MusicPackages.Radio`、`Radio_*` 系音樂事件和參數，以及若干武器和 Gadget 常數。`HybridExample` 是透過 `mod.strings[key]` 直接讀取字串值的具體範例。
+SDK 1.3.2.0 中可以確認 `MP_GolmudRailway` 使用的 `OnGolmudTrainStopped`、`GolmudTrainSendMoveCommand`、`GetGolmudTrainLocation`、`GolmudTrainMoveCommands`、`GolmudTrainStopReason`。具體範例請參見附錄 B 的 `GolmudTrainExample`。
 
 在 TypeScript 中，事件被寫為 `export function On...` 或 `export function Ongoing...`。使用 `mod.` 呼叫動作和值取得，例如 `mod.Set...`、`mod.Get...`、`mod.Create...`。
 
@@ -144,6 +145,15 @@ export function OnPlayerInteract(eventPlayer: mod.Player, eventInteractPoint: mo
 | --- | --- | --- | --- | --- |
 | `OnVehicleDestroyed` | 當車輛被破壞時。 | eventVehicle: mod.Vehicle | 無 | `export function OnVehicleDestroyed(eventVehicle): void { /* 處理 */ }` |
 | `OnVehicleSpawned` | 當車輛在地圖上產生時。 | eventVehicle: mod.Vehicle | 無 | `export function OnVehicleSpawned(eventVehicle): void { /* 處理 */ }` |
+
+## Golmud 列車事件
+
+| 事件 | 功能 / 目的 | 主要參數 | 返回值 | 範例 |
+| --- | --- | --- | --- | --- |
+| `OnGolmudTrainStopped` | Railway to Golmud 的列車在東端、西端或中途停止時呼叫。 | eventGolmudTrainStopReason: mod.GolmudTrainStopReason | 無 | `export function OnGolmudTrainStopped(reason): void { /* 處理 */ }` |
+
+控制列車時使用 `mod.GolmudTrainSendMoveCommand(mod.GolmudTrainMoveCommands.MoveWest)`、`Stop`、`MoveEast`。
+目前位置可以透過 `mod.GetGolmudTrainLocation()` 取得。
 
 # 接下來閱讀的附錄
 

@@ -18,6 +18,7 @@ free: true
 | `DisplayHighlightedWorldLogMessage` | ミニマップ上のワールドログへ強調メッセージを約6秒表示する。対象指定なしなら全員に表示する。 オーバーロード3種。 | message: Message | なし | `mod.DisplayHighlightedWorldLogMessage(mod.Message(mod.stringkeys.ok));` |
 | `DisplayNotificationMessage` | 画面右上へ通知メッセージを約6秒表示する。対象プレイヤーやチームも指定できる。 オーバーロード3種。 | message: Message | なし | `mod.DisplayNotificationMessage(mod.Message(mod.stringkeys.start), eventPlayer);` |
 | `SendErrorReport` | Adminメニューにエラーとして表示されるメッセージを送る。 | message: Message | なし | `mod.SendErrorReport(...);` |
+| `SendPortalLogToAdmin` | 専用サーバーでホストしている現在のセッションのPortalログを管理者クライアントへ送る。ローカルホスト時や管理者不在時は何も起こらない。 | なし | なし | `mod.SendPortalLogToAdmin();` |
 | `SetScoreboardColumnNames` | カスタムスコアボードの列名を設定する。 オーバーロード5種。 | column1Name: Message, column2Name: Message, column3Name: Message, column4Name: Message, column5Name: Message | なし | `mod.SetScoreboardColumnNames(...);` |
 | `SetScoreboardColumnWidths` | カスタムスコアボードの列幅比率を設定する。 オーバーロード5種。 | column1Width: number, column2Width: number, column3Width: number, column4Width: number, column5Width: number | なし | `mod.SetScoreboardColumnWidths(...);` |
 | `SetScoreboardHeader` | スコアボード左上に表示されるヘッダー名を設定する。 オーバーロード2種。 | team1Name: Message, team2Name: Message | なし | `mod.SetScoreboardHeader(...);` |
