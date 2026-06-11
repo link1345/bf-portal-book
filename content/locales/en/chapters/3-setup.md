@@ -178,7 +178,7 @@ The SDK is large, so you do not need to read everything from the beginning. Star
 | `code/types/mod/index.d.ts` | Function and type list for the Portal TypeScript API |
 | `GodotProject/mods/_StartHere_BasicTemplate` | The official TypeScript template to read first |
 
-In the local SDK's `sdk.version.json`, the reference SDK version is `1.3.1.0`. The SDK changes through updates, so if this book's steps differ from your screen, first check `sdk.version.json` and `docs/pages`.
+In the local SDK's `sdk.version.json`, the reference SDK version is `1.3.2.0`. The SDK changes through updates, so if this book's steps differ from your screen, first check `sdk.version.json` and `docs/pages`.
 
 # Conclusion
 

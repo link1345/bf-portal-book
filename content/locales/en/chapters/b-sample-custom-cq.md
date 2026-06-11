@@ -8,7 +8,7 @@ free: true
 `CustomCQ` is a large Conquest-style Portal template.
 Read it as a near-complete mode that combines maps, CapturePoints, AreaTriggers, AI, vehicles, UI, scoreboard logic, music, and VO.
 
-The folder added in SDK 1.3.1.0 includes the template workspace, strings, icon, and preconfigured `.tscn` / `.spatial.json` files for multiple maps.
+The CustomCQ folder available in SDK 1.3.2.0 is Version 10.0. It includes the template workspace, strings, icon, and preconfigured `.tscn` / `.spatial.json` files for multiple maps.
 Do not start by copying everything. Read it to learn how a large mode assigns ObjID ranges and keeps map data aligned with block logic.
 
 # Main Files
@@ -16,7 +16,7 @@ Do not start by copying everything. Read it to learn how a large mode assigns Ob
 | File | Role |
 | ---- | ---- |
 | `modinfo.json` | Sample name, description, workspace, and strings file |
-| `custom_conquest_template_V9.5.json` | Main Portal block template |
+| `custom_conquest_template_10.0.json` | Main Portal block template |
 | `CustomCQ.strings.json` | String keys for UI, VO, score, and settings |
 | `README.txt` | Setup notes, ObjID assignments, known issues, changelog |
 | `MP_..._Conquest.tscn` | Godot level scenes |
@@ -39,8 +39,10 @@ Do not start by copying everything. Read it to learn how a large mode assigns Ob
 | Area 22B | `MP_Granite_MilitaryRnD_Portal_Conquest` |
 | Redline Storage | `MP_Granite_MilitaryStorage_Portal_Conquest` |
 | Defense Nexus | `MP_Granite_TechCampus_Portal_CustomConquest` |
+| Complex 3 | `MP_Granite_Underground_Portal_Conquest` / Mancour version |
+| Hagental Base | `MP_Subsurface_Conquest` |
 
-The changelog treats Contaminated and Manhattan Bridge as recent additions.
+The V10.0 changelog treats Hagental Base and Complex 3 as new maps.
 In this repository, it is more precise to say that preconfigured Conquest map files were added for `CustomCQ`, rather than that the whole SDK gained brand-new base level files.
 
 # ObjID Design
@@ -57,6 +59,7 @@ In this repository, it is more precise to say that preconfigured Conquest map fi
 | `1400` | Infantry combat area AreaTrigger |
 | `700` - `749` | Repel Trigger |
 | `750` - `799` | Repel Target |
+| `2000` - `2999` | VFX |
 
 For a mode this large, ObjID ranges are part of the specification.
 If you change them casually, objectives, vehicles, AI, and boundary checks become difficult to reason about.
@@ -66,7 +69,15 @@ If you change them casually, objectives, vehicles, AI, and boundary checks becom
 1. Read `README.txt` for ObjID assignments and known issues.
 2. Open the `.tscn` and `.spatial.json` for the map you care about and inspect CapturePoint, AreaTrigger, and Spawner IDs.
 3. Check `CustomCQ.strings.json` for UI and VO keys.
-4. Read `custom_conquest_template_V9.5.json` by feature area: score, objectives, AI, and UI.
+4. Read `custom_conquest_template_10.0.json` by feature area: score, objectives, AI, and UI.
+
+# Version 10.0 Updates
+
+V10.0 updates the sample to use the official Combat Area, Surrounding Combat Area, and Exclusive HQ areas.
+It also adds an NVG toggle, a Conquest Assault toggle, and starting-ticket settings for Conquest Assault.
+
+When reading older CustomCQ notes, watch for assumptions that airspace and boundary checks are handled only by custom logic.
+V10.0 still keeps Custom OOB logic for backward compatibility, but the safer reading path is to treat the official Combat Area objects as the primary structure.
 
 Vehicle spawner properties changed to `EnableRespawn` in SDK 1.3.1.0.
 If older notes mention `DisableRespawn`, use the current SDK name and meaning.

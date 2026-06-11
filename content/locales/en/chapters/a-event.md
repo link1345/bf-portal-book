@@ -5,9 +5,10 @@ free: true
 
 # How to read this appendix
 
-This appendix lists the events and actions available in BF6 Portal TypeScript based on the `mod` namespace of the official SDK `code/types/mod/index.d.ts`. The reference SDK is `1.3.1.0` according to `index.d.ts`. Please be sure to search for `index.d.ts` before implementation, as it may increase or decrease with SDK updates.
+This appendix lists the events and actions available in BF6 Portal TypeScript based on the `mod` namespace of the official SDK `code/types/mod/index.d.ts`. The reference SDK is `1.3.2.0` according to `index.d.ts`. Please be sure to search for `index.d.ts` before implementation, as it may increase or decrease with SDK updates.
 
 SDK 1.3.1.0 adds `mod.strings`, `MusicPackages.Radio`, `Radio_*` music events and parameters, and several weapon and gadget constants. `HybridExample` is a concrete example of reading raw string values through `mod.strings[key]`.
+SDK 1.3.2.0 includes `OnGolmudTrainStopped`, `GolmudTrainSendMoveCommand`, `GetGolmudTrainLocation`, `GolmudTrainMoveCommands`, and `GolmudTrainStopReason` for `MP_GolmudRailway`. See Appendix B's `GolmudTrainExample` for a concrete sample.
 
 In TypeScript, events are written as `export function On...` or `export function Ongoing...`. Actions and value retrieval are called with `mod.`, such as `mod.Set...`, `mod.Get...`, `mod.Create...`.
 
@@ -144,6 +145,15 @@ Because `Ongoing...` events run continuously, it quickly becomes heavy when you 
 | --- | --- | --- | --- | --- |
 | `OnVehicleDestroyed` | When the vehicle is destroyed. | eventVehicle: mod.Vehicle | None | `export function OnVehicleDestroyed(eventVehicle): void { /* code */ }` |
 | `OnVehicleSpawned` | When a vehicle spawns on the map. | eventVehicle: mod.Vehicle | None | `export function OnVehicleSpawned(eventVehicle): void { /* code */ }` |
+
+## Golmud Train Events
+
+| Event | Purpose | Main arguments | Return value | Example |
+| --- | --- | --- | --- | --- |
+| `OnGolmudTrainStopped` | Called when the Railway to Golmud train stops at the east terminal, west terminal, or in transit. | eventGolmudTrainStopReason: mod.GolmudTrainStopReason | None | `export function OnGolmudTrainStopped(reason): void { /* code */ }` |
+
+Use `mod.GolmudTrainSendMoveCommand(mod.GolmudTrainMoveCommands.MoveWest)`, `Stop`, or `MoveEast` to command the train.
+Use `mod.GetGolmudTrainLocation()` to read its current position.
 
 # Next appendix to read
 
