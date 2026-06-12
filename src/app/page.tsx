@@ -6,6 +6,12 @@ import { defaultLocale, uiText } from "@/lib/i18n";
 export const metadata: Metadata = {
   title: uiText[defaultLocale].bookTitle,
   description: uiText[defaultLocale].bookDescription,
+  keywords: uiText[defaultLocale].seoTopics,
+  openGraph: {
+    title: uiText[defaultLocale].bookTitle,
+    description: uiText[defaultLocale].bookDescription,
+    type: "website",
+  },
 };
 
 export default async function Home() {

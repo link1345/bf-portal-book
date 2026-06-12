@@ -10,6 +10,12 @@ export const metadata: Metadata = {
     template: "%s | BF Portal Book",
   },
   description: uiText[defaultLocale].bookDescription,
+  keywords: uiText[defaultLocale].seoTopics,
+  openGraph: {
+    title: uiText[defaultLocale].bookTitle,
+    description: uiText[defaultLocale].bookDescription,
+    type: "website",
+  },
   verification: {
     google: "MnTAVU2rjTNXby0Ae3O6a6gnhH6lIkklglwdDAGDIQE",
   },

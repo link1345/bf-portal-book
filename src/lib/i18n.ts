@@ -24,6 +24,9 @@ export const uiText: Record<
     bookLabel: string;
     bookTitle: string;
     bookDescription: string;
+    seoIntroTitle: string;
+    seoIntro: string;
+    seoTopics: string[];
     coverAlt: string;
     chaptersTitle: string;
     backToContents: string;
@@ -41,7 +44,19 @@ export const uiText: Record<
     bookLabel: "Battlefield 6 Portal Book",
     bookTitle: "Battlefield 6 Portal エクスペリエンス制作大全",
     bookDescription:
-      "Battlefield 6 Portalのエクスペリエンスビルダー、Godot SDK、TypeScript、公開運営までを扱う入門書です。Portalカスタムでマップを編集し、ObjIdで仕掛けをつなぎ、TypeScript SDKと公式サンプルを読みながら自分のゲームモードを作れる状態を目指します。",
+      "BF6 Portalの作り方を、エクスペリエンスビルダー、Portalカスタム、Godot SDK、TypeScript SDK、公式サンプル、公開運営まで順に学ぶ日本語リファレンスです。マップ編集、ObjIdによる仕掛けの接続、ゲームモード制作の手順を解説します。",
+    seoIntroTitle: "BF6 Portalの作り方とリファレンス",
+    seoIntro:
+      "この解説本は、Battlefield 6 Portalで自分のゲームモードやカスタムサーバーを作りたい人向けの日本語ガイドです。BF6 Portalの始め方、Portal Builderの基本、マップエディタ、ルールエディタ、TypeScript API、イベントとアクション、公式サンプルの読み方を、実際に制作するときの順番で整理しています。検索で「BF6 Portal 作り方」「BF6 Portal リファレンス」「BF6 Protal 作り方」「BF6 Protal リファレンス」と調べている人が、必要な章へ進める入口になることを目指しています。",
+    seoTopics: [
+      "BF6 Portal 作り方",
+      "BF6 Portal リファレンス",
+      "BF6 Protal 作り方",
+      "BF6 Protal リファレンス",
+      "Battlefield 6 Portal TypeScript SDK",
+      "Portal Builder",
+      "Portal Custom",
+    ],
     coverAlt: "Battlefield 6 Portal エクスペリエンス制作大全の表紙",
     chaptersTitle: "目次",
     backToContents: "目次へ戻る",
@@ -59,7 +74,17 @@ export const uiText: Record<
     bookLabel: "Battlefield 6 Portal Book",
     bookTitle: "Battlefield 6 Portal Experience Creation Handbook",
     bookDescription:
-      "An introductory book covering Battlefield 6 Portal Experience Builder, the Godot SDK, TypeScript, publishing, and operations. Learn to edit maps, connect objects with ObjId, and read the TypeScript SDK and official samples so you can build your own game modes.",
+      "A guide and reference for building BF6 Portal experiences with Experience Builder, Portal Custom, the Godot SDK, TypeScript SDK, official samples, publishing, and operations.",
+    seoIntroTitle: "How to Build BF6 Portal Experiences",
+    seoIntro:
+      "This handbook explains how to create Battlefield 6 Portal game modes and custom servers, from the first setup through Portal Builder, map editing, rule editing, TypeScript APIs, events, actions, and official sample projects. It is written as a practical BF6 Portal reference for creators who want to move from basic editor usage to their own playable experience.",
+    seoTopics: [
+      "BF6 Portal guide",
+      "BF6 Portal reference",
+      "Battlefield 6 Portal TypeScript SDK",
+      "Portal Builder",
+      "Portal Custom",
+    ],
     coverAlt: "Cover of Battlefield 6 Portal Experience Creation Handbook",
     chaptersTitle: "Contents",
     backToContents: "Back to contents",
@@ -77,7 +102,17 @@ export const uiText: Record<
     bookLabel: "Battlefield 6 Portal Book",
     bookTitle: "Battlefield 6 Portal 体验制作大全",
     bookDescription:
-      "一本入门书，涵盖 Battlefield 6 Portal 的体验构建器、Godot SDK、TypeScript、发布和运营。学习编辑地图、用 ObjId 连接机关，并阅读 TypeScript SDK 与官方示例，最终制作自己的游戏模式。",
+      "一本 BF6 Portal 制作指南和参考资料，涵盖体验构建器、Portal Custom、Godot SDK、TypeScript SDK、官方示例、发布和运营。",
+    seoIntroTitle: "BF6 Portal 制作指南与参考",
+    seoIntro:
+      "本书面向想在 Battlefield 6 Portal 中制作自定义游戏模式和服务器的创作者，按实际制作顺序整理 Portal Builder、地图编辑器、规则编辑器、TypeScript API、事件、动作以及官方示例的阅读方法。",
+    seoTopics: [
+      "BF6 Portal 制作",
+      "BF6 Portal 参考",
+      "Battlefield 6 Portal TypeScript SDK",
+      "Portal Builder",
+      "Portal Custom",
+    ],
     coverAlt: "Battlefield 6 Portal 体验制作大全封面",
     chaptersTitle: "目录",
     backToContents: "返回目录",
@@ -95,7 +130,17 @@ export const uiText: Record<
     bookLabel: "Battlefield 6 Portal Book",
     bookTitle: "Battlefield 6 Portal 體驗製作大全",
     bookDescription:
-      "一本入門書，涵蓋 Battlefield 6 Portal 的體驗建構器、Godot SDK、TypeScript、發布與營運。學習編輯地圖、用 ObjId 連接機關，並閱讀 TypeScript SDK 與官方範例，最後製作自己的遊戲模式。",
+      "一本 BF6 Portal 製作指南與參考資料，涵蓋體驗建構器、Portal Custom、Godot SDK、TypeScript SDK、官方範例、發布與營運。",
+    seoIntroTitle: "BF6 Portal 製作指南與參考",
+    seoIntro:
+      "本書面向想在 Battlefield 6 Portal 中製作自訂遊戲模式與伺服器的創作者，依照實際製作順序整理 Portal Builder、地圖編輯器、規則編輯器、TypeScript API、事件、動作以及官方範例的閱讀方法。",
+    seoTopics: [
+      "BF6 Portal 製作",
+      "BF6 Portal 參考",
+      "Battlefield 6 Portal TypeScript SDK",
+      "Portal Builder",
+      "Portal Custom",
+    ],
     coverAlt: "Battlefield 6 Portal 體驗製作大全封面",
     chaptersTitle: "目錄",
     backToContents: "返回目錄",
