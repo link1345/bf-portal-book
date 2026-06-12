@@ -28,6 +28,12 @@ export async function generateMetadata({
   return {
     title: uiText[locale].bookTitle,
     description: uiText[locale].bookDescription,
+    keywords: uiText[locale].seoTopics,
+    openGraph: {
+      title: uiText[locale].bookTitle,
+      description: uiText[locale].bookDescription,
+      type: "website",
+    },
   };
 }
 

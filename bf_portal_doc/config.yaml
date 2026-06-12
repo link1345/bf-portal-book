@@ -1,8 +1,8 @@
 title: "Battlefield 6 Portal エクスペリエンス制作大全: — 公式ツールで創る「自分だけの戦場」ガイド —"
 summary: |-
-  Battlefield 6 Portalのエクスペリエンスビルダー、Godot SDK、TypeScript、公開運営までを扱う入門書です。
-  Portalカスタムでマップを編集し、ObjIdで仕掛けをつなぎ、TypeScript SDKと公式サンプルを読みながら自分のゲームモードを作れる状態を目指します。
-topics: ["Battlefield6", "BF6", "TypeScript", "ゲーム開発", "Godot"] # トピック（5つまで）
+  BF6 Portalの作り方を、エクスペリエンスビルダー、Portalカスタム、Godot SDK、TypeScript SDK、公式サンプル、公開運営まで順に学ぶ日本語リファレンスです。
+  マップ編集、ObjIdによる仕掛けの接続、ルールエディタ、イベントとアクション、ゲームモード制作の手順を解説します。
+topics: ["Battlefield6", "BF6 Portal", "TypeScript", "ゲーム開発", "Godot"] # トピック（5つまで）
 published: false # falseだと下書き
 price: 0 # 有料の場合200〜5000
 chapters:
