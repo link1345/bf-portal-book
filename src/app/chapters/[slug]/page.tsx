@@ -30,9 +30,19 @@ export async function generateMetadata({
     return {};
   }
 
+  const title = `${chapter.title} : ${uiText[defaultLocale].bookTitle}`;
+  const description = chapter.description || uiText[defaultLocale].bookDescription;
+
   return {
-    title: chapter.title,
-    description: chapter.description || uiText[defaultLocale].bookDescription,
+    title: {
+      absolute: title,
+    },
+    description,
+    openGraph: {
+      title,
+      description,
+      type: "article",
+    },
   };
 }
 
