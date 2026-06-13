@@ -3,9 +3,12 @@ title: "Chapter 9: Publishing, Hosting, and Operations"
 free: true
 ---
 
-# 0 Publishing, Hosting, and Operations
+In Chapter 8, we organized how to use messages, WorldIcon, SFX, and FX so players can understand the next action and feel successful feedback. But even if the experience communicates well in-game, it is not yet ready to be played after publication.
+This chapter organizes how to **publish a Portal experience in a playable state and operate it without breaking it**. We treat the title, description, thumbnail, announcements, tests, and update procedure as one flow, making the work after creation visible.
 
-> Design people can play, explanations they can understand, and updates that do not break the mode
+This is not a chapter about large-scale promotion. Instead, we decide how pre-publish checks, descriptions, small-group operation, updates, and rollback should relate to each other so people who arrive can start without confusion and you can see what to fix after they play.
+
+# 0 Publishing, Hosting, and Operations
 
 * Publish your mode with confidence, and prepare a path that stays easy to play even with a small group.
 * Standardize the title, description within 256 characters, thumbnail, and external announcements so important details are not missed.

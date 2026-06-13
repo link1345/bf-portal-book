@@ -53,6 +53,82 @@ function toChapter(chapter: ChapterFile): Chapter {
   };
 }
 
+function stripMarkdownForDescription(text: string) {
+  return text
+    .replace(/!\[[^\]]*]\([^)]*\)/g, "")
+    .replace(/\[([^\]]+)]\([^)]*\)/g, "$1")
+    .replace(/`([^`]+)`/g, "$1")
+    .replace(/[*_~#>|[\](){}\\]/g, "")
+    .replace(/<[^>]+>/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function trimDescription(text: string, maxLength = 160) {
+  const characters = Array.from(text);
+
+  if (characters.length <= maxLength) {
+    return text;
+  }
+
+  return `${characters.slice(0, maxLength - 3).join("").trimEnd()}...`;
+}
+
+function extractDescriptionFromContent(content: string) {
+  const candidates: { text: string; priority: number }[] = [];
+  const paragraph: string[] = [];
+  let inCodeBlock = false;
+
+  function flushParagraph() {
+    if (paragraph.length === 0) {
+      return;
+    }
+
+    const lines = paragraph.splice(0);
+    const firstLine = lines[0]?.trim() ?? "";
+    const text = stripMarkdownForDescription(lines.join(" "));
+
+    if (!text) {
+      return;
+    }
+
+    const priority = firstLine.startsWith(">") ? 2 : firstLine.match(/^[-*+]\s/) ? 1 : 0;
+    candidates.push({ text, priority });
+  }
+
+  for (const rawLine of content.split(/\r?\n/)) {
+    const line = rawLine.trim();
+
+    if (line.startsWith("```") || line.startsWith("~~~")) {
+      flushParagraph();
+      inCodeBlock = !inCodeBlock;
+      continue;
+    }
+
+    if (inCodeBlock) {
+      continue;
+    }
+
+    if (!line) {
+      flushParagraph();
+      continue;
+    }
+
+    if (line.startsWith("#") || line.startsWith(":::")) {
+      flushParagraph();
+      continue;
+    }
+
+    paragraph.push(line);
+  }
+
+  flushParagraph();
+
+  const bestCandidate = candidates.sort((a, b) => a.priority - b.priority)[0];
+
+  return bestCandidate ? trimDescription(bestCandidate.text) : "";
+}
+
 function extractHeadings(html: string): ChapterHeading[] {
   const $ = cheerio.load(html);
 
@@ -100,7 +176,7 @@ async function readChapterFile(filename: string, locale: Locale): Promise<Chapte
   return {
     slug,
     title: data.title ?? slug,
-    description: data.description ?? "",
+    description: data.description?.trim() || extractDescriptionFromContent(parsed.content),
     order: data.order ?? Number.MAX_SAFE_INTEGER,
     content: parsed.content,
   };

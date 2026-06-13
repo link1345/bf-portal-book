@@ -3,9 +3,12 @@ title: "Chapter 10: The Future of Portal: Where Battlefield Creativity Goes Next
 free: true
 ---
 
-# 0 The Future of Portal: Where Battlefield Creativity Goes Next
+In Chapter 9, we organized publishing and operation. In Chapter 9.5, we covered how to give AI the situation and logs so it can help with fixes and implementation. But Portal itself, the SDK, AI tools, and publishing rules will continue to change.
+This chapter separates what changes easily from what does not, so the thinking we have built so far can **survive future changes**. Even when tools change, you should still be able to reinterpret ID management, state management, presentation, and verification procedures.
 
-> Build with change in mind, and your thinking will be harder to break
+The goal here is not to predict the future. Instead, we decide what to watch, how to reinterpret things, and which design principles to keep so you do not get lost when specifications or environments change later.
+
+# 0 The Future of Portal: Where Battlefield Creativity Goes Next
 
 * How we build will change: as tool specs, AI behavior, and UI standards change, best practices will change too. If you memorize today's "right answer" as a fixed answer, every change will force you to rebuild your thinking.
 * Change is opportunity: as the rule editor and map editor gain more features, you may be able to build more safely with less code.

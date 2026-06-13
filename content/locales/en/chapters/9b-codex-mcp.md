@@ -3,9 +3,12 @@ title: "Chapter 9.5: Build Portal Code by Giving AI the Situation and Logs"
 free: true
 ---
 
-# 0 Build Portal Code by Giving AI the Situation and Logs
+In Chapter 9, we organized the operation procedure for publishing, explaining, and updating a finished experience without breaking it. But when you fix bugs after publishing or add new elements, tracking every API and type by yourself gets heavy.
+This chapter organizes **how to hand Portal coding work to AI**. We build a flow for giving AI the materials it can use: what you want to do, the target map, the target object, the trigger timing, what happened in the real game, and the contents of `PortalLog.txt`.
 
-> Give the AI what you want and what happened, then let it handle the code and investigation
+The goal here is not to throw everything at AI and stop thinking. Instead, we decide how role sharing, prompt writing, log handoff, MCP usage, and real in-game verification should relate to each other in a form that can be reused for later fixes.
+
+# 0 Build Portal Code by Giving AI the Situation and Logs
 
 When writing Portal scripts in TypeScript, you can hand most of the actual programming work to AI.
 AI is especially good at looking up function names, matching types, adding logs, and narrowing down causes.

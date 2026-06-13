@@ -3,9 +3,12 @@ title: "Chapter 8: Visuals and Presentation: Mastering UI, SFX, and FX"
 free: true
 ---
 
-# 0 Visuals and Presentation: Mastering UI, SFX, and FX
+In Chapter 7, we split the code into small boxes so message display and marker updates could be called cleanly. But code that runs is not enough by itself. Players still need to understand what to do next, whether they succeeded, and where they should go now.
+This chapter turns those reactions into **presentation that communicates with the player**. We connect short messages, WorldIcon updates, SFX, and FX in the order of **words -> marker -> effect**, so rule changes can be followed on screen without confusion.
 
-> Communicate -> guide -> make it feel good, in that order
+The goal here is not to add flashy effects for their own sake. Instead, we decide how notifications, guidance, sound effects, visual effects, anti-spam controls, and debug displays should relate to each other in a form that can be carried directly into the later TypeScript implementation.
+
+# 0 Visuals and Presentation: Mastering UI, SFX, and FX
 
 * Communicate: short messages and WorldIcon switching
 * Guide: placement and updates that make "go here" obvious at a glance
