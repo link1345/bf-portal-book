@@ -72,6 +72,10 @@ free: true
 | --- | --- | --- | --- | --- |
 | `SetCameraTypeForAll` | 全プレイヤーのカメラ種別を設定する。必要ならカメラインデックスも指定する。 オーバーロード2種。 | cameraType: Cameras | なし | `mod.SetCameraTypeForAll(...);` |
 | `SetCameraTypeForPlayer` | 指定プレイヤーのカメラ種別を設定する。必要ならカメラインデックスも指定する。 オーバーロード2種。 | player: Player, cameraType: Cameras | なし | `mod.SetCameraTypeForPlayer(...);` |
+| `SetFreeCameraCollisionForAll` | 全プレイヤーのFree Camera衝突判定を有効または無効にする。 | enabled: boolean | なし | `mod.SetFreeCameraCollisionForAll(true);` |
+| `SetFreeCameraCollisionForPlayer` | 指定プレイヤーのFree Camera衝突判定を有効または無効にする。 | player: Player, enabled: boolean | なし | `mod.SetFreeCameraCollisionForPlayer(player, true);` |
+| `SetThirdPersonCameraPositionForAll` | 全プレイヤーの三人称カメラ距離、高さ、肩オフセットを設定する。 | followDistance: number, followHeight: number, shoulderOffset: number | なし | `mod.SetThirdPersonCameraPositionForAll(2.5, 0.2, 0.6);` |
+| `SetThirdPersonCameraPositionForPlayer` | 指定プレイヤーの三人称カメラ距離、高さ、肩オフセットを設定する。 | player: Player, followDistance: number, followHeight: number, shoulderOffset: number | なし | `mod.SetThirdPersonCameraPositionForPlayer(player, 2.5, 0.2, 0.6);` |
 | `SetSpectatingFiltersForAll` | 全プレイヤーの観戦対象フィルタを設定する。分隊内・チーム内だけに制限できる。 | group: SpectatingGroup, ownSquadOnly: boolean, ownTeamOnly: boolean | なし | `mod.SetSpectatingFiltersForAll(...);` |
 | `SetSpectatingFiltersForPlayer` | 指定プレイヤーの観戦対象フィルタを設定する。分隊内・チーム内だけに制限できる。 | player: Player, group: SpectatingGroup, ownSquadOnly: boolean, ownTeamOnly: boolean | なし | `mod.SetSpectatingFiltersForPlayer(...);` |
 | `EnableScreenEffect` | 指定プレイヤーの画面効果を有効または無効にする。 | player: Player, screenEffect: ScreenEffects, enable: boolean | なし | `mod.EnableScreenEffect(...);` |
@@ -119,6 +123,8 @@ free: true
 | `PauseGameModeTime` | ゲームモードタイマーを一時停止または再開する。 | pauseTimer: boolean | なし | `mod.PauseGameModeTime(...);` |
 | `ResetGameModeTime` | ゲームモード時間を開始時の値へ戻す。 | なし | なし | `mod.ResetGameModeTime(...);` |
 | `SetFriendlyFire` | フレンドリーファイアを有効または無効にする。 | enableFriendlyFire: boolean | なし | `mod.SetFriendlyFire(...);` |
+| `SetGameModeCriteria` | 勝敗判定に使うスコア基準を設定する。 | criteria: ScoreCriteria | なし | `mod.SetGameModeCriteria(mod.ScoreCriteria.HighestProgress);` |
+| `SetGameModeInitialScore` | 指定チームの初期ゲームモードスコアを設定する。 | team: Team, initialscore: number | なし | `mod.SetGameModeInitialScore(mod.GetTeam(1), 0);` |
 | `SetGameModeScore` | 指定プレイヤーまたはチームのゲームモードスコアを設定する。 オーバーロード2種。 | team: Team, newScore: number | なし | `mod.SetGameModeScore(mod.GetTeam(1), 10);` |
 | `SetGameModeTargetScore` | 勝利判定に使う目標スコアを設定する。 | newScore: number | なし | `mod.SetGameModeTargetScore(...);` |
 | `SetGameModeTimeLimit` | ゲームモードの制限時間を秒数で設定する。 | newTimeLimit: number | なし | `mod.SetGameModeTimeLimit(...);` |
@@ -147,7 +153,16 @@ free: true
 | `EnableHQ` | HQを有効または無効にする。 | hq: HQ, enable: boolean | なし | `mod.EnableHQ(...);` |
 | `EnableGameModeObjective` | CapturePoint、HQ、Sector、MCOMなどの目標を有効または無効にする。 | objective: CapturePoint \| HQ \| Sector \| MCOM, enable: boolean | なし | `mod.EnableGameModeObjective(...);` |
 | `SetMCOMFuseTime` | MCOMが爆発するまでの導火時間を設定する。 | mCOM: MCOM, fuseTime: number | なし | `mod.SetMCOMFuseTime(...);` |
+| `SetMCOMArmType` | MCOMを通常アームにするか、Bomb所持者だけがアームできる方式にするか設定する。 | mcom: MCOM, mcomarmtype: MCOMArmType | なし | `mod.SetMCOMArmType(mod.GetMCOM(1), mod.MCOMArmType.Bomb);` |
 | `SetMCOMOwner` | MCOMの所有チームを設定する。設置・解除できるチームが切り替わる。 | mcom: MCOM, teamid: Team | なし | `mod.SetMCOMOwner(...);` |
+| `ForceBombDrop` | Bomb所持者からBombを強制的に落とす。 | bomb: Bomb | なし | `mod.ForceBombDrop(mod.GetBomb(1));` |
+| `ForceBombReset` | Bombを初期位置へ強制リセットする。 | bomb: Bomb | なし | `mod.ForceBombReset(mod.GetBomb(1));` |
+| `ForceBombSpawn` | Bombを元の位置に強制スポーンする。 | bomb: Bomb | なし | `mod.ForceBombSpawn(mod.GetBomb(1));` |
+| `ForceBombUnspawn` | Bombを強制的に消す。 | bomb: Bomb | なし | `mod.ForceBombUnspawn(mod.GetBomb(1));` |
+| `GiveBombToPlayer` | 指定プレイヤーへBombを渡す。 | player: Player, bomb: Bomb | なし | `mod.GiveBombToPlayer(player, mod.GetBomb(1));` |
+| `SetBombDropFuseTime` | Bombが地面に落ちてから爆発するまでの時間を設定する。 | bomb: Bomb, dropfusetime: number | なし | `mod.SetBombDropFuseTime(mod.GetBomb(1), 10);` |
+| `SetBombTeam` | Bombを拾えるチームを変更する。 | bomb: Bomb, team: Team | なし | `mod.SetBombTeam(mod.GetBomb(1), mod.GetTeam(2));` |
+| `SetBombWorldIconGlobalVisibility` | BombキャリアのWorldIconを全チームへ見せるか、攻撃側だけへ見せるか設定する。 | bomb: Bomb, enabled: boolean | なし | `mod.SetBombWorldIconGlobalVisibility(mod.GetBomb(1), false);` |
 | `GetRingOfFire` | RingOfFireを番号または対象から取得する。 | number: number | `RingOfFire` | `const value = mod.GetRingOfFire(...);` |
 | `AllCapturePoints` | ゲーム内に存在する全CapturePointを配列で取得する。 | なし | `Array` | `const value = mod.AllCapturePoints(...);` |
 | `GetCapturePoint` | CapturePointを番号または対象から取得する。 | id: number | `CapturePoint` | `const value = mod.GetCapturePoint(...);` |
@@ -157,6 +172,7 @@ free: true
 | `GetPlayersOnPoint` | 指定CapturePointの範囲内にいるプレイヤー配列を取得する。 | capturePoint: CapturePoint | `Array` | `const value = mod.GetPlayersOnPoint(...);` |
 | `GetPreviousOwnerTeam` | 指定CapturePointの直前の所有チームを取得する。 | capturePoint: CapturePoint | `Team` | `const value = mod.GetPreviousOwnerTeam(...);` |
 | `GetHQ` | HQを番号または対象から取得する。 | number: number | `HQ` | `const value = mod.GetHQ(...);` |
+| `GetBomb` | Bombを番号または対象から取得する。 | number: number | `Bomb` | `const bomb = mod.GetBomb(1);` |
 | `GetMCOM` | MCOMを番号または対象から取得する。 | number: number | `MCOM` | `const value = mod.GetMCOM(...);` |
 | `GetSector` | Sectorを番号または対象から取得する。 | number: number | `Sector` | `const value = mod.GetSector(...);` |
 
@@ -180,7 +196,7 @@ free: true
 | `GetAreaTrigger` | AreaTriggerを番号または対象から取得する。 | areaTriggerNumber: number | `AreaTrigger` | `const area = mod.GetAreaTrigger(0);` |
 | `GetInteractPoint` | InteractPointを番号または対象から取得する。 | interactPointNumber: number | `InteractPoint` | `const point = mod.GetInteractPoint(0);` |
 | `GetSpatialObject` | SpatialObjectを番号または対象から取得する。 | spatialObjectNumber: number | `SpatialObject` | `const value = mod.GetSpatialObject(...);` |
-| `SpawnObject` | ランタイムスポーン用Prefabを指定座標へ生成する。対応しないオブジェクトは戻り値が `-1` になることがある。 オーバーロード2種。 | prefabEnum: \| RuntimeSpawn_Common \| RuntimeSpawn_Abbasid \| RuntimeSpawn_Aftermath \| RuntimeSpawn_Badlands \| RuntimeSpawn_Battery \| RuntimeSpawn_Capstone \| RuntimeSpawn_Contaminated \| RuntimeSpawn_Dumbo \| RuntimeSpawn_Eastwood \| RuntimeSpawn_FireStorm \| RuntimeSpawn_Limestone \| RuntimeSpawn_Outskirts \| RuntimeSpawn_Subsurface \| RuntimeSpawn_Tungsten \| RuntimeSpawn_Granite_Downtown \| RuntimeSpawn_Granite_Marina \| RuntimeSpawn_Granite_MilitaryRnD \| RuntimeSpawn_Granite_MilitaryStorage \| RuntimeSpawn_Granite_ResidentialNorth \| RuntimeSpawn_Granite_TechCenter \| RuntimeSpawn_Granite_Underground \| RuntimeSpawn_Sand, position: Vector, rotation: Vector, scale: Vector | `Any` | `const obj = mod.SpawnObject(prefab, pos, rot, scale);` |
+| `SpawnObject` | ランタイムスポーン用Prefabを指定座標へ生成する。対応しないオブジェクトは戻り値が `-1` になることがある。 オーバーロード2種。 | prefabEnum: `RuntimeSpawn_Common` ほかMap別RuntimeSpawn（`RuntimeSpawn_Plaza` を含む）, position: Vector, rotation: Vector, scale: Vector | `Any` | `const obj = mod.SpawnObject(prefab, pos, rot, scale);` |
 | `GetObjectPosition` | 指定オブジェクトの現在位置をVectorで取得する。 | object: mod.Object | `Vector` | `const value = mod.GetObjectPosition(...);` |
 | `GetObjectRotation` | 指定オブジェクトの現在回転をVectorで取得する。 | object: mod.Object | `Vector` | `const value = mod.GetObjectRotation(...);` |
 | `GetObjectTransform` | 指定オブジェクトの位置と回転を含むTransformを取得する。 | object: mod.Object | `Transform` | `const value = mod.GetObjectTransform(...);` |
@@ -268,6 +284,13 @@ free: true
 | `GetAllPlayersInVehicle` | 指定車両に乗っている全プレイヤーを配列で取得する。 | vehicle: Vehicle | `Array` | `const value = mod.GetAllPlayersInVehicle(...);` |
 | `GetPlayerFromVehicleSeat` | 指定車両の指定座席に乗っているプレイヤーを取得する。空席なら無効なPlayerになる。 | vehicle: Vehicle, number: number | `Player` | `const value = mod.GetPlayerFromVehicleSeat(...);` |
 | `GetPlayerVehicleSeat` | 指定プレイヤーが乗っている車両座席番号を取得する。車両外なら-1。 | player: Player | `number` | `const value = mod.GetPlayerVehicleSeat(...);` |
+
+## 物理インパルス
+
+| 関数 | 機能・目的 | 主な引数 | 戻り値 | 使用例 |
+| --- | --- | --- | --- | --- |
+| `ApplyAreaImpulseAndDamage` | 指定中心と半径内の車両へ範囲インパルスと任意ダメージを適用する。方向指定あり/なしのオーバーロード2種。 | center: Vector, radius: number, impulseStrength: number, damageAmount: number | なし | `mod.ApplyAreaImpulseAndDamage(center, 5, 1000, 0);` |
+| `ApplyImpulse` | 1台の車両へ、指定ワールド位置・方向・強さでインパルスを加える。 | vehicle: Vehicle, worldPosition: Vector, direction: Vector, magnitude: number | なし | `mod.ApplyImpulse(vehicle, pos, mod.ForwardVector(), 500);` |
 
 ## ワールドアイコン
 

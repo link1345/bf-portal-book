@@ -25,6 +25,7 @@ free: true
 | `SetScoreboardPlayerValues` | 在自訂計分板上為每位玩家設定最多 5 列的欄位值。 5 種重載。 | player: Player, column1Value: number, column2Value: number, column3Value: number, column4Value: number, column5Value: number | 無 | `mod.SetScoreboardPlayerValues(...);` |
 | `SetScoreboardSorting` | 設定自訂計分板排序列與倒序規格。 2 種重載。 | sortingColumn: number, reverseSorting: boolean | 無 | `mod.SetScoreboardSorting(...);` |
 | `SetScoreboardType` | 更改要使用的計分板類型。 | scoreboardType: ScoreboardType | 無 | `mod.SetScoreboardType(...);` |
+| `SetHUDTicker` | 設定 HUD 頂部顯示的遊戲模式 Ticker。 | ticker: GameModeTicker | 無 | `mod.SetHUDTicker(...);` |
 | `AddUIButton` | 建立 UI Button Widget。 6 種重載。 | name: string, position: Vector, size: Vector, anchor: UIAnchor | 無 | `mod.AddUIButton(...);` |
 | `AddUIContainer` | 建立 UI Container Widget。 6 種重載。 | name: string, position: Vector, size: Vector, anchor: UIAnchor | 無 | `mod.AddUIContainer(...);` |
 | `AddUIGadgetImage` | 建立一個顯示 Gadget 影像的 UI Image Widget。 2 種重載。 | name: string, position: Vector, size: Vector, anchor: UIAnchor, gadget: Gadgets, parent: UIWidget | 無 | `mod.AddUIGadgetImage(...);` |
@@ -142,6 +143,13 @@ free: true
 | `GetSpawner` | 從編號或目標取得 Spawner。 | number: number | `Spawner` | `const value = mod.GetSpawner(...);` |
 | `GetVL7Cloud` | 從編號或目標取得 VL7Cloud。 | vl7CloudId: number | `VL7Cloud` | `const value = mod.GetVL7Cloud(...);` |
 
+## 效能測量
+
+| 函式 | 功能 / 目的 | 主要參數 | 回傳值 | 使用範例 |
+| --- | --- | --- | --- | --- |
+| `GetPortalAverageFrameTime` | 取得 Portal 邏輯的平均影格時間。這個值是最近的歷史平均值，不是每個影格即時更新的值。 | 無 | `number` | `const portalMs = mod.GetPortalAverageFrameTime();` |
+| `GetServerAverageFrameTime` | 取得伺服器端遊戲處理的平均影格時間。用來確認較重的 Ongoing 邏輯或大量 Spawn 的影響。 | 無 | `number` | `const serverMs = mod.GetServerAverageFrameTime();` |
+
 ## 邏輯 / 字串 / 擴充
 
 | 函式 | 功能 / 目的 | 主要參數 | 回傳值 | 使用範例 |
@@ -153,6 +161,8 @@ free: true
 | `GreaterThanEqualTo` | 判斷左邊的數字是否大於或等於右邊的數。 | left: number, right: number | `boolean` | `const value = mod.GreaterThanEqualTo(...);` |
 | `IfThenElse` | 一個三元運算，如果條件為 true，則傳回第一個值；如果條件為 false，則傳回第二個值。 | condition: boolean, trueValue: Any, falseValue: Any | `Any` | `const value = mod.IfThenElse(...);` |
 | `IsType` | 判斷值是否與指定類型相符。 | value: Any, type: Types | `boolean` | `const value = mod.IsType(...);` |
+| `IsUndefined` | 判斷值是否未定義。用於確認可選參照或搜尋結果。 | value: Any | `boolean` | `const missing = mod.IsUndefined(value);` |
+| `IsValid` | 判斷值是否為有效參照。處理 Bomb、Object、Player 等之前可先做防禦檢查。 | value: Any | `boolean` | `const ok = mod.IsValid(value);` |
 | `JsValue` | 在 JavaScript 端呼叫唯一值函數。使用Portal端的回傳值。 | valueName: string, valueArg0: Any, valueArg1: Any | `Any` | `const value = mod.JsValue("MyValue", eventPlayer, 0);` |
 | `LessThan` | 判斷左邊的數字是否小於右邊的數。 | left: number, right: number | `boolean` | `const value = mod.LessThan(...);` |
 | `LessThanEqualTo` | 判斷左邊的數是小於或等於右邊的數。 | left: number, right: number | `boolean` | `const value = mod.LessThanEqualTo(...);` |
@@ -228,6 +238,7 @@ free: true
 | --- | --- | --- |
 | `Player` | `Player` |事件參數，`AllPlayers()`，`ClosestPlayerTo()` |個人玩家處理、通知、裝備、健康、移動 |
 | `Team` | `Team` | `GetTeam(player)`，`GetTeam(1)` | `GetTeam(player)`基於隊伍的勝負、通知、分數和隸屬關係變化 |
+| `Bomb` | `Bomb` | `GetBomb(number)`、Bomb 系事件參數 | Obliteration 的炸彈持有、掉落、重置、M-COM 連動 |
 | `Vector` | `Vector` | `CreateVector(x, y, z)`，`GetObjectPosition(obj)` | `CreateVector(x, y, z)`座標、方向、顏色、UI位置等 |
 | `Message` | `Message(mod.stringkeys.textKey)` | msg: string \| number \| Player, msgArg0: string \| number \| Player, msgArg1: string \| number \| Player, msgArg2: string \| number \| Player | `Message` | `mod.Message(mod.stringkeys.remainingSeconds, 10);` |
 | `UIWidget` | `UIWidget` | `AddUIText()`、`AddUIButton()`、`FindUIWidgetWithName()` | HUD、按鈕、圖片、容器 |

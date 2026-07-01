@@ -50,3 +50,4 @@ free: true
 2026-05-02：补充关于 Codex App 中 MCP 设置、向 AI 提问的方法，以及 Rate limit 的说明
 2026-05-13：对应官方 SDK v1.3.1.0。补充 `HybridExample`、`CustomCQ`、`mod.strings`、Radio 系 Music 常量、新增装备常量，以及 `VehicleSpawner` 的 `EnableRespawn` 变更说明
 2026-06-12：对应官方 SDK v1.3.2.0。补充 `NightModeExample`、`GolmudTrainExample`、`MP_GolmudRailway`，以及 CustomCQ v10.0 的新增地图和更新点
+2026-07-01：对应官方 SDK v1.3.3.0。补充 `MovingPlatformExample`、`ObliterationExample`、`PhysicsImpulse_Gym`、`PortalPerformanceExample`、`MP_Aftermath_Portal`、`MP_Plaza`、Bomb/M-COM、物理冲量、相机和性能测量 API 的新增点

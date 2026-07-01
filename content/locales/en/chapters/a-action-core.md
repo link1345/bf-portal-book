@@ -72,6 +72,10 @@ Functions with the same name and multiple argument patterns are grouped together
 | --- | --- | --- | --- | --- |
 | `SetCameraTypeForAll` | Set the camera type for all players. If necessary, also specify the camera index. 2 overloads. | cameraType: Cameras | None | `mod.SetCameraTypeForAll(...);` |
 | `SetCameraTypeForPlayer` | Set the camera type of the specified player. If necessary, also specify the camera index. 2 overloads. | player: Player, cameraType: Cameras | None | `mod.SetCameraTypeForPlayer(...);` |
+| `SetFreeCameraCollisionForAll` | Enable or disable Free Camera collision for all players. | enabled: boolean | None | `mod.SetFreeCameraCollisionForAll(true);` |
+| `SetFreeCameraCollisionForPlayer` | Enable or disable Free Camera collision for a player. | player: Player, enabled: boolean | None | `mod.SetFreeCameraCollisionForPlayer(player, true);` |
+| `SetThirdPersonCameraPositionForAll` | Set third-person follow distance, height, and shoulder offset for all players. | followDistance: number, followHeight: number, shoulderOffset: number | None | `mod.SetThirdPersonCameraPositionForAll(2.5, 0.2, 0.6);` |
+| `SetThirdPersonCameraPositionForPlayer` | Set third-person follow distance, height, and shoulder offset for a player. | player: Player, followDistance: number, followHeight: number, shoulderOffset: number | None | `mod.SetThirdPersonCameraPositionForPlayer(player, 2.5, 0.2, 0.6);` |
 | `SetSpectatingFiltersForAll` | Set the viewing filter for all players. Can be restricted to only within the squad/team. | group: SpectatingGroup, ownSquadOnly: boolean, ownTeamOnly: boolean | None | `mod.SetSpectatingFiltersForAll(...);` |
 | `SetSpectatingFiltersForPlayer` | Set the filter for watching the specified player. Can be restricted to only within the squad/team. | player: Player, group: SpectatingGroup, ownSquadOnly: boolean, ownTeamOnly: boolean | None | `mod.SetSpectatingFiltersForPlayer(...);` |
 | `EnableScreenEffect` | Enable or disable screen effects for the specified player. | player: Player, screenEffect: ScreenEffects, enable: boolean | None | `mod.EnableScreenEffect(...);` |
@@ -119,6 +123,8 @@ Functions with the same name and multiple argument patterns are grouped together
 | `PauseGameModeTime` | Pause or resume game mode timer. | pauseTimer: boolean | None | `mod.PauseGameModeTime(...);` |
 | `ResetGameModeTime` | Return the game mode time to the starting value. | None | None | `mod.ResetGameModeTime(...);` |
 | `SetFriendlyFire` | Enable or disable friendly fire. | enableFriendlyFire: boolean | None | `mod.SetFriendlyFire(...);` |
+| `SetGameModeCriteria` | Set the score criterion used for win checks. | criteria: ScoreCriteria | None | `mod.SetGameModeCriteria(mod.ScoreCriteria.HighestProgress);` |
+| `SetGameModeInitialScore` | Set the initial game mode score for a team. | team: Team, initialscore: number | None | `mod.SetGameModeInitialScore(mod.GetTeam(1), 0);` |
 | `SetGameModeScore` | Set the game mode score for a specified player or team. 2 overloads. | team: Team, newScore: number | None | `mod.SetGameModeScore(mod.GetTeam(1), 10);` |
 | `SetGameModeTargetScore` | Set the target score used to determine victory. | newScore: number | None | `mod.SetGameModeTargetScore(...);` |
 | `SetGameModeTimeLimit` | Set the game mode time limit in seconds. | newTimeLimit: number | None | `mod.SetGameModeTimeLimit(...);` |
@@ -147,7 +153,16 @@ Functions with the same name and multiple argument patterns are grouped together
 | `EnableHQ` | Enable or disable HQ. | hq: HQ, enable: boolean | None | `mod.EnableHQ(...);` |
 | `EnableGameModeObjective` | Enable or disable objectives such as CapturePoint, HQ, Sector, MCOM, etc. | objective: CapturePoint \| HQ \| Sector \| MCOM, enable: boolean | None | `mod.EnableGameModeObjective(...);` |
 | `SetMCOMFuseTime` | Set the ignition time until MCOM explodes. | mCOM: MCOM, fuseTime: number | None | `mod.SetMCOMFuseTime(...);` |
+| `SetMCOMArmType` | Choose default M-COM arming or bomb-carrier-only arming. | mcom: MCOM, mcomarmtype: MCOMArmType | None | `mod.SetMCOMArmType(mod.GetMCOM(1), mod.MCOMArmType.Bomb);` |
 | `SetMCOMOwner` | Set the MCOM ownership team. The team that can install and remove it will change. | mcom: MCOM, teamid: Team | None | `mod.SetMCOMOwner(...);` |
+| `ForceBombDrop` | Force the Bomb to drop from its carrier. | bomb: Bomb | None | `mod.ForceBombDrop(mod.GetBomb(1));` |
+| `ForceBombReset` | Force the Bomb back to its initial location. | bomb: Bomb | None | `mod.ForceBombReset(mod.GetBomb(1));` |
+| `ForceBombSpawn` | Force the Bomb to spawn at its original location. | bomb: Bomb | None | `mod.ForceBombSpawn(mod.GetBomb(1));` |
+| `ForceBombUnspawn` | Force the Bomb to unspawn. | bomb: Bomb | None | `mod.ForceBombUnspawn(mod.GetBomb(1));` |
+| `GiveBombToPlayer` | Give the Bomb to a player. | player: Player, bomb: Bomb | None | `mod.GiveBombToPlayer(player, mod.GetBomb(1));` |
+| `SetBombDropFuseTime` | Set the time from Bomb drop to explosion. | bomb: Bomb, dropfusetime: number | None | `mod.SetBombDropFuseTime(mod.GetBomb(1), 10);` |
+| `SetBombTeam` | Change which team can pick up the Bomb. | bomb: Bomb, team: Team | None | `mod.SetBombTeam(mod.GetBomb(1), mod.GetTeam(2));` |
+| `SetBombWorldIconGlobalVisibility` | Make the Bomb carrier WorldIcon visible to all teams or only the attacking team. | bomb: Bomb, enabled: boolean | None | `mod.SetBombWorldIconGlobalVisibility(mod.GetBomb(1), false);` |
 | `GetRingOfFire` | Get RingOfFire from number or target. | number: number | `RingOfFire` | `const value = mod.GetRingOfFire(...);` |
 | `AllCapturePoints` | Get all CapturePoints existing in the game as an array. | None | `Array` | `const value = mod.AllCapturePoints(...);` |
 | `GetCapturePoint` | Get CapturePoint from number or target. | id: number | `CapturePoint` | `const value = mod.GetCapturePoint(...);` |
@@ -157,6 +172,7 @@ Functions with the same name and multiple argument patterns are grouped together
 | `GetPlayersOnPoint` | Get the array of players within the range of the specified CapturePoint. | capturePoint: CapturePoint | `Array` | `const value = mod.GetPlayersOnPoint(...);` |
 | `GetPreviousOwnerTeam` | Get the previous ownership team of the specified CapturePoint. | capturePoint: CapturePoint | `Team` | `const value = mod.GetPreviousOwnerTeam(...);` |
 | `GetHQ` | Get HQ from number or target. | number: number | `HQ` | `const value = mod.GetHQ(...);` |
+| `GetBomb` | Get Bomb from number or target. | number: number | `Bomb` | `const bomb = mod.GetBomb(1);` |
 | `GetMCOM` | Get MCOM from number or target. | number: number | `MCOM` | `const value = mod.GetMCOM(...);` |
 | `GetSector` | Get Sector from number or target. | number: number | `Sector` | `const value = mod.GetSector(...);` |
 
@@ -180,7 +196,7 @@ Functions with the same name and multiple argument patterns are grouped together
 | `GetAreaTrigger` | Get AreaTrigger from number or target. | areaTriggerNumber: number | `AreaTrigger` | `const area = mod.GetAreaTrigger(0);` |
 | `GetInteractPoint` | Get InteractPoint from number or target. | interactPointNumber: number | `InteractPoint` | `const point = mod.GetInteractPoint(0);` |
 | `GetSpatialObject` | Get SpatialObject from number or target. | spatialObjectNumber: number | `SpatialObject` | `const value = mod.GetSpatialObject(...);` |
-| `SpawnObject` | Generate a runtime spawn Prefab at the specified coordinates. Unsupported objects may have a return value of `-1`. 2 overloads. | prefabEnum: \| RuntimeSpawn_Common \| RuntimeSpawn_Abbasid \| RuntimeSpawn_Aftermath \| RuntimeSpawn_Badlands \| RuntimeSpawn_Battery \| RuntimeSpawn_Capstone \| RuntimeSpawn_Contaminated \| RuntimeSpawn_Dumbo \| RuntimeSpawn_Eastwood \| RuntimeSpawn_FireStorm \| RuntimeSpawn_Limestone \| RuntimeSpawn_Outskirts \| RuntimeSpawn_Subsurface \| RuntimeSpawn_Tungsten \| RuntimeSpawn_Granite_Downtown \| RuntimeSpawn_Granite_Marina \| RuntimeSpawn_Granite_MilitaryRnD \| RuntimeSpawn_Granite_MilitaryStorage \| RuntimeSpawn_Granite_ResidentialNorth \| RuntimeSpawn_Granite_TechCenter \| RuntimeSpawn_Granite_Underground \| RuntimeSpawn_Sand, position: Vector, rotation: Vector, scale: Vector | `Any` | `const obj = mod.SpawnObject(prefab, pos, rot, scale);` |
+| `SpawnObject` | Generate a runtime spawn Prefab at the specified coordinates. Unsupported objects may have a return value of `-1`. 2 overloads. | prefabEnum: `RuntimeSpawn_Common` and map-specific RuntimeSpawn enums including `RuntimeSpawn_Plaza`, position: Vector, rotation: Vector, scale: Vector | `Any` | `const obj = mod.SpawnObject(prefab, pos, rot, scale);` |
 | `GetObjectPosition` | Get the current position of the specified object as a Vector. | object: mod.Object | `Vector` | `const value = mod.GetObjectPosition(...);` |
 | `GetObjectRotation` | Get the current rotation of the specified object as a Vector. | object: mod.Object | `Vector` | `const value = mod.GetObjectRotation(...);` |
 | `GetObjectTransform` | Get the Transform that includes the position and rotation of the specified object. | object: mod.Object | `Transform` | `const value = mod.GetObjectTransform(...);` |
@@ -268,6 +284,13 @@ Functions with the same name and multiple argument patterns are grouped together
 | `GetAllPlayersInVehicle` | Get all players in the specified vehicle as an array. | vehicle: Vehicle | `Array` | `const value = mod.GetAllPlayersInVehicle(...);` |
 | `GetPlayerFromVehicleSeat` | Get the player in the designated seat of the designated vehicle. If the seat is empty, it becomes an invalid Player. | vehicle: Vehicle, number: number | `Player` | `const value = mod.GetPlayerFromVehicleSeat(...);` |
 | `GetPlayerVehicleSeat` | Get the vehicle seat number of the designated player. -1 if outside the vehicle. | player: Player | `number` | `const value = mod.GetPlayerVehicleSeat(...);` |
+
+## Physics Impulse
+
+| Function | Function / Purpose | Main arguments | Return value | Usage example |
+| --- | --- | --- | --- | --- |
+| `ApplyAreaImpulseAndDamage` | Apply area impulse and optional damage to vehicles within a center and radius. 2 overloads with or without direction override. | center: Vector, radius: number, impulseStrength: number, damageAmount: number | None | `mod.ApplyAreaImpulseAndDamage(center, 5, 1000, 0);` |
+| `ApplyImpulse` | Apply impulse to one vehicle with world position, direction, and magnitude. | vehicle: Vehicle, worldPosition: Vector, direction: Vector, magnitude: number | None | `mod.ApplyImpulse(vehicle, pos, mod.ForwardVector(), 500);` |
 
 ## WorldIcon
 

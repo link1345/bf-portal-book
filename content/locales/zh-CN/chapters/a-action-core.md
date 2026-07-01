@@ -72,6 +72,10 @@ free: true
 | --- | --- | --- | --- | --- |
 | `SetCameraTypeForAll` | 为所有玩家设置相机类型。如有必要，还需指定相机索引。 2 种重载。 | cameraType: Cameras | 无 | `mod.SetCameraTypeForAll(...);` |
 | `SetCameraTypeForPlayer` | 设置指定玩家的摄像头类型。如有必要，还需指定相机索引。 2 种重载。 | player: Player, cameraType: Cameras | 无 | `mod.SetCameraTypeForPlayer(...);` |
+| `SetFreeCameraCollisionForAll` | 启用或禁用所有玩家的 Free Camera 碰撞。 | enabled: boolean | 无 | `mod.SetFreeCameraCollisionForAll(true);` |
+| `SetFreeCameraCollisionForPlayer` | 启用或禁用指定玩家的 Free Camera 碰撞。 | player: Player, enabled: boolean | 无 | `mod.SetFreeCameraCollisionForPlayer(player, true);` |
+| `SetThirdPersonCameraPositionForAll` | 设置所有玩家的第三人称相机距离、高度和肩部偏移。 | followDistance: number, followHeight: number, shoulderOffset: number | 无 | `mod.SetThirdPersonCameraPositionForAll(2.5, 0.2, 0.6);` |
+| `SetThirdPersonCameraPositionForPlayer` | 设置指定玩家的第三人称相机距离、高度和肩部偏移。 | player: Player, followDistance: number, followHeight: number, shoulderOffset: number | 无 | `mod.SetThirdPersonCameraPositionForPlayer(player, 2.5, 0.2, 0.6);` |
 | `SetSpectatingFiltersForAll` | 为所有玩家设置观看过滤器。只能限制在小队 / 队伍内。 | group: SpectatingGroup, ownSquadOnly: boolean, ownTeamOnly: boolean | 无 | `mod.SetSpectatingFiltersForAll(...);` |
 | `SetSpectatingFiltersForPlayer` | 设置观看指定玩家的过滤器。只能限制在小队 / 队伍内。 | player: Player, group: SpectatingGroup, ownSquadOnly: boolean, ownTeamOnly: boolean | 无 | `mod.SetSpectatingFiltersForPlayer(...);` |
 | `EnableScreenEffect` | 启用或禁用指定玩家的屏幕效果。 | player: Player, screenEffect: ScreenEffects, enable: boolean | 无 | `mod.EnableScreenEffect(...);` |
@@ -119,6 +123,8 @@ free: true
 | `PauseGameModeTime` | 暂停或恢复游戏模式计时器。 | pauseTimer: boolean | 无 | `mod.PauseGameModeTime(...);` |
 | `ResetGameModeTime` | 将游戏模式时间返回到起始值。 | 无 | 无 | `mod.ResetGameModeTime(...);` |
 | `SetFriendlyFire` | 启用或禁用友军火力。 | enableFriendlyFire: boolean | 无 | `mod.SetFriendlyFire(...);` |
+| `SetGameModeCriteria` | 设置用于胜负判定的分数标准。 | criteria: ScoreCriteria | 无 | `mod.SetGameModeCriteria(mod.ScoreCriteria.HighestProgress);` |
+| `SetGameModeInitialScore` | 设置指定队伍的初始游戏模式分数。 | team: Team, initialscore: number | 无 | `mod.SetGameModeInitialScore(mod.GetTeam(1), 0);` |
 | `SetGameModeScore` | 设置指定玩家或队伍的游戏模式得分。 2 种重载。 | team: Team, newScore: number | 无 | `mod.SetGameModeScore(mod.GetTeam(1), 10);` |
 | `SetGameModeTargetScore` | 设置用于确定胜利的目标分数。 | newScore: number | 无 | `mod.SetGameModeTargetScore(...);` |
 | `SetGameModeTimeLimit` | 设置游戏模式时间限制（以秒为单位）。 | newTimeLimit: number | 无 | `mod.SetGameModeTimeLimit(...);` |
@@ -147,7 +153,16 @@ free: true
 | `EnableHQ` | 启用或禁用HQ。 | hq: HQ, enable: boolean | 无 | `mod.EnableHQ(...);` |
 | `EnableGameModeObjective` | 启用或禁用诸如 CapturePoint、HQ、Sector、MCOM 等目标。目标：CapturePoint \|HQ\|Sector\| MCOM，启用：boolean | objective: CapturePoint \| HQ \| Sector \| MCOM, enable: boolean | 无 | `mod.EnableGameModeObjective(...);` |
 | `SetMCOMFuseTime` | 设置点火时间直至 MCOM 爆炸。 | mCOM: MCOM, fuseTime: number | 无 | `mod.SetMCOMFuseTime(...);` |
+| `SetMCOMArmType` | 设置 MCOM 是普通安装，还是只有 Bomb 携带者才能安装。 | mcom: MCOM, mcomarmtype: MCOMArmType | 无 | `mod.SetMCOMArmType(mod.GetMCOM(1), mod.MCOMArmType.Bomb);` |
 | `SetMCOMOwner` | 设置 MCOM 所有权队伍。可以安装和删除它的队伍将会发生变化。 | mcom: MCOM, teamid: Team | 无 | `mod.SetMCOMOwner(...);` |
+| `ForceBombDrop` | 强制 Bomb 从携带者身上掉落。 | bomb: Bomb | 无 | `mod.ForceBombDrop(mod.GetBomb(1));` |
+| `ForceBombReset` | 强制把 Bomb 重置到初始位置。 | bomb: Bomb | 无 | `mod.ForceBombReset(mod.GetBomb(1));` |
+| `ForceBombSpawn` | 强制 Bomb 在原始位置生成。 | bomb: Bomb | 无 | `mod.ForceBombSpawn(mod.GetBomb(1));` |
+| `ForceBombUnspawn` | 强制移除 Bomb。 | bomb: Bomb | 无 | `mod.ForceBombUnspawn(mod.GetBomb(1));` |
+| `GiveBombToPlayer` | 把 Bomb 交给指定玩家。 | player: Player, bomb: Bomb | 无 | `mod.GiveBombToPlayer(player, mod.GetBomb(1));` |
+| `SetBombDropFuseTime` | 设置 Bomb 掉到地面后到爆炸为止的时间。 | bomb: Bomb, dropfusetime: number | 无 | `mod.SetBombDropFuseTime(mod.GetBomb(1), 10);` |
+| `SetBombTeam` | 更改可以拾取 Bomb 的队伍。 | bomb: Bomb, team: Team | 无 | `mod.SetBombTeam(mod.GetBomb(1), mod.GetTeam(2));` |
+| `SetBombWorldIconGlobalVisibility` | 设置 Bomb 携带者 WorldIcon 是对所有队伍可见，还是只对进攻方可见。 | bomb: Bomb, enabled: boolean | 无 | `mod.SetBombWorldIconGlobalVisibility(mod.GetBomb(1), false);` |
 | `GetRingOfFire` | 从编号或目标获取 RingOfFire。 | number: number | `RingOfFire` | `const value = mod.GetRingOfFire(...);` |
 | `AllCapturePoints` | 以数组形式获取游戏中存在的所有 CapturePoint。 | 无 | `Array` | `const value = mod.AllCapturePoints(...);` |
 | `GetCapturePoint` | 从数字或目标获取 CapturePoint。 | id: number | `CapturePoint` | `const value = mod.GetCapturePoint(...);` |
@@ -157,6 +172,7 @@ free: true
 | `GetPlayersOnPoint` | 获取指定CapturePoint范围内的玩家数组。 | capturePoint: CapturePoint | `Array` | `const value = mod.GetPlayersOnPoint(...);` |
 | `GetPreviousOwnerTeam` | 获取指定 CapturePoint 的先前所有权队伍。 | capturePoint: CapturePoint | `Team` | `const value = mod.GetPreviousOwnerTeam(...);` |
 | `GetHQ` | 从编号或目标获取HQ。 | number: number | `HQ` | `const value = mod.GetHQ(...);` |
+| `GetBomb` | 从编号或目标获取 Bomb。 | number: number | `Bomb` | `const bomb = mod.GetBomb(1);` |
 | `GetMCOM` | 从编号或目标获取 MCOM。 | number: number | `MCOM` | `const value = mod.GetMCOM(...);` |
 | `GetSector` | 从数字或目标获取Sector。 | number: number | `Sector` | `const value = mod.GetSector(...);` |
 
@@ -180,7 +196,7 @@ free: true
 | `GetAreaTrigger` | 从数字或目标获取AreaTrigger。 | areaTriggerNumber: number | `AreaTrigger` | `const area = mod.GetAreaTrigger(0);` |
 | `GetInteractPoint` | 从数字或目标获取 InteractPoint。 | interactPointNumber: number | `InteractPoint` | `const point = mod.GetInteractPoint(0);` |
 | `GetSpatialObject` | 从数字或目标获取 SpatialObject。 | spatialObjectNumber: number | `SpatialObject` | `const value = mod.GetSpatialObject(...);` |
-| `SpawnObject` | 在指定坐标处生成运行时生成预制件。不受支持的对象的返回值可能为 `-1`。 2 种重载。 | prefabEnum: \| RuntimeSpawn_Common \| RuntimeSpawn_Abbasid \| RuntimeSpawn_Aftermath \| RuntimeSpawn_Badlands \| RuntimeSpawn_Battery \| RuntimeSpawn_Capstone \| RuntimeSpawn_Contaminated \| RuntimeSpawn_Dumbo \| RuntimeSpawn_Eastwood \| RuntimeSpawn_FireStorm \| RuntimeSpawn_Limestone \| RuntimeSpawn_Outskirts \| RuntimeSpawn_Subsurface \| RuntimeSpawn_Tungsten \| RuntimeSpawn_Granite_Downtown \| RuntimeSpawn_Granite_Marina \| RuntimeSpawn_Granite_MilitaryRnD \| RuntimeSpawn_Granite_MilitaryStorage \| RuntimeSpawn_Granite_ResidentialNorth \| RuntimeSpawn_Granite_TechCenter \| RuntimeSpawn_Granite_Underground \| RuntimeSpawn_Sand, position: Vector, rotation: Vector, scale: Vector | `Any` | `const obj = mod.SpawnObject(prefab, pos, rot, scale);` |
+| `SpawnObject` | 在指定坐标处生成运行时 Prefab。不受支持的对象的返回值可能为 `-1`。2 种重载。 | prefabEnum: `RuntimeSpawn_Common` 和包含 `RuntimeSpawn_Plaza` 的各地图 RuntimeSpawn, position: Vector, rotation: Vector, scale: Vector | `Any` | `const obj = mod.SpawnObject(prefab, pos, rot, scale);` |
 | `GetObjectPosition` | 以 Vector 形式获取指定对象的当前位置。 | object: mod.Object | `Vector` | `const value = mod.GetObjectPosition(...);` |
 | `GetObjectRotation` | 以Vector形式获取指定对象的当前旋转。 | object: mod.Object | `Vector` | `const value = mod.GetObjectRotation(...);` |
 | `GetObjectTransform` | 获取包含指定对象的位置和旋转的 Transform。 | object: mod.Object | `Transform` | `const value = mod.GetObjectTransform(...);` |
@@ -268,6 +284,13 @@ free: true
 | `GetAllPlayersInVehicle` | 获取指定车辆中的所有玩家作为数组。 | vehicle: Vehicle | `Array` | `const value = mod.GetAllPlayersInVehicle(...);` |
 | `GetPlayerFromVehicleSeat` | 让玩家坐在指定车辆的指定座位上。如果座位是空的，则成为无效玩家。 | vehicle: Vehicle, number: number | `Player` | `const value = mod.GetPlayerFromVehicleSeat(...);` |
 | `GetPlayerVehicleSeat` | 获取指定玩家的车辆座位号。如果在车外，则为 -1。 | player: Player | `number` | `const value = mod.GetPlayerVehicleSeat(...);` |
+
+## 物理冲量
+
+| 函数 | 功能 / 目的 | 主要参数 | 返回值 | 使用示例 |
+| --- | --- | --- | --- | --- |
+| `ApplyAreaImpulseAndDamage` | 对指定中心和半径内的载具应用范围冲量和可选伤害。支持带方向覆盖和不带方向覆盖的 2 种重载。 | center: Vector, radius: number, impulseStrength: number, damageAmount: number | 无 | `mod.ApplyAreaImpulseAndDamage(center, 5, 1000, 0);` |
+| `ApplyImpulse` | 对单台载具按世界位置、方向和强度施加冲量。 | vehicle: Vehicle, worldPosition: Vector, direction: Vector, magnitude: number | 无 | `mod.ApplyImpulse(vehicle, pos, mod.ForwardVector(), 500);` |
 
 ## WorldIcon
 

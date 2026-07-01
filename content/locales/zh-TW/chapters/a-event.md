@@ -5,10 +5,11 @@ free: true
 
 # 如何閱讀本附錄
 
-本附錄基於官方 SDK `code/types/mod/index.d.ts` 的 `mod` 命名空間列出了 BF6 Portal TypeScript 中可用的事件和動作。參考 SDK 以 `index.d.ts` 為準，為 `1.3.2.0`。請務必在實作前搜尋 `index.d.ts`，因為它可能會隨著 SDK 更新而增加或減少。
+本附錄基於官方 SDK `code/types/mod/index.d.ts` 的 `mod` 命名空間列出了 BF6 Portal TypeScript 中可用的事件和動作。參考 SDK 以 `index.d.ts` 為準，為 `1.3.3.0`。請務必在實作前搜尋 `index.d.ts`，因為它可能會隨著 SDK 更新而增加或減少。
 
 SDK 1.3.1.0 追加了 `mod.strings`、`MusicPackages.Radio`、`Radio_*` 系音樂事件和參數，以及若干武器和 Gadget 常數。`HybridExample` 是透過 `mod.strings[key]` 直接讀取字串值的具體範例。
 SDK 1.3.2.0 中可以確認 `MP_GolmudRailway` 使用的 `OnGolmudTrainStopped`、`GolmudTrainSendMoveCommand`、`GetGolmudTrainLocation`、`GolmudTrainMoveCommands`、`GolmudTrainStopReason`。具體範例請參見附錄 B 的 `GolmudTrainExample`。
+SDK 1.3.3.0 為 Obliteration 新增了 `Bomb` 型別、`OngoingBomb`、`OnBombPickedUp`、`OnBombDropped`、`OnBombStateChanged`。具體範例請參見附錄 B 的 `ObliterationExample`。
 
 在 TypeScript 中，事件被寫為 `export function On...` 或 `export function Ongoing...`。使用 `mod.` 呼叫動作和值取得，例如 `mod.Set...`、`mod.Get...`、`mod.Create...`。
 
@@ -53,6 +54,7 @@ export function OnPlayerInteract(eventPlayer: mod.Player, eventInteractPoint: mo
 | --- | --- | --- | --- | --- |
 | `OngoingGlobal` | 全球的持續評估事件。不要每次都做繁重的處理，只看狀態變化。 | 無 | 無 | `export function OngoingGlobal(): void { /* 處理 */ }` |
 | `OngoingAreaTrigger` | 持續評估 AreaTrigger 的事件。不要每次都做繁重的處理，只看狀態變化。 | eventAreaTrigger: mod.AreaTrigger | 無 | `export function OngoingAreaTrigger(eventAreaTrigger): void { /* 處理 */ }` |
+| `OngoingBomb` | 持續評估 Bomb 的事件。不要每次都做繁重的處理，只看狀態變化。 | eventBomb: mod.Bomb | 無 | `export function OngoingBomb(eventBomb): void { /* 處理 */ }` |
 | `OngoingCapturePoint` | 持續評估 CapturePoint 的事件。不要每次都做繁重的處理，只看狀態變化。 | eventCapturePoint: mod.CapturePoint | 無 | `export function OngoingCapturePoint(eventCapturePoint): void { /* 處理 */ }` |
 | `OngoingEmplacementSpawner` | 持續評估 EmplacementSpawner 的事件。不要每次都做繁重的處理，只看狀態變化。 | eventEmplacementSpawner: mod.EmplacementSpawner | 無 | `export function OngoingEmplacementSpawner(eventEmplacementSpawner): void { /* 處理 */ }` |
 | `OngoingHQ` | 持續評估HQ的事件。不要每次都做繁重的處理，只看狀態變化。 | eventHQ: mod.HQ | 無 | `export function OngoingHQ(eventHQ): void { /* 處理 */ }` |
@@ -91,6 +93,9 @@ export function OnPlayerInteract(eventPlayer: mod.Player, eventInteractPoint: mo
 | `OnCapturePointCaptured` | 當隊伍佔領 CapturePoint。 | eventCapturePoint: mod.CapturePoint | 無 | `export function OnCapturePointCaptured(eventCapturePoint): void { /* 處理 */ }` |
 | `OnCapturePointCapturing` | 當隊伍開始佔領 CapturePoint 時。 | eventCapturePoint: mod.CapturePoint | 無 | `export function OnCapturePointCapturing(eventCapturePoint): void { /* 處理 */ }` |
 | `OnCapturePointLost` | 當隊伍失去 CapturePoint 的控制權。 | eventCapturePoint: mod.CapturePoint | 無 | `export function OnCapturePointLost(eventCapturePoint): void { /* 處理 */ }` |
+| `OnBombPickedUp` | 玩家拾起 Bomb 時。 | eventBomb: mod.Bomb, eventPlayer: mod.Player | 無 | `export function OnBombPickedUp(eventBomb, eventPlayer): void { /* 處理 */ }` |
+| `OnBombDropped` | 玩家丟下 Bomb 時。 | eventBomb: mod.Bomb, eventPlayer: mod.Player | 無 | `export function OnBombDropped(eventBomb, eventPlayer): void { /* 處理 */ }` |
+| `OnBombStateChanged` | Bomb 狀態變化時。 | eventBomb: mod.Bomb, eventBombState: mod.BombState | 無 | `export function OnBombStateChanged(eventBomb, eventBombState): void { /* 處理 */ }` |
 | `OnGameModeEnding` | 遊戲模式結束時。 | 無 | 無 | `export function OnGameModeEnding(): void { /* 處理 */ }` |
 | `OnGameModeStarted` | 啟動遊戲模式時。用作初始化的基點。 | 無 | 無 | `export function OnGameModeStarted(): void { /* 處理 */ }` |
 | `OnMCOMArmed` | 當 MCOM 被裝設時。 | eventMCOM: mod.MCOM | 無 | `export function OnMCOMArmed(eventMCOM): void { /* 處理 */ }` |
