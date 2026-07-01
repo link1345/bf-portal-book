@@ -304,9 +304,9 @@ function stopBlinkIcon() { if (blinkH) clearInterval(blinkH); api.showIcon(ICON_
 
 # 下一章預告
 
-接下來的第 9 章《發布、託管、營運》會進入實務，把到目前為止做出的體驗變成「能被別人遊玩」的狀態。
+接下來的第 8.5 章《把 Checkpoint Rush 做到發布前》會把第4章到第8章中講過的配置、ID、TypeScript、UI、SFX、FX，連接成一個小型製作流程。
 
-* 共享代碼、256 字以內說明文、縮圖的寫法：短短說明目的 / 推薦人數 / 所需時間
-* 伺服器營運：常駐 / 活動，以及公告模板
-* 更新頻率和「不弄壞地改進」的流程
-* 以 XP 相關內容可能因情況受限為前提，進行穩妥營運的技巧
+* 把開始按鈕、WorldIcon、AreaTrigger、FX/SFX 整理到一張設計表中
+* 落到 `ids.ts`、`config.ts`、`ui.ts`、`game.ts`、`Script.ts` 的最小結構
+* 通過 `lint`、`test`、`build` 和註冊前檢查
+* 準備好交給第9章繼續處理發布、託管和營運
