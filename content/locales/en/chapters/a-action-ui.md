@@ -25,6 +25,7 @@ This appendix covers functions for UI, notifications, and scoreboards, frequentl
 | `SetScoreboardPlayerValues` | Set column values for each player on the custom scoreboard up to 5 columns. 5 overloads. | player: Player, column1Value: number, column2Value: number, column3Value: number, column4Value: number, column5Value: number | None | `mod.SetScoreboardPlayerValues(...);` |
 | `SetScoreboardSorting` | Set the custom scoreboard sort column and reverse order specification. 2 overloads. | sortingColumn: number, reverseSorting: boolean | None | `mod.SetScoreboardSorting(...);` |
 | `SetScoreboardType` | Change the scoreboard type to be used. | scoreboardType: ScoreboardType | None | `mod.SetScoreboardType(...);` |
+| `SetHUDTicker` | Set the game-mode ticker displayed at the top of the HUD. | ticker: GameModeTicker | None | `mod.SetHUDTicker(...);` |
 | `AddUIButton` | Create a UI Button widget. 6 overloads. | name: string, position: Vector, size: Vector, anchor: UIAnchor | None | `mod.AddUIButton(...);` |
 | `AddUIContainer` | Create a UI Container Widget. 6 overloads. | name: string, position: Vector, size: Vector, anchor: UIAnchor | None | `mod.AddUIContainer(...);` |
 | `AddUIGadgetImage` | Create a UI Image Widget that displays the gadget image. 2 overloads. | name: string, position: Vector, size: Vector, anchor: UIAnchor, gadget: Gadgets, parent: UIWidget | None | `mod.AddUIGadgetImage(...);` |
@@ -142,6 +143,13 @@ This appendix covers functions for UI, notifications, and scoreboards, frequentl
 | `GetSpawner` | Get Spawner from number or target. | number: number | `Spawner` | `const value = mod.GetSpawner(...);` |
 | `GetVL7Cloud` | Get VL7Cloud from number or target. | vl7CloudId: number | `VL7Cloud` | `const value = mod.GetVL7Cloud(...);` |
 
+## Performance Measurement
+
+| Function | Function / Purpose | Main arguments | Return value | Usage example |
+| --- | --- | --- | --- | --- |
+| `GetPortalAverageFrameTime` | Get the average frame time for Portal logic. The value is a recent historical average, not a value updated instantly every frame. | None | `number` | `const portalMs = mod.GetPortalAverageFrameTime();` |
+| `GetServerAverageFrameTime` | Get the average frame time for server-side game processing. Use it to check the impact of heavy Ongoing logic or mass spawning. | None | `number` | `const serverMs = mod.GetServerAverageFrameTime();` |
+
 ## Logical/String/Extension
 
 | Function | Function / Purpose | Main arguments | Return value | Usage example |
@@ -153,6 +161,8 @@ This appendix covers functions for UI, notifications, and scoreboards, frequentl
 | `GreaterThanEqualTo` | Determine whether the number on the left is greater than or equal to the number on the right. | left: number, right: number | `boolean` | `const value = mod.GreaterThanEqualTo(...);` |
 | `IfThenElse` | A ternary operation that returns the first value if the condition is true, and the second value if it is false. | condition: boolean, trueValue: Any, falseValue: Any | `Any` | `const value = mod.IfThenElse(...);` |
 | `IsType` | Determine whether the value matches the specified type. | value: Any, type: Types | `boolean` | `const value = mod.IsType(...);` |
+| `IsUndefined` | Determine whether a value is undefined. Use it to check optional references and search results. | value: Any | `boolean` | `const missing = mod.IsUndefined(value);` |
+| `IsValid` | Determine whether a value is a valid reference. Use it before handling values such as Bomb, Object, or Player. | value: Any | `boolean` | `const ok = mod.IsValid(value);` |
 | `JsValue` | Call the unique value function on the JavaScript side. Use the return value on the Portal side. | valueName: string, valueArg0: Any, valueArg1: Any | `Any` | `const value = mod.JsValue("MyValue", eventPlayer, 0);` |
 | `LessThan` | Determine whether the number on the left is smaller than the number on the right. | left: number, right: number | `boolean` | `const value = mod.LessThan(...);` |
 | `LessThanEqualTo` | Determine whether the number on the left is less than or equal to the number on the right. | left: number, right: number | `boolean` | `const value = mod.LessThanEqualTo(...);` |
@@ -228,6 +238,7 @@ This appendix covers functions for UI, notifications, and scoreboards, frequentl
 | --- | --- | --- |
 | `Player` | Event arguments, `AllPlayers()`, `ClosestPlayerTo()` | Individual player processing, notifications, equipment, health, movement |
 | `Team` | `GetTeam(player)`, `GetTeam(1)` | Team-based wins and losses, notifications, scores, and affiliation changes |
+| `Bomb` | `GetBomb(number)`, Bomb event arguments | Obliteration bomb ownership, drops, resets, and M-COM linkage |
 | `Vector` | `CreateVector(x, y, z)`, `GetObjectPosition(obj)` | Coordinates, direction, color, UI position, etc. |
 | `Message` | `Message(mod.stringkeys.textKey)` | Notifications, WorldIcon text, scoreboard headings |
 | `UIWidget` | `AddUIText()`, `AddUIButton()`, `FindUIWidgetWithName()` | HUD, buttons, images, containers |

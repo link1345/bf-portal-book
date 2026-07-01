@@ -25,6 +25,7 @@ free: true
 | `SetScoreboardPlayerValues` | カスタムスコアボードのプレイヤー別列値を最大5列まで設定する。 オーバーロード5種。 | player: Player, column1Value: number, column2Value: number, column3Value: number, column4Value: number, column5Value: number | なし | `mod.SetScoreboardPlayerValues(...);` |
 | `SetScoreboardSorting` | カスタムスコアボードのソート列と逆順指定を設定する。 オーバーロード2種。 | sortingColumn: number, reverseSorting: boolean | なし | `mod.SetScoreboardSorting(...);` |
 | `SetScoreboardType` | 使用するスコアボード種別を変更する。 | scoreboardType: ScoreboardType | なし | `mod.SetScoreboardType(...);` |
+| `SetHUDTicker` | 画面上部のゲームモードTicker表示を設定する。 | ticker: GameModeTicker | なし | `mod.SetHUDTicker(...);` |
 | `AddUIButton` | UI Button Widgetを作成する。 オーバーロード6種。 | name: string, position: Vector, size: Vector, anchor: UIAnchor | なし | `mod.AddUIButton(...);` |
 | `AddUIContainer` | UI Container Widgetを作成する。 オーバーロード6種。 | name: string, position: Vector, size: Vector, anchor: UIAnchor | なし | `mod.AddUIContainer(...);` |
 | `AddUIGadgetImage` | ガジェット画像を表示するUI Image Widgetを作成する。 オーバーロード2種。 | name: string, position: Vector, size: Vector, anchor: UIAnchor, gadget: Gadgets, parent: UIWidget | なし | `mod.AddUIGadgetImage(...);` |
@@ -142,6 +143,13 @@ free: true
 | `GetSpawner` | Spawnerを番号または対象から取得する。 | number: number | `Spawner` | `const value = mod.GetSpawner(...);` |
 | `GetVL7Cloud` | VL7Cloudを番号または対象から取得する。 | vl7CloudId: number | `VL7Cloud` | `const value = mod.GetVL7Cloud(...);` |
 
+## パフォーマンス計測
+
+| 関数 | 機能・目的 | 主な引数 | 戻り値 | 使用例 |
+| --- | --- | --- | --- | --- |
+| `GetPortalAverageFrameTime` | Portalロジックの平均フレーム時間を取得する。値は直近の履歴平均で、毎フレーム即時更新される値ではない。 | なし | `number` | `const portalMs = mod.GetPortalAverageFrameTime();` |
+| `GetServerAverageFrameTime` | サーバー側ゲーム処理の平均フレーム時間を取得する。重いOngoing処理や大量Spawnの影響確認に使う。 | なし | `number` | `const serverMs = mod.GetServerAverageFrameTime();` |
+
 ## 論理・文字列・拡張
 
 | 関数 | 機能・目的 | 主な引数 | 戻り値 | 使用例 |
@@ -153,6 +161,8 @@ free: true
 | `GreaterThanEqualTo` | 左の数値が右の数値以上か判定する。 | left: number, right: number | `boolean` | `const value = mod.GreaterThanEqualTo(...);` |
 | `IfThenElse` | 条件がtrueなら第1値、falseなら第2値を返す三項演算。 | condition: boolean, trueValue: Any, falseValue: Any | `Any` | `const value = mod.IfThenElse(...);` |
 | `IsType` | 値が指定型と一致するか判定する。 | value: Any, type: Types | `boolean` | `const value = mod.IsType(...);` |
+| `IsUndefined` | 値が未定義か判定する。任意参照や検索結果の確認に使う。 | value: Any | `boolean` | `const missing = mod.IsUndefined(value);` |
+| `IsValid` | 値が有効な参照か判定する。Bomb、Object、Playerなどを扱う前の防御に使う。 | value: Any | `boolean` | `const ok = mod.IsValid(value);` |
 | `JsValue` | JavaScript側の独自値関数を呼ぶ。戻り値をPortal側で使う。 | valueName: string, valueArg0: Any, valueArg1: Any | `Any` | `const value = mod.JsValue("MyValue", eventPlayer, 0);` |
 | `LessThan` | 左の数値が右の数値より小さいか判定する。 | left: number, right: number | `boolean` | `const value = mod.LessThan(...);` |
 | `LessThanEqualTo` | 左の数値が右の数値以下か判定する。 | left: number, right: number | `boolean` | `const value = mod.LessThanEqualTo(...);` |
@@ -228,6 +238,7 @@ free: true
 | --- | --- | --- |
 | `Player` | イベント引数、`AllPlayers()`、`ClosestPlayerTo()` | プレイヤー個別の処理、通知、装備、体力、移動 |
 | `Team` | `GetTeam(player)`、`GetTeam(1)` | チーム単位の勝敗、通知、スコア、所属変更 |
+| `Bomb` | `GetBomb(number)`、Bomb系イベント引数 | Obliterationの爆弾所持、ドロップ、リセット、M-COM連動 |
 | `Vector` | `CreateVector(x, y, z)`、`GetObjectPosition(obj)` | 座標、方向、色、UI位置など |
 | `Message` | `Message(mod.stringkeys.textKey)` | 通知、WorldIconテキスト、スコアボード見出し |
 | `UIWidget` | `AddUIText()`、`AddUIButton()`、`FindUIWidgetWithName()` | HUD、ボタン、画像、コンテナ |

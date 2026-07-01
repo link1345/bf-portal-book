@@ -5,10 +5,11 @@ free: true
 
 # How to read this appendix
 
-This appendix lists the events and actions available in BF6 Portal TypeScript based on the `mod` namespace of the official SDK `code/types/mod/index.d.ts`. The reference SDK is `1.3.2.0` according to `index.d.ts`. Please be sure to search for `index.d.ts` before implementation, as it may increase or decrease with SDK updates.
+This appendix lists the events and actions available in BF6 Portal TypeScript based on the `mod` namespace of the official SDK `code/types/mod/index.d.ts`. The reference SDK is `1.3.3.0` according to `index.d.ts`. Please be sure to search for `index.d.ts` before implementation, as it may increase or decrease with SDK updates.
 
 SDK 1.3.1.0 adds `mod.strings`, `MusicPackages.Radio`, `Radio_*` music events and parameters, and several weapon and gadget constants. `HybridExample` is a concrete example of reading raw string values through `mod.strings[key]`.
 SDK 1.3.2.0 includes `OnGolmudTrainStopped`, `GolmudTrainSendMoveCommand`, `GetGolmudTrainLocation`, `GolmudTrainMoveCommands`, and `GolmudTrainStopReason` for `MP_GolmudRailway`. See Appendix B's `GolmudTrainExample` for a concrete sample.
+SDK 1.3.3.0 adds the `Bomb` type, `OngoingBomb`, `OnBombPickedUp`, `OnBombDropped`, and `OnBombStateChanged` for Obliteration. See Appendix B's `ObliterationExample` for a concrete sample.
 
 In TypeScript, events are written as `export function On...` or `export function Ongoing...`. Actions and value retrieval are called with `mod.`, such as `mod.Set...`, `mod.Get...`, `mod.Create...`.
 
@@ -53,6 +54,7 @@ Because `Ongoing...` events run continuously, it quickly becomes heavy when you 
 | --- | --- | --- | --- | --- |
 | `OngoingGlobal` | An event for continuous evaluation targeting Global. Do not run heavy processing every time; only watch for state changes. | None | None | `export function OngoingGlobal(): void { /* code */ }` |
 | `OngoingAreaTrigger` | Event that continuously evaluates AreaTrigger. Do not run heavy processing every time; only watch for state changes. | eventAreaTrigger: mod.AreaTrigger | None | `export function OngoingAreaTrigger(eventAreaTrigger): void { /* code */ }` |
+| `OngoingBomb` | Event that continuously evaluates Bomb. Do not run heavy processing every time; only watch for state changes. | eventBomb: mod.Bomb | None | `export function OngoingBomb(eventBomb): void { /* code */ }` |
 | `OngoingCapturePoint` | Event that continuously evaluates CapturePoint. Do not run heavy processing every time; only watch for state changes. | eventCapturePoint: mod.CapturePoint | None | `export function OngoingCapturePoint(eventCapturePoint): void { /* code */ }` |
 | `OngoingEmplacementSpawner` | Event that continuously evaluates EmplacementSpawner. Do not run heavy processing every time; only watch for state changes. | eventEmplacementSpawner: mod.EmplacementSpawner | None | `export function OngoingEmplacementSpawner(eventEmplacementSpawner): void { /* code */ }` |
 | `OngoingHQ` | Event that continuously evaluates HQ. Do not run heavy processing every time; only watch for state changes. | eventHQ: mod.HQ | None | `export function OngoingHQ(eventHQ): void { /* code */ }` |
@@ -91,6 +93,9 @@ Because `Ongoing...` events run continuously, it quickly becomes heavy when you 
 | `OnCapturePointCaptured` | When a team captures CapturePoint. | eventCapturePoint: mod.CapturePoint | None | `export function OnCapturePointCaptured(eventCapturePoint): void { /* code */ }` |
 | `OnCapturePointCapturing` | When the team begins capturing CapturePoint. | eventCapturePoint: mod.CapturePoint | None | `export function OnCapturePointCapturing(eventCapturePoint): void { /* code */ }` |
 | `OnCapturePointLost` | When a team loses control of CapturePoint. | eventCapturePoint: mod.CapturePoint | None | `export function OnCapturePointLost(eventCapturePoint): void { /* code */ }` |
+| `OnBombPickedUp` | When a player picks up a Bomb. | eventBomb: mod.Bomb, eventPlayer: mod.Player | None | `export function OnBombPickedUp(eventBomb, eventPlayer): void { /* code */ }` |
+| `OnBombDropped` | When a player drops a Bomb. | eventBomb: mod.Bomb, eventPlayer: mod.Player | None | `export function OnBombDropped(eventBomb, eventPlayer): void { /* code */ }` |
+| `OnBombStateChanged` | When a Bomb changes state. | eventBomb: mod.Bomb, eventBombState: mod.BombState | None | `export function OnBombStateChanged(eventBomb, eventBombState): void { /* code */ }` |
 | `OnGameModeEnding` | When game mode ends. | None | None | `export function OnGameModeEnding(): void { /* code */ }` |
 | `OnGameModeStarted` | When starting game mode. Use as the base point for initialization. | None | None | `export function OnGameModeStarted(): void { /* code */ }` |
 | `OnMCOMArmed` | When MCOM is armed. | eventMCOM: mod.MCOM | None | `export function OnMCOMArmed(eventMCOM): void { /* code */ }` |
