@@ -43,9 +43,12 @@ If you come across an API you don't know, first search for the function name at 
 | `HybridExample` | Read as an example of calling TypeScript from Portal blocks and returning values into variables or UI |
 | `NightModeExample` | Read as an example of night screen effects, NVG equipment, SFX switching, and VFX color changes |
 | `GolmudTrainExample` | Read as an example of Railway to Golmud train control, train location lookup, and moving objectives |
+| `MovingPlatformExample` | Read as an example of moving platforms using `MoveObjectOverTime` and `OrbitObjectOverTime` |
+| `ObliterationExample` | Read as an example of Obliteration-style rules that combine Bomb, M-COM, and bomb events |
+| `PortalPerformanceExample` | Read as an example of checking average Portal logic and server frame times |
 | `CustomCQ` | Read as an example of a large Conquest-style template, ObjID design, and multi-map support |
 | `CustomBT` | Read as an example of Breakthrough-style sector progression, attackers and defenders, AI, airspace, and five-map support |
-| `PhysicsImpulseExample` | Read as a physics impulse example. Renamed from SDK 1.3.3.0's `PhysicsImpulse_Gym` |
+| `PhysicsImpulseExample` | Read as an example of applying impulses to vehicles with `ApplyImpulse` and `ApplyAreaImpulseAndDamage`. Renamed from SDK 1.3.3.0's `PhysicsImpulse_Gym` |
 
 For beginners, `_StartHere_BasicTemplate` is enough. Larger samples are appealing because they already work, but they contain too much information to use as a first lesson.
 
@@ -132,7 +135,7 @@ By simply separating "create," "update," and "close," it becomes easier to add p
 
 Official samples are strong learning material if you read them in the correct order.
 
-First, treat `docs/pages` and `index.d.ts` as dictionaries, and learn the event shape with `_StartHere_BasicTemplate`. Then read the purpose-built samples under `GodotProject/mods`. SDK 1.3.2.0 adds `NightModeExample` and `GolmudTrainExample`, while SDK 1.4.1.0 adds `CustomBT`. The former `PhysicsImpulse_Gym` folder is now named `PhysicsImpulseExample`.
+First, treat `docs/pages` and `index.d.ts` as dictionaries, and learn the event shape with `_StartHere_BasicTemplate`. Then read the purpose-built samples under `GodotProject/mods`. SDK 1.3.2.0 adds `NightModeExample` and `GolmudTrainExample`; SDK 1.3.3.0 adds `MovingPlatformExample`, `ObliterationExample`, `PhysicsImpulse_Gym`, and `PortalPerformanceExample`; and SDK 1.4.1.0 adds `CustomBT`. The former `PhysicsImpulse_Gym` folder is now named `PhysicsImpulseExample`. Together they cover night effects, train control, moving platforms, Bomb/M-COM rules, physics impulses, performance measurements, and Custom Breakthrough.
 Then, rather than copying the entire contents of the sample, please incorporate the grouping of setting values, separation of responsibilities using classes, and UI management patterns into your own code. Appendix B of this book also covers only the samples located in this folder.
 
 ---

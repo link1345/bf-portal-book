@@ -96,6 +96,7 @@ SDKの `docs/pages/spatial_editor.html` と `FbExportData/level_info.json` で�
 | ---- | ---- |
 | Siege of Cairo | MP_Abbasid |
 | Empire State | MP_Aftermath |
+| Bellum1988's Operation Metro | MP_Aftermath_Portal |
 | Blackwell Fields | MP_Badlands |
 | Iberian Offensive | MP_Battery |
 | Liberation Peak | MP_Capstone |
@@ -112,6 +113,7 @@ SDKの `docs/pages/spatial_editor.html` と `FbExportData/level_info.json` で�
 | Complex 3 | MP_Granite_Underground_Portal |
 | Saint's Quarter | MP_Limestone |
 | New Sobek City | MP_Outskirts |
+| Cairo Bazaar | MP_Plaza |
 | Portal Sandbox | MP_Portal_Sand |
 | Hagental Base | MP_Subsurface |
 | Railway to Golmud | MP_GolmudRailway |
@@ -121,6 +123,7 @@ SDK 1.4.1.0では、`GodotProject/mods/CustomBT` にBreakthrough用の構成済�
 
 ※ 公式docsのAvailable Levels表では `MP_Firestorm` と表記されていますが、手元SDKの `asset_types.json` とGodotのレベルファイルでは `MP_FireStorm` の表記も使われています。`levelRestrictions` を検索するときは、SDK内の実データ側の表記を優先してください。
 ※ `MP_Granite_ClubHouse_Portal` は公式Level Nameでは `Golf Course` です。実際に使う場合は、`asset_types.json` の `levelRestrictions` と、Godot上の警告表示を確認してください。
+※ SDK 1.3.3.0では、コミュニティマップの `MP_Aftermath_Portal` と、Spatial Editor用の `MP_Plaza` が追加されています。`MP_Plaza` 由来のランタイム生成候補は `RuntimeSpawn_Plaza` として型定義にも追加されています。
 
 例えば 「`MP_Aftermath`（Empire State）」をベースに編集する場合は、`asset_types.json` の `levelRestrictions` が空、または `MP_Aftermath` を含むアセットを候補として扱います。
 Object LibraryやGodot上で見えていても、`levelRestrictions` に対象Levelがなければ実際のゲーム内では使用・表示できません。
@@ -139,9 +142,10 @@ const obj = mod.SpawnObject(
 );
 ```
 
-`RuntimeSpawn_Common` は複数Mapで使いやすい共通系、`RuntimeSpawn_Abbasid` などMap名付きのものは、そのMap由来の候補として読みます。
+`RuntimeSpawn_Common` は複数Mapで使いやすい共通系、`RuntimeSpawn_Abbasid` や `RuntimeSpawn_Plaza` などMap名付きのものは、そのMap由来の候補として読みます。
 ただし、`SpawnObject` の戻り値は、対象オブジェクトが対応していない場合 `-1` になることがあります。
 また、コードで生成したものはGodot上で手置きした `ObjId` 台帳とは別管理になるため、使う場合は「手置きID」と「ランタイム生成」を分けてメモしてください。
+SDK 1.3.3.0では `EnableSpatialObject` は削除されています。配置物を途中で出したり消したりしたい場合は、`SpawnObject` と `UnspawnObject` を使う前提で設計してください。
 
 ##  実務の目安：
 
@@ -187,6 +191,22 @@ const obj = mod.SpawnObject(
 
 `CapturePoint` は、範囲センサーではなく「ゲームモード上の目標」です。
 TypeScript側では `mod.GetCapturePoint(id)`、`mod.GetCaptureProgress(...)`、`mod.GetCurrentOwnerTeam(...)`、`mod.SetCapturePointOwner(...)` などで状態を読んだり変更したりできます。
+
+## Bomb / MCOM（Obliteration系の爆弾目標）
+
+SDK 1.3.3.0では、Obliteration向けに `Bomb` 型とM-COMの爆弾連動設定が追加されています。
+BombはSpatial Editorに配置するか、`mod.SpawnObject(mod.RuntimeSpawn_Common.Bomb, ...)` で生成して使います。
+
+TypeScript側では `mod.GetBomb(id)` で取得し、`mod.GiveBombToPlayer(...)`、`mod.ForceBombDrop(...)`、`mod.ForceBombReset(...)`、`mod.SetBombTeam(...)`、`mod.SetBombDropFuseTime(...)` などで制御します。
+M-COM側は `mod.SetMCOMArmType(mod.GetMCOM(id), mod.MCOMArmType.Bomb)` にすると、Bomb所持者だけがアームできる目標として扱えます。
+
+## MovingPlatform（動く足場）
+
+SDK 1.3.3.0では、移動する足場向けの `MovingPlatform` アセットが追加されています。
+サンプルでは `BarrierStoneBlock_01_H_PortalPlatform` を `SpawnObject` で生成するか、Godot上に配置してObjIdを付け、`MoveObjectOverTime` や `OrbitObjectOverTime` で動かしています。
+
+プレイヤーが乗る前提の足場は、見た目の移動だけでなく接触・同期が重要です。
+通常の飾りオブジェクトを無理に動かすより、MovingPlatform対応アセットを選び、移動距離、周期、反転、停止タイミングを台帳に書いておく方が安全です。
 
 ## VL7Cloud（ガス雲・特殊効果エリア）
 
@@ -267,6 +287,11 @@ SDK 1.4.1.0の `asset_types.json` では、閉じたSplineを示す `isClosed`�
 * 実体：`res://objects/gameplay/common/VehicleSpawner.tscn`
 * 役割：兵器の出現位置と車種を定義。
 * 実務の肝：出現直後の接触物なし／進行方向に向ける／常設とイベントでID帯を分ける（例：2001=常設、2090番台=イベント）。
+
+## VehicleResupplyStation（車両補給）
+
+SDK 1.3.3.0では、車両向けの `VehicleResupplyStation` アセットも追加されています。
+配置候補として扱うときは、車両の進入経路、補給中に詰まらない余白、周辺の戦闘圧を合わせて確認してください。
 
 ## WorldIcon（目標の道しるべ）
 

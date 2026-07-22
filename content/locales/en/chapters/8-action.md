@@ -304,9 +304,9 @@ function stopBlinkIcon() { if (blinkH) clearInterval(blinkH); api.showIcon(ICON_
 
 # Next Chapter
 
-In Chapter 9, "Publishing, Hosting, and Operations," we will move from the experience we have built so far into the practical work of making it playable by others.
+In Chapter 8.5, "Building Checkpoint Rush Up to Pre-Publish," we will connect the placement, IDs, TypeScript, UI, SFX, and FX from Chapters 4 through 8 into one small production flow.
 
-* How to write share codes, descriptions under 256 characters, and thumbnails that briefly communicate purpose / recommended player count / play time
-* Server operation patterns, permanent or event-based, and announcement templates
-* Update frequency and a process for improving without breaking
-* Practical operation tips, assuming XP-related restrictions may apply depending on the situation
+* Put the start button, WorldIcons, AreaTrigger, and FX/SFX into one design table
+* Reduce the mode to the minimum `ids.ts`, `config.ts`, `ui.ts`, `game.ts`, and `Script.ts` structure
+* Run `lint`, `test`, `build`, and the pre-registration checks
+* Prepare the mode so Chapter 9 can take over publishing, hosting, and operations

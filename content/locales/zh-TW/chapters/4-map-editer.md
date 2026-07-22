@@ -96,6 +96,7 @@ SDK 的 `docs/pages/spatial_editor.html` 和 `FbExportData/level_info.json` 中�
 | ---- | ---- |
 | Siege of Cairo | MP_Abbasid |
 | Empire State | MP_Aftermath |
+| Bellum1988's Operation Metro | MP_Aftermath_Portal |
 | Blackwell Fields | MP_Badlands |
 | Iberian Offensive | MP_Battery |
 | Liberation Peak | MP_Capstone |
@@ -112,6 +113,7 @@ SDK 的 `docs/pages/spatial_editor.html` 和 `FbExportData/level_info.json` 中�
 | Complex 3 | MP_Granite_Underground_Portal |
 | Saint's Quarter | MP_Limestone |
 | New Sobek City | MP_Outskirts |
+| Cairo Bazaar | MP_Plaza |
 | Portal Sandbox | MP_Portal_Sand |
 | Hagental Base | MP_Subsurface |
 | Railway to Golmud | MP_GolmudRailway |
@@ -121,6 +123,7 @@ SDK 1.4.1.0 在 `GodotProject/mods/CustomBT` 中新增了 5 張預先設定的 B
 
 註：官方 docs 的 Available Levels 表中寫作 `MP_Firestorm`，但手頭 SDK 的 `asset_types.json` 和 Godot 的 level 檔案中也使用 `MP_FireStorm`。搜尋 `levelRestrictions` 時，請優先使用 SDK 實際資料中的寫法。
 註：`MP_Granite_ClubHouse_Portal` 的官方 Level Name 是 `Golf Course`。實際使用時，請確認 `asset_types.json` 的 `levelRestrictions` 和 Godot 上的警告顯示。
+註：SDK 1.3.3.0 新增了社群地圖 `MP_Aftermath_Portal` 和 Spatial Editor 用的 `MP_Plaza`。來自 `MP_Plaza` 的執行時生成候選，也以 `RuntimeSpawn_Plaza` 的形式加入了型別定義。
 
 例如，以 `MP_Aftermath`（Empire State）為基礎進行編輯時，可以把 `asset_types.json` 中 `levelRestrictions` 為空，或包含 `MP_Aftermath` 的資產作為候選。
 即使在 Object Library 或 Godot 上看得到，如果 `levelRestrictions` 中沒有目標 Level，也無法在實際遊戲內使用或顯示。
@@ -139,9 +142,10 @@ const obj = mod.SpawnObject(
 );
 ```
 
-`RuntimeSpawn_Common` 是較容易在多個 Map 中使用的通用類，`RuntimeSpawn_Abbasid` 等帶有 Map 名稱的內容，則理解為來自該 Map 的候選。
+`RuntimeSpawn_Common` 是較容易在多個 Map 中使用的通用類，`RuntimeSpawn_Abbasid`、`RuntimeSpawn_Plaza` 等帶有 Map 名稱的內容，則理解為來自該 Map 的候選。
 不過，如果目標物件不支援，`SpawnObject` 的回傳值可能會變成 `-1`。
 另外，由程式碼生成的物件和 Godot 中手動放置的 `ObjId` 台帳是分開管理的。使用時，請分別記錄「手動 ID」和「執行時生成」。
+SDK 1.3.3.0 已刪除 `EnableSpatialObject`。如果想在遊玩中途新增或移除物件，請以 `SpawnObject` 和 `UnspawnObject` 為前提來設計。
 
 ## 實務上的判斷標準
 
@@ -187,6 +191,22 @@ const obj = mod.SpawnObject(
 
 `CapturePoint` 不是範圍感測器，而是「遊戲模式上的目標」。
 TypeScript 側可以用 `mod.GetCapturePoint(id)`、`mod.GetCaptureProgress(...)`、`mod.GetCurrentOwnerTeam(...)`、`mod.SetCapturePointOwner(...)` 等讀取或修改狀態。
+
+## Bomb / MCOM（Obliteration 系炸彈目標）
+
+SDK 1.3.3.0 為 Obliteration 新增了 `Bomb` 型別，以及和 Bomb 連動的 M-COM 設定。
+Bomb 可以放在 Spatial Editor 中，也可以用 `mod.SpawnObject(mod.RuntimeSpawn_Common.Bomb, ...)` 生成。
+
+TypeScript 側用 `mod.GetBomb(id)` 取得，並透過 `mod.GiveBombToPlayer(...)`、`mod.ForceBombDrop(...)`、`mod.ForceBombReset(...)`、`mod.SetBombTeam(...)`、`mod.SetBombDropFuseTime(...)` 等函數控制。
+M-COM 側使用 `mod.SetMCOMArmType(mod.GetMCOM(id), mod.MCOMArmType.Bomb)` 後，就可以把目標設為只有 Bomb 攜帶者才能安裝。
+
+## MovingPlatform（移動平台）
+
+SDK 1.3.3.0 新增了面向移動平台的 `MovingPlatform` 資產。
+範例中會用 `SpawnObject` 生成 `BarrierStoneBlock_01_H_PortalPlatform`，或在 Godot 中手動放置並賦予 ObjId，再透過 `MoveObjectOverTime` 或 `OrbitObjectOverTime` 移動。
+
+玩家會站上去的平台，不只是外觀在動，接觸和同步也很重要。
+與其強行移動普通裝飾物，不如選擇支援 MovingPlatform 的資產，並把移動距離、週期、反轉、停止時機寫進台帳。
 
 ## VL7Cloud（毒氣雲 / 特殊效果區域）
 
@@ -267,6 +287,11 @@ SDK 1.4.1.0 的 `asset_types.json` 也新增或整理了表示封閉 Spline 的 
 * 實體：`res://objects/gameplay/common/VehicleSpawner.tscn`
 * 作用：定義載具的出現位置和種類。
 * 實務要點：出現後不要立刻接觸物體，要朝向前進方向，並按常設與事件分開 ID 段（例：2001=常設，2090 段=事件）。
+
+## VehicleResupplyStation（載具補給）
+
+SDK 1.3.3.0 也新增了面向載具的 `VehicleResupplyStation` 資產。
+把它作為配置候選時，請同時確認載具進入路線、補給中不會堵住的餘白，以及周邊的戰鬥壓力。
 
 ## WorldIcon（目標路標）
 

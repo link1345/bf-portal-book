@@ -9,6 +9,7 @@ free: true
 
 SDK 1.3.1.0では、文字列実体を参照する `mod.strings`、`MusicPackages.Radio` と `Radio_*` 系の音楽イベント・パラメータ、いくつかの武器・ガジェット定数が追加されています。特に `HybridExample` は `mod.strings[key]` を使って文字列JSONの値を直接読む例になっています。
 SDK 1.3.2.0では、`MP_GolmudRailway` 向けに `OnGolmudTrainStopped`、`GolmudTrainSendMoveCommand`、`GetGolmudTrainLocation`、`GolmudTrainMoveCommands`、`GolmudTrainStopReason` が確認できます。具体例は付録Bの `GolmudTrainExample` を参照してください。
+SDK 1.3.3.0では、Obliteration向けに `Bomb` 型、`OngoingBomb`、`OnBombPickedUp`、`OnBombDropped`、`OnBombStateChanged` が追加されています。具体例は付録Bの `ObliterationExample` を参照してください。
 SDK 1.4.1.0では、新しいイベント自体は追加されていませんが、`IsDiving`、ObjIdからの `GetPlayer` / `GetVehicle`、新しい武器・アタッチメント定数、オブジェクト移動APIの対象型が更新されています。
 
 TypeScriptでは、イベントは `export function On...` または `export function Ongoing...` として書きます。アクションや値取得は `mod.Set...`、`mod.Get...`、`mod.Create...` のように `mod.` を付けて呼びます。
@@ -54,6 +55,7 @@ export function OnPlayerInteract(eventPlayer: mod.Player, eventInteractPoint: mo
 | --- | --- | --- | --- | --- |
 | `OngoingGlobal` | Globalを対象に継続評価するイベント。毎回重い処理を入れず、状態変化だけを見る。 | なし | なし | `export function OngoingGlobal(): void { /* 処理 */ }` |
 | `OngoingAreaTrigger` | AreaTriggerを対象に継続評価するイベント。毎回重い処理を入れず、状態変化だけを見る。 | eventAreaTrigger: mod.AreaTrigger | なし | `export function OngoingAreaTrigger(eventAreaTrigger): void { /* 処理 */ }` |
+| `OngoingBomb` | Bombを対象に継続評価するイベント。毎回重い処理を入れず、状態変化だけを見る。 | eventBomb: mod.Bomb | なし | `export function OngoingBomb(eventBomb): void { /* 処理 */ }` |
 | `OngoingCapturePoint` | CapturePointを対象に継続評価するイベント。毎回重い処理を入れず、状態変化だけを見る。 | eventCapturePoint: mod.CapturePoint | なし | `export function OngoingCapturePoint(eventCapturePoint): void { /* 処理 */ }` |
 | `OngoingEmplacementSpawner` | EmplacementSpawnerを対象に継続評価するイベント。毎回重い処理を入れず、状態変化だけを見る。 | eventEmplacementSpawner: mod.EmplacementSpawner | なし | `export function OngoingEmplacementSpawner(eventEmplacementSpawner): void { /* 処理 */ }` |
 | `OngoingHQ` | HQを対象に継続評価するイベント。毎回重い処理を入れず、状態変化だけを見る。 | eventHQ: mod.HQ | なし | `export function OngoingHQ(eventHQ): void { /* 処理 */ }` |
@@ -92,6 +94,9 @@ export function OnPlayerInteract(eventPlayer: mod.Player, eventInteractPoint: mo
 | `OnCapturePointCaptured` | チームがCapturePointを占領したとき。 | eventCapturePoint: mod.CapturePoint | なし | `export function OnCapturePointCaptured(eventCapturePoint): void { /* 処理 */ }` |
 | `OnCapturePointCapturing` | チームがCapturePointの占領を開始したとき。 | eventCapturePoint: mod.CapturePoint | なし | `export function OnCapturePointCapturing(eventCapturePoint): void { /* 処理 */ }` |
 | `OnCapturePointLost` | チームがCapturePointの支配を失ったとき。 | eventCapturePoint: mod.CapturePoint | なし | `export function OnCapturePointLost(eventCapturePoint): void { /* 処理 */ }` |
+| `OnBombPickedUp` | プレイヤーがBombを拾ったとき。 | eventBomb: mod.Bomb, eventPlayer: mod.Player | なし | `export function OnBombPickedUp(eventBomb, eventPlayer): void { /* 処理 */ }` |
+| `OnBombDropped` | プレイヤーがBombを落としたとき。 | eventBomb: mod.Bomb, eventPlayer: mod.Player | なし | `export function OnBombDropped(eventBomb, eventPlayer): void { /* 処理 */ }` |
+| `OnBombStateChanged` | Bombの状態が変わったとき。 | eventBomb: mod.Bomb, eventBombState: mod.BombState | なし | `export function OnBombStateChanged(eventBomb, eventBombState): void { /* 処理 */ }` |
 | `OnGameModeEnding` | ゲームモードが終了するとき。 | なし | なし | `export function OnGameModeEnding(): void { /* 処理 */ }` |
 | `OnGameModeStarted` | ゲームモード開始時。初期化の基点にする。 | なし | なし | `export function OnGameModeStarted(): void { /* 処理 */ }` |
 | `OnMCOMArmed` | MCOMがアームされたとき。 | eventMCOM: mod.MCOM | なし | `export function OnMCOMArmed(eventMCOM): void { /* 処理 */ }` |

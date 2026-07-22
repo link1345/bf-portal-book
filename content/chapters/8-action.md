@@ -290,9 +290,9 @@ function stopBlinkIcon() { if (blinkH) clearInterval(blinkH); api.showIcon(ICON_
 
 # 次節への案内
 
-続く 第9章「公開・ホスティング・運営」 では、ここまでの体験を **“遊ばれる状態”** にする実務へ進みます。
+続く 第8.5章「Checkpoint Rushを公開直前まで作る」では、第4章から第8章で扱った配置、ID、TypeScript、UI、SFX、FXを、1本の小さな制作手順としてつなげます。
 
-* 共有コード・256文字以内の説明文・サムネの書き方（目的／推奨人数／所要時間を短く伝える）
-* サーバー運用（常設／イベント）と告知のテンプレ
-* 更新頻度と“壊さず改良する”手順
-* XP周りは状況により制限の可能性がある前提での、穏当な運営のコツ
+* 開始ボタン、WorldIcon、AreaTrigger、FX/SFXを1つの設計表にまとめる
+* `ids.ts`、`config.ts`、`ui.ts`、`game.ts`、`Script.ts` の最小構成に落とす
+* `lint`、`test`、`build`、登録前チェックまでを通す
+* 第9章の公開・ホスティング・運営へ渡せる状態にする
