@@ -192,9 +192,7 @@ free: true
 | `RotateObject` | 指定オブジェクトをEuler角の差分で回転する。 | object: mod.Object, rotationDelta: Vector | なし | `mod.RotateObject(...);` |
 | `SetObjectTransform` | 指定オブジェクトのTransformを設定する。 | object: mod.Object, transform: Transform | なし | `mod.SetObjectTransform(...);` |
 | `SetObjectTransformOverTime` | 指定オブジェクトを時間をかけて指定Transformへ移動・回転させる。 | object: mod.Object, transform: Transform, timeInSeconds: number, shouldLoop: boolean, shouldReverse: boolean | なし | `mod.SetObjectTransformOverTime(...);` |
-| `StopActiveMovementForObject` | 指定オブジェクトで進行中の時間移動を停止する。 | object: mod.Object | なし | `mod.StopActiveMovementForObject(...);` |
-
-SDK 1.4.1.0では、これらの汎用移動APIの引数型が `mod.Object` 全般から、`Bomb`、`EmplacementSpawner`、`FixedCamera`、`InteractPoint`、`LootSpawner`、`MCOM`、`SFX`、`SpatialObject`、`Spawner`、`VehicleSpawner`、`VL7Cloud`、`VO`、`WorldIcon` のunionへ絞られました。`Player`、`Vehicle`、`VFX` などを同じ関数へ渡せるという意味ではありません。VFXには `MoveVFX`、WorldIconの新規実装には `SetObjectTransform` を使ってください。
+| `StopActiveMovementForObject` | 指定オブジェクトで進行中の時間移動を停止する。 | object: mod.Object | なし | `mod.StopActiveMovementForObject(...);` | SDK 1.4.1.0では、これらの汎用移動APIの引数型が `mod.Object` 全般から、`Bomb`、`EmplacementSpawner`、`FixedCamera`、`InteractPoint`、`LootSpawner`、`MCOM`、`SFX`、`SpatialObject`、`Spawner`、`VehicleSpawner`、`VL7Cloud`、`VO`、`WorldIcon` のunionへ絞られました。`Player`、`Vehicle`、`VFX` などを同じ関数へ渡せるという意味ではありません。VFXには `MoveVFX`、WorldIconの新規実装には `SetObjectTransform` を使ってください。
 | `GetAreaTrigger` | AreaTriggerを番号または対象から取得する。 | areaTriggerNumber: number | `AreaTrigger` | `const area = mod.GetAreaTrigger(0);` |
 | `GetInteractPoint` | InteractPointを番号または対象から取得する。 | interactPointNumber: number | `InteractPoint` | `const point = mod.GetInteractPoint(0);` |
 | `GetSpatialObject` | SpatialObjectを番号または対象から取得する。 | spatialObjectNumber: number | `SpatialObject` | `const value = mod.GetSpatialObject(...);` |
