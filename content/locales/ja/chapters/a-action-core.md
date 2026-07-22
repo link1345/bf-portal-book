@@ -192,7 +192,7 @@ free: true
 | `RotateObject` | 指定オブジェクトをEuler角の差分で回転する。 | object: mod.Object, rotationDelta: Vector | なし | `mod.RotateObject(...);` |
 | `SetObjectTransform` | 指定オブジェクトのTransformを設定する。 | object: mod.Object, transform: Transform | なし | `mod.SetObjectTransform(...);` |
 | `SetObjectTransformOverTime` | 指定オブジェクトを時間をかけて指定Transformへ移動・回転させる。 | object: mod.Object, transform: Transform, timeInSeconds: number, shouldLoop: boolean, shouldReverse: boolean | なし | `mod.SetObjectTransformOverTime(...);` |
-| `StopActiveMovementForObject` | 指定オブジェクトで進行中の時間移動を停止する。 | object: mod.Object | なし | `mod.StopActiveMovementForObject(...);` |
+| `StopActiveMovementForObject` | 指定オブジェクトで進行中の時間移動を停止する。 | object: mod.Object | なし | `mod.StopActiveMovementForObject(...);` | SDK 1.4.1.0では、これらの汎用移動APIの引数型が `mod.Object` 全般から、`Bomb`、`EmplacementSpawner`、`FixedCamera`、`InteractPoint`、`LootSpawner`、`MCOM`、`SFX`、`SpatialObject`、`Spawner`、`VehicleSpawner`、`VL7Cloud`、`VO`、`WorldIcon` のunionへ絞られました。`Player`、`Vehicle`、`VFX` などを同じ関数へ渡せるという意味ではありません。VFXには `MoveVFX`、WorldIconの新規実装には `SetObjectTransform` を使ってください。
 | `GetAreaTrigger` | AreaTriggerを番号または対象から取得する。 | areaTriggerNumber: number | `AreaTrigger` | `const area = mod.GetAreaTrigger(0);` |
 | `GetInteractPoint` | InteractPointを番号または対象から取得する。 | interactPointNumber: number | `InteractPoint` | `const point = mod.GetInteractPoint(0);` |
 | `GetSpatialObject` | SpatialObjectを番号または対象から取得する。 | spatialObjectNumber: number | `SpatialObject` | `const value = mod.GetSpatialObject(...);` |
@@ -252,6 +252,8 @@ free: true
 | `IsInventorySlotActive` | 指定プレイヤーが指定インベントリスロットを使用中か判定する。 | player: Player, inventorySlots: InventorySlots | `boolean` | `const value = mod.IsInventorySlotActive(...);` |
 | `IsSoldierClass` | 指定プレイヤーが指定兵科か判定する。 | player: Player, soldierClass: SoldierClass | `boolean` | `const value = mod.IsSoldierClass(...);` |
 
+SDK 1.4.1.0では、`SoldierStateBool.IsDiving`、`Gadgets.Class_Handheld_Jammer`、`Weapons.AssaultRifle_M16A4`、`Weapons.LMG_RPK_74M`、`Weapons.SMG_PP_19`、`Weapons.Sniper_L115` が追加されています。`WeaponAttachments` にもSubsonic系弾薬、バレル、マガジン、マズル、スコープなどが多数追加されているため、ロードアウトを組む前に現行 `index.d.ts` のenumを検索してください。
+
 ## 車両
 
 | 関数 | 機能・目的 | 主な引数 | 戻り値 | 使用例 |
@@ -283,7 +285,7 @@ free: true
 | `IsVehicleSeatOccupied` | 指定車両の指定座席が使用中か判定する。 | vehicle: Vehicle, number: number | `boolean` | `const value = mod.IsVehicleSeatOccupied(...);` |
 | `GetAllPlayersInVehicle` | 指定車両に乗っている全プレイヤーを配列で取得する。 | vehicle: Vehicle | `Array` | `const value = mod.GetAllPlayersInVehicle(...);` |
 | `GetPlayerFromVehicleSeat` | 指定車両の指定座席に乗っているプレイヤーを取得する。空席なら無効なPlayerになる。 | vehicle: Vehicle, number: number | `Player` | `const value = mod.GetPlayerFromVehicleSeat(...);` |
-| `GetPlayerVehicleSeat` | 指定プレイヤーが乗っている車両座席番号を取得する。車両外なら-1。 | player: Player | `number` | `const value = mod.GetPlayerVehicleSeat(...);` |
+| `GetPlayerVehicleSeat` | 指定プレイヤーが乗っている車両座席番号を取得する。SDK 1.4.1.0のコメントは車外時の `-1` を保証していないため、先に乗車状態を確認する。 | player: Player | `number` | `const value = mod.GetPlayerVehicleSeat(...);` |
 
 ## 物理インパルス
 
@@ -302,7 +304,7 @@ free: true
 | `SetWorldIconColor` | WorldIconの色を変更する。 | worldIcon: WorldIcon, newColor: Vector | なし | `mod.SetWorldIconColor(...);` |
 | `SetWorldIconImage` | WorldIconの画像種別を変更する。 | worldIcon: WorldIcon, newImage: WorldIconImages | なし | `mod.SetWorldIconImage(...);` |
 | `SetWorldIconOwner` | WorldIconを特定チームまたはプレイヤーだけに見えるよう制限する。 オーバーロード2種。 | worldIcon: WorldIcon, newTeamOwner: Team | なし | `mod.SetWorldIconOwner(...);` |
-| `SetWorldIconPosition` | WorldIconの表示位置を変更する。 | worldIcon: WorldIcon, newPosition: Vector | なし | `mod.SetWorldIconPosition(...);` |
+| `SetWorldIconPosition` | WorldIconの表示位置を変更する。SDK 1.4.1.0で非推奨。新規実装は `SetObjectTransform` を使う。 | worldIcon: WorldIcon, newPosition: Vector | なし | `mod.SetWorldIconPosition(...);` |
 | `SetWorldIconText` | WorldIcon上のテキストを変更する。表示文は `Strings.json` に登録してから `mod.stringkeys` で参照する。 | worldIcon: WorldIcon, newText: Message | なし | `mod.SetWorldIconText(icon, mod.Message(mod.stringkeys.pointA));` |
 | `GetWorldIcon` | WorldIconを番号または対象から取得する。 | worldIconNumber: number | `WorldIcon` | `const icon = mod.GetWorldIcon(0);` |
 

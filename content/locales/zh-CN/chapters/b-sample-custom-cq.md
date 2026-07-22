@@ -8,14 +8,14 @@ free: true
 `CustomCQ` 是一个大型 Conquest 风格的 Portal 模板。
 它不是用来确认单个小 API 的示例，而是接近完整模式的教材，包含地图、CapturePoint、AreaTrigger、AI、车辆、UI、计分板、音乐和 VO。
 
-SDK 1.3.2.0 中确认到的 CustomCQ 是 Version 10.0。文件夹中包含模板本体、字符串、图标，以及多个地图用的 `.tscn` 和 `.spatial.json`。
+SDK 1.4.1.0 中确认到的 CustomCQ 是 Version 10.0。文件夹中包含模板本体、字符串、图标，以及多个地图用的 `.tscn` 和 `.spatial.json`。`modinfo.json` 现在还明确列出了 Web Builder 组装示例时使用的 `base_skel` 和地图清单。
 不要一开始就照搬全部内容。应该阅读它如何分配 ObjID 区间，以及如何让地图数据和区块逻辑保持一致。
 
 # 主要文件
 
 | 文件 | 作用 |
 | ---- | ---- |
-| `modinfo.json` | 示例名称、说明、workspace 和字符串文件 |
+| `modinfo.json` | 示例名称、Version 10、作者、workspace、`base_skel`、字符串、游戏模式和 18 项地图配置 |
 | `custom_conquest_template_10.0.json` | Portal 区块侧模板本体 |
 | `CustomCQ.strings.json` | UI、VO、分数、设置名等字符串键 |
 | `README.txt` | 导入步骤、ObjID 分配、已知问题、更新记录 |

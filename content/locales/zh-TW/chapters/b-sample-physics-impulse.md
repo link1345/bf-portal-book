@@ -1,21 +1,21 @@
 ---
-title: "附錄 B：範例程式說明「PhysicsImpulse_Gym（物理衝量）」"
+title: "附錄 B：範例程式說明「PhysicsImpulseExample（物理衝量）」"
 free: true
 ---
 
-# PhysicsImpulse_Gym 要看什麼
+# PhysicsImpulseExample 要看什麼
 
-`PhysicsImpulse_Gym` 是對載具施加物理衝量的範例。
+`PhysicsImpulseExample` 是對載具施加物理衝量的範例。SDK 1.3.3.0 中的資料夾名稱為 `PhysicsImpulse_Gym`，SDK 1.4.1.0 將其改為目前的名稱。
 可以比較 SDK 1.3.3.0 新增的 `ApplyImpulse` 和 `ApplyAreaImpulseAndDamage` 的用法。
 
 # 包含的主要檔案
 
 | 檔案 | 作用 |
 | ---- | ---- |
-| `PhysicsImpulse_Gym.ts` | 衝量、範圍判定、偵錯顯示的主體 |
-| `PhysicsImpulse_Gym.tscn` | 測試載具、按鈕、位置的配置範例 |
-| `PhysicsImpulse_Gym.strings.json` | 顯示文字 |
-| `README_PhysicsImpulse_Gym.md` | 物理衝量 API 說明 |
+| `PhysicsImpulseExample.ts` | 衝量、範圍判定、偵錯顯示的主體 |
+| `PhysicsImpulseExample.tscn` | 測試載具、按鈕、位置的配置範例 |
+| `README_PhysicsImpulse.ts` | 物理衝量 API 說明 |
+| `tsconfig.json` | 範例的 TypeScript 設定 |
 
 # 物理衝量 API
 
@@ -44,6 +44,5 @@ free: true
 
 # 結論
 
-`PhysicsImpulse_Gym` 是學習推動載具、擊飛載具、讓載具對範圍做出反應的教材。
+`PhysicsImpulseExample` 是學習推動載具、擊飛載具、讓載具對範圍做出反應的教材。
 單一目標用 `ApplyImpulse`，範圍處理用 `ApplyAreaImpulseAndDamage`。只要先分清這一點，載具機關就好設計得多。
-

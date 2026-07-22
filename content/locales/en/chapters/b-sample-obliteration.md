@@ -53,4 +53,3 @@ Use `IsValid` and `IsUndefined` before handling Bomb or Player references.
 
 `ObliterationExample` is the sample for objective-carry rules built around Bomb and M-COM.
 Keep Bomb state, carrier, M-COM arming, and win/loss checks separate while reading it. That is the base for custom attack/defense rules.
-

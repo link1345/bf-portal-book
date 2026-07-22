@@ -51,4 +51,3 @@ free: true
 
 `MovingPlatformExample` 是通过 Portal 逻辑移动生成对象或已放置对象的教材。
 先看平台 ObjId、移动时间、下一条命令的时机，就能扩展为移动地板或巡回机关。
-

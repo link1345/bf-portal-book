@@ -178,7 +178,7 @@ SDKは大きいので、最初から全部を読む必要はありません。�
 | `code/types/mod/index.d.ts` | Portal TypeScript APIの関数・型一覧 |
 | `GodotProject/mods/_StartHere_BasicTemplate` | 最初に読む公式TypeScriptテンプレート |
 
-ローカルSDKにある `sdk.version.json` では、基準SDKは `1.3.3.0` です。SDKは更新で内容が変わるため、本書の手順と画面が違う場合は、まず `sdk.version.json` と `docs/pages` を確認してください。
+ローカルSDKにある `sdk.version.json` では、基準SDKは `1.4.1.0` です。SDKは更新で内容が変わるため、本書の手順と画面が違う場合は、まず `sdk.version.json` と `docs/pages` を確認してください。
 
 # 結論
 

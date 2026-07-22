@@ -51,3 +51,4 @@ This book was reviewed and revised with the help of the following people. I woul
 2026-05-13: Updated for official SDK v1.3.1.0. Added notes on `HybridExample`, `CustomCQ`, `mod.strings`, Radio music constants, new equipment constants, and the `VehicleSpawner` `EnableRespawn` change
 2026-06-12: Updated for official SDK v1.3.2.0. Added `NightModeExample`, `GolmudTrainExample`, `MP_GolmudRailway`, and the CustomCQ v10.0 map and behavior updates
 2026-07-01: Updated for official SDK v1.3.3.0. Added `MovingPlatformExample`, `ObliterationExample`, `PhysicsImpulse_Gym`, `PortalPerformanceExample`, `MP_Aftermath_Portal`, `MP_Plaza`, Bomb/M-COM, physics impulse, camera, and performance API notes
+2026-07-22: Updated for official SDK v1.4.1.0. Added `CustomBT` v2.0, its five preconfigured Breakthrough maps, the rename to `PhysicsImpulseExample`, and ObjId lookup and movement API type changes

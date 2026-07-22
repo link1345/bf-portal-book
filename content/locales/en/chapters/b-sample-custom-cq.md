@@ -8,14 +8,14 @@ free: true
 `CustomCQ` is a large Conquest-style Portal template.
 Read it as a near-complete mode that combines maps, CapturePoints, AreaTriggers, AI, vehicles, UI, scoreboard logic, music, and VO.
 
-The CustomCQ folder available in SDK 1.3.2.0 is Version 10.0. It includes the template workspace, strings, icon, and preconfigured `.tscn` / `.spatial.json` files for multiple maps.
+The CustomCQ folder available in SDK 1.4.1.0 is Version 10.0. It includes the template workspace, strings, icon, and preconfigured `.tscn` / `.spatial.json` files for multiple maps. Its `modinfo.json` now also declares the `base_skel` and map list used to assemble the sample in Web Builder.
 Do not start by copying everything. Read it to learn how a large mode assigns ObjID ranges and keeps map data aligned with block logic.
 
 # Main Files
 
 | File | Role |
 | ---- | ---- |
-| `modinfo.json` | Sample name, description, workspace, and strings file |
+| `modinfo.json` | Sample name, Version 10, author, workspace, `base_skel`, strings, game mode, and 18 map configurations |
 | `custom_conquest_template_10.0.json` | Main Portal block template |
 | `CustomCQ.strings.json` | String keys for UI, VO, score, and settings |
 | `README.txt` | Setup notes, ObjID assignments, known issues, changelog |

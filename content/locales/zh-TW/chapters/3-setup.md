@@ -178,7 +178,7 @@ SDK 很大，不需要一開始就全部閱讀。請先按下面的順序查看�
 | `code/types/mod/index.d.ts` | Portal TypeScript API 的函數和型別列表 |
 | `GodotProject/mods/_StartHere_BasicTemplate` | 最先閱讀的官方 TypeScript 範本 |
 
-本機 SDK 的 `sdk.version.json` 中，基準 SDK 是 `1.3.3.0`。SDK 會隨著更新而改變內容，如果本書步驟和你的畫面不同，請先確認 `sdk.version.json` 和 `docs/pages`。
+本機 SDK 的 `sdk.version.json` 中，基準 SDK 是 `1.4.1.0`。SDK 會隨著更新而改變內容，如果本書步驟和你的畫面不同，請先確認 `sdk.version.json` 和 `docs/pages`。
 
 # 結論
 

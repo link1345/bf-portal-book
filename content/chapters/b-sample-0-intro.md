@@ -45,9 +45,10 @@ SDKには公式サンプルが入っています。いきなり大きなサン�
 | `GolmudTrainExample` | Railway to Golmudの列車制御、列車位置取得、移動する拠点の例として読む |
 | `MovingPlatformExample` | `MoveObjectOverTime` と `OrbitObjectOverTime` による動く足場の例として読む |
 | `ObliterationExample` | Bomb、M-COM、爆弾イベントを組み合わせるObliteration系ルールの例として読む |
-| `PhysicsImpulse_Gym` | 車両へ衝撃を与える `ApplyImpulse` と `ApplyAreaImpulseAndDamage` の例として読む |
 | `PortalPerformanceExample` | Portalロジックとサーバー処理の平均フレーム時間を確認する例として読む |
 | `CustomCQ` | Conquest相当の大規模テンプレート、ObjId設計、複数マップ対応の例として読む |
+| `CustomBT` | Breakthrough相当のセクター進行、攻守、AI、空域、5マップ対応の例として読む |
+| `PhysicsImpulseExample` | 車両へ衝撃を与える `ApplyImpulse` と `ApplyAreaImpulseAndDamage` の例として読む。SDK 1.3.3.0の `PhysicsImpulse_Gym` から改名 |
 
 初心者は `_StartHere_BasicTemplate` からで十分です。複雑なサンプルは、動く完成品としては魅力的ですが、初手で読む教材としては情報量が多すぎます。
 
@@ -62,7 +63,7 @@ SDKには公式サンプルが入っています。いきなり大きなサン�
 | 待機処理 | `mod.Wait` の周期と目的 |
 | 多重発火対策 | `isProcessing...`、クールダウン、フラグ |
 
-この表を埋めるだけで、サンプルの全体像が見えます。コードを全部読むより、構造を先に読め。えらそうに聞こえるだろうが、これは本当に効きます。
+この表を埋めるだけで、サンプルの全体像が見えます。コードをすべて読むより、先に構造を確認する方が効率的です。
 
 # 4　公式サンプルから取り入れたい書き方
 
@@ -134,7 +135,7 @@ class ReadyUpUI {
 
 公式サンプルは、読む順番を間違えなければ強い教材です。
 
-まず `docs/pages` と `index.d.ts` を辞書にし、`_StartHere_BasicTemplate` でイベントの形を覚えます。その後で `GodotProject/mods` 配下の目的別サンプルを読んでください。SDK 1.3.2.0では `NightModeExample` と `GolmudTrainExample`、SDK 1.3.3.0では `MovingPlatformExample`、`ObliterationExample`、`PhysicsImpulse_Gym`、`PortalPerformanceExample` も確認対象に加わりました。夜間演出、列車制御、動く足場、Bomb/M-COM、物理インパルス、性能計測という読みどころが増えています。
+まず `docs/pages` と `index.d.ts` を辞書にし、`_StartHere_BasicTemplate` でイベントの形を覚えます。その後で `GodotProject/mods` 配下の目的別サンプルを読んでください。SDK 1.3.2.0では `NightModeExample` と `GolmudTrainExample`、SDK 1.3.3.0では `MovingPlatformExample`、`ObliterationExample`、`PhysicsImpulse_Gym`、`PortalPerformanceExample`、SDK 1.4.1.0では `CustomBT` が確認対象に加わりました。なお、旧 `PhysicsImpulse_Gym` は `PhysicsImpulseExample` へ改名されています。夜間演出、列車制御、動く足場、Bomb/M-COM、物理インパルス、性能計測、Custom Breakthroughという読みどころが増えています。
 そして、サンプルの中身を丸写しするのではなく、設定値の集約、クラスによる責務分離、UI管理の作法を自分のコードへ取り入れてください。本書の付録Bでも、このフォルダにあるサンプルだけを扱います。
 
 ---

@@ -46,4 +46,3 @@ SDK 1.3.3.0で追加されたPerformance系APIを、デバッグ用HUDやログ�
 
 `PortalPerformanceExample` は、重いPortalモードを作らないための計測サンプルです。
 平均フレーム時間を見ながら、Ongoing処理を間引く、UIを作り直さない、まとめてSpawnしすぎない。この判断を早めにできるようになります。
-

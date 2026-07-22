@@ -53,4 +53,3 @@ Bomb 比普通物件參照更需要注意狀態變化。
 
 `ObliterationExample` 是以 Bomb 和 M-COM 為核心的目標運送規則教材。
 閱讀時把 Bomb 狀態、持有玩家、M-COM 啟動設定和勝負判定分開，就能擴展為自己的攻防規則。
-

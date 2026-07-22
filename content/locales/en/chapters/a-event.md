@@ -5,11 +5,12 @@ free: true
 
 # How to read this appendix
 
-This appendix lists the events and actions available in BF6 Portal TypeScript based on the `mod` namespace of the official SDK `code/types/mod/index.d.ts`. The reference SDK is `1.3.3.0` according to `index.d.ts`. Please be sure to search for `index.d.ts` before implementation, as it may increase or decrease with SDK updates.
+This appendix lists the events and actions available in BF6 Portal TypeScript based on the `mod` namespace of the official SDK `code/types/mod/index.d.ts`. The reference SDK is `1.4.1.0` according to `index.d.ts`. Please be sure to search for `index.d.ts` before implementation, as it may increase or decrease with SDK updates.
 
 SDK 1.3.1.0 adds `mod.strings`, `MusicPackages.Radio`, `Radio_*` music events and parameters, and several weapon and gadget constants. `HybridExample` is a concrete example of reading raw string values through `mod.strings[key]`.
 SDK 1.3.2.0 includes `OnGolmudTrainStopped`, `GolmudTrainSendMoveCommand`, `GetGolmudTrainLocation`, `GolmudTrainMoveCommands`, and `GolmudTrainStopReason` for `MP_GolmudRailway`. See Appendix B's `GolmudTrainExample` for a concrete sample.
 SDK 1.3.3.0 adds the `Bomb` type, `OngoingBomb`, `OnBombPickedUp`, `OnBombDropped`, and `OnBombStateChanged` for Obliteration. See Appendix B's `ObliterationExample` for a concrete sample.
+SDK 1.4.1.0 adds no new event callbacks, but it updates `IsDiving`, ObjId-based `GetPlayer` / `GetVehicle`, weapon and attachment constants, and the accepted object types for movement APIs.
 
 In TypeScript, events are written as `export function On...` or `export function Ongoing...`. Actions and value retrieval are called with `mod.`, such as `mod.Set...`, `mod.Get...`, `mod.Create...`.
 

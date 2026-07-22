@@ -1,21 +1,21 @@
 ---
-title: "付録B： サンプルプログラム解説「PhysicsImpulse_Gym（物理インパルス）」"
+title: "付録B： サンプルプログラム解説「PhysicsImpulseExample（物理インパルス）」"
 free: true
 ---
 
-# PhysicsImpulse_Gymは何を見るサンプルか
+# PhysicsImpulseExampleは何を見るサンプルか
 
-`PhysicsImpulse_Gym` は、車両へ物理的な衝撃を与えるサンプルです。
+`PhysicsImpulseExample` は、車両へ物理的な衝撃を与えるサンプルです。SDK 1.3.3.0では `PhysicsImpulse_Gym` というフォルダ名でしたが、SDK 1.4.1.0で現在の名前へ変更されました。
 SDK 1.3.3.0で追加された `ApplyImpulse` と `ApplyAreaImpulseAndDamage` の使い分けを確認できます。
 
 # 含まれる主なファイル
 
 | ファイル | 役割 |
 | ---- | ---- |
-| `PhysicsImpulse_Gym.ts` | 衝撃付与、範囲判定、デバッグ表示の本体 |
-| `PhysicsImpulse_Gym.tscn` | 試験用の車両、ボタン、位置の配置例 |
-| `PhysicsImpulse_Gym.strings.json` | 表示文字列 |
-| `README_PhysicsImpulse_Gym.md` | 物理インパルスAPIの説明 |
+| `PhysicsImpulseExample.ts` | 衝撃付与、範囲判定、デバッグ表示の本体 |
+| `PhysicsImpulseExample.tscn` | 試験用の車両、ボタン、位置の配置例 |
+| `README_PhysicsImpulse.ts` | 物理インパルスAPIの説明 |
+| `tsconfig.json` | サンプルのTypeScript設定 |
 
 # 物理インパルスのAPI
 
@@ -44,6 +44,5 @@ SDK 1.3.3.0で追加された `ApplyImpulse` と `ApplyAreaImpulseAndDamage` の
 
 # 結論
 
-`PhysicsImpulse_Gym` は、車両を押す、飛ばす、範囲で反応させる処理の教材です。
+`PhysicsImpulseExample` は、車両を押す、飛ばす、範囲で反応させる処理の教材です。
 対象が1台なら `ApplyImpulse`、範囲内まとめてなら `ApplyAreaImpulseAndDamage`。この切り分けだけでも、車両ギミックの設計がかなり楽になります。
-

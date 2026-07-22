@@ -51,4 +51,3 @@ free: true
 
 `MovingPlatformExample` 是透過 Portal 邏輯移動生成物件或已放置物件的教材。
 先看平台 ObjId、移動時間、下一條命令的時機，就能擴展為移動地板或巡迴機關。
-

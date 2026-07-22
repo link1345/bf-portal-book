@@ -46,4 +46,3 @@ free: true
 
 `PortalPerformanceExample` 是避免製作過重 Portal 模式的計量範例。
 一邊看平均影格時間，一邊及早判斷是否需要減少 Ongoing、重用 UI、避免一次生成太多物件。
-

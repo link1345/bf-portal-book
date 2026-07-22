@@ -193,6 +193,8 @@ free: true
 | `SetObjectTransform` | 设置指定对象的Transform。 | object: mod.Object, transform: Transform | 无 | `mod.SetObjectTransform(...);` |
 | `SetObjectTransformOverTime` | 随着时间的推移，将指定的对象移动并旋转到指定的变换。 | object: mod.Object, transform: Transform, timeInSeconds: number, shouldLoop: boolean, shouldReverse: boolean | 无 | `mod.SetObjectTransformOverTime(...);` |
 | `StopActiveMovementForObject` | 停止指定对象上正在进行的时间移动。 | object: mod.Object | 无 | `mod.StopActiveMovementForObject(...);` |
+
+SDK 1.4.1.0 将这些通用移动 API 的参数从所有 `mod.Object` 收窄为 `Bomb`、`EmplacementSpawner`、`FixedCamera`、`InteractPoint`、`LootSpawner`、`MCOM`、`SFX`、`SpatialObject`、`Spawner`、`VehicleSpawner`、`VL7Cloud`、`VO`、`WorldIcon` 的联合类型。这并不表示可以把 `Player`、`Vehicle` 或 `VFX` 传给同一函数。VFX 请使用 `MoveVFX`，新的 WorldIcon 实现请使用 `SetObjectTransform`。
 | `GetAreaTrigger` | 从数字或目标获取AreaTrigger。 | areaTriggerNumber: number | `AreaTrigger` | `const area = mod.GetAreaTrigger(0);` |
 | `GetInteractPoint` | 从数字或目标获取 InteractPoint。 | interactPointNumber: number | `InteractPoint` | `const point = mod.GetInteractPoint(0);` |
 | `GetSpatialObject` | 从数字或目标获取 SpatialObject。 | spatialObjectNumber: number | `SpatialObject` | `const value = mod.GetSpatialObject(...);` |
@@ -252,6 +254,8 @@ free: true
 | `IsInventorySlotActive` | 确定指定玩家是否正在使用指定的物品栏位。 | player: Player, inventorySlots: InventorySlots | `boolean` | `const value = mod.IsInventorySlotActive(...);` |
 | `IsSoldierClass` | 判断指定玩家是否为指定军种。 | player: Player, soldierClass: SoldierClass | `boolean` | `const value = mod.IsSoldierClass(...);` |
 
+SDK 1.4.1.0 新增了 `SoldierStateBool.IsDiving`、`Gadgets.Class_Handheld_Jammer`、`Weapons.AssaultRifle_M16A4`、`Weapons.LMG_RPK_74M`、`Weapons.SMG_PP_19` 和 `Weapons.Sniper_L115`。`WeaponAttachments` 还增加了大量 Subsonic 弹药、枪管、弹匣、枪口和瞄具常量，因此配置装备前请搜索当前 `index.d.ts` 的 enum。
+
 ## 车辆
 
 | 函数 | 功能 / 目的 | 主要参数 | 返回值 | 使用示例 |
@@ -283,7 +287,7 @@ free: true
 | `IsVehicleSeatOccupied` | 判断指定车辆的预留座位是否正在使用。 | vehicle: Vehicle, number: number | `boolean` | `const value = mod.IsVehicleSeatOccupied(...);` |
 | `GetAllPlayersInVehicle` | 获取指定车辆中的所有玩家作为数组。 | vehicle: Vehicle | `Array` | `const value = mod.GetAllPlayersInVehicle(...);` |
 | `GetPlayerFromVehicleSeat` | 让玩家坐在指定车辆的指定座位上。如果座位是空的，则成为无效玩家。 | vehicle: Vehicle, number: number | `Player` | `const value = mod.GetPlayerFromVehicleSeat(...);` |
-| `GetPlayerVehicleSeat` | 获取指定玩家的车辆座位号。如果在车外，则为 -1。 | player: Player | `number` | `const value = mod.GetPlayerVehicleSeat(...);` |
+| `GetPlayerVehicleSeat` | 获取玩家的车辆座位号。SDK 1.4.1.0 不再说明车外时返回 `-1`，因此应先确认乘车状态。 | player: Player | `number` | `const value = mod.GetPlayerVehicleSeat(...);` |
 
 ## 物理冲量
 
@@ -302,7 +306,7 @@ free: true
 | `SetWorldIconColor` | 更改WorldIcon的颜色。 | worldIcon: WorldIcon, newColor: Vector | 无 | `mod.SetWorldIconColor(...);` |
 | `SetWorldIconImage` | 更改 WorldIcon 的图像类型。 | worldIcon: WorldIcon, newImage: WorldIconImages | 无 | `mod.SetWorldIconImage(...);` |
 | `SetWorldIconOwner` | 限制 WorldIcon 仅对特定队伍或玩家可见。 2 种重载。 | worldIcon: WorldIcon, newTeamOwner: Team | 无 | `mod.SetWorldIconOwner(...);` |
-| `SetWorldIconPosition` | 更改 WorldIcon 的显示位置。 | worldIcon: WorldIcon, newPosition: Vector | 无 | `mod.SetWorldIconPosition(...);` |
+| `SetWorldIconPosition` | 更改 WorldIcon 的显示位置。SDK 1.4.1.0 已弃用；新代码请使用 `SetObjectTransform`。 | worldIcon: WorldIcon, newPosition: Vector | 无 | `mod.SetWorldIconPosition(...);` |
 | `SetWorldIconText` | 更改 WorldIcon 上的文本。显示文本在 `Strings.json` 注册，然后在 `mod.stringkeys` 引用。 | worldIcon: WorldIcon, newText: Message | 无 | `mod.SetWorldIconText(icon, mod.Message(mod.stringkeys.pointA));` |
 | `GetWorldIcon` | 从数字或目标获取 WorldIcon。 | worldIconNumber: number | `WorldIcon` | `const icon = mod.GetWorldIcon(0);` |
 

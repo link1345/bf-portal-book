@@ -13,7 +13,7 @@ free: true
 
 # 1 “可以放置的东西”的本质：`res://objects` 与地图依赖
 
-**地图上可以放置的对象，仅限于 Godot 文件系统 `res://objects` 内的对象。** 此外，**根据以哪张地图为基础进行编辑，可放置对象的范围也会受到限制。** **截至 2026 年 7 月 1 日，手头的 Portal SDK（版本：1.3.3.0）结构如下。**
+**地图上可以放置的对象，仅限于 Godot 文件系统 `res://objects` 内的对象。** 此外，**根据以哪张地图为基础进行编辑，可放置对象的范围也会受到限制。** **截至 2026 年 7 月 22 日，手头的 Portal SDK（版本：1.4.1.0）结构如下。**
 
 SDK 可能会随着更新而改变结构。开始作业前，请确认 SDK 根目录下的 `sdk.version.json`。如果与本书不同，请优先参考 SDK 内的 `docs/pages/spatial_editor.html` 和 `code/types/mod/index.d.ts`。
 
@@ -90,7 +90,7 @@ flowchart TD
 ```
 
 文件夹名、官方 Level Name、Map ID 可能并不一致。
-SDK 的 `docs/pages/spatial_editor.html` 和 `FbExportData/level_info.json` 中，可用 Level 整理如下（截至 2026 年 7 月 1 日，SDK 1.3.3.0）。
+SDK 的 `docs/pages/spatial_editor.html` 和 `FbExportData/level_info.json` 中，可用 Level 整理如下（截至 2026 年 7 月 22 日，SDK 1.4.1.0）。
 
 | 官方 Level Name | Map ID |
 | ---- | ---- |
@@ -118,6 +118,8 @@ SDK 的 `docs/pages/spatial_editor.html` 和 `FbExportData/level_info.json` 中�
 | Hagental Base | MP_Subsurface |
 | Railway to Golmud | MP_GolmudRailway |
 | Mirak Valley | MP_Tungsten |
+
+SDK 1.4.1.0 在 `GodotProject/mods/CustomBT` 中增加了 5 张预配置的 Breakthrough 地图：`MP_Dumbo`、`MP_Granite_ClubHouse_Portal`、`MP_Granite_MainStreet_Portal`、`MP_Granite_Marina_Portal` 和 `MP_Granite_TechCampus_Portal`。这并不是新增 Level ID，而是为 Custom Breakthrough 预先配置了现有 Level 的 `.tscn` 和 `.spatial.json`。详情请参阅附录 B 的 `CustomBT` 说明。
 
 注：官方 docs 的 Available Levels 表中写作 `MP_Firestorm`，但手头 SDK 的 `asset_types.json` 和 Godot 的 level 文件中也使用 `MP_FireStorm`。搜索 `levelRestrictions` 时，请优先使用 SDK 实际数据中的写法。
 注：`MP_Granite_ClubHouse_Portal` 的官方 Level Name 是 `Golf Course`。实际使用时，请确认 `asset_types.json` 的 `levelRestrictions` 和 Godot 上的警告显示。
@@ -229,6 +231,8 @@ TypeScript 侧用 `mod.GetVL7Cloud(id)` 获取，并用 `mod.SetVL7CloudEffects(
 
 拿不准时，先从 `AreaTrigger` 考虑。
 如果需要“占领”或“拥有队伍”这些概念，就用 `CapturePoint`；如果想放置毒气云或特殊效果本身，就用 `VL7Cloud`。
+
+SDK 1.4.1.0 的 `asset_types.json` 还新增或整理了表示闭合 Spline 的 `isClosed`、箱形 `OBBVolume`、category 为 `shadowvolume` 的 `ShadowVolume`，以及通过 points 和 height 定义形状的 `InteriorVolume`。它们并不能替代事件驱动的 `AreaTrigger`。请把它们视为形状、渲染或内部区域数据，并确认 Godot 中的实际属性和警告。
 
 ## CombatArea（可游玩区域）
 

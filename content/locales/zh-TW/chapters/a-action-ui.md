@@ -142,6 +142,8 @@ free: true
 | `GetSpawnPoint` | 從數字或目標取得 SpawnPoint。 | number: number | `SpawnPoint` | `const value = mod.GetSpawnPoint(...);` |
 | `GetSpawner` | 從編號或目標取得 Spawner。 | number: number | `Spawner` | `const value = mod.GetSpawner(...);` |
 | `GetVL7Cloud` | 從編號或目標取得 VL7Cloud。 | vl7CloudId: number | `VL7Cloud` | `const value = mod.GetVL7Cloud(...);` |
+| `GetPlayer` | 取得 ObjId 對應的 Player。SDK 1.4.1.0 新增。 | objId: number | `Player` | `const player = mod.GetPlayer(123);` |
+| `GetVehicle` | 取得 ObjId 對應的 Vehicle。SDK 1.4.1.0 新增。 | objId: number | `Vehicle` | `const vehicle = mod.GetVehicle(456);` |
 
 ## 效能測量
 

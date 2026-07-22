@@ -51,4 +51,3 @@ Like the sample, put wait time or a state flag before sending the next movement 
 
 `MovingPlatformExample` is the sample for moving spawned or pre-placed objects through Portal logic.
 Read the platform ObjId, movement duration, and timing for the next command first. From there, it is easy to adapt into moving floors and patrol gimmicks.
-

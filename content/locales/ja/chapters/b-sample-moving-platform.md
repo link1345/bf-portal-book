@@ -51,4 +51,3 @@ SDK 1.3.3.0で追加された `MovingPlatform` の考え方を、`MoveObjectOver
 
 `MovingPlatformExample` は、Spawnしたオブジェクトや配置済みオブジェクトを、Portalロジックで動かす教材です。
 足場のObjId、移動時間、次の命令を出すタイミング。この3点を先に読めば、動く床や巡回ギミックへ応用できます。
-

@@ -45,9 +45,10 @@ SDK 包含官方範例。如果一上來就閱讀大型範例，UI、AI、車輛
 | `GolmudTrainExample` | 閱讀 Railway to Golmud 列車控制、列車位置取得、移動目標點的範例 |
 | `MovingPlatformExample` | 閱讀使用 `MoveObjectOverTime` 和 `OrbitObjectOverTime` 製作移動平台的範例 |
 | `ObliterationExample` | 閱讀組合 Bomb、M-COM 和炸彈事件的 Obliteration 風格規則範例 |
-| `PhysicsImpulse_Gym` | 閱讀透過 `ApplyImpulse` 和 `ApplyAreaImpulseAndDamage` 對載具施加衝量的範例 |
 | `PortalPerformanceExample` | 閱讀確認 Portal 邏輯和伺服器平均影格時間的範例 |
 | `CustomCQ` | 閱讀大型 Conquest 風格範本、ObjID 設計、多地圖支援的範例 |
+| `CustomBT` | 閱讀 Breakthrough 風格的區域推進、攻守、AI、空域與 5 張地圖支援範例 |
+| `PhysicsImpulseExample` | 閱讀透過 `ApplyImpulse` 和 `ApplyAreaImpulseAndDamage` 對載具施加衝量的範例。由 SDK 1.3.3.0 的 `PhysicsImpulse_Gym` 重新命名而來 |
 
 對於初學者來說，`_StartHere_BasicTemplate` 就足夠了。複雜範例作為可執行的成品很有吸引力，但資訊量太大，不適合作為最開始的教材。
 
@@ -134,7 +135,7 @@ class ReadyUpUI {
 
 只要按正確順序閱讀，官方範例就是很強的學習材料。
 
-首先，把 `docs/pages` 和 `index.d.ts` 當作字典，並用 `_StartHere_BasicTemplate` 掌握事件的形狀。然後閱讀 `GodotProject/mods` 下依目的分類的範例。SDK 1.3.2.0 把 `NightModeExample` 和 `GolmudTrainExample` 加入閱讀對象，SDK 1.3.3.0 又加入了 `MovingPlatformExample`、`ObliterationExample`、`PhysicsImpulse_Gym`、`PortalPerformanceExample`。現在可以學習夜間效果、列車控制、移動平台、Bomb/M-COM、物理衝量和效能測量。
+首先，把 `docs/pages` 和 `index.d.ts` 當作字典，並用 `_StartHere_BasicTemplate` 掌握事件的形狀。然後閱讀 `GodotProject/mods` 下依目的分類的範例。SDK 1.3.2.0 加入了 `NightModeExample` 和 `GolmudTrainExample`；SDK 1.3.3.0 加入了 `MovingPlatformExample`、`ObliterationExample`、`PhysicsImpulse_Gym` 和 `PortalPerformanceExample`；SDK 1.4.1.0 又加入了 `CustomBT`。原本的 `PhysicsImpulse_Gym` 資料夾現已重新命名為 `PhysicsImpulseExample`。這些範例涵蓋夜間效果、列車控制、移動平台、Bomb/M-COM、物理衝量、效能測量和 Custom Breakthrough。
 接著，不要照搬範例的全部內容，而是把設定值集中管理、用類別分離職責、UI 管理方式這些寫法吸收到自己的程式碼中。本書的附錄 B 也只介紹這個資料夾中的範例。
 
 ---

@@ -46,4 +46,3 @@ When it looks bad, inspect recently added Ongoing logic, array loops, Spawn call
 
 `PortalPerformanceExample` is the sample for avoiding heavy Portal modes.
 By watching average frame time, you can decide early when to thin Ongoing logic, reuse UI instead of recreating it, and avoid spawning too much at once.
-

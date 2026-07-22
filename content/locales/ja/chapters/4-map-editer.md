@@ -13,7 +13,7 @@ Godotや `asset_types.json` で最終確認する前の「候補探し」に使�
 
 # 1　“置けるもの”の正体：“res://objects”とマップ依存
 
-**マップ上に配置できるオブジェクトは、 Godotのファイルシステム `res://objects` 内にあるものに限られます** 。さらに、 **「どのマップをベースに編集するか」によって置けるオブジェクトの範囲に制限があります** 。 **2026年7月1日時点で手元にあるPortal SDK(バージョン：1.3.3.0)は次のように構成** されています。
+**マップ上に配置できるオブジェクトは、 Godotのファイルシステム `res://objects` 内にあるものに限られます** 。さらに、 **「どのマップをベースに編集するか」によって置けるオブジェクトの範囲に制限があります** 。 **2026年7月22日時点で手元にあるPortal SDK(バージョン：1.4.1.0)は次のように構成** されています。
 
 SDKは更新で構成が変わることがあります。作業前にSDK直下の `sdk.version.json` を確認し、本書と違う場合はSDK内の `docs/pages/spatial_editor.html` と `code/types/mod/index.d.ts` を優先してください。
 
@@ -90,7 +90,7 @@ flowchart TD
 ```
 
 フォルダ名と公式のLevel名、Map IDは一致しない場合があります。
-SDKの `docs/pages/spatial_editor.html` と `FbExportData/level_info.json` では、利用できるLevelは次のように整理されています（2026年7月1日時点、SDK 1.3.3.0）。
+SDKの `docs/pages/spatial_editor.html` と `FbExportData/level_info.json` では、利用できるLevelは次のように整理されています（2026年7月22日時点、SDK 1.4.1.0）。
 
 | 公式Level Name | Map ID |
 | ---- | ---- |
@@ -118,6 +118,8 @@ SDKの `docs/pages/spatial_editor.html` と `FbExportData/level_info.json` で�
 | Hagental Base | MP_Subsurface |
 | Railway to Golmud | MP_GolmudRailway |
 | Mirak Valley | MP_Tungsten |
+
+SDK 1.4.1.0では、`GodotProject/mods/CustomBT` にBreakthrough用の構成済みマップが5つ追加されています。対象は `MP_Dumbo`、`MP_Granite_ClubHouse_Portal`、`MP_Granite_MainStreet_Portal`、`MP_Granite_Marina_Portal`、`MP_Granite_TechCampus_Portal` です。これは新しいLevel IDの追加ではなく、既存Level向けの `.tscn` と `.spatial.json` をCustom Breakthrough用に事前構成したものです。詳しくは付録Bの `CustomBT` 解説を参照してください。
 
 ※ 公式docsのAvailable Levels表では `MP_Firestorm` と表記されていますが、手元SDKの `asset_types.json` とGodotのレベルファイルでは `MP_FireStorm` の表記も使われています。`levelRestrictions` を検索するときは、SDK内の実データ側の表記を優先してください。
 ※ `MP_Granite_ClubHouse_Portal` は公式Level Nameでは `Golf Course` です。実際に使う場合は、`asset_types.json` の `levelRestrictions` と、Godot上の警告表示を確認してください。
@@ -229,6 +231,8 @@ TypeScript側では `mod.GetVL7Cloud(id)` で取得し、`mod.SetVL7CloudEffects
 
 迷ったら、まず `AreaTrigger` から考えてください。
 「占領」や「所有チーム」という言葉が必要になったら `CapturePoint`、ガス雲や特殊効果そのものを置きたいなら `VL7Cloud` です。
+
+SDK 1.4.1.0の `asset_types.json` では、閉じたSplineを示す `isClosed`、箱形の `OBBVolume`、categoryが `shadowvolume` の `ShadowVolume`、pointsとheightで形を作る `InteriorVolume` も追加・整理されています。これらはゲームイベント用の `AreaTrigger` と同じものではありません。範囲の形状・描画・内部判定用データとして、実際のGodotプロパティと警告を確認して使ってください。
 
 ## CombatArea（プレイ可能領域）
 
