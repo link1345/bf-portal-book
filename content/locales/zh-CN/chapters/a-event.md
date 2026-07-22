@@ -5,10 +5,11 @@ free: true
 
 # 如何阅读本附录
 
-本附录基于官方 SDK `code/types/mod/index.d.ts` 的 `mod` 命名空间列出了 BF6 Portal TypeScript 中可用的事件和动作。参考 SDK 以 `index.d.ts` 为准，为 `1.3.2.0`。请务必在实现前搜索 `index.d.ts`，因为它可能会随着 SDK 更新而增加或减少。
+本附录基于官方 SDK `code/types/mod/index.d.ts` 的 `mod` 命名空间列出了 BF6 Portal TypeScript 中可用的事件和动作。参考 SDK 以 `index.d.ts` 为准，为 `1.4.1.0`。请务必在实现前搜索 `index.d.ts`，因为它可能会随着 SDK 更新而增加或减少。
 
 SDK 1.3.1.0 追加了 `mod.strings`、`MusicPackages.Radio`、`Radio_*` 系音乐事件和参数，以及若干武器和 Gadget 常量。`HybridExample` 是通过 `mod.strings[key]` 直接读取字符串值的具体示例。
 SDK 1.3.2.0 中可以确认 `MP_GolmudRailway` 使用的 `OnGolmudTrainStopped`、`GolmudTrainSendMoveCommand`、`GetGolmudTrainLocation`、`GolmudTrainMoveCommands`、`GolmudTrainStopReason`。具体示例请参见附录 B 的 `GolmudTrainExample`。
+SDK 1.4.1.0 没有新增事件回调，但更新了 `IsDiving`、基于 ObjId 的 `GetPlayer` / `GetVehicle`、武器与配件常量，以及移动 API 可接受的对象类型。
 
 在 TypeScript 中，事件被编写为 `export function On...` 或 `export function Ongoing...`。使用 `mod.` 调用动作和值获取，例如 `mod.Set...`、`mod.Get...`、`mod.Create...`。
 

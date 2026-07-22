@@ -44,6 +44,8 @@ SDK 包含官方示例。如果一上来就阅读大型示例，UI、AI、车辆
 | `NightModeExample` | 阅读夜间画面效果、NVG 装备、SFX 切换、VFX 颜色变化的示例 |
 | `GolmudTrainExample` | 阅读 Railway to Golmud 列车控制、列车位置取得、移动目标点的示例 |
 | `CustomCQ` | 阅读大型 Conquest 风格模板、ObjID 设计、多地图支持的示例 |
+| `CustomBT` | 阅读 Breakthrough 风格的扇区推进、攻守、AI、空域和 5 地图支持示例 |
+| `PhysicsImpulseExample` | 阅读物理冲量示例。由 SDK 1.3.3.0 的 `PhysicsImpulse_Gym` 重命名而来 |
 
 对于初学者来说，`_StartHere_BasicTemplate` 就足够了。复杂示例作为可运行的成品很有吸引力，但信息量太大，不适合作为最开始的教材。
 
@@ -130,7 +132,7 @@ class ReadyUpUI {
 
 只要按正确顺序阅读，官方示例就是很强的学习材料。
 
-首先，把 `docs/pages` 和 `index.d.ts` 当作字典，并用 `_StartHere_BasicTemplate` 掌握事件的形状。然后阅读 `GodotProject/mods` 下按目的划分的示例。SDK 1.3.2.0 还把 `NightModeExample` 和 `GolmudTrainExample` 加入了阅读对象，可以学习夜间效果、NVG、列车控制，以及 `MP_GolmudRailway` 专用事件。
+首先，把 `docs/pages` 和 `index.d.ts` 当作字典，并用 `_StartHere_BasicTemplate` 掌握事件的形状。然后阅读 `GodotProject/mods` 下按目的划分的示例。SDK 1.3.2.0 加入了 `NightModeExample` 和 `GolmudTrainExample`，SDK 1.4.1.0 又加入了 `CustomBT`。原来的 `PhysicsImpulse_Gym` 文件夹现已重命名为 `PhysicsImpulseExample`。
 接着，不要照搬示例的全部内容，而是把设置值集中管理、用类分离职责、UI 管理方式这些写法吸收到自己的代码中。本书的附录 B 也只介绍这个文件夹中的示例。
 
 ---

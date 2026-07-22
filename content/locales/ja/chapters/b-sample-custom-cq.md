@@ -8,14 +8,14 @@ free: true
 `CustomCQ` は、Conquest相当の大規模テンプレートをPortalで作るためのサンプルです。
 単体の小さなAPI確認ではなく、複数マップ、CapturePoint、AreaTrigger、AI、車両、UI、スコアボード、音楽・VOまで含む「完成モード寄り」の教材として読みます。
 
-SDK 1.3.2.0で確認できるCustomCQはVersion 10.0です。テンプレート本体、文字列、アイコン、複数マップ用の `.tscn` と `.spatial.json` が入っています。
+SDK 1.4.1.0で確認できるCustomCQはVersion 10.0です。テンプレート本体、文字列、アイコン、複数マップ用の `.tscn` と `.spatial.json` に加え、Web Builderでサンプルを組み立てるための `base_skel` とマップ一覧が `modinfo.json` に明記されています。
 丸写しする対象ではなく、大きいモードをどう分割し、どのID帯に何を割り当てるかを見る対象です。
 
 # 含まれる主なファイル
 
 | ファイル | 役割 |
 | ---- | ---- |
-| `modinfo.json` | サンプル名、説明、読み込むworkspaceと文字列ファイル |
+| `modinfo.json` | サンプル名、Version 10、作者、workspace、`base_skel`、文字列、ゲームモード、18件のマップ構成 |
 | `custom_conquest_template_10.0.json` | Portalブロック側のテンプレート本体 |
 | `CustomCQ.strings.json` | UI、VO、スコア、設定名などの文字列キー |
 | `README.txt` | 導入手順、ObjID割り当て、既知問題、更新履歴 |

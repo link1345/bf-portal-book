@@ -141,6 +141,8 @@ free: true
 | `GetSpawnPoint` | SpawnPointを番号または対象から取得する。 | number: number | `SpawnPoint` | `const value = mod.GetSpawnPoint(...);` |
 | `GetSpawner` | Spawnerを番号または対象から取得する。 | number: number | `Spawner` | `const value = mod.GetSpawner(...);` |
 | `GetVL7Cloud` | VL7Cloudを番号または対象から取得する。 | vl7CloudId: number | `VL7Cloud` | `const value = mod.GetVL7Cloud(...);` |
+| `GetPlayer` | ObjIdに対応するPlayerを取得する。SDK 1.4.1.0で追加。 | objId: number | `Player` | `const player = mod.GetPlayer(123);` |
+| `GetVehicle` | ObjIdに対応するVehicleを取得する。SDK 1.4.1.0で追加。 | objId: number | `Vehicle` | `const vehicle = mod.GetVehicle(456);` |
 
 ## 論理・文字列・拡張
 

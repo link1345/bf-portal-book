@@ -13,7 +13,7 @@ Use it for the first pass of candidate hunting before doing the final check in G
 
 # 1 What "Placeable Objects" Really Are: `res://objects` and Map Dependencies
 
-**Objects you can place on a map are limited to files inside Godot's `res://objects` file system.** In addition, **the range of placeable objects depends on which map you use as the base for editing.** **As of June 12, 2026, the Portal SDK available here (version 1.3.2.0) is structured as follows.**
+**Objects you can place on a map are limited to files inside Godot's `res://objects` file system.** In addition, **the range of placeable objects depends on which map you use as the base for editing.** **As of July 22, 2026, the Portal SDK available here (version 1.4.1.0) is structured as follows.**
 
 The SDK structure may change through updates. Before working, check `sdk.version.json` directly under the SDK. If it differs from this book, prioritize the SDK's `docs/pages/spatial_editor.html` and `code/types/mod/index.d.ts`.
 
@@ -90,7 +90,7 @@ flowchart TD
 ```
 
 Folder names, official Level names, and Map IDs do not always match.
-In the SDK's `docs/pages/spatial_editor.html` and `FbExportData/level_info.json`, the available Levels are organized as follows (as of June 12, 2026, SDK 1.3.2.0).
+In the SDK's `docs/pages/spatial_editor.html` and `FbExportData/level_info.json`, the available Levels are organized as follows (as of July 22, 2026, SDK 1.4.1.0).
 
 | Official Level Name | Map ID |
 | ---- | ---- |
@@ -116,6 +116,8 @@ In the SDK's `docs/pages/spatial_editor.html` and `FbExportData/level_info.json`
 | Hagental Base | MP_Subsurface |
 | Railway to Golmud | MP_GolmudRailway |
 | Mirak Valley | MP_Tungsten |
+
+SDK 1.4.1.0 adds five preconfigured Breakthrough maps under `GodotProject/mods/CustomBT`: `MP_Dumbo`, `MP_Granite_ClubHouse_Portal`, `MP_Granite_MainStreet_Portal`, `MP_Granite_Marina_Portal`, and `MP_Granite_TechCampus_Portal`. These are not new Level IDs. They are existing Levels with `.tscn` and `.spatial.json` files prepared for Custom Breakthrough. See the `CustomBT` appendix for details.
 
 Note: The official docs' Available Levels table writes `MP_Firestorm`, but the local SDK's `asset_types.json` and Godot level files also use `MP_FireStorm`. When searching `levelRestrictions`, prioritize the notation used in the SDK's actual data.
 Note: The official Level Name for `MP_Granite_ClubHouse_Portal` is `Golf Course`. When using it, check both `levelRestrictions` in `asset_types.json` and the warning display in Godot.
@@ -209,6 +211,8 @@ However, their purposes are quite different.
 
 When unsure, start with `AreaTrigger`.
 If you need words like "capture" or "owning team", use `CapturePoint`. If you want to place a gas cloud or special effect itself, use `VL7Cloud`.
+
+SDK 1.4.1.0 also adds or formalizes `isClosed` for closed splines, box-shaped `OBBVolume`, `ShadowVolume` with the `shadowvolume` category, and `InteriorVolume` built from points and height in `asset_types.json`. These are not substitutes for the event-driven `AreaTrigger`. Treat them as shape, rendering, or interior-volume data and confirm their actual Godot properties and warnings.
 
 ## CombatArea (Playable Area)
 

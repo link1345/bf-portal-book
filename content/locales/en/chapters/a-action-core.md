@@ -177,6 +177,8 @@ Functions with the same name and multiple argument patterns are grouped together
 | `SetObjectTransform` | Set the Transform of the specified object. | object: mod.Object, transform: Transform | None | `mod.SetObjectTransform(...);` |
 | `SetObjectTransformOverTime` | Move and rotate the specified object to the specified Transform over time. | object: mod.Object, transform: Transform, timeInSeconds: number, shouldLoop: boolean, shouldReverse: boolean | None | `mod.SetObjectTransformOverTime(...);` |
 | `StopActiveMovementForObject` | Stops ongoing time movement on the specified object. | object: mod.Object | None | `mod.StopActiveMovementForObject(...);` |
+
+In SDK 1.4.1.0, these generic movement APIs no longer accept every `mod.Object`. Their parameter is narrowed to a union of `Bomb`, `EmplacementSpawner`, `FixedCamera`, `InteractPoint`, `LootSpawner`, `MCOM`, `SFX`, `SpatialObject`, `Spawner`, `VehicleSpawner`, `VL7Cloud`, `VO`, and `WorldIcon`. This does not mean you can pass a `Player`, `Vehicle`, or `VFX` to the same function. Use `MoveVFX` for VFX and `SetObjectTransform` for new WorldIcon code.
 | `GetAreaTrigger` | Get AreaTrigger from number or target. | areaTriggerNumber: number | `AreaTrigger` | `const area = mod.GetAreaTrigger(0);` |
 | `GetInteractPoint` | Get InteractPoint from number or target. | interactPointNumber: number | `InteractPoint` | `const point = mod.GetInteractPoint(0);` |
 | `GetSpatialObject` | Get SpatialObject from number or target. | spatialObjectNumber: number | `SpatialObject` | `const value = mod.GetSpatialObject(...);` |
@@ -236,6 +238,8 @@ Functions with the same name and multiple argument patterns are grouped together
 | `IsInventorySlotActive` | Determine whether the specified player is using the specified inventory slot. | player: Player, inventorySlots: InventorySlots | `boolean` | `const value = mod.IsInventorySlotActive(...);` |
 | `IsSoldierClass` | Determine whether the specified player is a specified military class. | player: Player, soldierClass: SoldierClass | `boolean` | `const value = mod.IsSoldierClass(...);` |
 
+SDK 1.4.1.0 adds `SoldierStateBool.IsDiving`, `Gadgets.Class_Handheld_Jammer`, `Weapons.AssaultRifle_M16A4`, `Weapons.LMG_RPK_74M`, `Weapons.SMG_PP_19`, and `Weapons.Sniper_L115`. `WeaponAttachments` also gains many subsonic ammo, barrel, magazine, muzzle, and scope constants, so search the current `index.d.ts` enum before building a loadout.
+
 ## Vehicle
 
 | Function | Function / Purpose | Main arguments | Return value | Usage example |
@@ -267,7 +271,7 @@ Functions with the same name and multiple argument patterns are grouped together
 | `IsVehicleSeatOccupied` | Determine whether the reserved seat of the designated vehicle is in use. | vehicle: Vehicle, number: number | `boolean` | `const value = mod.IsVehicleSeatOccupied(...);` |
 | `GetAllPlayersInVehicle` | Get all players in the specified vehicle as an array. | vehicle: Vehicle | `Array` | `const value = mod.GetAllPlayersInVehicle(...);` |
 | `GetPlayerFromVehicleSeat` | Get the player in the designated seat of the designated vehicle. If the seat is empty, it becomes an invalid Player. | vehicle: Vehicle, number: number | `Player` | `const value = mod.GetPlayerFromVehicleSeat(...);` |
-| `GetPlayerVehicleSeat` | Get the vehicle seat number of the designated player. -1 if outside the vehicle. | player: Player | `number` | `const value = mod.GetPlayerVehicleSeat(...);` |
+| `GetPlayerVehicleSeat` | Gets the player's vehicle seat number. SDK 1.4.1.0 no longer documents `-1` for players outside vehicles, so check the vehicle state first. | player: Player | `number` | `const value = mod.GetPlayerVehicleSeat(...);` |
 
 ## WorldIcon
 
@@ -279,7 +283,7 @@ Functions with the same name and multiple argument patterns are grouped together
 | `SetWorldIconColor` | Change the color of WorldIcon. | worldIcon: WorldIcon, newColor: Vector | None | `mod.SetWorldIconColor(...);` |
 | `SetWorldIconImage` | Change the image type of WorldIcon. | worldIcon: WorldIcon, newImage: WorldIconImages | None | `mod.SetWorldIconImage(...);` |
 | `SetWorldIconOwner` | Restrict WorldIcon to be visible only to specific teams or players. 2 overloads. | worldIcon: WorldIcon, newTeamOwner: Team | None | `mod.SetWorldIconOwner(...);` |
-| `SetWorldIconPosition` | Change the display position of WorldIcon. | worldIcon: WorldIcon, newPosition: Vector | None | `mod.SetWorldIconPosition(...);` |
+| `SetWorldIconPosition` | Changes a WorldIcon's position. Deprecated in SDK 1.4.1.0; use `SetObjectTransform` for new code. | worldIcon: WorldIcon, newPosition: Vector | None | `mod.SetWorldIconPosition(...);` |
 | `SetWorldIconText` | Change the text on WorldIcon. The display text is registered at `Strings.json` and then referenced at `mod.stringkeys`. | worldIcon: WorldIcon, newText: Message | None | `mod.SetWorldIconText(icon, mod.Message(mod.stringkeys.pointA));` |
 | `GetWorldIcon` | Get WorldIcon from number or target. | worldIconNumber: number | `WorldIcon` | `const icon = mod.GetWorldIcon(0);` |
 

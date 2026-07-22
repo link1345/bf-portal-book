@@ -141,6 +141,8 @@ free: true
 | `GetSpawnPoint` | 从数字或目标获取 SpawnPoint。 | number: number | `SpawnPoint` | `const value = mod.GetSpawnPoint(...);` |
 | `GetSpawner` | 从编号或目标中获取 Spawner。 | number: number | `Spawner` | `const value = mod.GetSpawner(...);` |
 | `GetVL7Cloud` | 从编号或目标获取 VL7Cloud。 | vl7CloudId: number | `VL7Cloud` | `const value = mod.GetVL7Cloud(...);` |
+| `GetPlayer` | 获取 ObjId 对应的 Player。SDK 1.4.1.0 新增。 | objId: number | `Player` | `const player = mod.GetPlayer(123);` |
+| `GetVehicle` | 获取 ObjId 对应的 Vehicle。SDK 1.4.1.0 新增。 | objId: number | `Vehicle` | `const vehicle = mod.GetVehicle(456);` |
 
 ## 逻辑 / 字符串 / 扩展
 

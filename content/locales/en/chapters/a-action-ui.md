@@ -141,6 +141,8 @@ This appendix covers functions for UI, notifications, and scoreboards, frequentl
 | `GetSpawnPoint` | Get SpawnPoint from number or target. | number: number | `SpawnPoint` | `const value = mod.GetSpawnPoint(...);` |
 | `GetSpawner` | Get Spawner from number or target. | number: number | `Spawner` | `const value = mod.GetSpawner(...);` |
 | `GetVL7Cloud` | Get VL7Cloud from number or target. | vl7CloudId: number | `VL7Cloud` | `const value = mod.GetVL7Cloud(...);` |
+| `GetPlayer` | Gets the Player corresponding to an ObjId. Added in SDK 1.4.1.0. | objId: number | `Player` | `const player = mod.GetPlayer(123);` |
+| `GetVehicle` | Gets the Vehicle corresponding to an ObjId. Added in SDK 1.4.1.0. | objId: number | `Vehicle` | `const vehicle = mod.GetVehicle(456);` |
 
 ## Logical/String/Extension
 

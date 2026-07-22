@@ -50,3 +50,4 @@ TypeScriptの文法は、「[サバイバルTypeScript](https://typescriptbook.j
 2026-05-02: Codex AppでのMCP設定、AIへの聞き方、レート制限に関する補足説明を追加
 2026-05-13: 公式SDK v1.3.1.0に対応。`HybridExample`、`CustomCQ`、`mod.strings`、Radio系Music定数、追加装備定数、`VehicleSpawner` の `EnableRespawn` 変更に関する説明を追加
 2026-06-12: 公式SDK v1.3.2.0に対応。`NightModeExample`、`GolmudTrainExample`、`MP_GolmudRailway`、CustomCQ v10.0の追加マップと更新点を反映
+2026-07-22: 公式SDK v1.4.1.0に対応。`CustomBT` v2.0、5つの構成済みBreakthroughマップ、`PhysicsImpulseExample` への改名、ObjId参照APIと移動APIの型変更を反映
