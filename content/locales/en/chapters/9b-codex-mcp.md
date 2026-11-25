@@ -103,7 +103,7 @@ On the custom MCP setup screen, enter the following.
 | Launch command | `npx` |
 | Argument 1 | `bf6-portal-typescript-mcp@latest` |
 | Argument 2 | `mcp` |
-| Argument 3 | `--sdk_path` |
+| Argument 3 | `--sdk-path` |
 | Argument 4 | `/path/to/bf6-portal-sdk` |
 
 ![How to configure the MCP server in Codex App](/images/bf_portal_doc/d-codex-3.png)
@@ -118,7 +118,7 @@ After setup, you are ready if `bf6_portal_typescript_mcp` is available in the Co
 If it does not work after setup, check the following in order.
 
 * Whether `npx` is available.
-* Whether the folder specified by `--sdk_path` contains `code/types/mod/index.d.ts`.
+* Whether the folder specified by `--sdk-path` contains `code/types/mod/index.d.ts`.
 * Whether you restarted Codex App after changing the settings.
 * Whether `bf6_portal_typescript_mcp` appears in the Codex tool list.
 * Whether the server name is short and easy to recognize.
