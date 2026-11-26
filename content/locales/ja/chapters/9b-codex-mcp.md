@@ -97,7 +97,7 @@ AIに聞くときは、エラー文、設定画面の入力内容、SDKフォル
 | 起動用コマンド | `npx` |
 | 引数1 | `bf6-portal-typescript-mcp@latest` |
 | 引数2 | `mcp` |
-| 引数3 | `--sdk_path` |
+| 引数3 | `--sdk-path` |
 | 引数4 | `/path/to/bf6-portal-sdk` |
 
 ![Codex AppのMCPサーバー設定方法](/images/bf_portal_doc/d-codex-3.png)
@@ -112,7 +112,7 @@ AIに聞くときは、エラー文、設定画面の入力内容、SDKフォル
 設定しても動かない場合は、次の順番で確認します。
 
 * `npx` が使える状態になっているか。
-* `--sdk_path` に指定したフォルダの中に `code/types/mod/index.d.ts` があるか。
+* `--sdk-path` に指定したフォルダの中に `code/types/mod/index.d.ts` があるか。
 * 設定後にCodex Appを再起動したか。
 * Codexのツール一覧に `bf6_portal_typescript_mcp` が出ているか。
 * サーバー名が短く分かりやすい名前になっているか。

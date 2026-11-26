@@ -102,7 +102,7 @@ MCP就像交给AI的一本词典。
 | 启动命令 | `npx` |
 | 参数1 | `bf6-portal-typescript-mcp@latest` |
 | 参数2 | `mcp` |
-| 参数3 | `--sdk_path` |
+| 参数3 | `--sdk-path` |
 | 参数4 | `/path/to/bf6-portal-sdk` |
 
 ![Codex App中MCP服务器的设置方法](/images/bf_portal_doc/d-codex-3.png)
@@ -117,7 +117,7 @@ MCP就像交给AI的一本词典。
 设置后仍然不能正常工作时，按下面的顺序确认。
 
 * `npx` 是否可用。
-* `--sdk_path` 指定的文件夹中是否有 `code/types/mod/index.d.ts`。
+* `--sdk-path` 指定的文件夹中是否有 `code/types/mod/index.d.ts`。
 * 设置后是否重启了Codex App。
 * Codex的工具列表中是否出现了 `bf6_portal_typescript_mcp`。
 * 服务器名称是否简短、容易识别。
